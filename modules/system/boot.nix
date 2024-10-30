@@ -11,10 +11,10 @@
     initrd.verbose = false;
     plymouth = {
       enable = true;
-      theme = "rings";
+      theme = "catppuccin-plymouth";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
-          selected_themes = [ "rings"];
+          selected_themes = [ "catppuccin-plymouth"];
         })
       ];
     };
