@@ -38,8 +38,7 @@
     };
   };
 
-  outputs =
-    inputs@{
+  outputs = {
     self,
     nixpkgs,
     nixvim,
@@ -48,7 +47,7 @@
     nix-colors,
     nixos-cosmic,
     ...
-    }:
+    } @ inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
