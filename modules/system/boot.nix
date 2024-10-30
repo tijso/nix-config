@@ -1,6 +1,10 @@
 { pkgs, lib, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+      catppuccin-plymouth
+    ];
+
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "v4l2loopback" ];
