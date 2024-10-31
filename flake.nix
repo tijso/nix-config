@@ -44,6 +44,7 @@
     nix-colors,
     nixvim,
     nixos-cosmic,
+    catppuccin,
     ...
   } @ inputs: let
     inherit (self) outputs;
