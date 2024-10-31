@@ -9,7 +9,7 @@
     nix-du
     nix-prefetch-git
     nix-prefetch-github
-    nixfmt
+    # nixfmt
     alejandra
     nil
   ];
