@@ -55,7 +55,7 @@
           inherit system;
           config.allowUnfree = true;
         }
-    };
+    );
   in {
     inherit lib;
     overlays = import ./overlays {inherit inputs;};
