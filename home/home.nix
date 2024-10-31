@@ -3,7 +3,6 @@
   config,
   inputs,
   nix-colors,
-  username,
   ...
 }: {
   imports = [
