@@ -22,7 +22,6 @@
     };
 
     # Programs
-    catppuccin.url = "github:catppuccin/nix";
     nix-colors.url = "github:misterio77/nix-colors";
 
     nixvim = {
@@ -44,7 +43,6 @@
     nix-colors,
     nixvim,
     nixos-cosmic,
-    catppuccin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -88,7 +86,6 @@
         modules = [
           ./home/home.nix
           nixvim.homeManagerModules.nixvim
-          catppuccin.homeManagerModules.catppuccin
         ];
       };
     };
