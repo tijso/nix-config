@@ -83,6 +83,7 @@
             ./home/home.nix
             nixvim.homeManagerModules.nixvim
             catppuccin.homeManagerModules.catppuccin
+            nix-colors
           ];
         };
       };
