@@ -5,7 +5,6 @@
 }: {
   programs.fish = {
     enable = true;
-    catppuccin.enable = true;
     interactiveShellInit = ''
       set fish_greeting
       #fastfetch
