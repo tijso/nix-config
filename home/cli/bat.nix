@@ -5,7 +5,7 @@
 }: {
   programs.bat = {
     enable = true;
-    catppuccin.flavor = "mocha";
+    config.theme = "base16";
     extraPackages = with pkgs.bat-extras; [
       batdiff
       batgrep
