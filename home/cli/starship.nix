@@ -18,8 +18,8 @@
         format = "$symbol";
         success_symbol = "[->](fg:#${config.colorScheme.palette.base0A}) ";
         error_symbol = "[┤](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
-        vimcmd_symbol = "[ NORMAL](#${config.colorScheme.palette.base08})";
-        vimcmd_visual_symbol = "[ VISUAL](#${config.colorScheme.palette.base08})";
+        # vimcmd_symbol = "[ NORMAL](#${config.colorScheme.palette.base08})";
+        # vimcmd_visual_symbol = "[ VISUAL](#${config.colorScheme.palette.base08})";
       };
 
       username = {
