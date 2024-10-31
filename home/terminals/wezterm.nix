@@ -13,7 +13,7 @@
         font = wezterm.font "Fira Code",
         -- font = wezterm.font "Monaspace Radon",
         font_size = 16.0,
-        window_background_opacity = .90,
+        window_background_opacity = 1.00,
         window_close_confirmation = "NeverPrompt",
         use_fancy_tab_bar = true,
         hide_tab_bar_if_only_one_tab = true,
