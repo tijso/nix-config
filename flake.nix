@@ -1,14 +1,12 @@
 {
-	description = "nixos-config";
+  description = "Your new nix config";
 
-    inputs  = {
-    # Official NixOS
+  inputs = {
+    # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    # The next two are for pinning to stable vs unstable regardless of what the above is set to
-    # See also 'stable-packages' and 'unstable-packages' overlays at 'overlays/default.nix"
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    systems.url = "github:nix-systems/default-linux";
 
     # Home Manager
     home-manager = {
@@ -16,16 +14,16 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    # Programs
-    catppuccin.url = "github:catppuccin/nix";
-    nix-colors.url = "github:misterio77/nix-colors";
-
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+    # Programs
+    catppuccin.url = "github:catppuccin/nix";
+    nix-colors.url = "github:misterio77/nix-colors";
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -41,27 +39,36 @@
   outputs = {
     self,
     nixpkgs,
-    nixvim,
+    systems,
     home-manager,
-    catppuccin,
     nix-colors,
+    nixvim,
     nixos-cosmic,
     ...
-    } @ inputs:
-    let
-      lib = nixpkgs.lib;
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      overlays = import ./overlays { inherit inputs; };
-      nixosConfigurations = {
-        serenity = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit system;
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/serenity/configuration.nix
+  } @ inputs: let
+    inherit (self) outputs;
+    lib = nixpkgs.lib // home-manager.lib;
+    forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
+    pkgsFor = lib.genAttrs (import systems) (
+      system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+    };
+  in {
+    inherit lib;
+    overlays = import ./overlays {inherit inputs;};
+
+    packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
+    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
+    formatter = forEachSystem (pkgs: pkgs.alejandra);
+
+    nixosConfigurations = {
+        serenity = lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/serenity/configuration.nix
             {
               nix.settings = {
                 substituters = [ "https://cosmic.cachix.org/" ];
@@ -69,22 +76,20 @@
               };
             }
             nixos-cosmic.nixosModules.default
-          ];
-        };
-      };
-      homeConfigurations = {
-        "tijso@serenity" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = {
-            inherit inputs;
-            inherit nix-colors;
-          };
-          modules = [
-            ./home/home.nix
-            nixvim.homeManagerModules.nixvim
-            catppuccin.homeManagerModules.catppuccin
-          ];
-        };
+        ];
       };
     };
+
+    homeConfigurations = {
+      "tijso@serenity" = lib.homeManagerConfiguration {
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home/home.nix
+            nixvim.homeManagerModules.nixvim
+            catppuccin.homeManagerModules.catppuccin
+        ];
+      };
+    };
+  };
 }
