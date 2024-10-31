@@ -8,7 +8,6 @@
   imports = [
     nix-colors.homeManagerModules.default
     ./cli
-    ./shells
     ./terminals
     ./editors
     ./desktop

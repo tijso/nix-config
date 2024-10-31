@@ -7,8 +7,11 @@
   imports = [
     ./bat.nix
     ./eza.nix
-    ./git.nix
     ./fastfetch
+    ./fish.nix
+    ./git.nix
+    ./starship.nix
+    # ./zsh.nix
   ];
 
   programs.fzf = {
