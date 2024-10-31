@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    # nix-colors.homeManagerModules.default
+    nix-colors.homeManagerModules.default
     ./cli
     ./shells
     ./terminals
