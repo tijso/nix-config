@@ -6,11 +6,9 @@
 }: {
   programs.starship = {
     enable = true;
-    # catppuccin.enable = true;
     enableZshIntegration = true;
     enableFishIntegration = true;
     settings = {
-      # palette = "catppuccin_mocha";
       format = ''
         [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
         [└](fg:#${config.colorScheme.palette.base0A}) $os$character
@@ -20,6 +18,8 @@
         format = "$symbol";
         success_symbol = "[->](fg:#${config.colorScheme.palette.base0A}) ";
         error_symbol = "[┤](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
+        vimcmd_symbol = "[ NORMAL](#${config.colorScheme.palette.base08})"
+        # vimcmd_visual_symbol
       };
 
       username = {
