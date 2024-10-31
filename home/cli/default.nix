@@ -15,7 +15,6 @@
     enable = true;
     enableZshIntegration = true;
     enableFishIntegration = true;
-    catppuccin.enable = true;
     defaultCommand = "fd --type f --max-depth 10";
     changeDirWidgetCommand = "fd --type d --max-depth 10";
     fileWidgetCommand = "fd --type f --max-depth 10";
