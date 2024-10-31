@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     binutils
     brightnessctl
@@ -32,8 +30,12 @@
     udisks2.enable = true;
     tumbler.enable = true;
     fstrim.enable = true;
-    printing.drivers = [ pkgs.hplip ];
+    printing.drivers = [pkgs.hplip];
     printing.enable = true;
-    avahi = { enable = true; nssmdns4 = true; openFirewall = true; };
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
   };
 }

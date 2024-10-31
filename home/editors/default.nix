@@ -1,8 +1,10 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
-     ./nvim
+    ./nvim
     # ./helix
   ];
 }

@@ -1,6 +1,8 @@
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     # Hardware
     ./hardware-configuration.nix
@@ -30,5 +32,4 @@
   };
 
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }

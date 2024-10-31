@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins = {
     treesitter = {
-      enable   = true;
+      enable = true;
       nixvimInjections = true;
       nixGrammars = true;
       settings = {
@@ -16,7 +16,7 @@
         };
         treesitter-context = {
           enable = true;
-          settings = { max_lines = 2; };
+          settings = {max_lines = 2;};
         };
         incrementalSelection = {
           enable = true;

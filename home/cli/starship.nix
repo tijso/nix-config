@@ -1,15 +1,17 @@
-{ pkgs, config, ...}:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
     enableFishIntegration = true;
     settings = {
-      add_newline =true;
+      add_newline = true;
       character = {
-        success_symbol  = "[❯](#cba6f7)[❯](#89dceb)[❯](#f2cdcd)";
-        error_symbol    = "[❯](#fab387)[❯](#eba0ac)[❯](#6c7086)";
+        success_symbol = "[❯](#cba6f7)[❯](#89dceb)[❯](#f2cdcd)";
+        error_symbol = "[❯](#fab387)[❯](#eba0ac)[❯](#6c7086)";
       };
       username = {
         show_always = true;

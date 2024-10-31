@@ -1,6 +1,11 @@
-{ pkgs, config, inputs, nix-colors, username,... }:
-
 {
+  pkgs,
+  config,
+  inputs,
+  nix-colors,
+  username,
+  ...
+}: {
   imports = [
     nix-colors.homeManagerModules.default
     ./cli
@@ -15,7 +20,7 @@
   home = {
     username = "tijso";
     homeDirectory = "/home/tijso";
-    sessionPath = [ "$HOME/.local/bin" ];
+    sessionPath = ["$HOME/.local/bin"];
     sessionVariables = {
       EDITOR = "nvim";
       PAGER = "bat";
@@ -53,5 +58,4 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";
-
 }

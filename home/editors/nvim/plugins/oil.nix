@@ -6,7 +6,7 @@
         useDefaultKeymaps = true;
         deleteToTrash = true;
         float = {
-          padding  = 2;
+          padding = 2;
           maxWidth = 0.9; # ''math.ceil(vim.o.lines * 0.8 - 4)'';
           maxHeight = 0.9; # ''math.ceil(vim.o.columns * 0.8)'';
           border = "rounded"; # 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open

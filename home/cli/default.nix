@@ -1,6 +1,9 @@
-{ pkgs, lib, config, ... }:
-
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./bat.nix
     ./eza.nix
@@ -48,5 +51,4 @@
     tree
     qbittorrent
   ];
-
 }

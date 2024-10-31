@@ -1,19 +1,21 @@
-{ inputs, pkgs, ... }:
-
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.fish.enable = true;
   users.users.tijso = {
     # defaultUserShell = pkgs.fish;
-      isNormalUser = true;
-      shell = pkgs.fish;
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-        "audio"
-        "video"
-        "libvirtd"
-      ];
-      packages = with pkgs; [ ];
+    isNormalUser = true;
+    shell = pkgs.fish;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "video"
+      "libvirtd"
+    ];
+    packages = with pkgs; [];
   };
 
   time.timeZone = "America/Chicago";

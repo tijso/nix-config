@@ -17,14 +17,13 @@
       sections = {
         lualine_a = [
           {
-            name ="mode";
+            name = "mode";
             extraConfig = {
               separator = {
                 # left = "";
                 # right = "";
                 # left = "";
                 # right = "";
-
               };
             };
           }
@@ -58,9 +57,9 @@
             name = "filename";
             extraConfig = {
               colored = true;
-          };
-        }
-      ];
+            };
+          }
+        ];
         lualine_x = [
           {
             name = "diagnostics";

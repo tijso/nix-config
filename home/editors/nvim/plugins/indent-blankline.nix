@@ -24,11 +24,11 @@
               "mason"
               "notify"
               "toggleterm"
-            "lazyterm"
-          ];
+              "lazyterm"
+            ];
+          };
         };
       };
     };
   };
-};
 }

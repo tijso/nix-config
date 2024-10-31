@@ -1,6 +1,4 @@
-{ pkgs, ...}:
-
-{
+{pkgs, ...}: {
   programs.nixvim = {
     colorschemes.kanagawa = {
       enable = false;
@@ -10,7 +8,7 @@
         compile = true;
         style = "wave";
         styles = {
-          italic =true;
+          italic = true;
           bold = true;
           transparency = true;
         };
@@ -66,36 +64,36 @@
         transparent_background = true;
         term_colors = true;
         integrations = {
-        cmp = true;
-        noice = true;
-        notify = true;
-        harpoon = true;
-        gitsigns = true;
-        which_key = true;
-        rainbow_delimiters = true;
-        treesitter_context = true;
-        telescope.enabled = true;
-        treesitter = true;
-        indent_blankline.enabled = true;
-        native_lsp = {
-          enabled = true;
-          inlay_hints = {
-            background = true;
-          };
-          underlines = {
-            errors = ["underline"];
-            hints = ["underline"];
-            information = ["underline"];
-            warnings = ["underline"];
+          cmp = true;
+          noice = true;
+          notify = true;
+          harpoon = true;
+          gitsigns = true;
+          which_key = true;
+          rainbow_delimiters = true;
+          treesitter_context = true;
+          telescope.enabled = true;
+          treesitter = true;
+          indent_blankline.enabled = true;
+          native_lsp = {
+            enabled = true;
+            inlay_hints = {
+              background = true;
+            };
+            underlines = {
+              errors = ["underline"];
+              hints = ["underline"];
+              information = ["underline"];
+              warnings = ["underline"];
+            };
           };
         };
       };
     };
-  };
 
-  extraPlugins = with pkgs.vimPlugins; [
-    kanagawa-nvim
-    tokyonight-nvim
-  ];
-};
+    extraPlugins = with pkgs.vimPlugins; [
+      kanagawa-nvim
+      tokyonight-nvim
+    ];
+  };
 }

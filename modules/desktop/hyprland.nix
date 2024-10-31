@@ -1,6 +1,9 @@
-{ inputs, pkgs, lib, ... }:
-
 {
+  inputs,
+  pkgs,
+  lib,
+  ...
+}: {
   programs.hyprland.enable = true;
 
   services.xserver = {
@@ -18,15 +21,12 @@
     config.common.default = "*";
     wlr.enable = true;
     xdgOpenUsePortal = true;
-    extraPortals =
-      [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
   };
 
-  environment.systemPackages  = with pkgs; [
+  environment.systemPackages = with pkgs; [
     sugar.sddm-sugar-dark # Name: sugar-dark
     tokyo-night # Name: tokyo-night-sddm
     libsForQt5.qt5.qtgraphicaleffects
-   ];
-
-
+  ];
 }

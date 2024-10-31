@@ -1,6 +1,9 @@
-{ pkgs, lib, inputs, ... }:
-
 {
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   programs.thunar = {
     enable = true;
     plugins = with pkgs.xfce; [

@@ -1,10 +1,12 @@
-{ pkgs, config, inputs, ... }:
-
 {
+  pkgs,
+  config,
+  inputs,
+  ...
+}: {
   imports = [
     #inputs.nix-colors.homeManagerModules.default
   ];
-
 
   # ColorScheme
   #colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
@@ -37,8 +39,8 @@
       # package = pkgs.kanagawa-gtk-theme;
       name = "Catppuccin-Mocha-Compact-Lavender-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "lavender" ];
-        size    = "compact";
+        accents = ["lavender"];
+        size = "compact";
         # tweaks  = [ "rimless" ];
         variant = "mocha";
       };
@@ -58,5 +60,4 @@
       gtk-application-prefer-dark-theme = true;
     };
   };
-
 }

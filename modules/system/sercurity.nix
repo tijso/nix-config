@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
   services.gnome.gnome-keyring.enable = true;

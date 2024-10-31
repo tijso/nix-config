@@ -1,6 +1,9 @@
-{ pkgs, config, lib, ...}:
-
 {
+  pkgs,
+  config,
+  lib,
+  ...
+}: {
   programs.starship = {
     enable = true;
     # catppuccin.enable = true;
@@ -9,15 +12,15 @@
     settings = {
       # palette = "catppuccin_mocha";
       format = ''
-      [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
-      [└](fg:#${config.colorScheme.palette.base0A}) $os$character
+        [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
+        [└](fg:#${config.colorScheme.palette.base0A}) $os$character
       '';
 
       character = {
         format = "$symbol";
-        success_symbol  = "[->](fg:#${config.colorScheme.palette.base0A}) ";
-        error_symbol    = "[┤](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
-       };
+        success_symbol = "[->](fg:#${config.colorScheme.palette.base0A}) ";
+        error_symbol = "[┤](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
+      };
 
       username = {
         show_always = false;
@@ -41,7 +44,7 @@
 
       os = with config.colorScheme.palette; {
         disabled = false;
-         style = "fg:#${base0D}";
+        style = "fg:#${base0D}";
         symbols = {
           # Arch = "[ ]($style)";
           NixOS = "[ ]($style)";

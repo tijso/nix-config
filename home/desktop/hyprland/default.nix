@@ -1,7 +1,10 @@
-{ inputs, pkgs, config, lib, ... }:
-
 {
-
+  inputs,
+  pkgs,
+  config,
+  lib,
+  ...
+}: {
   imports = [
     # ./binds.nix
     # ./rules.nix
@@ -10,7 +13,7 @@
     # ./animations.nix
   ];
 
-  home.packages  = with pkgs; [
+  home.packages = with pkgs; [
     clipse
     grim
     slurp
@@ -26,7 +29,7 @@
     # sugar.sddm-sugar-dark # Name: sugar-dark
     # tokyo-night # Name: tokyo-night-sddm
     # libsForQt5.qt5.qtgraphicaleffects
-   ];
+  ];
 
   # programs.hyprland = {
   #   enable = true;
@@ -42,5 +45,4 @@
     # plugins = [ inputs.hyprspace.packages.${pkgs.system}.Hyprspace ];
     # catppuccin.enable = true;
   };
-
 }

@@ -1,6 +1,8 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   programs.fish = {
     enable = true;
     catppuccin.enable = true;
@@ -46,7 +48,7 @@
     shellAliases = {
       cat = "bat -p";
       img = "wezterm imgcat";
-      update  = "sudo nix flake update";
+      update = "sudo nix flake update";
       rebuild = "sudo nixos-rebuild switch --flake .#serenity && notify-send \"Done\"";
       hmr = "home-manager switch --flake .#tijso@serenity";
       ls = "eza -lg";
@@ -58,5 +60,4 @@
       tm = "trash-rm";
     };
   };
-
 }
