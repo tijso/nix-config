@@ -13,7 +13,6 @@
         success_symbol = "[❯](#cba6f7)[❯](#89dceb)[❯](#f2cdcd)";
         error_symbol = "[❯](#fab387)[❯](#eba0ac)[❯](#6c7086)";
         vimcmd_symbol = "[ NORMAL](#9ccfd8)";
-        vimcmd_visual_symbol = "[ VISUAL](#31748f)";
       };
       username = {
         show_always = true;
