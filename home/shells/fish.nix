@@ -47,10 +47,8 @@
       cat = "bat -p";
       img = "wezterm imgcat";
       update  = "sudo nix flake update";
-      # rebuild = "sudo nixos-rebuild switch --flake .#andromeda && notify-send \"Done\"&& bat cache --build; ";
       rebuild = "sudo nixos-rebuild switch --flake .#serenity && notify-send \"Done\"";
-      # hmu = "nix flake update home-manager .";
-      hmr = "home-manager switch --flake .";
+      hmr = "home-manager switch --flake .#tijso@serenity";
       ls = "eza -lg";
       la = "eza -la";
       lt = "eza --tree";
