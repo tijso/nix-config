@@ -5,7 +5,7 @@
 }: {
   programs.kitty = {
     enable = true;
-    catppuccin.enable = true;
+    theme = "Catppuccin-Mocha";
     # theme = "Nightfly";
     # theme = "Kanagawa";
     font = {
