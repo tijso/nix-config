@@ -41,7 +41,7 @@
     nixpkgs,
     systems,
     home-manager,
-    # nix-colors,
+    nix-colors,
     nixvim,
     nixos-cosmic,
     catppuccin,
@@ -89,6 +89,7 @@
           ./home/home.nix
           nixvim.homeManagerModules.nixvim
           catppuccin.homeManagerModules.catppuccin
+          nix-colors
         ];
       };
     };
