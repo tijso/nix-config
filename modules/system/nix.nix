@@ -6,8 +6,8 @@
     nix-du
     nix-prefetch-git
     nix-prefetch-github
-    # nixfmt-rfc-style
-    nixpkgs-fmt
+    nixfmt
+    alejandra
     nil
   ];
 
