@@ -15,7 +15,7 @@
     ./desktop
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 
   home = {
     username = "tijso";
