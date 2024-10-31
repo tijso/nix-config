@@ -7,9 +7,9 @@
     enable = true;
     extraConfig = ''
       return {
-        -- color_scheme = "Catppuccin Mocha",
+        color_scheme = "Catppuccin Mocha",
         -- color_scheme = "rose-pine",
-        color_scheme = "Kanagawa (Gogh)",
+        -- color_scheme = "Kanagawa (Gogh)",
         font = wezterm.font "Fira Code",
         -- font = wezterm.font "Monaspace Radon",
         font_size = 16.0,

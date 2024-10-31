@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.nixvim = {
     colorschemes.kanagawa = {
-      enable = true;
+      enable = false;
       settings = {
         # transparent = false;
         terminal_colors = true;
@@ -12,15 +12,6 @@
           bold = true;
           transparency = true;
         };
-         colors = {
-           theme ={
-             all = {
-               ui ={
-                 bg_gutter = "none";
-               };
-             };
-           };
-         };
       };
     };
 
@@ -51,7 +42,7 @@
     };
 
     colorschemes.catppuccin = {
-      enable = false;
+      enable = true;
       settings = {
         background = {
           light = "macchiato";
