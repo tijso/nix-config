@@ -9,22 +9,34 @@
   home.packages = with pkgs; [
     tree
     btop
-    logseq
     inkscape
     ookla-speedtest
     gnome-disk-utility
     obs-studio
-    baobab
     cava
     telegram-desktop
     gimp
     corefonts
     cachix
     qbittorrent
-    jamesdsp
-    megasync
-    vesktop
     ani-cli
+
+    imagemagick
+    sxiv
+    pavucontrol
+    hyprpicker
+    wl-clipboard
+    playerctl
+    swww
+    grim
+    slurp
+    optipng
+    libnotify
+    bibata-cursors
+    papirus-icon-theme
+    pamixer
+    xdg-desktop-portal-hyprland
+
   ];
 
   programs.git = {
