@@ -64,5 +64,9 @@
       "$mod, mouse:272, movewindow"
       "$mod, mouse:273, resizewindow"
     ];
+
+    ++ map (i: workspace (toString i)) workspaceArr
+    ++ map (i: moveToWorkspace (toString i)) workspaceArr
+    ++ map (i: moveToWorkspaceSilent (toString i)) workspaceArr;
   };
 }
