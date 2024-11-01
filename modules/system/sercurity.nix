@@ -9,8 +9,9 @@
 
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
+
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.login.enableGnomeKeyring = true;
+  programs.seahorse.enable = true;
 
   # Enable Yubikey support
   services.pcscd.enable = true;
