@@ -1,66 +1,71 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
+    "$mod" = "SUPER";
     bind =
       [
-        "$mod,RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
-        "$mod,E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
-        "$mod,B, exec, ${pkgs.qutebrowser}/bin/qutebrowser" # Qutebrowser
-        "$mod,K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
-        "$mod,L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
-        "$mod,X, exec, powermenu" # Powermenu
-        "$mod,SPACE, exec, menu" # Launcher
-        "$mod,C, exec, quickmenu" # Quickmenu
-        "$shiftMod,SPACE, exec, hyprfocus-toggle" # Toggle HyprFocus
-        "$mod,TAB, overview:toggle" # Overview
+        # Programs
+        "$mod, Q, killactive,"
+        "$mod  SHIFT, C, exit,"
+        "$mod, RETURN, exec, wezterm"
+        "$mod, B, exec, brave"
+        "$mod, E, exec, thunar"
+        "$mod, D, exec, grim -g  discord"
+        "$mod, S, exec, grim -g "$(slurp)""
 
-        "$mod,Q, killactive," # Close window
-        "$mod,T, togglefloating," # Toggle Floating
-        "$mod,F, fullscreen" # Toggle Fullscreen
-        "$mod,left, movefocus, l" # Move focus left
-        "$mod,right, movefocus, r" # Move focus Right
-        "$mod,up, movefocus, u" # Move focus Up
-        "$mod,down, movefocus, d" # Move focus Down
-        "$shiftMod,up, focusmonitor, -1" # Focus previous monitor
-        "$shiftMod,down, focusmonitor, 1" # Focus next monitor
-        "$shiftMod,left, layoutmsg, addmaster" # Add to master
-        "$shiftMod,right, layoutmsg, removemaster" # Remove from master
+        # Rofi
+        "$main_mod, R, exec, rofi -show drun -theme $rofi_theme $focus_rofi"
+        "$main_mod, Equal, exec, rofi -modi calc -show calc -theme $rofi_theme $focus_rofi"
+        "$main_mod, Period, exec, rofimoji --selector-args \"-theme '$HOME/.config/rofi/theme.rasi'\" $focus_rofi"
+        "$main_mod, N, exec, dunstctl action $focus_rofi"
+        "$main_mod, V, exec, clipse list | rofi -dmenu -p C -theme $rofi_theme | clipse decode | wl-copy $focus_rofi"
+        "$main_mod ALT, V, exec, wtype \"$(wl-paste)\""
 
-        "$mod,PRINT, exec, screenshot window" # Screenshot window
-        ",PRINT, exec, screenshot monitor" # Screenshot monitor
-        "$shiftMod,PRINT, exec, screenshot region" # Screenshot region
-        "ALT,PRINT, exec, screenshot region swappy" # Screenshot region then edit
+        # Tiling
+        "$mod, F, fullscreen,"
+        "$mod, T, togglefloating,"
+        "$mod, H, movefocus, l"
+        "$mod, L, movefocus, r"
+        "$mod, K, movefocus, u"
+        "$mod, J, movefocus, d"
 
-        "$shiftMod,S, exec, ${pkgs.qutebrowser}/bin/qutebrowser :open $(wofi --show dmenu -L 1 -p ' Search on internet')" # Search on internet with wofi
-        "$shiftMod,C, exec, clipboard" # Clipboard picker with wofi
-        "$shiftMod,E, exec, ${pkgs.wofi-emoji}/bin/wofi-emoji" # Emoji picker with wofi
-        "$mod,F2, exec, night-shift" # Toggle night shift
-        "$mod,F3, exec, night-shift" # Toggle night shift
+        # Move window with mainMod + shift
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, L, movewindow, r"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, J, movewindow, d"
+
+        # Workspaces
+        "$mod, bracketright, workspace, +1"
+        "$mod, bracketleft, workspace, -1"
+        "$mod, CONTROL, bracketright, movetoworkspace, +1"
+        "$mod, CONTROL, bracketleft, movetoworkspace, -1"
+
+        # Resizing
+        "$mod ALT, L, resizeactive, 20 0"
+        "$mod ALT, H, resizeactive, -20 0"
+        "$mod ALT, K, resizeactive, 0 -20"
+        "$mod ALT, J, resizeactive, 0 20"
+
+        # Audio
+        "$mod, P, exec, playerctl play-pause"
+        "$mod, M, exec, swayosd-client --input-volume mute-toggle"
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPrev, exec, playerctl prev"
+        ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+        ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
       ]
-      ++ (builtins.concatLists (builtins.genList (i: let
-        ws = i + 1;
-      in [
-        "$mod,code:1${toString i}, workspace, ${toString ws}"
-        "$mod SHIFT,code:1${toString i}, movetoworkspace, ${toString ws}"
-      ]) 9));
-
+      binde = [
+      ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
+      ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
+      "SHIFT, XF86AudioRaiseVolume, exec, swayosd-client --input-volume raise"
+      "SHIFT, XF86AudioLowerVolume, exec, swayosd-client --input-volume lower"
+      ", XF86MonBrightnessDown, exec, swayosd-client --brightness -10"
+      ", XF86MonBrightnessUp, exec, swayosd-client --brightness +10"
+    ];
     bindm = [
-      "$mod,mouse:272, movewindow" # Move Window (mouse)
-      "$mod,R, resizewindow" # Resize Window (mouse)
-    ];
-
-    bindl = [
-      ",XF86AudioMute, exec, sound-toggle" # Toggle Mute
-      ",XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause" # Play/Pause Song
-      ",XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next" # Next Song
-      ",XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous" # Previous Song
-      ",switch:Lid Switch, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock when closing Lid
-    ];
-
-    bindle = [
-      ",XF86AudioRaiseVolume, exec, sound-up" # Sound Up
-      ",XF86AudioLowerVolume, exec, sound-down" # Sound Down
-      ",XF86MonBrightnessUp, exec, brightness-up" # Brightness Up
-      ",XF86MonBrightnessDown, exec, brightness-down" # Brightness Down
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
     ];
   };
 }

@@ -1,4 +1,9 @@
-{...}: {
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     settings = {
       general = {
