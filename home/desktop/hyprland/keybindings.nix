@@ -30,19 +30,7 @@
       "$mod SHIFT, K, movewindow, u"
       "$mod SHIFT, J, movewindow, d"
 
-      # Workspaces
-      "$mod, CONTROL  L, workspace, +1"
-      "$mod, CONTROL  H, workspace, -1"
-      # "$mod, CONTROL, K, movetoworkspace, +1"
-      # "$mod, CONTROL, J, movetoworkspace, -1"
-
-      # Resizing
-      "$mod ALT, L, resizeactive, 20 0"
-      "$mod ALT, H, resizeactive, -20 0"
-      "$mod ALT, K, resizeactive, 0 -20"
-      "$mod ALT, J, resizeactive, 0 20"
-
-      # Switch workspaces with mainMod + [0-6]
+      # Switch workspaces
       "$mod, 1, workspace, 1"
       "$mod, 2, workspace, 2"
       "$mod, 3, workspace, 3"
@@ -54,7 +42,7 @@
       "$mod, 9, workspace, 9"
       "$mod, 0, workspace, 10"
 
-      # Move active window to a workspace with mainMod + SHIFT + [0-6]
+      # Move active window to a workspace
       "$mod SHIFT, 1, movetoworkspace, 1"
       "$mod SHIFT, 2, movetoworkspace, 2"
       "$mod SHIFT, 3, movetoworkspace, 3"
@@ -65,6 +53,12 @@
       "$mod SHIFT, 8, movetoworkspace, 8"
       "$mod SHIFT, 9, movetoworkspace, 9"
       "$mod SHIFT, 0, movetoworkspace, 10"
+
+      # Resizing
+      "$mod ALT, L, resizeactive, 20 0"
+      "$mod ALT, H, resizeactive, -20 0"
+      "$mod ALT, K, resizeactive, 0 -20"
+      "$mod ALT, J, resizeactive, 0 20"
 
       # Audio
       "$mod, P, exec, playerctl play-pause"
