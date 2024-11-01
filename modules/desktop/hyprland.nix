@@ -12,7 +12,7 @@
     xkb.variant = "";
     displayManager.sddm = {
       enable = true;
-      theme = "sugar";
+      theme = "sugar-dark";
     };
   };
 
