@@ -3,6 +3,10 @@
   lib,
   ...
 }: {
+  environment.systemPackages = with pkgs; [
+    polkit_gnome
+  ];
+
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
   services.gnome.gnome-keyring.enable = true;

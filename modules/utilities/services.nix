@@ -11,7 +11,6 @@
     pavucontrol
     pciutils
     playerctl
-    polkit_gnome
     unrar
     unzip
     usbutils
