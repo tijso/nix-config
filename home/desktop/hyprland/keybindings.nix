@@ -10,15 +10,12 @@
         "$mod, B, exec, brave"
         "$mod, E, exec, thunar"
         "$mod, D, exec, grim -g  discord"
-        "$mod, S, exec, grim -g "$(slurp)""
 
         # Rofi
-        "$main_mod, R, exec, rofi -show drun -theme $rofi_theme $focus_rofi"
-        "$main_mod, Equal, exec, rofi -modi calc -show calc -theme $rofi_theme $focus_rofi"
-        "$main_mod, Period, exec, rofimoji --selector-args \"-theme '$HOME/.config/rofi/theme.rasi'\" $focus_rofi"
-        "$main_mod, N, exec, dunstctl action $focus_rofi"
-        "$main_mod, V, exec, cliphist list | rofi -dmenu -p C -theme $rofi_theme | cliphist decode | wl-copy $focus_rofi"
-        "$main_mod ALT, V, exec, wtype \"$(wl-paste)\""
+        "$mod, R, exec, rofi -show drun -theme $rofi_theme $focus_rofi"
+        "$mod, Equal, exec, rofi -modi calc -show calc -theme $rofi_theme $focus_rofi"
+        "$mod, N, exec, dunstctl action $focus_rofi"
+        "$mod, V, exec, cliphist list | rofi -dmenu -p C -theme $rofi_theme | cliphist decode | wl-copy $focus_rofi"
 
         # Tiling
         "$mod, F, fullscreen,"
