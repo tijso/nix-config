@@ -1,4 +1,10 @@
-{...}: {
+{
+  pkgs,
+  config,
+  inputs,
+  nix-colors,
+  ...
+}: {
   imports = [
     ../../home/environments/hyprland
     ../../home/software/local.nix
@@ -14,6 +20,28 @@
       TERMINAL = "kitty";
     };
   };
+
+  programs.nix-index = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  # programs.direnv = {
+  #   enable = true;
+  #   enableBashIntegration = true;
+  #   enableFishIntegration = true;
+  #   enableZshIntegration = true;
+  #   enableNushellIntegration = true;
+  #   nix-direnv.enable = true;
+  # };
+
+  # xdg = {
+  #   enable = true;
+  #   userDirs = {
+  #     enable = true;
+  #     createDirectories = true;
+  #   };
+  # };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

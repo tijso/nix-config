@@ -86,7 +86,7 @@
         extraSpecialArgs = {inherit inputs outputs nix-colors;};
         modules = [
           ./home/home.nix
-          ./users/local.nix
+          ./users/home.nix
           nixvim.homeManagerModules.nixvim
         ];
       };
