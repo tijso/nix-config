@@ -33,8 +33,8 @@
       # Workspaces
       "$mod, CONTROL  L, workspace, +1"
       "$mod, CONTROL  H, workspace, -1"
-      "$mod, CONTROL, K, movetoworkspace, +1"
-      "$mod, CONTROL, J, movetoworkspace, -1"
+      # "$mod, CONTROL, K, movetoworkspace, +1"
+      # "$mod, CONTROL, J, movetoworkspace, -1"
 
       # Resizing
       "$mod ALT, L, resizeactive, 20 0"
