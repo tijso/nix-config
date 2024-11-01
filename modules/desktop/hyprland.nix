@@ -4,6 +4,10 @@
   lib,
   ...
 }: {
+  imports = [
+    ../applications/thunar
+  ];
+
   programs.hyprland.enable = true;
 
   services.xserver = {
@@ -29,4 +33,7 @@
     sddm-sugar-dark
     libsForQt5.qt5.qtgraphicaleffects
   ];
+
+
+
 }

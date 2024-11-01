@@ -12,7 +12,6 @@
     ./env.nix
     ./keybindings.nix
     ./rules.nix
-    ../../../modules/applications/thunar
   ];
 
   home.packages = with pkgs; [
