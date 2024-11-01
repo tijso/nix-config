@@ -28,7 +28,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    brave
+    # brave
     firefox
     bibata-cursors
     catppuccin-cursors
