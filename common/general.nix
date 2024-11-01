@@ -1,0 +1,85 @@
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
+  time.timeZone = "America/Chicago";
+  time.hardwareClockInLocalTime = true;
+
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = lib.mkForce "us";
+    useXkbConfig = true;
+  };
+
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
+
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
+      substituters = [
+        "https://cache.nixos.org/"
+        "https://prayag2.cachix.org/"
+        "https://nix-community.cachix.org"
+        "https://hyprland.cachix.org"
+      ];
+      trusted-public-keys = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        "prayag2.cachix.org-1:Lu+JhgBkHI0vNG3VcZJAXTniydou+5bUiqf67kEcA4g="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      ];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-then 7d";
+    };
+  };
+
+  environment = {
+    pathsToLink = [
+      "/share/xdg-desktop-portal"
+      "/share/applications"
+    ];
+    systemPackages = with pkgs; [
+      git
+      vim
+      wget
+      killall
+      nh
+      nix-du
+      nix-prefetch-git
+      nix-prefetch-github
+      alejandra
+      nil
+    ];
+  };
+
+  fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      jetbrains-mono
+      noto-fonts
+      noto-fonts-emoji
+      monaspace
+      fira-code
+      material-icons
+      cascadia-code
+      (pkgs.nerdfonts.override {
+        fonts = [
+          "Hack"
+          "NerdFontsSymbolsOnly"
+        ];
+      })
+    ];
+  };
+
+  services.xserver.enable = true;
+  services.xserver.excludePackages = [pkgs.xterm]; # i don't want xterm :(
+}
