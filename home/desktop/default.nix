@@ -6,6 +6,6 @@
   imports = [
     ./gtk.nix
     ./wofi.nix
-    # ./hyprland
+    ./hyprland
   ];
 }
