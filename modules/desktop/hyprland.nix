@@ -25,8 +25,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    sugar.sddm-sugar-dark # Name: sugar-dark
-    tokyo-night # Name: tokyo-night-sddm
+    catppuccin-sddm
+    sddm-sugar-dark
     libsForQt5.qt5.qtgraphicaleffects
   ];
 }
