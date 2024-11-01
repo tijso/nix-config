@@ -21,15 +21,7 @@
     ../../modules/utilities
   ];
 
-  # Services
-  services = {
-    hardware = {
-      openrgb = {
-        enable = true;
-        motherboard = "amd";
-      };
-    };
-  };
+  networking.hostName = "serenity";
 
   system.stateVersion = "23.11"; # Did you read the comment?
 }
