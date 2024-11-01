@@ -17,7 +17,7 @@
         "$main_mod, Equal, exec, rofi -modi calc -show calc -theme $rofi_theme $focus_rofi"
         "$main_mod, Period, exec, rofimoji --selector-args \"-theme '$HOME/.config/rofi/theme.rasi'\" $focus_rofi"
         "$main_mod, N, exec, dunstctl action $focus_rofi"
-        "$main_mod, V, exec, clipse list | rofi -dmenu -p C -theme $rofi_theme | clipse decode | wl-copy $focus_rofi"
+        "$main_mod, V, exec, cliphist list | rofi -dmenu -p C -theme $rofi_theme | cliphist decode | wl-copy $focus_rofi"
         "$main_mod ALT, V, exec, wtype \"$(wl-paste)\""
 
         # Tiling
