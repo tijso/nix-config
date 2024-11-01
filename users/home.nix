@@ -6,9 +6,12 @@
   ...
 }: {
   imports = [
+    nix-colors.homeManagerModules.default
     ../../home/environments/hyprland
     ../../home/software/local.nix
   ];
+
+  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 
   home = {
     username = "tijso";
