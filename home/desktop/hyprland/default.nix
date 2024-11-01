@@ -6,11 +6,11 @@
   ...
 }: {
   imports = [
-    # ./binds.nix
-    # ./rules.nix
-    # ./general.nix
-    # ./theme.nix
-    # ./animations.nix
+    ./binds.nix
+    ./rules.nix
+    ./general.nix
+    ./theme.nix
+    ./animations.nix
   ];
 
   home.packages = with pkgs; [
@@ -38,11 +38,11 @@
   #   portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   # };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    # plugins = [ inputs.hyprspace.packages.${pkgs.system}.Hyprspace ];
-    # catppuccin.enable = true;
-  };
+  # wayland.windowManager.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  #   package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  #   # plugins = [ inputs.hyprspace.packages.${pkgs.system}.Hyprspace ];
+  #   # catppuccin.enable = true;
+  # };
 }
