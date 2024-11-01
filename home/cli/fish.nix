@@ -6,7 +6,6 @@
   programs.fish = {
     enable = true;
     shellInit = ''
-      # fish_vi_key_bindings
       fish_default_key_bindings
     '';
     interactiveShellInit = ''
