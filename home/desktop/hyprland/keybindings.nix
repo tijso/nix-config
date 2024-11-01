@@ -38,10 +38,10 @@
         # "$mod, CONTROL, bracketleft, movetoworkspace, -1"
 
         # Resizing
-        "$mod ALT, L, resizeactive, 20 0"
-        "$mod ALT, H, resizeactive, -20 0"
-        "$mod ALT, K, resizeactive, 0 -20"
-        "$mod ALT, J, resizeactive, 0 20"
+        # "$mod ALT, L, resizeactive, 20 0"
+        # "$mod ALT, H, resizeactive, -20 0"
+        # "$mod ALT, K, resizeactive, 0 -20"
+        # "$mod ALT, J, resizeactive, 0 20"
 
         # Audio
         "$mod, P, exec, playerctl play-pause"
