@@ -35,7 +35,7 @@
       set -g fish_color_host_remote a6e3a1
       set -g fish_color_status f38ba8
 
-      Completion Pager Colors
+      # Completion Pager Colors
       set -g fish_pager_color_progress    6c7086
       set -g fish_pager_color_prefix      f5c2e7
       set -g fish_pager_color_completion  cdd6f4
