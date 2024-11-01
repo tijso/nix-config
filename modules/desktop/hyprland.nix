@@ -10,14 +10,15 @@
 
   programs.hyprland.enable = true;
 
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "catppuccin";
+  };
+
   services.xserver = {
     enable = true;
     xkb.layout = "us";
     xkb.variant = "";
-    displayManager.sddm = {
-      enable = true;
-      theme = "sugar-dark";
-    };
   };
 
   xdg.portal = {
@@ -33,7 +34,4 @@
     sddm-sugar-dark
     libsForQt5.qt5.qtgraphicaleffects
   ];
-
-
-
 }
