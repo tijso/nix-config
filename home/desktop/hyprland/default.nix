@@ -72,12 +72,6 @@
         force_split = 2;
       };
 
-      master = {
-        new_is_master = true;
-        no_gaps_when_only = 0;
-        mfact = 0.3;
-      };
-
       gestures = {
         workspace_swipe = false;
       };

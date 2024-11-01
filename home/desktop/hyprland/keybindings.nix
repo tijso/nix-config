@@ -32,10 +32,10 @@
         "$mod SHIFT, J, movewindow, d"
 
         # Workspaces
-        "$mod, bracketright, workspace, +1"
-        "$mod, bracketleft, workspace, -1"
-        "$mod, CONTROL, bracketright, movetoworkspace, +1"
-        "$mod, CONTROL, bracketleft, movetoworkspace, -1"
+        # "$mod, bracketright, workspace, +1"
+        # "$mod, bracketleft, workspace, -1"
+        # "$mod, CONTROL, bracketright, movetoworkspace, +1"
+        # "$mod, CONTROL, bracketleft, movetoworkspace, -1"
 
         # Resizing
         "$mod ALT, L, resizeactive, 20 0"
