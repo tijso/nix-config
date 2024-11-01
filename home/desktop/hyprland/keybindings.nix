@@ -51,7 +51,7 @@
         ", XF86AudioPrev, exec, playerctl prev"
         ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
         ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
-      ]
+      ];
       binde = [
       ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
       ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
