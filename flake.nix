@@ -68,6 +68,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/serenity/configuration.nix
+          ./users/tijso/global.nix
           {
             nix.settings = {
               substituters = ["https://cosmic.cachix.org/"];
@@ -85,6 +86,7 @@
         extraSpecialArgs = {inherit inputs outputs nix-colors;};
         modules = [
           ./home/home.nix
+          ./users/local.nix
           nixvim.homeManagerModules.nixvim
         ];
       };
