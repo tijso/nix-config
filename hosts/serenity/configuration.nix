@@ -11,9 +11,6 @@
     ../../modules/system
     ../system
 
-    # Desktop Evniroment
-    ../../modules/desktop
-
     # Development/Lsp
     ../../modules/development
 
