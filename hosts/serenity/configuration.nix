@@ -9,7 +9,7 @@
 
     # Core system components
     ../../modules/system
-    ./system
+    ../system
 
     # Desktop Evniroment
     ../../modules/desktop
