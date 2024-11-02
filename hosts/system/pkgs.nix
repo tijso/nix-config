@@ -11,20 +11,40 @@
 
   # Environment system packages
   environment.systemPackages = with pkgs; [
-    neovim
-    wget
     git
-    mariadb
-    postgresql
+    vim
+    wget
+    killall
+    nh
+    nix-du
+    nix-prefetch-git
+    nix-prefetch-github
+    alejandra
+    nil
     mpd
     curl
-    zsh
-    #nginx
-    networkmanager
-    networkmanagerapplet
-    htop
-    killall
     unzip
     zip
   ];
+
+fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      jetbrains-mono
+      noto-fonts
+      noto-fonts-emoji
+      monaspace
+      fira-code
+      material-icons
+      cascadia-code
+      (pkgs.nerdfonts.override {
+        fonts = [
+          "Hack"
+          "NerdFontsSymbolsOnly"
+        ];
+      })
+    ];
+
+
+
 }
