@@ -6,7 +6,6 @@
   imports = [
     # Hardware
     ./hardware-configuration.nix
-    ../../modules/hardware
 
     # Core system components
     ../../modules/system
