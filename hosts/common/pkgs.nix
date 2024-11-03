@@ -14,6 +14,7 @@
     brightnessctl
     coreutils
     curl
+    dconf
     git
     gnumake
     killall
