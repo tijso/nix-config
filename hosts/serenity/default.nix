@@ -10,6 +10,7 @@
     # Core system components
     ../common
     ../evnironments
+    ../applications
     ../users/global.nix
 
     # Development/Lsp
