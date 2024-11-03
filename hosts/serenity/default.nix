@@ -6,11 +6,11 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../applications
     ../common
-    ../development
-    ../evnironments
     ../users/global.nix
+    ../../applications
+    ../../development
+    ../../environments
   ];
 
   system.stateVersion = "23.11";
