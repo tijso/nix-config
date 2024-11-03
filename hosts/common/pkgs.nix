@@ -32,7 +32,6 @@
     vim
     wget
     xdg-utils
-    mpv
     zip
   ];
 

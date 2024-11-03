@@ -11,7 +11,7 @@
     ./editors
     ./environments/gtk.nix
     # ./environments/hyprland
-    ./mvp
+    ./mpv
     ./software
     ./terminals
     # ./tmux
