@@ -7,7 +7,7 @@
       enable = true;
       catppuccin = {
         enable = true;
-        flavor = "mocha";
+        # flavor = "mocha";
       };
       # theme = "rings";
       # themePackages = with pkgs; [
