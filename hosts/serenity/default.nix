@@ -8,7 +8,7 @@
 
     ../common
     ../users/global.nix
-    ../../applications
+    ../../software
     ../../development
     ../../environments
   ];
