@@ -19,7 +19,5 @@
     ../../modules/utilities
   ];
 
-  services.fstrim.enable = true;
-
   system.stateVersion = "23.11";
 }
