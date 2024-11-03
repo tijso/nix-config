@@ -78,6 +78,7 @@
             };
           }
           nixos-cosmic.nixosModules.default
+          catppuccin.nixosModules.catppuccin
         ];
       };
     };
