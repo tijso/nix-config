@@ -9,7 +9,7 @@
     initrd.verbose = false;
     plymouth = {
       enable = true;
-      theme = "catppuccin-mocha.plymouth";
+      theme = "catppuccin-plymouth";
       # themePackages = with pkgs; [
       #   (adi1090x-plymouth-themes.override {
       #     selected_themes = ["catppuccin-plymouth.mocha"];
