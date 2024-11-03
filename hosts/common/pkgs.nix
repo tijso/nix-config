@@ -22,7 +22,7 @@
     lm_sensors
     lshw
     mpd
-    papirus-icon-theme
+    # papirus-icon-theme
     pavucontrol
     pciutils
     playerctl
