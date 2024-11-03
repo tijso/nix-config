@@ -33,6 +33,8 @@
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = {
@@ -43,6 +45,7 @@
     nix-colors,
     nixvim,
     nixos-cosmic,
+    catppuccin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -86,6 +89,7 @@
         modules = [
           ./home/home.nix
           nixvim.homeManagerModules.nixvim
+          catppuccin.homeManagerModules.catppuccin
         ];
       };
     };
