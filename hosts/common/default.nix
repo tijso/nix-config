@@ -5,6 +5,7 @@
     ./boot.nix
     ./disks.nix
     ./graphics.nix
+    ./gtk.nix
     ./network.nix
     ./nix.nix
     ./pkgs.nix
