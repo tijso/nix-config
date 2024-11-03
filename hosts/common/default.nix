@@ -9,11 +9,11 @@
     ./gnome.nix
     ./graphics.nix
     # ./hyprland.nix
-    ./keyring.nix
     ./network.nix
     ./nix.nix
     ./pkgs.nix
     # ./sddm.nix
+    ./security.nix
     ./services.nix
     # ./tlp.nix
   ];

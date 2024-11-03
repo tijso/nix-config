@@ -1,25 +1,30 @@
 {pkgs, ...}: {
-  services.libinput.enable = true;
   programs.dconf.enable = true;
-  services = {
-    dbus.enable = true;
-    gvfs.enable = true;
-    upower.enable = true;
-    power-profiles-daemon.enable = true;
-    udisks2.enable = true;
-    tumbler.enable = true;
-    fstrim.enable = true;
-    libinput.enable = true;
-    # libinput.touchpad.tapping = true;
-    printing.drivers = [pkgs.hplip];
-    printing.enable = true;
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
-    };
-  };
+  programs.seahorse.enable = true;
+
+  services.avahi.enable = true;
+  services.fstrim.enable = true;
+  services.gvfs.enable = true;
+
+  services.dbus.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+
+  services.libinput.enable = true;
+  services.libinput.enable = true;
+  services.libinput.touchpad.tapping = true;
+
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
+  services.printing.drivers = [pkgs.hplip];
+  services.printing.enable = true;
+
+  services.tumbler.enable = true;
+  services.udisks2.enable = true;
 
   services.xserver.enable = true;
-  services.xserver.excludePackages = [pkgs.xterm]; # i don't want xterm :(
+  services.xserver.excludePackages = [pkgs.xterm];
+
+  services.openssh.enable = true;
+  programs.ssh.startAgent = true;
 }
