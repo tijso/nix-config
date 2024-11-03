@@ -70,6 +70,7 @@
       update = "sudo nix flake update";
       rebuild = "sudo nixos-rebuild switch --flake .#serenity && notify-send \"Done\"";
       hmr = "home-manager switch --flake .#tijso@serenity";
+      news = "home-manager news --flake .#tijso@serenity";
       ls = "eza -lg";
       la = "eza -la";
       lt = "eza --tree";
