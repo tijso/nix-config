@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   boot = {
     supportedFilesystems = [ "ntfs" ];
+    loader.grub.enable = false;
     loader.systemd-boot.enable = true;
     loader.systemd-boot.memtest86.enable = true;
     loader.efi.canTouchEfiVariables = true;
@@ -9,7 +10,7 @@
 
     consoleLogLevel = 0;
     initrd.verbose = false;
-    plymouth.enable = true;
+    plymouth.enable = false;
     kernelParams = [
       "quiet"
       "splash"
