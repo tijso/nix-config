@@ -12,7 +12,7 @@
       theme = "catppuccin";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
-          selected_themes = ["catppuccin"];
+          selected_themes = ["catppuccin-mocha"];
         })
       ];
     };
