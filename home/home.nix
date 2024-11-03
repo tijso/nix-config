@@ -12,7 +12,7 @@
     ./environments/gtk.nix
     # ./environments/hyprland
     ./mpv
-    ./software
+    # ./software
     ./terminals
     # ./tmux
   ];
