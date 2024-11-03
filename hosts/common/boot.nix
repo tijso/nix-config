@@ -5,10 +5,8 @@
     initrd.verbose = false;
     plymouth = {
       enable = true;
-      catppuccin = {
-        enable = true;
+      catppuccin.enable = true;
         # flavor = "mocha";
-      };
       # theme = "rings";
       # themePackages = with pkgs; [
       #   (adi1090x-plymouth-themes.override {
