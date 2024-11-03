@@ -10,6 +10,7 @@
   environment.systemPackages = with pkgs; [
     binutils
     brightnessctl
+    brave
     coreutils
     curl
     git
