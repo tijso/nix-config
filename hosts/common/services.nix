@@ -9,6 +9,8 @@
     udisks2.enable = true;
     tumbler.enable = true;
     fstrim.enable = true;
+    libinput.enable = true;
+    # libinput.touchpad.tapping = true;
     printing.drivers = [pkgs.hplip];
     printing.enable = true;
     avahi = {

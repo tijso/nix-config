@@ -33,14 +33,6 @@
     wget
     xdg-utils
     zip
-
-    # Nix Sutff
-    alejandra
-    nh
-    nil
-    nix-du
-    nix-prefetch-git
-    nix-prefetch-github
   ];
 
   fonts = {

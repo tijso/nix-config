@@ -8,13 +8,13 @@
     ./gdm.nix
     ./gnome.nix
     ./graphics.nix
-    ./hyprland.nix
+    # ./hyprland.nix
     ./keyring.nix
     ./network.nix
+    ./nix.nix
     ./pkgs.nix
     # ./sddm.nix
-    # ./tlp.nix
-    ./touchpad.nix
     ./services.nix
+    # ./tlp.nix
   ];
 }

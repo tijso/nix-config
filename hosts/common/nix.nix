@@ -1,9 +1,19 @@
 {
+  inputs,
   pkgs,
   lib,
-  inputs,
   ...
 }: {
+  environment.systemPackages = with pkgs; [
+    nh
+    nix-du
+    nix-prefetch-git
+    nix-prefetch-github
+    # nixfmt
+    alejandra
+    nil
+  ];
+
   nixpkgs = {
     config.allowUnfree = true;
   };
@@ -31,10 +41,4 @@
       options = "--delete-older-then 7d";
     };
   };
-
-  environment = {
-    pathsToLink = [
-      "/share/xdg-desktop-portal"
-      "/share/applications"
-    ];
 }
