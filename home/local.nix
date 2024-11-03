@@ -2,6 +2,7 @@
   imports = [
     ./cli
     ./editors
+    ./environments/gtk.nix
     ./mvp
     ./software
     ./terminals
@@ -24,6 +25,8 @@
     imagemagick
     sxiv
     optipng
+    bibata-cursors
+    papirus-icon-theme
     pamixer
   ];
 
