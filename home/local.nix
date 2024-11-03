@@ -15,7 +15,6 @@
     inkscape
     ookla-speedtest
     gnome-disk-utility
-    obs-studio
     cava
     telegram-desktop
     gimp
@@ -23,17 +22,12 @@
     cachix
     qbittorrent
     ani-cli
-
     imagemagick
     sxiv
-    pavucontrol
-    playerctl
     optipng
-    libnotify
     bibata-cursors
     papirus-icon-theme
     pamixer
-
   ];
 
   programs.git = {
