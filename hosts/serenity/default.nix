@@ -8,8 +8,8 @@
     ./hardware-configuration.nix
 
     # Core system components
-    ../../modules/system
     ../common
+    ../desktop
     ../users/global.nix
 
     # Development/Lsp
