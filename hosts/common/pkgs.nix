@@ -11,23 +11,39 @@
 
   # Environment system packages
   environment.systemPackages = with pkgs; [
+    binutils
+    brightnessctl
+    coreutils
+    curl
     git
+    gnumake
+    killall
+    libnotify
+    lm_sensors
+    lshw
+    mpd
+    pavucontrol
+    pciutils
+    playerctl
+    unrar
+    unzip
+    usbutils
+    v4l-utils
     vim
     wget
-    killall
+    xdg-utils
+    zip
+
+    # Nix Sutff
+    alejandra
     nh
+    nil
     nix-du
     nix-prefetch-git
     nix-prefetch-github
-    alejandra
-    nil
-    mpd
-    curl
-    unzip
-    zip
   ];
 
-fonts = {
+  fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
       jetbrains-mono
@@ -44,7 +60,5 @@ fonts = {
         ];
       })
     ];
-
-
-
+  };
 }
