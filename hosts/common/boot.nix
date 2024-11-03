@@ -1,5 +1,4 @@
 { pkgs, ... }: {
- {pkgs, ...}: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = ["v4l2loopback"];
