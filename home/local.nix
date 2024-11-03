@@ -24,8 +24,6 @@
     imagemagick
     sxiv
     optipng
-    bibata-cursors
-    papirus-icon-theme
     pamixer
   ];
 

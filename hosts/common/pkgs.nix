@@ -8,9 +8,10 @@
 
   # Environment system packages
   environment.systemPackages = with pkgs; [
+    bibata-cursors
     binutils
-    brightnessctl
     brave
+    brightnessctl
     coreutils
     curl
     git
@@ -20,6 +21,7 @@
     lm_sensors
     lshw
     mpd
+    papirus-icon-theme
     pavucontrol
     pciutils
     playerctl
