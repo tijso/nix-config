@@ -9,7 +9,8 @@
 
     # Core system components
     ../../modules/system
-    ../system
+    ../common
+    ../users/global.nix
 
     # Development/Lsp
     ../../modules/development
