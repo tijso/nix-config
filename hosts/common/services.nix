@@ -8,7 +8,6 @@
   services.gnome.gnome-keyring.enable = true;
 
   services.libinput.enable = true;
-  services.libinput.enable = true;
   services.libinput.touchpad.tapping = true;
 
   services.power-profiles-daemon.enable = true;
