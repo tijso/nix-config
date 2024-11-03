@@ -61,25 +61,5 @@
     ];
   };
 
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      jetbrains-mono
-      noto-fonts
-      noto-fonts-emoji
-      monaspace
-      fira-code
-      material-icons
-      cascadia-code
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "Hack"
-          "NerdFontsSymbolsOnly"
-        ];
-      })
-    ];
-  };
 
-  services.xserver.enable = true;
-  services.xserver.excludePackages = [pkgs.xterm]; # i don't want xterm :(
 }

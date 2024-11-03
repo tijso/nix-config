@@ -4,16 +4,6 @@
   inputs,
   ...
 }: {
-  time.timeZone = "America/Chicago";
-  time.hardwareClockInLocalTime = true;
-
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = lib.mkForce "us";
-    useXkbConfig = true;
-  };
-
   nixpkgs = {
     config.allowUnfree = true;
   };
@@ -47,39 +37,4 @@
       "/share/xdg-desktop-portal"
       "/share/applications"
     ];
-    systemPackages = with pkgs; [
-      git
-      vim
-      wget
-      killall
-      nh
-      nix-du
-      nix-prefetch-git
-      nix-prefetch-github
-      alejandra
-      nil
-    ];
-  };
-
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      jetbrains-mono
-      noto-fonts
-      noto-fonts-emoji
-      monaspace
-      fira-code
-      material-icons
-      cascadia-code
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "Hack"
-          "NerdFontsSymbolsOnly"
-        ];
-      })
-    ];
-  };
-
-  services.xserver.enable = true;
-  services.xserver.excludePackages = [pkgs.xterm]; # i don't want xterm :(
 }

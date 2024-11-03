@@ -17,4 +17,7 @@
       openFirewall = true;
     };
   };
+
+  services.xserver.enable = true;
+  services.xserver.excludePackages = [pkgs.xterm]; # i don't want xterm :(
 }
