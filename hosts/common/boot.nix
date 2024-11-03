@@ -1,20 +1,17 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    catppuccin-plymouth
-  ];
-
+ {pkgs, ...}: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = ["v4l2loopback"];
     initrd.verbose = false;
     plymouth = {
       enable = true;
-      theme = "catppuccin-plymouth";
-      # themePackages = with pkgs; [
-      #   (adi1090x-plymouth-themes.override {
-      #     selected_themes = ["catppuccin-plymouth.mocha"];
-      #   })
-      # ];
+      theme = "rings";
+      themePackages = with pkgs; [
+        (adi1090x-plymouth-themes.override {
+          selected_themes = ["rings"];
+        })
+      ];
     };
 
     loader = {
