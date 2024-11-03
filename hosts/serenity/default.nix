@@ -19,7 +19,6 @@
     ../../modules/utilities
   ];
 
-  networking.hostName = "serenity";
   services.fstrim.enable = true;
 
   system.stateVersion = "23.11";
