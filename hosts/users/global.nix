@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   imports = [];
   time.timeZone = "America/Chicago";
   time.hardwareClockInLocalTime = true;
