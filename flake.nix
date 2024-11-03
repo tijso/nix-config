@@ -68,7 +68,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/serenity/configuration.nix
-          ./users/tijso/global.nix
+          ./hosts/serenity
           {
             nix.settings = {
               substituters = ["https://cosmic.cachix.org/"];
