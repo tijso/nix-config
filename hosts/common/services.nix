@@ -1,24 +1,4 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    binutils
-    brightnessctl
-    coreutils
-    curl
-    gnumake
-    libnotify
-    lm_sensors
-    lshw
-    pavucontrol
-    pciutils
-    playerctl
-    unrar
-    unzip
-    usbutils
-    v4l-utils
-    wget
-    xdg-utils
-  ];
-
   services.libinput.enable = true;
   programs.dconf.enable = true;
   services = {

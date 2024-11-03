@@ -15,5 +15,6 @@
     # ./sddm.nix
     # ./tlp.nix
     ./touchpad.nix
+    ./services.nix
   ];
 }
