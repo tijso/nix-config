@@ -6,9 +6,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Fix error gtk applications
-  programs.dconf.enable = true;
-
   # Environment system packages
   environment.systemPackages = with pkgs; [
     binutils

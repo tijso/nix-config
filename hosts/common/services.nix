@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  programs.dconf.enable = true;
-  programs.seahorse.enable = true;
 
   services.avahi.enable = true;
   services.fstrim.enable = true;

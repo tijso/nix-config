@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./cli
-    ./hyprland
     ./editors
     ./mvp
     ./software

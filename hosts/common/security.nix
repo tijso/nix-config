@@ -9,6 +9,7 @@
 
   # Enable Yubikey support
   services.pcscd.enable = true;
+  programs.seahorse.enable = true;
 
   security = {
     polkit.enable = true;

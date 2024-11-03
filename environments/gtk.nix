@@ -11,6 +11,9 @@
   # ColorScheme
   #colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
 
+  # Fix error gtk applications
+  programs.dconf.enable = true;
+
   home.pointerCursor = {
     name = "Bibata-Modern-Ice";
     package = pkgs.bibata-cursors;
