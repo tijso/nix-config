@@ -10,7 +10,7 @@
     useXkbConfig = true;
   };
 
-  program.fish.enable = true;
+  programs.fish.enable = true;
   users.users.tijso = {
     home = "/home/tijso";
     description = "tijso";
