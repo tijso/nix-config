@@ -27,18 +27,12 @@
     imagemagick
     sxiv
     pavucontrol
-    hyprpicker
-    wl-clipboard
     playerctl
-    swww
-    grim
-    slurp
     optipng
     libnotify
     bibata-cursors
     papirus-icon-theme
     pamixer
-    xdg-desktop-portal-hyprland
 
   ];
 
