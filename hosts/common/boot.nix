@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+ {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     catppuccin-plymouth
   ];
@@ -9,7 +10,7 @@
     initrd.verbose = false;
     plymouth = {
       enable = true;
-      theme = "catppuccin-mocha";
+      theme = "catppuccin-plymouth";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
           selected_themes = ["catppuccin-mocha"];
