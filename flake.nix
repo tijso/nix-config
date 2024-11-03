@@ -67,7 +67,7 @@
       serenity = lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/serenity/configuration.nix
+          # ./hosts/serenity/configuration.nix
           ./hosts/serenity
           {
             nix.settings = {
@@ -85,7 +85,7 @@
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs nix-colors;};
         modules = [
-          ./home/home.nix
+          # ./home/home.nix
           ./users/home.nix
           nixvim.homeManagerModules.nixvim
         ];
