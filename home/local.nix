@@ -1,9 +1,12 @@
 {pkgs, ...}: {
   imports = [
     ./cli
-    ./terminals
+    ./hyprland
     ./editors
-    ./desktop
+    ./mvp
+    ./software
+    ./terminals
+    # ./tmux
   ];
 
   home.packages = with pkgs; [
