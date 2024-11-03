@@ -23,7 +23,6 @@
     gnomeExtensions.dash-to-panel
     gnomeExtensions.forge
     gnomeExtensions.just-perfection
-    gnomeExtensions.rounded-window-corners
     gnomeExtensions.tray-icons-reloaded
     gnomeExtensions.vitals
     gnomeExtensions.window-calls
