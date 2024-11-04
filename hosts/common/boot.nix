@@ -23,6 +23,10 @@
       grub = {
         enable = true;
         devices = ["nodev"];
+        catppuccin={
+          enable = true;
+          flavor = "mocha";
+        };
         efiSupport = true;
         useOSProber = true;
         configurationLimit = 10;
