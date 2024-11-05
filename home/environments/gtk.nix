@@ -5,11 +5,11 @@
   ...
 }: {
   imports = [
-    inputs.nix-colors.homeManagerModules.default
+    # inputs.nix-colors.homeManagerModules.default
   ];
 
   # ColorScheme
-  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+  # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
 
   home.pointerCursor = {
     name = "Bibata-Modern-Ice";
