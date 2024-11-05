@@ -65,15 +65,21 @@
     '';
 
     shellAliases = {
-      cat = "bat -p";
+      # List Commands
+      ls  = "eza --group-directories-first --long";
+      ll  = "eza --group-directories-first --long";
+      la  = "eza --group-directories-first --long --all";
+      lt  = "eza --group-directories-first --tree";
+      llt = "eza --group-directories-first --long --tree";
+      # ls = "eza -lg";
+      # la = "eza -la";
+      # lt = "eza --tree";
+      cat = "bat";
       img = "wezterm imgcat";
       update = "sudo nix flake update";
       rebuild = "sudo nixos-rebuild switch --flake .#serenity && notify-send \"Done\"";
       hmr = "home-manager switch --flake .#tijso@serenity";
       news = "home-manager news --flake .#tijso@serenity";
-      ls = "eza -lg";
-      la = "eza -la";
-      lt = "eza --tree";
       tl = "trash-list";
       te = "trash-empty";
       tr = "trash-restore";
