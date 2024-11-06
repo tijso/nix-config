@@ -34,7 +34,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-  #   catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix";
 
    stylix.url = "github:danth/stylix";
   };
@@ -47,6 +47,7 @@
     nixvim,
     nixos-cosmic,
     stylix,
+    catppuccin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -79,7 +80,7 @@
             };
           }
           nixos-cosmic.nixosModules.default
-          # catppuccin.nixosModules.catppuccin
+          catppuccin.nixosModules.catppuccin
         ];
       };
     };
@@ -91,7 +92,7 @@
         modules = [
           ./home/home.nix
           nixvim.homeManagerModules.nixvim
-          # catppuccin.homeManagerModules.catppuccin
+          catppuccin.homeManagerModules.catppuccin
           stylix.homeManagerModules.stylix
         ];
       };
