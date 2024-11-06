@@ -9,7 +9,7 @@
 in {
   imports = with inputs; [
     stylix.homeManagerModules.stylix
-    catppuccin.homeManagerModules.catppuccin
+    # catppuccin.homeManagerModules.catppuccin
   ];
 
   options.styles.stylix = {
