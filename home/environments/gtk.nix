@@ -11,7 +11,7 @@
         accent = "teal";
         size = "compact";
       };
-      cursors = {
+      cursor = {
         eanble = true;
         flavor = "mocha";
         accent = "mauve";
