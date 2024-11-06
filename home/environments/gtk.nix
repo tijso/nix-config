@@ -9,10 +9,6 @@
         flavor = "mocha";
         accent = "teal";
       };
-      cursor = {
-        enable = true;
-        accent = "mauve";
-      };
     };
     # theme = {
     #   name = "Kanagawa-BL";
