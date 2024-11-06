@@ -37,14 +37,7 @@
     theme = {
       # name = "Kanagawa-BL";
       # package = pkgs.kanagawa-gtk-theme;
-      # name = "Catppuccin-Mocha-Compact-Lavender-Dark";
-      name = "Catppuccin";
-      package = pkgs.catppuccin-gtk.override {
-        accents = ["lavender"];
-        size = "compact";
-        # tweaks  = [ "rimless" ];
-        variant = "mocha";
-      };
+      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
     };
 
     cursorTheme = {
