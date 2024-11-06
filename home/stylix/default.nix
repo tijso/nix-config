@@ -1,57 +1,68 @@
 {
+  lib,
   pkgs,
   config,
+  inputs,
   ...
-}: {
-  stylix = {
-    enable = true;
+}: let
+  cfg = config.styles.stylix;
+in {
+  imports = with inputs; [
+    stylix.homeManagerModules.stylix
+    catppuccin.homeManagerModules.catppuccin
+  ];
 
-    # Placeholder (literally doesn't matter)
-    image = config.wallpaper;
-
-    base16Scheme = ./themes/oxocarbon.yaml;
-    polarity = "dark";
-
-    cursor = {
-      name = "phinger-cursors-light";
-      package = pkgs.phinger-cursors;
-      size = 24;
-    };
-
-    targets = {
-      hyprland.enable = false;
-      nixvim.enable = false;
-      neovim.enable = false;
-      firefox.enable = false;
-      fzf.enable = false;
-      tmux.enable = false;
-      gtk.extraCss = with config.lib.stylix.colors; ''
-        @define-color accent_color #${base0D};
-        @define-color accent_bg_color #${base0D};
-      '';
-    };
-
-    fonts = {
-      monospace = {
-        name = "${config.font}";
-        package = pkgs.nerdfonts.override {fonts = ["${config.font}"];};
-      };
-      sansSerif = {
-        name = "rubik";
-        package = pkgs.rubik;
-      };
-    };
+  options.styles.stylix = {
+    enable = lib.mkEnableOption "Enable stylix";
   };
 
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme.override {color = "blue";};
-    };
-  };
+  config = lib.mkIf cfg.enable {
+    home.packages = with pkgs; [
+      (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+      google-fonts
+      plemoljp
+    ];
 
-  qt = {
-    enable = true;
+    stylix = {
+      enable = true;
+      autoEnable = true;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+
+      image = pkgs.nixicle.wallpapers.earth;
+
+      cursor = {
+        name = "Bibata-Modern-Classic";
+        package = pkgs.bibata-cursors;
+        size = 24;
+      };
+
+      fonts = {
+        sizes = {
+          terminal = 14;
+          applications = 12;
+          popups = 12;
+        };
+
+        serif = {
+          name = "Source Serif";
+          package = pkgs.source-serif;
+        };
+
+        sansSerif = {
+          name = "Noto Sans";
+          package = pkgs.noto-fonts;
+        };
+
+        monospace = {
+          package = pkgs.nixicle.monolisa;
+          name = "MonoLisa Nerd Font";
+        };
+
+        emoji = {
+          package = pkgs.noto-fonts-emoji;
+          name = "Noto Color Emoji";
+        };
+      };
+    };
   };
 }
