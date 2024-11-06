@@ -5,12 +5,13 @@
     catppuccin = {
       enable = true;
       gnomeShellTheme = true;
-    };
-    iconTheme = {
-      catppuccin.icon = {
+      icon = {
+        enable = true;
         flavor = "mocha";
         accent = "teal";
       };
+    };
+    iconTheme = {
     #   name = "Tela-circle-dark";
     #   package = pkgs.tela-circle-icon-theme;
     };
