@@ -13,7 +13,6 @@
     # ./environments/hyprland
     ./mpv
     # ./software
-    ./stylix
     ./terminals
     # ./tmux
   ];
