@@ -37,6 +37,9 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
+   stylix.url = "github:danth/stylix";
+
+
   outputs = {
     self,
     nixpkgs,
@@ -45,7 +48,7 @@
     nix-colors,
     nixvim,
     nixos-cosmic,
-    catppuccin,
+    stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -91,6 +94,7 @@
           ./home/home.nix
           nixvim.homeManagerModules.nixvim
           catppuccin.homeManagerModules.catppuccin
+          stylix.homeManagerModules.stylix
         ];
       };
     };
