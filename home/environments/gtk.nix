@@ -1,61 +1,28 @@
-{
-  pkgs,
-  config,
-  inputs,
-  ...
-}: {
-  imports = [
-    # inputs.nix-colors.homeManagerModules.default
-  ];
-
-  # ColorScheme
-  # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-
-  home.pointerCursor = {
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
-    size = 20;
-  };
-
+{pkgs, ...}: {
+  # GTK theme configuration
   gtk = {
     enable = true;
-    font = {
-      name = "DejaVu Sans";
-      size = 12;
+    catppuccin = {
+      enable = true;
+      gnomeShellTheme = true;
     };
-
     iconTheme = {
-      # name = "Kanagawa";
-      # package = pkgs.kanagawa-icon-theme;
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "lavender";
-      };
+      name = "Tela-circle-dark";
+      package = pkgs.tela-circle-icon-theme;
     };
-
-    theme = {
-      # name = "Kanagawa-BL";
-      # package = pkgs.kanagawa-gtk-theme;
-      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
-    };
-
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 20;
+      name = "Yaru";
+      package = pkgs.yaru-theme;
     };
-
+    font = {
+      name = "Roboto";
+      size = 11;
+    };
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
-
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
-  };
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk3";
   };
 }
