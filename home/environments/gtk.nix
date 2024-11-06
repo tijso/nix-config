@@ -35,9 +35,9 @@
     };
 
     theme = {
-      # name = "Kanagawa-BL";
-      # package = pkgs.kanagawa-gtk-theme;
-      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
+      name = "Kanagawa-BL";
+      package = pkgs.kanagawa-gtk-theme;
+      # name = "Catppuccin-Mocha-Compact-Lavender-Dark";
     };
 
     cursorTheme = {
