@@ -5,11 +5,15 @@
     catppuccin = {
       enable = true;
       gnomeShellTheme = true;
+      icon = {
+        flavor = "mocha";
+        accent = "teal";
+      };
     };
-    iconTheme = {
-      name = "Tela-circle-dark";
-      package = pkgs.tela-circle-icon-theme;
-    };
+    # iconTheme = {
+    #   name = "Tela-circle-dark";
+    #   package = pkgs.tela-circle-icon-theme;
+    # };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
