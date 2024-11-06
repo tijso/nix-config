@@ -11,12 +11,12 @@
       package = pkgs.tela-circle-icon-theme;
     };
     cursorTheme = {
-      name = "Yaru";
-      package = pkgs.yaru-theme;
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
     };
     font = {
-      name = "Roboto";
-      size = 11;
+      name = "Monaspace Neon";
+      size = 14;
     };
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
