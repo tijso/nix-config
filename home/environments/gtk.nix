@@ -9,7 +9,6 @@
         enable = true;
         flavor = "mocha";
         accent = "teal";
-        size = "compact";
       };
       cursor = {
         enable = true;
