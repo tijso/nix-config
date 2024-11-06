@@ -15,7 +15,7 @@
         eanble = true;
         flavor = "mocha";
         accent = "mauve";
-      }
+      };
     };
 
     # theme = {
