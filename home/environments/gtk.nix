@@ -12,7 +12,7 @@
         size = "compact";
       };
       cursor = {
-        eanble = true;
+        enable = true;
         flavor = "mocha";
         accent = "mauve";
       };
