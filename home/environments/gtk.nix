@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-  # GTK theme configuration
   gtk = {
     enable = true;
     catppuccin = {
@@ -12,11 +11,9 @@
       };
       cursor = {
         enable = true;
-        flavor = "mocha";
         accent = "mauve";
       };
     };
-
     # theme = {
     #   name = "Kanagawa-BL";
     #   package = pkgs.kanagawa-gtk-theme;
@@ -30,10 +27,10 @@
     #     accent = "lavender";
     #   };
     # };
-    # cursorTheme = {
-    #   name = "Bibata-Modern-Ice";
-    #   package = pkgs.bibata-cursors;
-    # };
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+    };
     font = {
       name = "Monaspace Neon";
       size = 14;
