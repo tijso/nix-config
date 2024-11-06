@@ -7,7 +7,7 @@
       gnomeShellTheme = true;
     };
     iconTheme = {
-      catpuccin.icon = {
+      catppuccin.icon = {
         flavor = "mocha";
         accent = "teal";
       };
