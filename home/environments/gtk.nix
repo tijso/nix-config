@@ -9,16 +9,32 @@
         enable = true;
         flavor = "mocha";
         accent = "teal";
+        size = "compact";
       };
+      cursors = {
+        eanble = true;
+        flavor = "mocha";
+        accent = "mauve";
+      }
     };
-    iconTheme = {
+
+    # theme = {
+    #   name = "Kanagawa-BL";
+    #   package = pkgs.kanagawa-gtk-theme;
+    #   name = "Catppuccin-Mocha-Compact-Lavender-Dark";
+    # };
+    # iconTheme = {
     #   name = "Tela-circle-dark";
     #   package = pkgs.tela-circle-icon-theme;
-    };
-    cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-    };
+    #   package = pkgs.catppuccin-papirus-folders.override {
+    #     flavor = "mocha";
+    #     accent = "lavender";
+    #   };
+    # };
+    # cursorTheme = {
+    #   name = "Bibata-Modern-Ice";
+    #   package = pkgs.bibata-cursors;
+    # };
     font = {
       name = "Monaspace Neon";
       size = 14;
@@ -30,7 +46,7 @@
       gtk-application-prefer-dark-theme = true;
     };
   };
-   dconf.settings = {
+  dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
