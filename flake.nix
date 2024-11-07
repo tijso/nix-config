@@ -7,7 +7,6 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
-    nur.url = "github:nix-community/NUR";
     systems.url = "github:nix-systems/default-linux";
 
     # Home Manager
@@ -47,7 +46,6 @@
     nixvim,
     nixos-cosmic,
     catppuccin,
-    nur,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -81,7 +79,6 @@
           }
           nixos-cosmic.nixosModules.default
           catppuccin.nixosModules.catppuccin
-          nur.nixosModules.nur
         ];
       };
     };
@@ -94,7 +91,6 @@
           ./home/home.nix
           nixvim.homeManagerModules.nixvim
           catppuccin.homeManagerModules.catppuccin
-          nur.nixosModules.nur
         ];
       };
     };
