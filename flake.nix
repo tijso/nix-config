@@ -94,6 +94,7 @@
           ./home/home.nix
           nixvim.homeManagerModules.nixvim
           catppuccin.homeManagerModules.catppuccin
+          nur.nixosModules.nur
         ];
       };
     };
