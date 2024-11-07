@@ -4,7 +4,7 @@
   nur,
   ...
 }: {
-  home-manager.users.${config.user}.programs.bat = {
+  home-manager.users.programs.bat = {
     enable = true;
     config = {
       theme = "catppuccin-mocha";
