@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  home-manager.users.programs.bat = {
+  programs.bat = {
     enable = true;
     catppuccin.enable = true;
     config = {
