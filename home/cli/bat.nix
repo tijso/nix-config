@@ -1,9 +1,10 @@
 {
   pkgs,
   config,
+  nur,
   ...
 }: {
-  home-manager.users.programs.bat = {
+  home-manager.users.${config.user}.programs.bat = {
     enable = true;
     config = {
       theme = "catppuccin-mocha";
