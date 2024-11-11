@@ -4,7 +4,6 @@
   lib,
   ...
 }: {
-  # Enable GTK configuration
   gtk = {
     enable = true;
 
@@ -48,7 +47,7 @@
 
   qt = {
     enable = true;
-    platformTheme = "gtk";
+    platformTheme.name = "gtk";
   };
 
   dconf = {
