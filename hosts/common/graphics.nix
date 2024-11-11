@@ -10,7 +10,6 @@
       vulkan-loader
       vulkan-validation-layers
       vulkan-extension-layer
-      vulkan-radeon
       rocmPackages.clr.icd
       # amdvlk
     ];
