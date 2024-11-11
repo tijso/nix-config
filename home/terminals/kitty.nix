@@ -6,12 +6,12 @@
   programs.kitty = {
     enable = true;
     themeFile = "Catppuccin-Mocha";
-    # theme = "Nightfly";
-    # theme = "Kanagawa";
+    # themeFile = "Nightfly";
+    # themeFile = "Kanagawa";
     font = {
       name = "Fira Code";
       # name = "Iosevka";
-      size = 16;
+      size = 15;
     };
     settings = {
       enable_audio_bell = false;
