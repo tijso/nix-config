@@ -9,7 +9,7 @@
     enable = true;
 
     theme = {
-      name = "Catppuccin-Mocha-Standard-Blue-Dark";
+      name = "Catppuccin-Mocha-Standard-Teal-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = ["teal"];
         size = "standard";
@@ -20,7 +20,11 @@
 
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      # package = pkgs.papirus-icon-theme;
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "teal";
+      };
     };
 
     cursorTheme = {
