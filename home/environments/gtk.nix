@@ -9,25 +9,22 @@
     enable = true;
 
     theme = {
-      name = "Kanagawa";
-      package = pkgs.kanagawa-icon-theme;
-      # name = "Catppuccin-Mocha-Standard-Teal-Dark";
-      # package = pkgs.catppuccin-gtk.override {
-      #   accents = ["teal"];
-      #   size = "standard";
-      #   tweaks = ["normal"];
-      #   variant = "mocha";
-      # };
+      name = "Catppuccin-Mocha-Standard-Teal-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = ["teal"];
+        size = "standard";
+        tweaks = ["normal"];
+        variant = "mocha";
+      };
     };
 
     iconTheme = {
-      name = "Kanagawa-BL";
-      package = pkgs.kanagawa-gtk-theme;
-      # name = "Papirus-Dark";
-      # package = pkgs.catppuccin-papirus-folders.override {
-      #   flavor = "mocha";
-      #   accent = "teal";
-      # };
+      name = "Papirus-Dark";
+      # package = pkgs.papirus-icon-theme;
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "teal";
+      };
     };
 
     cursorTheme = {
