@@ -1,6 +1,6 @@
 {
-  programs.nixvim.plugins = {
-    noice = {
+  programs.nixvim.plugins.noice = {
+    settings = {
       enable = true;
       notify = {
         enabled = true;
