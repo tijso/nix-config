@@ -45,12 +45,18 @@
       '';
     };
   };
-    qt = {
-      enable = true;
-      # platformTheme = "gtk";
-      # style = {
-      #   name = "gtk";
-      #   package = pkgs.qt5.qtbase.gtk;
-      # };
+  qt = {
+    enable = true;
+    # platformTheme = "gtk";
+    # style = {
+    #   name = "gtk";
+    #   package = pkgs.qt5.qtbase.gtk;
+    # };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
     };
+  };
 }
