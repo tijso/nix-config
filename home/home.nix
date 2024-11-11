@@ -9,7 +9,7 @@
     nix-colors.homeManagerModules.default
     ./cli
     ./editors
-    # ./environments/gtk.nix
+    ./environments/gtk.nix
     # ./environments/hyprland
     ./mpv
     # ./software

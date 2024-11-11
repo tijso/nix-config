@@ -17,6 +17,10 @@
     dconf
     git
     gnumake
+    gtk-engine-murrine
+    gtk_engines
+    gsettings-desktop-schemas
+    gnome.gnome-settings-daemon
     killall
     libnotify
     lm_sensors

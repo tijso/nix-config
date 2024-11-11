@@ -45,9 +45,6 @@
     };
   };
 
-  # Ensure dconf is enabled for storing GTK settings
-  programs.dconf.enable = true;
-
   # Optional: Configure qt5ct for Qt applications to match GTK theme
   qt = {
     enable = true;
