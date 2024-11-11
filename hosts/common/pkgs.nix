@@ -23,9 +23,6 @@
     lshw
     mpd
     # papirus-icon-theme
-    gtk-engine-murrine
-    gtk_engines
-    gsettings-desktop-schemas
     pavucontrol
     pciutils
     playerctl
