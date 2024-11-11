@@ -48,10 +48,10 @@
   # Optional: Configure qt5ct for Qt applications to match GTK theme
   qt = {
     enable = true;
-    platformTheme = "gtk";
-    style = {
-      name = "gtk2";
-      package = pkgs.qt5.qtbase.gtk;
-    };
+    # platformTheme = "gtk";
+    # style = {
+    #   name = "gtk";
+    #   package = pkgs.qt5.qtbase.gtk;
+    # };
   };
 }
