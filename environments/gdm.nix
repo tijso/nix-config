@@ -2,7 +2,8 @@
   services.xserver.displayManager.gdm = {
     enable = true;
     wayland = true;
-    gdmCustomize = ''
+    extraConfig = ''
+      [org/gnome/login-screen]
       gtk-theme = "Adwaita"
     '';
   };
