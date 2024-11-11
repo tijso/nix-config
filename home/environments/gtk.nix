@@ -7,6 +7,7 @@
   # Enable GTK configuration
   gtk = {
     enable = true;
+
     theme = {
       name = "Catppuccin-Mocha-Standard-Blue-Dark";
       package = pkgs.catppuccin-gtk.override {
@@ -27,26 +28,26 @@
       package = pkgs.bibata-cursors;
       size = 20;
     };
-  };
 
-  gtk3.extraConfig = {
-    Settings = ''
-      gtk-application-prefer-dark-theme=1
-    '';
-  };
+    gtk3.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
 
-  gtk4.extraConfig = {
-    Settings = ''
-      gtk-application-prefer-dark-theme=1
-    '';
-  };
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
 
-  qt = {
-    enable = true;
-    # platformTheme = "gtk";
-    # style = {
-    #   name = "gtk";
-    #   package = pkgs.qt5.qtbase.gtk;
-    # };
+    qt = {
+      enable = true;
+      # platformTheme = "gtk";
+      # style = {
+      #   name = "gtk";
+      #   package = pkgs.qt5.qtbase.gtk;
+      # };
+    };
   };
 }
