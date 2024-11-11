@@ -40,8 +40,8 @@
       nvim-autopairs.enable = true;
       nix.enable = true;
       nvim-colorizer.enable = true;
-      mini.modules.icons.enable = true;
-      mini.mockDevIcons.enable = true;
+      # mini.modules.icons.enable = true;
+      # mini.mockDevIcons.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       # nvim-web-devicons
