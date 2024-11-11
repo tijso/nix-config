@@ -48,11 +48,7 @@
 
   qt = {
     enable = true;
-    # platformTheme = "gtk";
-    # style = {
-    #   name = "gtk";
-    #   package = pkgs.qt5.qtbase.gtk;
-    # };
+    platformTheme = "gtk";
   };
 
   dconf = {
