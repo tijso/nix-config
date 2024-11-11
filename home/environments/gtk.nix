@@ -4,7 +4,7 @@
     theme = {
     #   name = "Kanagawa-BL";
     #   package = pkgs.kanagawa-gtk-theme;
-      name = "Catppuccin-Mocha-Teal-Dark";
+      name = "Catppuccin-Mocha-Compact-Teal-Dark";
     };
     iconTheme = {
        # name = "Tela-circle-dark";
