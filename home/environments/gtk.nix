@@ -7,12 +7,12 @@
       name = "Catppuccin-Mocha-Teal-Dark";
     };
     iconTheme = {
-    #   name = "Tela-circle-dark";
-    #   package = pkgs.tela-circle-icon-theme;
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "teal";
-      };
+       name = "Tela-circle-dark";
+       package = pkgs.tela-circle-icon-theme;
+      #  package = pkgs.catppuccin-papirus-folders.override {
+      #    flavor = "mocha";
+      #    accent = "teal";
+      # };
     };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
