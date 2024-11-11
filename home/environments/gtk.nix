@@ -48,14 +48,6 @@
   # Ensure dconf is enabled for storing GTK settings
   programs.dconf.enable = true;
 
-  # Add required packages to system environment
-  environment.systemPackages = with pkgs; [
-    gtk-engine-murrine
-    gtk_engines
-    gsettings-desktop-schemas
-    gnome.gnome-settings-daemon
-  ];
-
   # Optional: Configure qt5ct for Qt applications to match GTK theme
   qt = {
     enable = true;
