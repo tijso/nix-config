@@ -2,10 +2,9 @@
   services.xserver.displayManager.gdm = {
     enable = true;
     wayland = true;
-    theme = {
-      name = "Adwaita";
-      package = pkgs.gnome.adwaita-icon-theme;
-    };
+    gdmCustomize = ''
+      gtk-theme = "Adwaita"
+    '';
   };
 
   security.pam.services.gdm.enableGnomeKeyring = true;
