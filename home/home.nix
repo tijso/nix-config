@@ -10,6 +10,7 @@
     ./cli
     ./editors
     ./environments/gtk.nix
+    ./environments/gnome.nix
     # ./environments/hyprland
     ./mpv
     # ./software
