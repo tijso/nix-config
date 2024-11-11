@@ -36,8 +36,8 @@
 
     # Optional: Configure cursor theme
     cursorTheme = {
-      name = "Catppuccin-Mocha-Dark-Cursors";
-      package = pkgs.catppuccin-cursors.mochaDark;
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
       size = 24;
     };
   };
