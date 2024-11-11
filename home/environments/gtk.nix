@@ -1,28 +1,19 @@
 {pkgs, ...}: {
   gtk = {
     enable = true;
-    catppuccin = {
-      enable = true;
-      gnomeShellTheme = true;
-      icon = {
-        enable = true;
+    theme = {
+    #   name = "Kanagawa-BL";
+    #   package = pkgs.kanagawa-gtk-theme;
+      name = "Catppuccin-Mocha-Teal-Dark";
+    };
+    iconTheme = {
+    #   name = "Tela-circle-dark";
+    #   package = pkgs.tela-circle-icon-theme;
+      package = pkgs.catppuccin-papirus-folders.override {
         flavor = "mocha";
         accent = "teal";
       };
     };
-    # theme = {
-    #   name = "Kanagawa-BL";
-    #   package = pkgs.kanagawa-gtk-theme;
-    #   name = "Catppuccin-Mocha-Compact-Lavender-Dark";
-    # };
-    # iconTheme = {
-    #   name = "Tela-circle-dark";
-    #   package = pkgs.tela-circle-icon-theme;
-    #   package = pkgs.catppuccin-papirus-folders.override {
-    #     flavor = "mocha";
-    #     accent = "lavender";
-    #   };
-    # };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
