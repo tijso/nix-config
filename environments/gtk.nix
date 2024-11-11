@@ -8,7 +8,7 @@
     theme = {
       name = "Catppuccin-Mocha-Standard-Blue-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "blue" ];
+        accents = [ "teal" ];
         size = "standard";
         tweaks = [ "normal" ];
         variant = "mocha";
