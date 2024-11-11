@@ -40,7 +40,7 @@
         gtk-application-prefer-dark-theme=1
       '';
     };
-
+  };
     qt = {
       enable = true;
       # platformTheme = "gtk";
@@ -49,5 +49,4 @@
       #   package = pkgs.qt5.qtbase.gtk;
       # };
     };
-  };
 }
