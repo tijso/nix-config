@@ -1,4 +1,8 @@
 {
+  pkgs,
+  config,
+  ...
+}: {
   plugins.alpha = {
     enable = true;
     iconsEnabled = true;
