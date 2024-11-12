@@ -20,9 +20,7 @@
         "   ██╔██╗ ██║██║ ╚███╔╝ ██║   ██║██║██╔████╔██║"
         "   ██║╚██╗██║██║ ██╔██╗ ╚██╗ ██╔╝██║██║╚██╔╝██║"
         "   ██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║"
-          "   ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝"
-
-          ""
+        "   ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝"
         "       git@github.com:tijso/nix-config.git"
         ];
       }
@@ -56,10 +54,10 @@
         };
       }
 
-      {
-        type = "padding";
-        val = 2;
-      }
+      # {
+      #   type = "padding";
+      #   val = 2;
+      # }
       {
         type = "button";
         val = "  > Find File";
@@ -86,10 +84,10 @@
         };
       }
 
-      {
-        type = "padding";
-        val = 2;
-      }
+      # {
+      #   type = "padding";
+      #   val = 2;
+      # }
       {
         type = "button";
         val = "  > Find Recent";
@@ -115,10 +113,10 @@
           hl_shortcut = "Keyword";
         };
       }
-      {
-        type = "padding";
-        val = 2;
-      }
+      # {
+      #   type = "padding";
+      #   val = 2;
+      # }
       {
         type = "button";
         val = " > Repos";
@@ -144,10 +142,10 @@
           hl_shortcut = "Keyword";
         };
       }
-      {
-        type = "padding";
-        val = 2;
-      }
+      # {
+      #   type = "padding";
+      #   val = 2;
+      # }
       {
         type = "button";
         val = "󰗼  > Quit NVIM";
