@@ -10,7 +10,7 @@
     ./noice.nix
     ./startify.nix
     ./harpoon.nix
-    # ./neo-tree.nix
+    ./neo-tree.nix
     ./whichkey.nix
     # ./oil.nix
     # ./fzf.nix
@@ -19,6 +19,7 @@
    programs.nixvim = {
     plugins = {
       mini = {
+        enable = true;
         modules.icons = {};
         mockDevIcons = true;
       };
