@@ -22,7 +22,7 @@
           prompt_prefix = "   ";
           selection_caret = "  ";
           entry_prefix = "  ";
-          color_devicons = true;
+          # color_devicons = true;
           initial_mode = "insert";
           selection_strategy = "reset";
           sorting_strategy = "ascending";
