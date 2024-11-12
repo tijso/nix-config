@@ -18,6 +18,10 @@
 
    programs.nixvim = {
     plugins = {
+      mini = {
+        modules.icons = {};
+        mockDevIcons = true;
+      };
       gitsigns = {
         enable = true;
         settings.signs = {
@@ -38,7 +42,6 @@
       nvim-autopairs.enable = true;
       nix.enable = true;
       nvim-colorizer.enable = true;
-      mini.modules.icons = {};
     };
     extraPlugins = with pkgs.vimPlugins; [
       # nvim-web-devicons
