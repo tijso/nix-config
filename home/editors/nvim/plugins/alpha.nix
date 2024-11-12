@@ -21,7 +21,8 @@
         "   ██║╚██╗██║██║ ██╔██╗ ╚██╗ ██╔╝██║██║╚██╔╝██║"
         "   ██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║"
         "   ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝"
-        "       git@github.com:tijso/nix-config.git"
+
+          "       git@github.com:tijso/nix-config.git"
         ];
       }
       {
@@ -54,10 +55,10 @@
         };
       }
 
-      # {
-      #   type = "padding";
-      #   val = 2;
-      # }
+      {
+        type = "padding";
+        val = 1;
+      }
       {
         type = "button";
         val = "  > Find File";
@@ -84,10 +85,10 @@
         };
       }
 
-      # {
-      #   type = "padding";
-      #   val = 2;
-      # }
+      {
+        type = "padding";
+        val = 1;
+      }
       {
         type = "button";
         val = "  > Find Recent";
@@ -113,10 +114,10 @@
           hl_shortcut = "Keyword";
         };
       }
-      # {
-      #   type = "padding";
-      #   val = 2;
-      # }
+      {
+        type = "padding";
+        val = 1;
+      }
       {
         type = "button";
         val = " > Repos";
@@ -142,10 +143,10 @@
           hl_shortcut = "Keyword";
         };
       }
-      # {
-      #   type = "padding";
-      #   val = 2;
-      # }
+      {
+        type = "padding";
+        val = 1;
+      }
       {
         type = "button";
         val = "󰗼  > Quit NVIM";
@@ -171,47 +172,6 @@
           hl_shortcut = "Keyword";
         };
       }
-
-      # {
-      #   type = "group";
-      #   val = [
-      #     {
-      #       command = "<CMD>ene <CR>";
-      #       desc = "  > New file";
-      #       shortcut = "e";
-      #     }
-      #     {
-      #       command = ":cd $HOME/repos | Telescope find_files<CR>";
-      #       desc = "󰺄  > Find file";
-      #       shortcut = "f";
-      #     }
-      #     {
-      #       command = ":Telescope oldfiles<CR>";
-      #       desc = "  > Find Recent";
-      #       shortcut = "t";
-      #     }
-      #     {
-      #       command = ":cd $HOME/repos | Telescope find_files<CR>";
-      #       desc = " > Repos";
-      #       shortcut = "r";
-      #     }
-      #     {
-      #       command = ":cd $HOME/docs | Neotree<CR>";
-      #       desc = "󱔗  > Docs";
-      #       shortcut = "d";
-      #     }
-      #     {
-      #       command = ":cd $HOME/repos/nix/nixflakes | Neotree <CR>";
-      #       desc = "  > Nixflakes";
-      #       shortcut = "n";
-      #     }
-      #     {
-      #       command = ":qa<CR>";
-      #       desc = "󰗼  > Quit NVIM";
-      #       shortcut = "q";
-      #     }
-      #   ];
-      # }
       {
         type = "padding";
         val = 2;
