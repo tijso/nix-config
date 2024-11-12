@@ -2,13 +2,14 @@
 
 {
   imports = [
+    ./alpha.nix
     ./lualine.nix
     ./treesitter.nix
     ./indent-blankline.nix
     ./colorscheme.nix
     ./telescope.nix
     ./noice.nix
-    ./startify.nix
+    # ./startify.nix
     ./harpoon.nix
     ./neo-tree.nix
     ./whichkey.nix
