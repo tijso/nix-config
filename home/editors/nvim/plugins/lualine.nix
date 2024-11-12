@@ -51,10 +51,6 @@
           lualine_c = [
             {
               __unkeyed-1 = "branch";
-              separator = {
-                # left = "";
-                right = "";
-              };
               padding = {
                 left = 2;
                 right = 0;
