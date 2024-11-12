@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    plugins.lualine.settings = {
+    plugins.lualine = {
       enable = true;
       globalstatus = true;
       theme = "auto";
