@@ -1,9 +1,5 @@
 {
-  pkgs,
-  config,
-  ...
-}: {
-  plugins.alpha = {
+  programs.nixvim.plugins.alpha = {
     enable = true;
     iconsEnabled = true;
     layout = [
