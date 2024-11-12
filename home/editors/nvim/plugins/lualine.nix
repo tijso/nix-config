@@ -1,110 +1,108 @@
 {
   programs.nixvim = {
     plugins.lualine = {
-      settings = {
-        enable = true;
-        globalstatus = true;
-        theme = "auto";
-        componentSeparators = {
-          left = "|";
-          right = "|";
-        };
-        sectionSeparators = {
-          # left = "";
-          # right = "";
-          left = "";
-          right = "";
-        };
-        sections = {
-          lualine_a = [
-            {
-              name = "mode";
-              extraConfig = {
-                separator = {
-                  # left = "";
-                  # right = "";
-                  # left = "";
-                  # right = "";
-                };
+      enable = true;
+      globalstatus = true;
+      theme = "auto";
+      componentSeparators = {
+        left = "|";
+        right = "|";
+      };
+      sectionSeparators = {
+        # left = "";
+        # right = "";
+        left = "";
+        right = "";
+      };
+      sections = {
+        lualine_a = [
+          {
+            name = "mode";
+            extraConfig = {
+              separator = {
+                # left = "";
+                # right = "";
+                # left = "";
+                # right = "";
               };
-            }
-          ];
-          lualine_b = [
-            {
-              name = "branch";
-              extraConfig = {
-                padding = {
-                  left = 2;
-                  right = 0;
-                };
-                icon = "";
-                colored = true;
+            };
+          }
+        ];
+        lualine_b = [
+          {
+            name = "branch";
+            extraConfig = {
+              padding = {
+                left = 2;
+                right = 0;
               };
-            }
-            {
-              name = "diff";
-              extraConfig = {
-                colored = true;
-                symbols = {
-                  added = " ";
-                  modified = " ";
-                  removed = " ";
-                };
+              icon = "";
+              colored = true;
+            };
+          }
+          {
+            name = "diff";
+            extraConfig = {
+              colored = true;
+              symbols = {
+                added = " ";
+                modified = " ";
+                removed = " ";
               };
-            }
-          ];
-          lualine_c = [
-            {
-              name = "filename";
-              extraConfig = {
-                colored = true;
+            };
+          }
+        ];
+        lualine_c = [
+          {
+            name = "filename";
+            extraConfig = {
+              colored = true;
+            };
+          }
+        ];
+        lualine_x = [
+          {
+            name = "diagnostics";
+            extraConfig = {
+              color = {
+                fg = "#605f6f";
+                bg = "#232232";
               };
-            }
-          ];
-          lualine_x = [
-            {
-              name = "diagnostics";
-              extraConfig = {
-                color = {
-                  fg = "#605f6f";
-                  bg = "#232232";
-                };
-                diagnostics_color = {
-                  color_error = {fg = "#F38BA8";};
-                  color_warn = {fg = "#FAE3B0";};
-                };
-                symbols = {
-                  error = " ";
-                  warn = " ";
-                };
+              diagnostics_color = {
+                color_error = {fg = "#F38BA8";};
+                color_warn = {fg = "#FAE3B0";};
               };
-            }
-            {
-              name = "filetype";
-              extraConfig = {
-                colored = true;
-                padding = {
-                  left = 1;
-                  right = 2;
-                };
+              symbols = {
+                error = " ";
+                warn = " ";
               };
-            }
-          ];
-          lualine_y = ["progress"];
-          lualine_z = [
-            {
-              name = "location";
-              extraConfig = {
-                separator = {
-                  # right = "";
-                  # right = "";
-                  # left = "";
-                  # left = "";
-                };
+            };
+          }
+          {
+            name = "filetype";
+            extraConfig = {
+              colored = true;
+              padding = {
+                left = 1;
+                right = 2;
               };
-            }
-          ];
-        };
+            };
+          }
+        ];
+        lualine_y = ["progress"];
+        lualine_z = [
+          {
+            name = "location";
+            extraConfig = {
+              separator = {
+                # right = "";
+                # right = "";
+                # left = "";
+                # left = "";
+              };
+            };
+          }
+        ];
       };
     };
   };
