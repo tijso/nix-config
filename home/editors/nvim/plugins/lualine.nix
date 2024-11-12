@@ -9,7 +9,7 @@
           theme = "catppuccin";
           section_separators = {
             right = "";
-            left = "▊ ";
+            left = " ";
           };
           component_separators = {
             left = "";
