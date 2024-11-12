@@ -52,8 +52,8 @@
             {
               __unkeyed-1 = "branch";
               separator = {
-                # left = "";
-                right = "";
+                left = "";
+                # right = "";
               };
               padding = {
                 left = 2;
