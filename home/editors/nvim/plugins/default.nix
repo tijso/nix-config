@@ -38,9 +38,10 @@
       nvim-autopairs.enable = true;
       nix.enable = true;
       nvim-colorizer.enable = true;
+      mini.modules.icons = {};
     };
     extraPlugins = with pkgs.vimPlugins; [
-      nvim-web-devicons
+      # nvim-web-devicons
     ];
   };
 }
