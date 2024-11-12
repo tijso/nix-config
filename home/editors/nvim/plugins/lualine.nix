@@ -55,10 +55,10 @@
                 left = "";
                 right = "";
               };
-              padding = {
-                left = 2;
-                right = 0;
-              };
+              # padding = {
+              #   left = 2;
+              #   right = 0;
+              # };
               icon = "";
               colored = false;
               color = {
