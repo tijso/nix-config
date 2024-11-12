@@ -22,7 +22,7 @@
         "   ██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║"
         "   ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝"
         ""
-        "     git@github.com:tijso/nix-config.git"
+        "    git@github.com:tijso/nix-config.git"
         ];
       }
       {
