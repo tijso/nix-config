@@ -19,74 +19,62 @@
           lualine_a = [
             {
               name = "mode";
-              extraConfig = {
-                separator = {
-                  # left = "";
-                  # right = "";
-                  # left = "";
-                  # right = "";
-                };
+              separator = {
+                # left = "";
+                # right = "";
+                # left = "";
+                # right = "";
               };
             }
           ];
           lualine_b = [
             {
               name = "branch";
-              extraConfig = {
-                padding = {
-                  left = 2;
-                  right = 0;
-                };
-                icon = "";
-                colored = true;
+              padding = {
+                left = 2;
+                right = 0;
               };
+              icon = "";
+              colored = true;
             }
             {
               name = "diff";
-              extraConfig = {
-                colored = true;
-                symbols = {
-                  added = " ";
-                  modified = " ";
-                  removed = " ";
-                };
+              colored = true;
+              symbols = {
+                added = " ";
+                modified = " ";
+                removed = " ";
               };
             }
           ];
           lualine_c = [
             {
               name = "filename";
-              extraConfig = {
-                colored = true;
-              };
+              colored = true;
             }
           ];
           lualine_x = [
             {
               name = "diagnostics";
-              extraConfig = {
-                color = {
-                  fg = "#605f6f";
-                  bg = "#232232";
-                };
-                diagnostics_color = {
-                  color_error = {fg = "#F38BA8";};
-                  color_warn = {fg = "#FAE3B0";};
-                };
-                symbols = {
-                  error = " ";
-                  warn = " ";
-                };
+              color = {
+                fg = "#605f6f";
+                bg = "#232232";
+              };
+              diagnostics_color = {
+                color_error = {fg = "#F38BA8";};
+                color_warn = {fg = "#FAE3B0";};
+              };
+              symbols = {
+                error = " ";
+                warn = " ";
               };
             }
             {
               name = "filetype";
-              extraConfig = {
-                colored = true;
-                padding = {
-                  left = 1;
-                  right = 2;
-                };
+              colored = true;
+              padding = {
+                left = 1;
+                right = 2;
               };
             }
           ];
@@ -94,13 +82,11 @@
           lualine_z = [
             {
               name = "location";
-              extraConfig = {
-                separator = {
-                  # right = "";
-                  # right = "";
-                  # left = "";
-                  # left = "";
-                };
+              separator = {
+                # right = "";
+                # right = "";
+                # left = "";
+                # left = "";
               };
             }
           ];
