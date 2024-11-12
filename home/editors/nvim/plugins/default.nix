@@ -2,7 +2,7 @@
 
 {
   imports = [
-    # ./lualine.nix
+    ./lualine.nix
     ./treesitter.nix
     ./indent-blankline.nix
     ./colorscheme.nix
