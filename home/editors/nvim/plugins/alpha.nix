@@ -25,7 +25,7 @@
               "           ░    ░  ░     ░     ░  ░  "
               "                        ░            "
               "                                     "
-              "      git@github.com:redyf/neve      "
+              "      git@github.com:tijso/nix-config.git  "
             ];
         # val = [
         #   "       ___           ___                                   ___      "
