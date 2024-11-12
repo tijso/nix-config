@@ -23,7 +23,7 @@
               __unkeyed-1 = "mode";
               separator = {
                 left = "";
-                right = "";
+                # right = "";
               };
               icon = " ";
               color = {
