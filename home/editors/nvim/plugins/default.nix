@@ -6,7 +6,7 @@
     ./treesitter.nix
     ./indent-blankline.nix
     ./colorscheme.nix
-    # ./telescope.nix
+    ./telescope.nix
     ./noice.nix
     ./startify.nix
     ./harpoon.nix
