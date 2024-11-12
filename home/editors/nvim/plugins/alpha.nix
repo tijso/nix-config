@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins.alpha = {
     enable = true;
-    iconsEnabled = true;
+    # iconsEnabled = true;
     layout = [
       {
         type = "padding";
