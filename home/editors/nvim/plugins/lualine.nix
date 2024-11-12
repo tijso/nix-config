@@ -21,6 +21,10 @@
           lualine_a = [
             {
               __unkeyed-1 = "mode";
+              separator = {
+                left = "";
+                right = "";
+              };
               icon = " ";
               color = {
                 gui = "bold";
