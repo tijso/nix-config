@@ -25,12 +25,12 @@
     # Programs
     nix-colors.url = "github:misterio77/nix-colors";
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # };
 
-    # nixvim.url = "github:tijso/nixvim";
+    nixvim.url = "github:tijso/nixvim";
 
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
@@ -45,7 +45,7 @@
     systems,
     home-manager,
     nix-colors,
-    nixvim,
+    # nixvim,
     nixos-cosmic,
     catppuccin,
     ...
@@ -91,7 +91,7 @@
         extraSpecialArgs = {inherit inputs outputs nix-colors;};
         modules = [
           ./home/home.nix
-          nixvim.homeManagerModules.nixvim
+          # nixvim.homeManagerModules.nixvim
           catppuccin.homeManagerModules.catppuccin
         ];
       };
