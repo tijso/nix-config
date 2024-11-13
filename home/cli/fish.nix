@@ -1,9 +1,4 @@
 {
-  pkgs,
-  config,
-  ...
-}:
-{
   programs.fish = {
     enable = true;
     shellInit = ''
@@ -69,7 +64,8 @@
       vi = "nvim";
       vim = "nvim";
       mkdir = "mkdir -p";
-      cat = "bat";
+      cat = "bat --paging=never";
+      man = "tldr";
       img = "wezterm imgcat";
 
       # List Commands
@@ -79,7 +75,7 @@
       lt = "eza --group-directories-first --tree";
       llt = "eza --group-directories-first --long --tree";
 
-      # Nix 
+      # Nix
       update = "sudo nix flake update";
       rebuild = "sudo nixos-rebuild switch --flake .#serenity && notify-send \"Done\"";
       hmr = "home-manager switch --flake .#tijso@serenity";
