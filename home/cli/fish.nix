@@ -2,7 +2,8 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   programs.fish = {
     enable = true;
     shellInit = ''
@@ -65,21 +66,26 @@
     '';
 
     shellAliases = {
-      # List Commands
-      ls  = "eza --group-directories-first --long";
-      ll  = "eza --group-directories-first --long";
-      la  = "eza --group-directories-first --long --all";
-      lt  = "eza --group-directories-first --tree";
-      llt = "eza --group-directories-first --long --tree";
-      # ls = "eza -lg";
-      # la = "eza -la";
-      # lt = "eza --tree";
+      vi = "nvim";
+      vim = "nvim";
+      mkdir = "mkdir -p";
       cat = "bat";
       img = "wezterm imgcat";
+
+      # List Commands
+      ls = "eza --group-directories-first --long";
+      ll = "eza --group-directories-first --long";
+      la = "eza --group-directories-first --long --all";
+      lt = "eza --group-directories-first --tree";
+      llt = "eza --group-directories-first --long --tree";
+
+      # Nix 
       update = "sudo nix flake update";
       rebuild = "sudo nixos-rebuild switch --flake .#serenity && notify-send \"Done\"";
       hmr = "home-manager switch --flake .#tijso@serenity";
       news = "home-manager news --flake .#tijso@serenity";
+
+      # Cli Trash Commands
       tl = "trash-list";
       te = "trash-empty";
       tr = "trash-restore";
