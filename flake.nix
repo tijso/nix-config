@@ -30,6 +30,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    # nixvim.url = "github:tijso/nixvim";
+
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
