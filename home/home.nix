@@ -8,7 +8,7 @@
   imports = [
     nix-colors.homeManagerModules.default
     ./cli
-    ./editors
+    # ./editors
     ./environments/gtk.nix
     ./environments/gnome.nix
     # ./environments/hyprland
@@ -19,7 +19,7 @@
   ];
 
   home.packages = with pkgs; [
-    # inputs.nixvim.packages.x86_64-linux.default
+    inputs.nixvim.packages.x86_64-linux.default
     tree
     btop
     inkscape
