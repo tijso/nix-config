@@ -5,8 +5,8 @@
 {
   programs.bat = {
     enable = true;
+    catppuccin.enable = true;
     config = {
-      catppuccin.enable = true;
       style = "numbers,changes,header";
       paging = "auto";
       wrap = "never";
