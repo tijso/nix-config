@@ -1,10 +1,10 @@
 {
   pkgs,
-  config,
   inputs,
   nix-colors,
   ...
-}: {
+}:
+{
   imports = [
     nix-colors.homeManagerModules.default
     ./cli
@@ -43,7 +43,7 @@
   home = {
     username = "tijso";
     homeDirectory = "/home/tijso";
-    sessionPath = ["$HOME/.local/bin"];
+    sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
       EDITOR = "nvim";
       PAGER = "bat";
