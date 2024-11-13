@@ -2,17 +2,20 @@
   description = "Your new nix config";
 
   inputs = {
-    # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
-    systems.url = "github:nix-systems/default-linux";
-
-    # Home Manager
+    # Flakes 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+    systems.url = "github:nix-systems/default-linux";
+
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Hyprland
@@ -22,28 +25,25 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    # Programs
+    # Theming 
     nix-colors.url = "github:misterio77/nix-colors";
-
-    # Neovim Configuration
-    nixvim.url = "github:tijso/nixvim";
-
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     catppuccin.url = "github:catppuccin/nix";
+
+    # Custom Flakes
+    nixvim.url = "github:tijso/nixvim";
   };
+
   outputs =
     {
       self,
       nixpkgs,
-      systems,
       home-manager,
+      systems,
       nix-colors,
       nixos-cosmic,
+      nixvim,
       catppuccin,
+      hyprland,
       ...
     }@inputs:
     let
