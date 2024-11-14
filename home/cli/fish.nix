@@ -75,8 +75,10 @@
       img = "wezterm imgcat";
 
       # List Commands
-      ls = "eza --long";
-      la = "eza --long --all";
+      # ls = "eza --long";
+      ls = "eza";
+      la = "eza --lah";
+      # la = "eza --long --all";
       lt = "eza --tree";
 
       # Neovim
