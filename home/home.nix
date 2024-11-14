@@ -47,7 +47,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       PAGER = "bat";
-      TERMINAL = "kitty";
+      TERMINAL = "wezterm";
     };
   };
 
