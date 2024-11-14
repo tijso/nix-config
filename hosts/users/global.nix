@@ -11,7 +11,7 @@
     useXkbConfig = true;
   };
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
   users.users.tijso = {
     home = "/home/tijso";
     description = "tijso";
@@ -22,6 +22,6 @@
       "storage"
       "libvirtd"
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 }
