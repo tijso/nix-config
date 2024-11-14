@@ -1,5 +1,6 @@
-{pkgs, lib, ...}: {
-  imports = [];
+{ pkgs, lib, ... }:
+{
+  imports = [ ];
   time.timeZone = "America/Chicago";
   time.hardwareClockInLocalTime = true;
 
@@ -10,12 +11,17 @@
     useXkbConfig = true;
   };
 
-  programs.fish.enable = true;
+  programs.zsh.enable = true;
   users.users.tijso = {
     home = "/home/tijso";
     description = "tijso";
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager" "storage" "libvirtd"];
-    shell = pkgs.fish;
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "storage"
+      "libvirtd"
+    ];
+    shell = pkgs.zsh;
   };
 }
