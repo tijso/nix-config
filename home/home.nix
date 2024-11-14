@@ -13,8 +13,9 @@
     ./environments/gnome.nix
     # ./environments/hyprland
     ./mpv
-    # ./software
+    ./utils
     ./terminals
+    ./shells
     # ./tmux
   ];
 
