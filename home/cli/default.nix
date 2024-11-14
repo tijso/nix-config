@@ -1,7 +1,5 @@
 {
   pkgs,
-  lib,
-  config,
   ...
 }:
 {
@@ -9,10 +7,10 @@
     ./bat.nix
     ./eza.nix
     ./fastfetch
-    # ./fish.nix
+    ./fish.nix
     ./git.nix
     ./starship.nix
-    ./zsh.nix
+    # ./zsh.nix
   ];
 
   programs.fzf = {

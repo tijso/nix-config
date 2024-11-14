@@ -61,19 +61,27 @@
     '';
 
     shellAliases = {
-      vi = "nvim";
-      vim = "nvim";
+      home = "cd ~/";
+      config = "cd ~/nix-config";
+      personal = "cd ~/projects/personal";
+      github = "cd ~/projects/personal/github";
+      gitlab = "cd ~/projects/personal/gitlab";
       mkdir = "mkdir -p";
       cat = "bat --paging=never";
       man = "tldr";
+      grep = "rg";
+      find = "fd";
+      lg = "lazygit";
       img = "wezterm imgcat";
 
       # List Commands
-      ls = "eza --group-directories-first --long";
-      ll = "eza --group-directories-first --long";
-      la = "eza --group-directories-first --long --all";
-      lt = "eza --group-directories-first --tree";
-      llt = "eza --group-directories-first --long --tree";
+      ls = "eza --long";
+      la = "eza --long --all";
+      lt = "eza --tree";
+
+      # Neovim
+      vi = "nvim";
+      vim = "nvim";
 
       # Nix
       update = "sudo nix flake update";
