@@ -29,15 +29,6 @@
     #
     # yaml-language-server
 
-    # Nix
-    nh
-    nix-du
-    nix-prefetch-git
-    nix-prefetch-github
-    # nixfmt
-    alejandra
-    nil
-
     # Rust
     cargo
     rust-analyzer
