@@ -4,6 +4,6 @@
     ./git
     ./go.nix
     ./nixdev.nix
-    ./virtualization.nix
+    # ./virtualization.nix
   ];
 }
