@@ -6,9 +6,9 @@
 }:
 with lib;
 {
-  options.thunarConfig.enable = mkEnableOption "thunar file manager configuration";
+  options.thunar.enable = mkEnableOption "thunar file manager configuration";
 
-  config = mkIf config.thunarConfig.enable {
+  config = mkIf config.thunar.enable {
     home.packages = with pkgs; [
       # Core Thunar and essential plugins
       xfce.thunar

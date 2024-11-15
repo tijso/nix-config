@@ -21,7 +21,7 @@
   ];
 
   nixdev.enable = true;
-  thunarConfig.enable = true;
+  thunar.enable = true;
 
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default
