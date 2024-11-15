@@ -9,7 +9,7 @@
 
     ../common
     ../users/global.nix
-    ../../development
+    # ../../development
     ../../environments
   ];
 

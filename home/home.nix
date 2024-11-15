@@ -11,7 +11,7 @@
     ./environments/gtk.nix
     ./environments/gnome.nix
     # ./environments/hyprland
-    # ../development
+    ./development
     ./mpv
     ./utils
     ./terminals
@@ -25,7 +25,7 @@
   bat.enable = true;
   fzf.enable = true;
   eza.enable = true;
-  virt.enable = false;
+  virt.enable = true;
 
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default
