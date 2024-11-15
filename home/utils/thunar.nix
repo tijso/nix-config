@@ -25,7 +25,7 @@ with lib;
     ];
 
     # Thunar configuration
-    xfce.thunar = {
+    thunar = {
       enable = true;
       plugins = with pkgs.xfce; [
         thunar-archive-plugin
