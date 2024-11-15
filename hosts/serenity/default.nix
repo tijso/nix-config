@@ -2,14 +2,14 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   imports = [
     ./hardware-configuration.nix
 
     ../common
     ../users/global.nix
-    # ../../development
+    ../../software
+    ../../development
     ../../environments
   ];
 

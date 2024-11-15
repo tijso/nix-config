@@ -1,41 +1,14 @@
 {
   pkgs,
+  config,
   inputs,
   nix-colors,
   ...
-}:
-{
+}: {
   imports = [
     nix-colors.homeManagerModules.default
-    ./cli
-    # ./editors
-    ./environments/gtk.nix
-    ./environments/gnome.nix
-    # ./environments/hyprland
-    ./mpv
-    # ./software
-    ./terminals
-    # ./tmux
-  ];
-
-  home.packages = with pkgs; [
-    inputs.nixvim.packages.x86_64-linux.default
-    tree
-    btop
-    inkscape
-    ookla-speedtest
-    gnome-disk-utility
-    cava
-    telegram-desktop
-    gimp
-    corefonts
-    cachix
-    qbittorrent
-    ani-cli
-    imagemagick
-    sxiv
-    optipng
-    pamixer
+    ../../home/environments/hyprland
+    ../../home/software/local.nix
   ];
 
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
@@ -43,11 +16,11 @@
   home = {
     username = "tijso";
     homeDirectory = "/home/tijso";
-    sessionPath = [ "$HOME/.local/bin" ];
+    sessionPath = ["$HOME/.local/bin"];
     sessionVariables = {
       EDITOR = "nvim";
       PAGER = "bat";
-      TERMINAL = "wezterm";
+      TERMINAL = "kitty";
     };
   };
 
