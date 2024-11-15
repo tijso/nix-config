@@ -16,9 +16,6 @@ with lib;
     programs.bat = {
       enable = true;
       catppuccin.enable = true;
-      extraPackages = with pkgs.bat-extras; [
-        prettybat
-      ];
     };
   };
 }
