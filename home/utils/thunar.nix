@@ -10,11 +10,10 @@ with lib;
 
   config = mkIf config.thunar.enable {
     home.packages = with pkgs; [
-      # Core Thunar and essential plugins
-      xfce.thunar
-      xfce.thunar-archive-plugin # Archive creation/extraction
-      xfce.thunar-volman # Removable media management
-      xfce.thunar-media-tags-plugin # Media file tagging
+      thunar
+      thunar-archive-plugin # Archive creation/extraction
+      thunar-volman # Removable media management
+      thunar-media-tags-plugin # Media file tagging
 
       # Additional dependencies for full functionality
       gnome.file-roller # Archive handling GUI
