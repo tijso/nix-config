@@ -6,7 +6,7 @@
 }:
 with lib;
 {
-  options.bat.enable = MkEnableOption "bat settings";
+  options.bat.enable = mkEnableOption "bat settings";
 
   config = mkIf config.bat.enale {
     home.packages = with pkgs; [
