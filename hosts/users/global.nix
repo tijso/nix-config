@@ -21,6 +21,8 @@
       "networkmanager"
       "storage"
       "libvirtd"
+      "kvm"
+      "qemu"
     ];
     shell = pkgs.fish;
   };

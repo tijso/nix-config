@@ -19,11 +19,6 @@ with lib;
     ];
 
     virtualisation.libvirtd.enable = true;
-    users.groups = [
-      "libvirtd"
-      "kvm"
-      "qemu"
-    ];
 
     # Environment variables
     home.sessionVariables = {
