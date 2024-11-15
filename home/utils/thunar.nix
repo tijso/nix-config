@@ -8,8 +8,8 @@ with lib;
 {
   options.thunar.enable = mkEnableOption "thunar file manager configuration";
 
+  environment.systemPackages = with pkgs; [ xfce.thunar ];
   config = mkIf config.thunar.enable {
-    environment.systemPackages = with pkgs; [ xfce.thunar ];
     home.packages = with pkgs; [
       xfce.thunar-archive-plugin # Archive creation/extraction
       xfce.thunar-volman # Removable media management
