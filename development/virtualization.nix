@@ -8,7 +8,7 @@ with lib;
 {
   options.virt.enable = mkEnableOption "virtualization configuration";
 
-  config = mIf config.virt.enable {
+  config = mkIf config.virt.enable {
     home.packages = with pkgs; [
       qemu
       qemu-utils
