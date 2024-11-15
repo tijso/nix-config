@@ -81,6 +81,19 @@
   #     createDirectories = true;
   #   };
   # };
+  home.sessionVariables = {
+    # Use fd instead of find
+    FZF_CTRL_T_COMMAND = "fd --type file --hidden --follow --exclude .git";
+    FZF_ALT_C_COMMAND = "fd --type directory --hidden --follow --exclude .git";
+
+    # Preview window settings for different commands
+    FZF_CTRL_T_OPTS = "--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (eza --tree {} | less)) || echo {} 2> /dev/null | head -200'";
+    FZF_ALT_C_OPTS = "--preview 'eza --tree {} | head -200'";
+    FZF_CTRL_R_OPTS = "--preview 'echo {}' --preview-window up:3:hidden:wrap --bind '?:toggle-preview'";
+
+    # Use fd for completion
+    _FZF_COMPLETION_OPTS = "--border --info=inline";
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
