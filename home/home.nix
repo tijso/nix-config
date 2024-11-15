@@ -11,7 +11,7 @@
     ./environments/gtk.nix
     ./environments/gnome.nix
     # ./environments/hyprland
-    ../development
+    # ../development
     ./mpv
     ./utils
     ./terminals
