@@ -26,12 +26,6 @@ with lib;
       "qemu"
     ];
 
-    # Environment variables
-    home.sessionVariables = {
-      LIBVIRT_DEFAULT_URI = "qemu:///system";
-      VAGRANT_DEFAULT_PROVIDER = "libvirt";
-    };
-
     # Configuration files
     home.file = {
       # QEMU config
