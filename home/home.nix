@@ -7,7 +7,6 @@
 {
   imports = [
     nix-colors.homeManagerModules.default
-    ./cli
     # ./editors
     ./environments/gtk.nix
     ./environments/gnome.nix
