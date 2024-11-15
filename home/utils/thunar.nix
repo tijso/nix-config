@@ -6,9 +6,9 @@
 }:
 with lib;
 {
-  options.thunar.enable = mkEnableOption "thunar file manager configuration";
+  options.thunarConfig.enable = mkEnableOption "thunar file manager configuration";
 
-  config = mkIf config.thunar.enable {
+  config = mkIf config.thunarConfig.enable {
     home.packages = with pkgs; [
       thunar
       xfce.thunar-archive-plugin # Archive creation/extraction
