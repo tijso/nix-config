@@ -35,10 +35,6 @@ with lib;
       ];
     };
 
-    # Associated services
-    services.tumbler.enable = true; # Thumbnail service
-    services.gvfs.enable = true; # Virtual filesystem support
-
     # Default applications for common file types
     xdg.mimeApps.defaultApplications = {
       "inode/directory" = [ "thunar.desktop" ];
