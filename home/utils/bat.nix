@@ -8,7 +8,7 @@ with lib;
 {
   options.bat.enable = mkEnableOption "bat settings";
 
-  config = mkIf config.bat.enale {
+  config = mkIf config.bat.enable {
     home.packages = with pkgs; [
       bat
       bat-extras
