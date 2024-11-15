@@ -7,8 +7,7 @@
 with lib;
 {
   options.thunar.enable = mkEnableOption "thunar file manager configuration";
-
-  environment.systemPackages = with pkgs; [ xfce.thunar ];
+  environment.defaultPackages = with pkgs; [ xfce.thunar ];
   config = mkIf config.thunar.enable {
     home.packages = with pkgs; [
       xfce.thunar-archive-plugin # Archive creation/extraction
