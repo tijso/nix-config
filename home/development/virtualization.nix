@@ -18,7 +18,7 @@ with lib;
       quickemu
     ];
 
-    virtualisation.libvirtd.enable = true;
+    # virtualisation.libvirtd.enable = true;
 
     # Environment variables
     home.sessionVariables = {
