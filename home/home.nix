@@ -25,7 +25,7 @@
   bat.enable = true;
   fzf.enable = true;
   eza.enable = true;
-  virt.enable = true;
+  virt.enable = false;
 
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default
