@@ -12,12 +12,16 @@
     ./environments/gtk.nix
     ./environments/gnome.nix
     # ./environments/hyprland
+    ../development
     ./mpv
     ./utils
     ./terminals
     ./shells
     # ./tmux
   ];
+
+  nixdev.enable = true;
+  thunarConfig.enable = true;
 
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default
