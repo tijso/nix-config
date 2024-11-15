@@ -9,8 +9,8 @@ with lib;
   options.thunar.enable = mkEnableOption "thunar file manager configuration";
 
   config = mkIf config.thunar.enable {
+    environment.systemPackages = with pkgs; [ thunar ];
     home.packages = with pkgs; [
-      pkgs.thunar
       xfce.thunar-archive-plugin # Archive creation/extraction
       xfce.thunar-volman # Removable media management
       xfce.thunar-media-tags-plugin # Media file tagging
