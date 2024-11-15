@@ -6,11 +6,11 @@
 }:
 with lib;
 {
-  options.thunarConfig.enable = mkEnableOption "thunar file manager configuration";
+  options.thunar.enable = mkEnableOption "thunar file manager configuration";
 
-  config = mkIf config.thunarConfig.enable {
+  config = mkIf config.thunar.enable {
     home.packages = with pkgs; [
-      thunar
+      pkgs.thunar
       xfce.thunar-archive-plugin # Archive creation/extraction
       xfce.thunar-volman # Removable media management
       xfce.thunar-media-tags-plugin # Media file tagging

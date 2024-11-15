@@ -20,7 +20,7 @@
   ];
 
   nixdev.enable = true;
-  thunarConfig.enable = true;
+  thunar.enable = true;
   go.enable = true;
   bat.enable = true;
   fzf.enable = true;
