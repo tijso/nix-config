@@ -12,9 +12,7 @@ with lib;
     programs.go = {
       enable = true;
       package = pkgs.go;
-      packages = {
-        "golang.org/x/text" = builtins.fetchGit "https://go.googlesource.com/text";
-      };
+      packages = { };
       goPath = "go";
       # goPrivate = ["*github.com/asanbilit/*" "*gitlab.iranairs.com/*"];
     };
