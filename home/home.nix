@@ -22,6 +22,10 @@
 
   nixdev.enable = true;
   thunar.enable = true;
+  go.enable = true;
+  bat.enable = true;
+  fzf.enable = true;
+  eza.enable = true;
 
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default
