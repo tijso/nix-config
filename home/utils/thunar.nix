@@ -13,10 +13,10 @@ with lib;
       xfce.thunar-archive-plugin # Archive creation/extraction
       xfce.thunar-volman # Removable media management
       xfce.thunar-media-tags-plugin # Media file tagging
+      xfce.tumbler # Thumbnail service
       # Additional dependencies for full functionality
       gnome.file-roller # Archive handling GUI
       ffmpegthumbnailer # Video thumbnails
-      tumbler # Thumbnail service
       gvfs # Virtual filesystem support
       libgsf # ODF thumbnails
       poppler_utils # PDF thumbnails
