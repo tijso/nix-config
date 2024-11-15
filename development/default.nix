@@ -1,8 +1,9 @@
 {
   imports = [
     ./base.nix
+    ./git
     ./go.nix
     ./nixdev.nix
-    ./git
+    ./virtualization.nix
   ];
 }
