@@ -11,11 +11,16 @@ with lib;
   config = mkIf config.bat.enable {
     home.packages = with pkgs; [
       bat
-      bat-extras
     ];
     programs.bat = {
       enable = true;
       catppuccin.enable = true;
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batgrep
+        prettybat
+        batman
+      ];
     };
   };
 }
