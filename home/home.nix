@@ -25,7 +25,6 @@
     inkscape
     ookla-speedtest
     gnome-disk-utility
-    cava
     telegram-desktop
     gimp
     corefonts
