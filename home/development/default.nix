@@ -11,5 +11,5 @@
   ];
 
   go.enable = true;
-  nix.dev = true;
+  nixdev.enable = true;
 }
