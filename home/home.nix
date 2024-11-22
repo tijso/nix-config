@@ -15,6 +15,7 @@
     ./mpv
     # ./software
     ./terminals
+    ./development
     # ./tmux
   ];
 

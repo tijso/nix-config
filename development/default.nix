@@ -12,7 +12,7 @@
     openssl
 
     elixir
-    go
+    # go
     python3
     rustup
 
