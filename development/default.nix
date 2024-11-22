@@ -13,12 +13,12 @@
 
     elixir
     # go
+    # gopls
     python3
     rustup
 
     ccls
     cmake-language-server
-    gopls
     lua-language-server
     nodePackages.bash-language-server
     nodePackages.eslint
