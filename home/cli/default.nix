@@ -8,7 +8,7 @@
     ./eza.nix
     ./fastfetch
     ./fish.nix
-    ./git.nix
+    # ./git.nix
     ./starship.nix
     # ./zsh.nix
   ];
