@@ -3,16 +3,17 @@
   pkgs,
   lib,
   ...
-}: {
-  environment.systemPackages = with pkgs; [
-    nh
-    nix-du
-    nix-prefetch-git
-    nix-prefetch-github
-    # nixfmt
-    alejandra
-    nil
-  ];
+}:
+{
+  # environment.systemPackages = with pkgs; [
+  #   nh
+  #   nix-du
+  #   nix-prefetch-git
+  #   nix-prefetch-github
+  #   # nixfmt
+  #   alejandra
+  #   nil
+  # ];
 
   nixpkgs = {
     config.allowUnfree = true;
@@ -21,7 +22,10 @@
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       substituters = [
         "https://cache.nixos.org/"
         "https://prayag2.cachix.org/"
