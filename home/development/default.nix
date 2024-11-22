@@ -8,5 +8,5 @@
   imports = [
     ./go.nix
   ];
-  go.enable = true;
+  go.enable = false;
 }
