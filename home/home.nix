@@ -9,6 +9,7 @@
     nix-colors.homeManagerModules.default
     ./cli
     ./cli/bat.nix
+    ./cli/eza.nix
     # ./editors
     ./environments/gtk.nix
     ./environments/gnome.nix
@@ -21,6 +22,7 @@
   ];
 
   bat.enable = true;
+  eza.enable = true;
 
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default
