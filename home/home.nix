@@ -20,7 +20,7 @@
     # ./tmux
   ];
 
-  bat.enable = true;
+  bat.enable = false;
 
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default
