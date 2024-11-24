@@ -8,6 +8,7 @@
   imports = [
     nix-colors.homeManagerModules.default
     ./cli
+    ./cli/bat.nix
     # ./editors
     ./environments/gtk.nix
     ./environments/gnome.nix
@@ -18,6 +19,8 @@
     ./development
     # ./tmux
   ];
+
+  bat.enable = true;
 
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default

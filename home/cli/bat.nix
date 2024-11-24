@@ -1,15 +1,21 @@
 {
   pkgs,
+  lib,
+  config,
   ...
 }:
+with lib;
 {
-  programs.bat = {
-    enable = true;
-    catppuccin.enable = true;
-    extraPackages = with pkgs.bat-extras; [
-      batdiff
-      batgrep
-      prettybat
-    ];
+  options.bat.enable = mkEnableOption "bat settings";
+  config = mkIf config.bat.enable {
+    programs.bat = {
+      enable = true;
+      catppuccin.enable = true;
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batgrep
+        prettybat
+      ];
+    };
   };
 }
