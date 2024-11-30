@@ -50,12 +50,8 @@
       fira-code
       material-icons
       cascadia-code
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "Hack"
-          "NerdFontsSymbolsOnly"
-        ];
-      })
+      hack-nerdfont
+      NerdFontsSymbolsOnly-nerdfont
     ];
   };
 }
