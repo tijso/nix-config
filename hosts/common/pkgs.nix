@@ -51,7 +51,7 @@
       material-icons
       cascadia-code
       nerd-fonts.hack
-      nerd-fonts.NerdFontsSymbolsOnly
+      nerd-fonts.symbols-only
     ];
   };
 }
