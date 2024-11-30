@@ -50,8 +50,8 @@
       fira-code
       material-icons
       cascadia-code
-      hack-nerdfont
-      NerdFontsSymbolsOnly-nerdfont
+      nerd-fonts.hack
+      nerd-fonts.NerdFontsSymbolsOnly
     ];
   };
 }
