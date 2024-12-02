@@ -46,6 +46,7 @@
       jetbrains-mono
       noto-fonts
       noto-fonts-emoji
+      maple-mono
       monaspace
       fira-code
       material-icons
