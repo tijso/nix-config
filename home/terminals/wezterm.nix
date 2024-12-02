@@ -2,7 +2,8 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   programs.wezterm = {
     enable = true;
     extraConfig = ''
@@ -12,6 +13,24 @@
         -- color_scheme = "Kanagawa (Gogh)",
         font = wezterm.font "Fira Code",
         -- font = wezterm.font "Monaspace Radon",
+        -- font = wezterm.font "Monaspace Radon",
+        font_rules = {
+        {
+        intensity = "Bold",
+        italic = true,
+        font = wezterm.font({ family = "Maple Mono", weight = "Bold", style = "Italic" }),
+        },
+        {
+        italic = true,
+        intensity = "Half",
+        font = wezterm.font({ family = "Maple Mono", weight = "DemiBold", style = "Italic" }),
+        },
+        {
+        italic = true,
+        intensity = "Normal",
+        font = wezterm.font({ family = "Maple Mono", style = "Italic" }),
+        },
+        },
         font_size = 16.0,
         window_background_opacity = 1.00,
         window_close_confirmation = "NeverPrompt",
