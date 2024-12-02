@@ -38,29 +38,40 @@
       # set -g fish_pager_color_description 6c7086
 
       # Tokonight
-      set -g fish_color_normal c0caf5
-      set -g fish_color_command 7dcfff
-      set -g fish_color_keyword bb9af7
-      set -g fish_color_quote e0af68
-      set -g fish_color_redirection c0caf5
-      set -g fish_color_end ff9e64
-      set -g fish_color_option bb9af7
-      set -g fish_color_error f7768e
-      set -g fish_color_param 9d7cd8
-      set -g fish_color_comment 565f89
-      set -g fish_color_selection --background=283457
-      set -g fish_color_search_match --background=283457
-      set -g fish_color_operator 9ece6a
-      set -g fish_color_escape bb9af7
-      set -g fish_color_autosuggestion 565f89
+      set -l foreground c0caf5
+      set -l selection 283457
+      set -l comment 565f89
+      set -l red f7768e
+      set -l orange ff9e64
+      set -l yellow e0af68
+      set -l green 9ece6a
+      set -l purple 9d7cd8
+      set -l cyan 7dcfff
+      set -l pink bb9af7
+
+      # Syntax Highlighting Colors
+      set -g fish_color_normal $foreground
+      set -g fish_color_command $cyan
+      set -g fish_color_keyword $pink
+      set -g fish_color_quote $yellow
+      set -g fish_color_redirection $foreground
+      set -g fish_color_end $orange
+      set -g fish_color_option $pink
+      set -g fish_color_error $red
+      set -g fish_color_param $purple
+      set -g fish_color_comment $comment
+      set -g fish_color_selection --background=$selection
+      set -g fish_color_search_match --background=$selection
+      set -g fish_color_operator $green
+      set -g fish_color_escape $pink
+      set -g fish_color_autosuggestion $comment
 
       # Completion Pager Colors
-      set -g fish_pager_color_progress 565f89
-      set -g fish_pager_color_prefix 7dcfff
-      set -g fish_pager_color_completion c0caf5
-      set -g fish_pager_color_description 565f89
-      set -g fish_pager_color_selected_background --background=283457
-
+      set -g fish_pager_color_progress $comment
+      set -g fish_pager_color_prefix $cyan
+      set -g fish_pager_color_completion $foreground
+      set -g fish_pager_color_description $comment
+      set -g fish_pager_color_selected_background --background=$selection 
 
       # Kanagawa
       # set -g fish_color_normal DCD7BA
