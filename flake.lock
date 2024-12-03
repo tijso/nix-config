@@ -619,11 +619,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1733095793,
-        "narHash": "sha256-woqkmcGxOleK1RyoZpXU3NaC4+epr2qYau2mVhVQFjY=",
+        "lastModified": 1733194713,
+        "narHash": "sha256-zGy98Hs0AUeeHrB1qnohLhOjrBKjA9hTd26QNR5ZI5c=",
         "owner": "lilyinstarlight",
         "repo": "nixos-cosmic",
-        "rev": "e468c8b79dd55f1ce8803887d3593fb0016f1f81",
+        "rev": "9edb4815049cf8d7db652915e0555531abc89fa3",
         "type": "github"
       },
       "original": {
@@ -693,16 +693,16 @@
     },
     "nixpkgs-stable_2": {
       "locked": {
-        "lastModified": 1732749044,
-        "narHash": "sha256-T38FQOg0BV5M8FN1712fovzNakSOENEYs+CSkg31C9Y=",
+        "lastModified": 1732981179,
+        "narHash": "sha256-F7thesZPvAMSwjRu0K8uFshTk3ZZSNAsXTIFvXBT+34=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0c5b4ecbed5b155b705336aa96d878e55acd8685",
+        "rev": "62c435d93bf046a5396f3016472e8f7c8e2aed65",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-24.05",
+        "ref": "nixos-24.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -763,11 +763,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1733182529,
-        "narHash": "sha256-e7PMrJ/RRc/YM2dIPQ12s9CcutvInbKLXPIFr6v7VRw=",
+        "lastModified": 1733196488,
+        "narHash": "sha256-yTEiuTBFf+ywLjRifQS9eaiRjVMaBE6Zt0oFF4eA8DI=",
         "owner": "tijso",
         "repo": "nixvim",
-        "rev": "0139b254a15b50b969c5ac21dc34376dd5463db4",
+        "rev": "e4aef7ea5c27f920992fe33e648fd4e79882f55f",
         "type": "github"
       },
       "original": {
