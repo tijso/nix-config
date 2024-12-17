@@ -33,7 +33,7 @@
         --},
         --},
         font_size = 16.0,
-        window_background_opacity = .90,
+        window_background_opacity = .95,
         window_close_confirmation = "NeverPrompt",
         use_fancy_tab_bar = true,
         hide_tab_bar_if_only_one_tab = true,
