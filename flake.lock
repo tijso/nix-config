@@ -823,11 +823,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1734488552,
-        "narHash": "sha256-rn6efX86Izpkd9XQewDzOaty5iLYm3q4jXOkS8dTX48=",
+        "lastModified": 1734513101,
+        "narHash": "sha256-OK0FTzlLXG/byWOeLQV6tarmP72XWPEw7Zy6zTLLm5s=",
         "owner": "tijso",
         "repo": "nixvim",
-        "rev": "b11601254faca8e9b67bc0b043de4be2bce44556",
+        "rev": "e87a5f070af00b8970b3c96fd7203545f7f5af7e",
         "type": "github"
       },
       "original": {
