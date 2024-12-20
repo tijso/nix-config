@@ -12,6 +12,8 @@
           selected_themes = [
             "rings"
             "optimus"
+            "cybernetic"
+            "dark planet"
           ];
         })
       ];
