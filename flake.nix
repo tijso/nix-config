@@ -40,6 +40,7 @@
       systems,
       nix-colors,
       nixos-cosmic,
+      nixos-grub-themes,
       nixvim,
       catppuccin,
       hyprland,
