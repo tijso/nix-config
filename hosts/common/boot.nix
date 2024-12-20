@@ -6,12 +6,12 @@
     initrd.verbose = false;
     plymouth = {
       enable = true;
-      theme = "Optimus";
+      theme = "optimus";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
           selected_themes = [
-            "Rings"
-            "Optimus"
+            "rings"
+            "optimus"
           ];
         })
       ];
