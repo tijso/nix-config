@@ -26,6 +26,7 @@
     # Theming
     nix-colors.url = "github:misterio77/nix-colors";
     catppuccin.url = "github:catppuccin/nix";
+    nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
 
     # Custom Flakes
     nixvim.url = "github:tijso/nixvim";
