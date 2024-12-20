@@ -4,11 +4,14 @@
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "v4l2loopback" ];
     initrd.verbose = false;
-    catppuccin = {
+    plymouth = {
       enable = true;
-      plymouth = {
+      catppuccin = {
         enable = true;
         flavor = "mocha";
+        plymouth = {
+          enable = true;
+        };
       };
       # theme = "rings";
       # themePackages = with pkgs; [
