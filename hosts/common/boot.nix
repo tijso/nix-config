@@ -28,7 +28,7 @@
         efiSupport = true;
         useOSProber = true;
         configurationLimit = 10;
-        theme = inputs.nixos-grub-themes.packages.${pkgs.system}.nixos;
+        theme = inputs.nixos-grub-themes.packages.${pkgs.system}.big-sur;
         # catppuccin = {
         #   enable = true;
         #   flavor = "mocha";
