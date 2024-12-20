@@ -13,8 +13,7 @@
             "rings"
             "optimus"
             "cybernetic"
-            "catppuccin"
-            "darkplanet"
+            "dark-planet"
           ];
         })
       ];
