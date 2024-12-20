@@ -8,9 +8,8 @@
       enable = true;
       catppuccin = {
         enable = true;
-        flavor = "mocha";
         plymouth = {
-          enable = true;
+          flavor = "mocha";
         };
       };
       # theme = "rings";
