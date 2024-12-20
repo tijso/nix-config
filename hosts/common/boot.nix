@@ -25,13 +25,15 @@
       grub = {
         enable = true;
         devices = [ "nodev" ];
-        catppuccin = {
-          enable = true;
-          flavor = "mocha";
-        };
         efiSupport = true;
         useOSProber = true;
         configurationLimit = 10;
+        extraConfig = "set theme=($drive2)${pkgs.breeze-grub}/grub/themes/breeze/theme.txt";
+        splashImage = null;
+        # catppuccin = {
+        #   enable = true;
+        #   flavor = "mocha";
+        # };
       };
     };
   };
