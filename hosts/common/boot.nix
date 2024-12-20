@@ -1,11 +1,12 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["v4l2loopback"];
+    kernelModules = [ "v4l2loopback" ];
     initrd.verbose = false;
-    plymouth = {
+    catppuccin = {
       enable = true;
-      catppuccin = {
+      plymouth = {
         enable = true;
         flavor = "mocha";
       };
@@ -22,8 +23,8 @@
       efi.efiSysMountPoint = "/boot";
       grub = {
         enable = true;
-        devices = ["nodev"];
-        catppuccin={
+        devices = [ "nodev" ];
+        catppuccin = {
           enable = true;
           flavor = "mocha";
         };
@@ -35,7 +36,7 @@
   };
 }
 
-  #   boot = {
+#   boot = {
 #     supportedFilesystems = [ "ntfs" ];
 #     loader.grub.enable = false;
 #     loader.systemd-boot.enable = true;
