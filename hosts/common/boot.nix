@@ -13,7 +13,6 @@
             "rings"
             "optimus"
             "cybernetic"
-            "Glow"
             "lone"
           ];
         })
