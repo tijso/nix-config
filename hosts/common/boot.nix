@@ -13,7 +13,8 @@
             "rings"
             "optimus"
             "cybernetic"
-            "Dark Planet"
+            "glow"
+            "lone"
           ];
         })
       ];
