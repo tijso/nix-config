@@ -4,21 +4,18 @@
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "v4l2loopback" ];
     initrd.verbose = false;
-    catppuccin = {
+    plymouth = {
       enable = true;
-      plymouth = {
-        flavor = "mocha";
-      };
+      theme = "Optimus";
+      themePackages = with pkgs; [
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [
+            "Rings"
+            "Optimus"
+          ];
+        })
+      ];
     };
-    # plymouth = {
-    # enable = true;
-    # theme = "rings";
-    # themePackages = with pkgs; [
-    #   (adi1090x-plymouth-themes.override {
-    #     selected_themes = ["rings"];
-    #   })
-    # ];
-    # };
 
     loader = {
       efi.canTouchEfiVariables = true;
