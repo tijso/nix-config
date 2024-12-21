@@ -28,16 +28,16 @@
         efiSupport = true;
         useOSProber = true;
         configurationLimit = 10;
-        grub2-theme = {
-          theme = "stylish";
-          footer = true;
-          customResolution = "3840x2160";
-        };
         # theme = inputs.nixos-grub-themes.packages.${pkgs.system}.big-sur;
         # catppuccin = {
         #   enable = true;
         #   flavor = "mocha";
         # };
+      };
+      grub2-theme = {
+        theme = "stylish";
+        footer = true;
+        customResolution = "3840x2160";
       };
     };
   };
