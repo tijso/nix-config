@@ -26,7 +26,10 @@
     # Theming
     nix-colors.url = "github:misterio77/nix-colors";
     catppuccin.url = "github:catppuccin/nix";
-    nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
+    # nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
+    grub2-themes = {
+      url = "github:vinceliuice/grub2-themes";
+    };
 
     # Custom Flakes
     nixvim.url = "github:tijso/nixvim";
@@ -43,6 +46,7 @@
       nixvim,
       catppuccin,
       hyprland,
+      grub2-themes,
       ...
     }@inputs:
     let
@@ -80,6 +84,7 @@
             }
             nixos-cosmic.nixosModules.default
             catppuccin.nixosModules.catppuccin
+            grub2-themes.nixosModules.default
           ];
         };
       };
