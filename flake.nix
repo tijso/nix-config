@@ -31,8 +31,12 @@
       url = "github:vinceliuice/grub2-themes";
     };
 
+    # My Nvim Config
+    # nvim.url = "github:tijso/nvim";
+
     # Custom Flakes
     nixvim.url = "github:tijso/nixvim";
+
   };
 
   outputs =
