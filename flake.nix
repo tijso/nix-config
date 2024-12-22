@@ -45,7 +45,7 @@
       nixpkgs,
       home-manager,
       systems,
-      nix-colors,
+      # nix-colors,
       nixos-cosmic,
       nixvim,
       catppuccin,
@@ -97,7 +97,7 @@
         "tijso@serenity" = lib.homeManagerConfiguration {
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = {
-            inherit inputs outputs nix-colors;
+            inherit inputs outputs;
           };
           modules = [
             ./home/home.nix

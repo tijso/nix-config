@@ -1,12 +1,11 @@
 {
   pkgs,
   inputs,
-  nix-colors,
   ...
 }:
 {
   imports = [
-    nix-colors.homeManagerModules.default
+    inputs.nix-colors.homeManagerModule
     ./cli
     ./cli/bat.nix
     ./cli/eza.nix
@@ -43,7 +42,7 @@
     pamixer
   ];
 
-  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
+  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-dark;
 
   home = {
     username = "tijso";
