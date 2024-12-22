@@ -9,8 +9,8 @@
     enableFishIntegration = true;
     settings = {
       format = ''
-        [┌](fg:#${config.colorScheme.palette.base02}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
-        [└](fg:#${config.colorScheme.palette.base02}) $os$character
+        [┌](fg:#${config.colorScheme.palette.base08}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
+        [└](fg:#${config.colorScheme.palette.base08}) $os$character
       '';
 
       character = {
