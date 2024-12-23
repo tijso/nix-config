@@ -3,18 +3,27 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   gtk = {
     enable = true;
 
     theme = {
-      name = "Catppuccin-Mocha-Standard-Teal-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = ["teal"];
-        size = "standard";
-        tweaks = ["normal"];
-        variant = "mocha";
+      name = "Tokyonight-Dark";
+      package = pkgs.tokyonight-gtk-theme.override {
+        themeVariants = [ "default" ];
+        tweakVariants = [
+          "outline"
+          "float"
+        ];
       };
+      # name = "Catppuccin-Mocha-Standard-Teal-Dark";
+      # package = pkgs.catppuccin-gtk.override {
+      #   accents = ["teal"];
+      #   size = "standard";
+      #   tweaks = ["normal"];
+      #   variant = "mocha";
+      # };
     };
 
     iconTheme = {
