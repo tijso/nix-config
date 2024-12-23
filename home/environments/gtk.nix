@@ -36,8 +36,8 @@
     cursorTheme = {
       # name = "Bibata-Modern-Ice";
       # package = pkgs.bibata-cursors;
-      name = "capitaine-cursors";
-      package = pkgs.capitaine-cursors;
+      name = "Yaru";
+      package = pkgs.yaru-theme;
       size = 20;
     };
 
