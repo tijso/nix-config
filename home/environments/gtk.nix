@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  lib,
   ...
 }:
 {
@@ -36,8 +34,10 @@
     };
 
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
+      # name = "Bibata-Modern-Ice";
+      # package = pkgs.bibata-cursors;
+      name = "capitaine-cursors";
+      package = pkgs.capitaine-cursors;
       size = 20;
     };
 
