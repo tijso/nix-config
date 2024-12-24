@@ -7,9 +7,9 @@
     enable = true;
 
     theme = {
-      name = "Tokyonight-Dark";
+      name = "Tokyonight-Dark-BL";
       package = pkgs.tokyonight-gtk-theme.override {
-        themeVariants = [ "default" ];
+        themeVariants = [ "Dark-BL" ];
         tweakVariants = [
           "outline"
           "float"
@@ -25,12 +25,14 @@
     };
 
     iconTheme = {
-      name = "Papirus-Dark";
+      name = "Fluent-orange-dark";
+      package = pkgs.fluent-icon-theme.override { colorVariants = [ "orange" ]; };
+      # name = "Papirus-Dark";
       # package = pkgs.papirus-icon-theme;
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "teal";
-      };
+      # package = pkgs.catppuccin-papirus-folders.override {
+      #   flavor = "mocha";
+      #   accent = "teal";
+      # };
     };
 
     cursorTheme = {
