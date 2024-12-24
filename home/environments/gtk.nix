@@ -36,11 +36,9 @@
     };
 
     cursorTheme = {
-      # name = "Bibata-Modern-Ice";
-      # package = pkgs.bibata-cursors;
-      name = "Yaru";
-      package = pkgs.yaru-theme;
-      size = 20;
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
     };
 
     gtk3.extraConfig = {
