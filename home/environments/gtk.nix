@@ -9,7 +9,7 @@
     theme = {
       name = "Tokyonight-Dark-BL";
       package = pkgs.tokyonight-gtk-theme.override {
-        themeVariants = [ "Dark-BL" ];
+        themeVariants = [ "teal" ];
         tweakVariants = [
           "outline"
           "float"
