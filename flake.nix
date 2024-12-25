@@ -45,7 +45,7 @@
       nixpkgs,
       home-manager,
       systems,
-      # nix-colors,
+      nix-colors,
       nixos-cosmic,
       nixvim,
       catppuccin,
