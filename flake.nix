@@ -92,6 +92,11 @@
                 trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
               };
             }
+            {
+              environment.systemPackages = [
+                ghostty.packages.x86_64-linux.default
+              ];
+            }
             nixos-cosmic.nixosModules.default
             catppuccin.nixosModules.catppuccin
             grub2-themes.nixosModules.default
