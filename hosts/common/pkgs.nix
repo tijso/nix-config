@@ -8,7 +8,7 @@
 
   # Environment system packages
   environment.systemPackages = with pkgs; [
-    ghostty
+    ghostty.packages.x86_64-linux.default
     bibata-cursors
     binutils
     brave
