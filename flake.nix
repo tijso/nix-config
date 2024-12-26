@@ -95,7 +95,6 @@
             nixos-cosmic.nixosModules.default
             catppuccin.nixosModules.catppuccin
             grub2-themes.nixosModules.default
-            ghostty.packages.x86_64-linux.default
           ];
         };
       };
