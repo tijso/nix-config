@@ -37,6 +37,11 @@
     # Custom Flakes
     nixvim.url = "github:tijso/nixvim";
 
+    # Terminal
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
+
   };
 
   outputs =
@@ -51,6 +56,7 @@
       catppuccin,
       hyprland,
       grub2-themes,
+      ghostty,
       ...
     }@inputs:
     let
@@ -89,6 +95,7 @@
             nixos-cosmic.nixosModules.default
             catppuccin.nixosModules.catppuccin
             grub2-themes.nixosModules.default
+            ghostty.packages.x86_64-linux.default
           ];
         };
       };
