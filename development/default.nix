@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -14,7 +14,7 @@
     elixir
     # go
     # gopls
-    python3
+    # python3
     rustup
 
     ccls
