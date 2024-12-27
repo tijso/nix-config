@@ -14,7 +14,7 @@
     elixir
     # go
     # gopls
-    # python3
+    python3
     rustup
 
     ccls
@@ -24,7 +24,7 @@
     nodePackages.eslint
     nodePackages.prettier
     # nodePackages_latest.pyright
-    pyright
+    # pyright
     nodePackages.typescript
     nodePackages.typescript-language-server
     vscode-langservers-extracted
