@@ -23,8 +23,7 @@
     nodePackages.bash-language-server
     nodePackages.eslint
     nodePackages.prettier
-    # nodePackages_latest.pyright
-    # pyright
+    pyright
     nodePackages.typescript
     nodePackages.typescript-language-server
     vscode-langservers-extracted
