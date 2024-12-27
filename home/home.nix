@@ -61,10 +61,10 @@
     enableFishIntegration = true;
   };
 
-  home.file.".config/ghostty/config" = {
-    source = ../../config/ghostty/config;
-    recursive = true;
-  };
+  # home.file.".config/ghostty/config" = {
+  #   source = ../../config/ghostty/config;
+  #   recursive = true;
+  # };
 
   # programs.direnv = {
   #   enable = true;
