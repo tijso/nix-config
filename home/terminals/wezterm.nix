@@ -32,7 +32,7 @@
         --font = wezterm.font({ family = "Maple Mono", style = "Italic" }),
         --},
         --},
-        font_size = 16.0,
+        font_size = 18.0,
         window_background_opacity = .95,
         window_close_confirmation = "NeverPrompt",
         use_fancy_tab_bar = true,
