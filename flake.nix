@@ -38,9 +38,9 @@
     nixvim.url = "github:tijso/nixvim";
 
     # Terminal
-    # ghostty = {
-    #   url = "github:ghostty-org/ghostty";
-    # };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
 
   };
 
@@ -56,7 +56,7 @@
       catppuccin,
       hyprland,
       grub2-themes,
-      # ghostty,
+      ghostty,
       ...
     }@inputs:
     let
