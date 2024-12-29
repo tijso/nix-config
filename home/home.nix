@@ -25,7 +25,7 @@
 
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default
-    inputs.ghostty.packages."${pkgs.system}".default
+    # inputs.ghostty.packages."${pkgs.system}".default
     tree
     btop
     inkscape
