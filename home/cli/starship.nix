@@ -1,115 +1,96 @@
 {
   config,
-  lib,
   ...
 }:
 {
-  home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
-
   programs.starship = {
     enable = true;
-    enableNushellIntegration = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
     settings = {
-      palette = "tokyonight";
-      add_newline = false;
-      palettes.tokyonight = {
-        red = "#f7768e";
-        orange = "#ff9e64";
-        yellow = "#e0af68";
-        light-green = "#9ece6a";
-        green = "#73daca";
-        turquoise = "#89ddff";
-        light-cyan = "#b4f9f8";
-        teal = "#2ac3de";
-        cyan = "#7dcfff";
-        blue = "#7aa2f7";
-        magenta = "#bb9af7";
-        white = "#c0caf5";
-        light-gray = "#9aa5ce";
-        parameters = "#cfc9c2";
-        comment = "#565f89";
-        black = "#414868";
-        foreground = "#a9b1d6";
-        background = "#1a1b26";
-      };
-      format = lib.concatStrings [
-        "$character"
-        "$hostname"
-        "$directory"
-        "$git_branch"
-        "$git_status"
-        "$rust"
-        "$golang"
-      ];
-      right_format = lib.concatStrings [
-        "$direnv"
-        "$nix_shell"
-      ];
+      format = ''
+        [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
+        [└](fg:#${config.colorScheme.palette.base0A}) $os$character
+      '';
+
       character = {
-        error_symbol = "[](bold red)";
-        success_symbol = "[](bold white)";
+        format = "$symbol";
+        success_symbol = "[->](fg:#${config.colorScheme.palette.base0A}) ";
+        error_symbol = "[┤](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
       };
+
       username = {
         show_always = false;
-        format = "[$user]($style)";
-        style_user = "red";
+        style_user = "fg:#${config.colorScheme.palette.base03}";
+        style_root = "fg:#${config.colorScheme.palette.base03}";
+        format = "[$user@]($style)";
       };
+
       hostname = {
-        ssh_symbol = "🌐";
-        format = "[$hostname $ssh_symbol]($style)";
-        ssh_only = true;
-        disabled = false;
+        ssh_only = false;
+        format = "[$hostname]($style) ";
+        style = "fg:#${config.colorScheme.palette.base0C}";
       };
+
       directory = {
-        format = "[$path ]($style)";
-        truncation_length = 3;
-        truncation_symbol = "…/";
-        read_only = "🔒";
-        style = "red";
-        home_symbol = "";
+        truncation_length = 1;
+        truncation_symbol = "";
+        fish_style_pwd_dir_length = 1;
+        style = "fg:#${config.colorScheme.palette.base07}";
       };
-      directory.substitutions = {
-        "Documents" = " ";
-        "Downloads" = " ";
-        "Music" = " ";
-        "Pictures" = " ";
-      };
-      nix_shell = {
+
+      os = with config.colorScheme.palette; {
         disabled = false;
-        impure_msg = "[impure shell](bold red)";
-        pure_msg = "[pure shell](bold green)";
-        unknown_msg = "[unknown shell](bold yellow)";
-        format = "[$state( \($name\))](bold white)";
+        style = "fg:#${base0D}";
+        symbols = {
+          # Arch = "[ ]($style)";
+          NixOS = "[ ]($style)";
+          # Linux = "[  ](fg:fg $style)";
+        };
       };
-      direnv = {
-        disabled = false;
-        detect_files = [ ".envrc" ];
-        style = "bold turquoise";
-      };
+
       git_branch = {
-        symbol = "";
-        format = "[$symbol $branch ]($style)";
-        style = "turquoise";
+        style = "fg:#${config.colorScheme.palette.base0E}";
       };
+
       git_status = {
-        format = "[$all_status$ahead_behind ]($style)";
-        style = "red";
+        conflicted = " ";
+        ahead = " ";
+        behind = " 󱊾 ";
+        diverged = "󱡷 ";
+        untracked = "";
+        stashed = " ";
+        modified = " ";
+        staged = " ";
+        renamed = " ";
+        deleted = "󰆴 ";
+        style = "fg:#${config.colorScheme.palette.base0E}";
       };
+
       golang = {
-        symbol = "";
-        format = "[$symbol ($version) ]($style)";
-        style = "teal";
+        format = "[$symbol $version]($style)";
+        symbol = " ";
+        style = "fg:#${config.colorScheme.palette.base0C}";
       };
+
       rust = {
+        format = "[$symbol$version]($style)";
         symbol = "";
-        format = "[$symbol ($version) ]($style)";
-        style = "orange";
+        style = "fg:#${config.colorScheme.palette.base0C}";
       };
-      time = {
-        disabled = false;
-        time_format = "%R";
-        format = "[ $time ]($style)";
-        style = "red";
+
+      python = {
+        format = "[$symbol$version]($style)";
+        symbol = "";
+        style = "fg:#${config.colorScheme.palette.base0A}";
+      };
+
+      nix_shell = {
+        format = "[$symbol$state($name)]($style) ";
+        style = "fg:#${config.colorScheme.palette.base0D}";
+        symbol = " ";
+        impure_msg = "";
+        pure_msg = "pure ";
       };
     };
   };
