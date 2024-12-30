@@ -1,96 +1,97 @@
-{ lib, inputs, ... }:
 {
-  programs.starship = {
-    enable = true;
+  programs = {
+    starship = {
+      enable = true;
 
-    enableBashIntegration = true;
-    enableZshIntegration = true;
-    enableFishIntegration = true;
-    enableNushellIntegration = true;
+      settings = {
+        add_newline = false;
 
-    settings = {
-      format = lib.concatStrings [
-        "[](color_orange)"
-        "$os"
-        "[](bg:color_yellow fg:color_orange)"
-        "$directory"
-        "[](fg:color_yellow bg:color_aqua)"
-        "$git_branch"
-        "$git_status"
-        "[](fg:color_aqua bg:color_blue)"
-        "$nix_shell"
-        "[](fg:color_blue bg:color_bg3)"
-        "$cmd_duration"
-        "[](fg:color_bg3) "
-      ];
+        format = ''
+          [┌ ](bold blue)$username[@](bold blue)$hostname$kubernetes$directory$git_branch$git_commit$git_state$git_status$docker_context$package$golang$helm$java$cmake$julia$kotlin$lua$nim$nodejs$python$ruby$rust$swift$terraform$aws$gcloud$azure$nix_shell$fill$character$cmd_duration$time
+          [└─> ](bold blue)
+        '';
 
-      palette = "gruvbox_dark";
-      palettes.gruvbox_dark = {
-        color_fg0 = "#fbf1c7";
-        color_bg1 = "#3c3836";
-        color_bg3 = "#665c54";
-        color_blue = "#458588";
-        color_aqua = "#689d6a";
-        color_green = "#98971a";
-        color_orange = "#d65d0e";
-        color_purple = "#b16286";
-        color_red = "#cc241d";
-        color_yellow = "#d79921";
-      };
+        fill.symbol = " ";
 
-      os = {
-        disabled = false;
-        style = "bg:color_orange bold fg:color_fg0";
-        symbols = {
-          NixOS = " ";
+        character = {
+          error_symbol = "[](bold red)";
+          success_symbol = "[](bold green)";
+          vimcmd_symbol = "[N](bold blue)";
+          vimcmd_visual_symbol = "[V](bold red)";
+          vimcmd_replace_one_symbol = "[R](bold purple)";
+          vimcmd_replace_symbol = "[R](bold purple)";
         };
-      };
 
-      directory = {
-        style = "bold fg:color_fg0 bg:color_yellow";
-        format = "[ $path ]($style)";
-        truncation_length = 3;
-      };
+        username = {
+          style_user = "blue bold";
+          style_root = "red bold";
+          format = "[$user]($style)";
+          disabled = false;
+          show_always = true;
+        };
 
-      git_branch = {
-        symbol = "";
-        style = "bg:color_aqua";
-        format = "[[ $symbol $branch ](bold fg:color_fg0 bg:color_aqua)]($style)";
-      };
+        hostname = {
+          ssh_only = false;
+          format = "[$hostname]($style) ";
+          style = "blue bold";
+          trim_at = ".";
+          disabled = false;
+        };
 
-      git_status = {
-        style = "bg:color_aqua bold fg:color_fg0";
-        format = "[$all_status$ahead_behind]($style)";
-      };
+        nix_shell = {
+          symbol = " ";
+        };
 
-      nix_shell = {
-        format = "[ via nix $name ]($style)";
-        style = "bg:color_blue bold fg:color_fg0";
-      };
+        golang = {
+          style = "blue";
+          symbol = " ";
+        };
 
-      time = {
-        disabled = false;
-        time_format = "%R";
-        style = "bg:color_bg1";
-        format = "[[   $time ](fg:color_fg0 bg:color_bg1)]($style)";
-      };
+        lua = {
+          symbol = " ";
+        };
 
-      cmd_duration = {
-        format = "[ 󰔛 $duration ]($style)";
-        disabled = false;
-        style = "bg:color_bg3 fg:color_fg0";
-        show_notifications = false;
-        min_time_to_notify = 60000;
-      };
+        cmake = {
+          style = "green";
+          symbol = "△ ";
+        };
 
-      line_break = {
-        disabled = false;
-      };
+        git_branch = {
+          symbol = " ";
+        };
+        rust = {
+          symbol = " ";
+        };
+        nodejs = {
+          symbol = " ";
+        };
+        docker_context = {
+          symbol = " ";
+        };
 
-      character = {
-        disabled = false;
-        success_symbol = "[  ](bold fg:color_green)";
-        error_symbol = "[  ](bold fg:color_red)";
+        time = {
+          format = "[$time]($style) ";
+          style = "bold blue";
+          disabled = false;
+        };
+
+        cmd_duration = {
+          format = "[$duration]($style) ";
+          style = "bold blue";
+        };
+
+        status = {
+          format = "[$symbol]($style) ";
+          symbol = "[](bold red)";
+          success_symbol = "[](bold green)";
+          disabled = false;
+        };
+
+        directory = {
+          read_only = " ";
+          truncation_length = 7;
+          truncation_symbol = "… /";
+        };
       };
     };
   };
