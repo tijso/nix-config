@@ -1,97 +1,115 @@
 {
-  programs = {
-    starship = {
-      enable = true;
+  config,
+  lib,
+  ...
+}:
+{
+  home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
 
-      settings = {
-        add_newline = false;
-
-        format = ''
-          [┌ ](bold blue)$username[@](bold blue)$hostname$kubernetes$directory$git_branch$git_commit$git_state$git_status$docker_context$package$golang$helm$java$cmake$julia$kotlin$lua$nim$nodejs$python$ruby$rust$swift$terraform$aws$gcloud$azure$nix_shell$fill$character$cmd_duration$time
-          [└─> ](bold blue)
-        '';
-
-        fill.symbol = " ";
-
-        character = {
-          error_symbol = "[](bold red)";
-          success_symbol = "[](bold green)";
-          vimcmd_symbol = "[N](bold blue)";
-          vimcmd_visual_symbol = "[V](bold red)";
-          vimcmd_replace_one_symbol = "[R](bold purple)";
-          vimcmd_replace_symbol = "[R](bold purple)";
-        };
-
-        username = {
-          style_user = "blue bold";
-          style_root = "red bold";
-          format = "[$user]($style)";
-          disabled = false;
-          show_always = true;
-        };
-
-        hostname = {
-          ssh_only = false;
-          format = "[$hostname]($style) ";
-          style = "blue bold";
-          trim_at = ".";
-          disabled = false;
-        };
-
-        nix_shell = {
-          symbol = " ";
-        };
-
-        golang = {
-          style = "blue";
-          symbol = " ";
-        };
-
-        lua = {
-          symbol = " ";
-        };
-
-        cmake = {
-          style = "green";
-          symbol = "△ ";
-        };
-
-        git_branch = {
-          symbol = " ";
-        };
-        rust = {
-          symbol = " ";
-        };
-        nodejs = {
-          symbol = " ";
-        };
-        docker_context = {
-          symbol = " ";
-        };
-
-        time = {
-          format = "[$time]($style) ";
-          style = "bold blue";
-          disabled = false;
-        };
-
-        cmd_duration = {
-          format = "[$duration]($style) ";
-          style = "bold blue";
-        };
-
-        status = {
-          format = "[$symbol]($style) ";
-          symbol = "[](bold red)";
-          success_symbol = "[](bold green)";
-          disabled = false;
-        };
-
-        directory = {
-          read_only = " ";
-          truncation_length = 7;
-          truncation_symbol = "… /";
-        };
+  programs.starship = {
+    enable = true;
+    enableNushellIntegration = true;
+    settings = {
+      palette = "tokyonight";
+      add_newline = false;
+      palettes.tokyonight = {
+        red = "#f7768e";
+        orange = "#ff9e64";
+        yellow = "#e0af68";
+        light-green = "#9ece6a";
+        green = "#73daca";
+        turquoise = "#89ddff";
+        light-cyan = "#b4f9f8";
+        teal = "#2ac3de";
+        cyan = "#7dcfff";
+        blue = "#7aa2f7";
+        magenta = "#bb9af7";
+        white = "#c0caf5";
+        light-gray = "#9aa5ce";
+        parameters = "#cfc9c2";
+        comment = "#565f89";
+        black = "#414868";
+        foreground = "#a9b1d6";
+        background = "#1a1b26";
+      };
+      format = lib.concatStrings [
+        "$character"
+        "$hostname"
+        "$directory"
+        "$git_branch"
+        "$git_status"
+        "$rust"
+        "$golang"
+      ];
+      right_format = lib.concatStrings [
+        "$direnv"
+        "$nix_shell"
+      ];
+      character = {
+        error_symbol = "[](bold red)";
+        success_symbol = "[](bold white)";
+      };
+      username = {
+        show_always = false;
+        format = "[$user]($style)";
+        style_user = "red";
+      };
+      hostname = {
+        ssh_symbol = "🌐";
+        format = "[$hostname $ssh_symbol]($style)";
+        ssh_only = true;
+        disabled = false;
+      };
+      directory = {
+        format = "[$path ]($style)";
+        truncation_length = 3;
+        truncation_symbol = "…/";
+        read_only = "🔒";
+        style = "red";
+        home_symbol = "";
+      };
+      directory.substitutions = {
+        "Documents" = " ";
+        "Downloads" = " ";
+        "Music" = " ";
+        "Pictures" = " ";
+      };
+      nix_shell = {
+        disabled = false;
+        impure_msg = "[impure shell](bold red)";
+        pure_msg = "[pure shell](bold green)";
+        unknown_msg = "[unknown shell](bold yellow)";
+        format = "[$state( \($name\))](bold white)";
+      };
+      direnv = {
+        disabled = false;
+        detect_files = [ ".envrc" ];
+        style = "bold turquoise";
+      };
+      git_branch = {
+        symbol = "";
+        format = "[$symbol $branch ]($style)";
+        style = "turquoise";
+      };
+      git_status = {
+        format = "[$all_status$ahead_behind ]($style)";
+        style = "red";
+      };
+      golang = {
+        symbol = "";
+        format = "[$symbol ($version) ]($style)";
+        style = "teal";
+      };
+      rust = {
+        symbol = "";
+        format = "[$symbol ($version) ]($style)";
+        style = "orange";
+      };
+      time = {
+        disabled = false;
+        time_format = "%R";
+        format = "[ $time ]($style)";
+        style = "red";
       };
     };
   };
