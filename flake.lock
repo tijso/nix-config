@@ -303,11 +303,11 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1735589157,
-        "narHash": "sha256-s5fJn9LSwz3cfkKSvicQppCnXVs8F05OH96yaa5K2Dc=",
+        "lastModified": 1735590259,
+        "narHash": "sha256-NzqiAppzcwt+6nTKMBCdal84aNyl1B7dAhWadRj9wPM=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "ef542c6e63b40b3541dc5efd625c0b95f750bbc6",
+        "rev": "9204bb888f7f7112045084393d623c0f9e3a83f0",
         "type": "github"
       },
       "original": {
@@ -1032,11 +1032,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1735589391,
-        "narHash": "sha256-jCXB1jS2wYuqTNusN54psyvvNo9wjr6nEz6fqu/P9fU=",
+        "lastModified": 1735590999,
+        "narHash": "sha256-+UV7NvvMAvZVOl2eEVAprYntWHyUBxZ+YHl2pWnOEXw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c4f2bb3f2e143db7a9b117a4727ea33e97d49f9f",
+        "rev": "c8dc84e6b4083018f04987e6be40631556b7f4ee",
         "type": "github"
       },
       "original": {
@@ -1102,11 +1102,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1735590070,
-        "narHash": "sha256-bZNxQIz5r5JRAGsA6gBFUI6nWfq2v0In/5gYm58BZSM=",
+        "lastModified": 1735590973,
+        "narHash": "sha256-5pqWDnkFhLOvsNBcptHlLsOgZ3zQ3iUkEx+mMDyM7as=",
         "owner": "tijso",
         "repo": "nixvim",
-        "rev": "087d475cca065912f4bcb72ba12df5b0d8a9630f",
+        "rev": "c6cfdded7c7bde0d9942e229773617128e5d96f9",
         "type": "github"
       },
       "original": {
