@@ -43,7 +43,7 @@
     pamixer
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
+  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-dark;
 
   home = {
     username = "tijso";
