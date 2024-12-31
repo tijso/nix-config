@@ -48,7 +48,7 @@
               --},
               font_size = 18.0,
 
-              window_background_opacity = .95,
+              window_background_opacity = 0.9,
               window_decorations = "RESIZE",
               window_close_confirmation = "NeverPrompt",
               use_fancy_tab_bar = true,
