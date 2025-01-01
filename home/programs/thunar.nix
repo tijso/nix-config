@@ -9,7 +9,9 @@ let
   cfg = config.modules.programs.thunar;
 in
 {
-  options.modules.programs.thunar.enable = mkEnableOption "Enable Thunar";
+  options.modules.programs.thunar = {
+    enable = mkEnableOption "Enable Thunar";
+  };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       xfce.thunar
@@ -17,14 +19,14 @@ in
       xfce.thunar-volman
       file-roller
     ];
-    programs = {
-      thunar = {
-        enable = true;
-        plugins = with pkgs.xfce; [
-          thunar-volman
-          thunar-archive-plugin
-        ];
-      };
-    };
+    # programs = {
+    #   thunar = {
+    #     enable = true;
+    #     plugins = with pkgs.xfce; [
+    #       thunar-volman
+    #       thunar-archive-plugin
+    #     ];
+    #   };
+    # };
   };
 }
