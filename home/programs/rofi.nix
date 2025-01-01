@@ -10,12 +10,11 @@ let
   local-overlays = import ../overlays { inherit inputs; };
 in
 {
-  nixpkgs.overlays = [
-    local-overlays.rofi-plugins
-  ];
-
   options.modules.programs.rofi.enable = mkEnableOption "Enable Rofi";
   config = mkIf cfg.enable {
+    nixpkgs.overlays = [
+      local-overlays.rofi-plugins
+    ];
     programs = {
       rofi = {
         enable = true;
