@@ -44,42 +44,79 @@ in
         # set -g fish_pager_color_completion  cdd6f4
         # set -g fish_pager_color_description 6c7086
 
+        # CoolNight
+        set -g fish_color_normal CBE0F0
+        set -g fish_color_command 44FFB1
+        set -g fish_color_quote FFE073
+        set -g fish_color_redirection 24EAF7
+        set -g fish_color_end 0FC5ED
+        set -g fish_color_error E52E2E
+        set -g fish_color_param A277FF
+        set -g fish_color_comment 214969
+        set -g fish_color_match 24EAF7
+        set -g fish_color_selection --background=033259
+        set -g fish_color_search_match --background=033259
+        set -g fish_color_history_current --bold
+        set -g fish_color_operator 0FC5ED
+        set -g fish_color_escape A277FF
+        set -g fish_color_cwd 44FFB1
+        set -g fish_color_cwd_root E52E2E
+        set -g fish_color_valid_path --underline
+        set -g fish_color_autosuggestion 214969
+        set -g fish_color_user 44FFB1
+        set -g fish_color_host 0FC5ED
+        set -g fish_color_cancel E52E2E
+        set -g fish_color_host_remote FFE073
+
+        # Background and pager colors
+        set -g fish_pager_color_prefix 24EAF7
+        set -g fish_pager_color_completion CBE0F0
+        set -g fish_pager_color_description 214969
+        set -g fish_pager_color_progress 214969
+        set -g fish_pager_color_secondary_background 011423
+        set -g fish_pager_color_secondary_prefix 24EAF7
+        set -g fish_pager_color_secondary_completion CBE0F0
+        set -g fish_pager_color_secondary_description 214969
+        set -g fish_pager_color_selected_background --background=033259
+        set -g fish_pager_color_selected_prefix 24EAF7
+        set -g fish_pager_color_selected_completion CBE0F0
+        set -g fish_pager_color_selected_description 214969
+
         # Nightfly
-        # Syntax highlighting colors.
-        set -g fish_color_autosuggestion 4b6479
-        set -g fish_color_cancel 4b6479
-        set -g fish_color_command 7cb3ff
-        set -g fish_color_comment 7c8f8f --italics
-        set -g fish_color_cwd 87d787
-        set -g fish_color_cwd_root ff5874
-        set -g fish_color_end 7c8f8f
-        set -g fish_color_error fc514e
-        set -g fish_color_escape 7c8f8f
-        set -g fish_color_history_current c3ccdc --background=1d3b53
-        set -g fish_color_host d6deeb
-        set -g fish_color_host_remote d6deeb
-        set -g fish_color_keyword c792ea
-        set -g fish_color_match c3ccdc --background=1d3b53
-        set -g fish_color_normal bdc1c6
-        set -g fish_color_operator ff5874
-        set -g fish_color_option bdc1c6
-        set -g fish_color_param 61d5ae
-        set -g fish_color_quote ecc48d
-        set -g fish_color_redirection a1cd5e
-        set -g fish_color_search_match --background=1d3b53
-        set -g fish_color_selection --background=1d3b53
-        set -g fish_color_status fc514e
-        set -g fish_color_user 21c7a8
-        set -g fish_color_valid_path
+        # set -g fish_color_autosuggestion 4b6479
+        # set -g fish_color_cancel 4b6479
+        # set -g fish_color_command 7cb3ff
+        # set -g fish_color_comment 7c8f8f --italics
+        # set -g fish_color_cwd 87d787
+        # set -g fish_color_cwd_root ff5874
+        # set -g fish_color_end 7c8f8f
+        # set -g fish_color_error fc514e
+        # set -g fish_color_escape 7c8f8f
+        # set -g fish_color_history_current c3ccdc --background=1d3b53
+        # set -g fish_color_host d6deeb
+        # set -g fish_color_host_remote d6deeb
+        # set -g fish_color_keyword c792ea
+        # set -g fish_color_match c3ccdc --background=1d3b53
+        # set -g fish_color_normal bdc1c6
+        # set -g fish_color_operator ff5874
+        # set -g fish_color_option bdc1c6
+        # set -g fish_color_param 61d5ae
+        # set -g fish_color_quote ecc48d
+        # set -g fish_color_redirection a1cd5e
+        # set -g fish_color_search_match --background=1d3b53
+        # set -g fish_color_selection --background=1d3b53
+        # set -g fish_color_status fc514e
+        # set -g fish_color_user 21c7a8
+        # set -g fish_color_valid_path
 
         # Completion pager colors.
-        set -g fish_pager_color_completion c3ccdc
-        set -g fish_pager_color_description 7c8f8f
-        set -g fish_pager_color_prefix 82aaff
-        set -g fish_pager_color_progress 7c8f8f
-        set -g fish_pager_color_selected_background --background=1d3b53
-        set -g fish_pager_color_selected_completion d6deeb
-        set -g fish_pager_color_selected_description d6deeb
+        # set -g fish_pager_color_completion c3ccdc
+        # set -g fish_pager_color_description 7c8f8f
+        # set -g fish_pager_color_prefix 82aaff
+        # set -g fish_pager_color_progress 7c8f8f
+        # set -g fish_pager_color_selected_background --background=1d3b53
+        # set -g fish_pager_color_selected_completion d6deeb
+        # set -g fish_pager_color_selected_description d6deeb
 
         # Rose-Pine
         # set -g fish_color_normal e0def4
