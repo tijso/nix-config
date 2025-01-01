@@ -22,6 +22,7 @@
     cli = {
       bat.enable = true;
       eza.enable = true;
+      fish.enable = true;
       zsh.enable = false;
     };
   };
