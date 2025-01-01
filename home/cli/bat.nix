@@ -14,7 +14,7 @@ in
     programs.bat = {
       enable = true;
       config = {
-        theme = "base16";
+        theme = "Catppuccin Mocha";
       };
       extraPackages = with pkgs.bat-extras; [
         batdiff
