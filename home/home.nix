@@ -24,7 +24,7 @@
       eza.enable = true;
       fish.enable = true;
       zsh.enable = false;
-      fastfetch.enable = true;
+      fastfetch.enable = false;
     };
     development = {
       lazygit.enable = true;
