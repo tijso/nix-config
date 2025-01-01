@@ -7,14 +7,15 @@
   imports = [
     inputs.nix-colors.homeManagerModule
     ./cli
+    ./desktop
+    ./development
     # ./editors
-    ./environments/gtk.nix
     ./environments/gnome.nix
+    # ./environments/gtk.nix
     # ./environments/hyprland
     ./mpv
-    # ./software
+    ./software
     ./terminals
-    ./development
     # ./tmux
   ];
 
@@ -22,9 +23,14 @@
     cli = {
       bat.enable = true;
       eza.enable = true;
-      fish.enable = true;
-      zsh.enable = false;
       fastfetch.enable = true;
+      fish.enable = true;
+      starship.enable = true;
+      zsh.enable = false;
+    };
+    desktop = {
+      gtk.enable = true;
+      # gnome.enable = true;
     };
     development = {
       git.enable = true;
