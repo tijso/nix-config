@@ -9,11 +9,9 @@
     meson
     ncurses
     ninja
-    # openssl
+    openssl
 
     elixir
-    # go
-    # gopls
     python3
     rustup
 
