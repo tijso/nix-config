@@ -17,30 +17,26 @@ in
         gui = {
           theme = {
             activeBorderColor = [
-              "#7aa2f7"
+              "#24EAF7"
               "bold"
-            ]; # Light blue
-            inactiveBorderColor = [ "#545c7e" ]; # Muted blue-gray
-            optionsTextColor = [ "#7dcfff" ]; # Sky blue
-            selectedLineBgColor = [ "#2f334d" ]; # Dark blue-gray
-            selectedRangeBgColor = [ "#2f334d" ]; # Dark blue-gray
-            cherryPickedCommitBgColor = [ "#3b4261" ]; # Darker blue-gray
-            cherryPickedCommitFgColor = [ "#7aa2f7" ]; # Light blue
-            unstagedChangesColor = [ "#f7768e" ]; # Pink/Red
-            defaultFgColor = [ "#c0caf5" ]; # Light gray-blue
-            searchingActiveBorderColor = [ "#bb9af7" ]; # Purple
+            ]; # Cyan
+            inactiveBorderColor = [ "#214969" ]; # Dark blue
+            optionsTextColor = [ "#44FFB1" ]; # Green
+            selectedLineBgColor = [ "#033259" ]; # Selection background
+            selectedRangeBgColor = [ "#033259" ]; # Selection background
+            cherryPickedCommitBgColor = [ "#214969" ]; # Dark blue
+            cherryPickedCommitFgColor = [ "#A277FF" ]; # Purple
+            unstagedChangesColor = [ "#E52E2E" ]; # Red
+            defaultFgColor = [ "#CBE0F0" ]; # Foreground
+            searchingActiveBorderColor = [ "#FFE073" ]; # Yellow
 
-            # Additional Tokyo Night specific colors
-            statusBarBgColor = [ "#1f2335" ]; # Dark background
-            commandBarBgColor = [ "#1f2335" ]; # Dark background
-            menuBgColor = [ "#1f2335" ]; # Dark background
-            menuFgColor = [ "#c0caf5" ]; # Light gray-blue
-            commitLength = {
-              show = true;
-            };
+            # Additional theme settings using your colors
+            statusBarBgColor = [ "#011423" ]; # Background
+            commandBarBgColor = [ "#011423" ]; # Background
+            menuBgColor = [ "#011423" ]; # Background
+            menuFgColor = [ "#CBE0F0" ]; # Foreground
           };
         };
-
       };
     };
   };
