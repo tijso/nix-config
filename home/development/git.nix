@@ -4,12 +4,13 @@
   pkgs,
   ...
 }:
-
 with lib;
+let
+  cfg = config.modules.development.git;
+in
 {
-  options.git.enable = mkEnableOption "git settings";
-
-  config = mkIf config.git.enable {
+  options.modules.development.git.enable = mkEnableOption "Enable Git";
+  config = mkIf cfg.enable {
     home.packages = with pkgs; [
       git-gone # trim stale branches :: Cleanup stale Git branches of pull requests
       git-open # :: Type `git open` to open the GitHub page or website for a repository in your browser.

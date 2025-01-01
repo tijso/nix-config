@@ -1,17 +1,8 @@
 {
-  inputs,
-  pkgs,
-  config,
-  ...
-}:
-{
   imports = [
     ./go.nix
     ./nixdev.nix
-    ./git/git.nix
+    ./git.nix
     ./lazygit.nix
   ];
-
-  git.enable = true;
-  nixdev.enable = true;
 }

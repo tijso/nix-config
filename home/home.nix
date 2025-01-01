@@ -27,8 +27,10 @@
       fastfetch.enable = true;
     };
     development = {
-      lazygit.enable = true;
+      git.enable = true;
       go.enable = true;
+      lazygit.enable = true;
+      nixdev.enable = true;
     };
   };
 

@@ -5,9 +5,12 @@
   ...
 }:
 with lib;
+let
+  cfg = config.modules.development.nixdev;
+in
 {
-  options.nixdev.enable = mkEnableOption "nix developement packages";
-  config = mkIf config.nixdev.enable {
+  options.modules.development.nixdev.enable = mkEnableOption "Enable Nix Developement Packages";
+  config = mkIf cfg.enable {
     home.packages = with pkgs; [
       alejandra
       niv
