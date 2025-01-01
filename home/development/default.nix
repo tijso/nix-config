@@ -12,7 +12,6 @@
     ./lazygit.nix
   ];
 
-  go.enable = true;
   git.enable = true;
   nixdev.enable = true;
 }

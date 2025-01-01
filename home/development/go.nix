@@ -5,10 +5,12 @@
   ...
 }:
 with lib;
+let
+  cfg = config.modules.development.go;
+in
 {
-  options.go.enable = mkEnableOption "go settings";
-
-  config = mkIf config.go.enable {
+  options.modules.development.go.enable = mkEnableOption "Enable Go";
+  config = mkIf cfg.enable {
     programs.go = {
       enable = true;
       package = pkgs.go;

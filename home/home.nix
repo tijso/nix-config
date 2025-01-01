@@ -24,10 +24,11 @@
       eza.enable = true;
       fish.enable = true;
       zsh.enable = false;
-      fastfetch.enable = false;
+      fastfetch.enable = true;
     };
     development = {
       lazygit.enable = true;
+      go.enable = true;
     };
   };
 
