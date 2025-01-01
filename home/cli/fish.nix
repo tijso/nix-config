@@ -4,7 +4,7 @@ let
   cfg = config.modules.cli.fish;
 in
 {
-  options.modules.cli.fish.enable = mkEnbleOption "Enable Fish";
+  options.modules.cli.fish.enable = mkEnableOption "Enable Fish";
   config = mkIf cfg.enable {
     programs.fish = {
       enable = true;
