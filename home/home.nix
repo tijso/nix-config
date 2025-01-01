@@ -25,6 +25,9 @@
       fish.enable = true;
       zsh.enable = false;
     };
+    development = {
+      lazygit.enable = true;
+    };
   };
 
   home.packages = with pkgs; [
