@@ -15,18 +15,14 @@ in
   config = mkIf cfg.enable {
     programs.fastfetch = {
       enable = true;
-      # Move settings into configFile for proper structure
-      configFile = {
-        # Display config
+      settings = {
         display = {
           separator = " => ";
-          key_width = 15; # Changed from keyWidth to key_width
-          # Using your color scheme
+          key_width = 15;
           color_keys = "#24EAF7"; # Cyan for keys
           color_title = "#44FFB1"; # Green for title
         };
 
-        # Module configuration
         modules = [
           "title"
           "separator"
@@ -53,48 +49,45 @@ in
           "colors"
         ];
 
-        # Color configuration for each module
         format = {
           title = {
-            color = "#44FFB1"; # Green for title text
+            color = "#44FFB1";
           };
           os = {
-            color = "#0FC5ED"; # Light blue for OS info
+            color = "#0FC5ED";
           };
           host = {
-            color = "#A277FF"; # Purple for host info
+            color = "#A277FF";
           };
           kernel = {
-            color = "#24EAF7"; # Cyan for kernel info
+            color = "#24EAF7";
           };
           packages = {
-            color = "#FFE073"; # Yellow for package info
+            color = "#FFE073";
           };
           shell = {
-            color = "#E52E2E"; # Red for shell info
+            color = "#E52E2E";
           };
           wm = {
-            color = "#44FFB1"; # Green for WM info
+            color = "#44FFB1";
           };
           memory = {
-            color = "#0FC5ED"; # Light blue for memory info
+            color = "#0FC5ED";
           };
           disk = {
-            color = "#A277FF"; # Purple for disk info
+            color = "#A277FF";
           };
         };
 
-        # Logo configuration
         logo = {
-          type = "small"; # You can change this to "large" if preferred
+          type = "small";
           colors = [
-            # Changed from color to colors and made it a list
-            "#24EAF7" # Cyan
-            "#44FFB1" # Green
-            "#A277FF" # Purple
-            "#FFE073" # Yellow
-            "#0FC5ED" # Light blue
-            "#E52E2E" # Red
+            "#24EAF7"
+            "#44FFB1"
+            "#A277FF"
+            "#FFE073"
+            "#0FC5ED"
+            "#E52E2E"
           ];
         };
       };
