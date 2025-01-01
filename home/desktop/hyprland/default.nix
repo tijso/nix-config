@@ -18,25 +18,24 @@ in
     ./rules.nix
   ];
 
-  home.packages = with pkgs; [
-    cliphist
-    grim
-    slurp
-    swappy
-    swaynotificationcenter
-    swww
-    wl-clipboard
-    wl-color-picker
-    wlr-randr
-    wayland-utils
-    wayland-protocols
-    ydotool
-    xdg-desktop-portal-hyprland
-    hyprpicker
-  ];
-
   options.modules.desktop.hyprland.enable = mkEnableOption "Enable Hyprland";
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      cliphist
+      grim
+      slurp
+      swappy
+      swaynotificationcenter
+      swww
+      wl-clipboard
+      wl-color-picker
+      wlr-randr
+      wayland-utils
+      wayland-protocols
+      ydotool
+      xdg-desktop-portal-hyprland
+      hyprpicker
+    ];
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
