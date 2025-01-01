@@ -22,7 +22,7 @@ in
             owner = "folke";
             repo = "tokyonight.nvim";
             rev = "f247ee700b569ed43f39320413a13ba9b0aef0db"; # Replace with latest commit
-            sha256 = "sha256-axjZVZOI+WIv85FfHAqz5PG4v0HmBFZoWvIdVJqZQvk=";
+            sha256 = "";
           };
           file = "extras/sublime/tokyonight_storm.tmTheme";
         };
