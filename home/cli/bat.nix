@@ -14,7 +14,18 @@ in
     programs.bat = {
       enable = true;
       config = {
-        theme = "Catppuccin Mocha";
+        theme = "tokyo-night";
+      };
+      themes = {
+        tokyo-night = {
+          src = pkgs.fetchFromGitHub {
+            owner = "folke";
+            repo = "tokyonight.nvim";
+            rev = "f247ee700b569ed43f39320413a13ba9b0aef0db"; # Replace with latest commit
+            sha256 = "sha256-axjZVZOI+WIv85FfHAqz5PG4v0HmBFZoWvIdVJqZQvk=";
+          };
+          file = "extras/sublime/tokyonight_storm.tmTheme";
+        };
       };
       extraPackages = with pkgs.bat-extras; [
         batdiff
