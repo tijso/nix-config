@@ -9,7 +9,7 @@ let
   cfg = config.modules.cli.bat;
 in
 {
-  options.cli.bat.enable = mkEnableOption "bat settings";
+  options.modules.cli.bat.enable = mkEnableOption "Enable Bat";
   config = mkIf cfg.enable {
     programs.bat = {
       enable = true;
