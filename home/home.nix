@@ -10,10 +10,8 @@
     ./desktop
     ./development
     # ./editors
-    ./mpv
     ./programs
     ./terminals
-    # ./tmux
   ];
 
   modules = {
