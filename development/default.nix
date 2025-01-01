@@ -9,7 +9,7 @@
     meson
     ncurses
     ninja
-    openssl
+    # openssl
 
     elixir
     # go
