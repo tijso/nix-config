@@ -5,10 +5,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.desktop.fastfetch;
+  cfg = config.modules.cli.fastfetch;
 in
 {
-  options.modules.desktop.fastfetch = {
+  options.modules.cli.fastfetch = {
     enable = mkEnableOption "fastfetch";
   };
 
