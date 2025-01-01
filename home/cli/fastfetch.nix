@@ -5,10 +5,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.cli.fastfetch;
+  cfg = config.modules.desktop.fastfetch;
 in
 {
-  options.modules.cli.fastfetch = {
+  options.modules.desktop.fastfetch = {
     enable = mkEnableOption "fastfetch";
   };
 
@@ -16,13 +16,7 @@ in
     programs.fastfetch = {
       enable = true;
       settings = {
-        display = {
-          separator = " => ";
-          key_width = 15;
-          color_keys = "#24EAF7"; # Cyan for keys
-          color_title = "#44FFB1"; # Green for title
-        };
-
+        # Module configuration
         modules = [
           "title"
           "separator"
@@ -49,36 +43,21 @@ in
           "colors"
         ];
 
-        format = {
-          title = {
-            color = "#44FFB1";
-          };
-          os = {
-            color = "#0FC5ED";
-          };
-          host = {
-            color = "#A277FF";
-          };
-          kernel = {
-            color = "#24EAF7";
-          };
-          packages = {
-            color = "#FFE073";
-          };
-          shell = {
-            color = "#E52E2E";
-          };
-          wm = {
-            color = "#44FFB1";
-          };
-          memory = {
-            color = "#0FC5ED";
-          };
-          disk = {
-            color = "#A277FF";
-          };
+        # Color configuration
+        colors = {
+          title = "#44FFB1";
+          separator = "#24EAF7";
+          os = "#0FC5ED";
+          host = "#A277FF";
+          kernel = "#24EAF7";
+          packages = "#FFE073";
+          shell = "#E52E2E";
+          wm = "#44FFB1";
+          memory = "#0FC5ED";
+          disk = "#A277FF";
         };
 
+        # ASCII settings
         ascii = {
           type = "small";
           colors = [
