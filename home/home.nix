@@ -36,7 +36,7 @@
     };
     programs = {
       mpv.enable = true;
-      rofi.enable = true;
+      # rofi.enable = true;
       thunar.enable = true;
       tmux.enable = false;
     };
