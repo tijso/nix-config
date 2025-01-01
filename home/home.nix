@@ -21,7 +21,7 @@
   modules = {
     cli = {
       bat.enable = true;
-      eza.enable = true;
+      eza.enable = false;
       zsh.enable = false;
     };
   };
