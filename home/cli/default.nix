@@ -4,8 +4,8 @@
 }:
 {
   imports = [
-    # ./bat.nix
-    # ./eza.nix
+    ./bat.nix
+    ./eza.nix
     ./fastfetch
     ./fish.nix
     ./starship.nix

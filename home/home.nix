@@ -7,8 +7,8 @@
   imports = [
     inputs.nix-colors.homeManagerModule
     ./cli
-    ./cli/bat.nix
-    ./cli/eza.nix
+    # ./cli/bat.nix
+    # ./cli/eza.nix
     # ./editors
     ./environments/gtk.nix
     ./environments/gnome.nix
@@ -20,8 +20,12 @@
     # ./tmux
   ];
 
-  bat.enable = true;
-  eza.enable = true;
+  modules = {
+    cli = {
+      bat.enable = true;
+      eza.enable = true;
+    };
+  };
 
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default
