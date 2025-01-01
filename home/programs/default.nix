@@ -2,7 +2,7 @@
 {
   imports = [
     ./mpv
-    ./rofi.nix
+    # ./rofi.nix
     ./thunar.nix
     ./tmux
   ];
