@@ -10,7 +10,7 @@
     ./desktop
     ./development
     # ./editors
-    ./environments/gnome.nix
+    # ./environments/gnome.nix
     # ./environments/gtk.nix
     # ./environments/hyprland
     ./mpv
@@ -30,8 +30,8 @@
     };
     desktop = {
       gtk.enable = true;
-      # gnome.enable = true;
-      # hyprland.enable = true;
+      gnome.enable = true;
+      hyprland.enable = false;
     };
     development = {
       git.enable = true;
