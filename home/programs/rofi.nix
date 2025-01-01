@@ -1,33 +1,36 @@
 {
   pkgs,
   config,
-lib,
+  lib,
   ...
 }:
+with lib;
 let
-   cfg = config.modules.programs.rofi;
-  local-overlays = import ../overlays {inherit inputs;};
+  cfg = config.modules.programs.rofi;
+  local-overlays = import ../overlays { inherit inputs; };
 in
 {
   nixpkgs.overlays = [
     local-overlays.rofi-plugins
   ];
 
-  programs = {
-    rofi = {
-      enable = true;
-      package = pkgs.rofi-wayland;
-      extraConfig = {
-        modi = "drun,filebrowser,run";
-        show-icons = true;
-        icon-theme = "Papirus";
-        location = 0;
-        font = "JetBrainsMono Nerd Font Mono 12";
-        drun-display-format = "{icon} {name}";
-        display-drun = " Apps";
-        display-run = " Run";
-        display-filebrowser = " File";
-      };
+  options.modules.desktop.hyprland.enable = mkEnableOption "Enable Hyprland";
+  config = mkIf cfg.enable {
+    programs = {
+      rofi = {
+        enable = true;
+        package = pkgs.rofi-wayland;
+        extraConfig = {
+          modi = "drun,filebrowser,run";
+          show-icons = true;
+          icon-theme = "Papirus";
+          location = 0;
+          font = "JetBrainsMono Nerd Font Mono 12";
+          drun-display-format = "{icon} {name}";
+          display-drun = " Apps";
+          display-run = " Run";
+          display-filebrowser = " File";
+        };
         "window" = {
           width = mkLiteral "50%";
           transparency = "real";
@@ -37,7 +40,7 @@ in
           border = mkLiteral "2px";
           border-color = "@border-color";
           border-radius = mkLiteral "20px";
-          background-color = mkLiteral #${config.colorScheme.palette.base00};
+          background-color = mkLiteral; # ${config.colorScheme.palette.base00};
         };
         "mainbox" = {
           padding = mkLiteral "15px";
