@@ -11,13 +11,13 @@ in
 {
   options.modules.programs.thunar.enable = mkEnableOption "Enable Thunar";
   config = mkIf cfg.enable {
-    programs = {
+    programs.xfce = {
       thunar = {
         enable = true;
-        file-roller.enable = true;
         plugins = with pkgs.xfce; [
           thunar-volman
           thunar-archive-plugin
+          file-roller
         ];
       };
     };
