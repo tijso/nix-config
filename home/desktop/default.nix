@@ -1,6 +1,7 @@
 {
   imports = [
+    # ./gnome.nix
     ./gtk.nix
-    ./gnome.nix
+    ./hyprland
   ];
 }

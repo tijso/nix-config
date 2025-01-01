@@ -31,6 +31,7 @@
     desktop = {
       gtk.enable = true;
       # gnome.enable = true;
+      # hyprland.enable = true;
     };
     development = {
       git.enable = true;

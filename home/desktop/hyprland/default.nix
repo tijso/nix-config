@@ -1,10 +1,14 @@
 {
-  inputs,
   pkgs,
   config,
   lib,
   ...
-}: {
+}:
+with lib;
+let
+  cfg = config.modules.desktop.hyprland;
+in
+{
   imports = [
     ./animations.nix
     ./autostart.nix
@@ -31,51 +35,54 @@
     hyprpicker
   ];
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    systemd.enable = true;
-    settings = {
-      monitor = [
-        "DP-1,2560x1440,1920x0, 1"
-        "DP-2,1920x1080, 0x0, 1"
-      ];
+  options.modules.desktop.hyprland.enable = mkEnableOption "Enable Hyprland";
+  config = mkIf cfg.enable {
+    wayland.windowManager.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+      systemd.enable = true;
+      settings = {
+        monitor = [
+          "DP-1,2560x1440,1920x0, 1"
+          "DP-2,1920x1080, 0x0, 1"
+        ];
 
-      input = {
-        kb_layout = "us";
-        follow_mouse = true;
-        numlock_by_default = true;
+        input = {
+          kb_layout = "us";
+          follow_mouse = true;
+          numlock_by_default = true;
 
-        touchpad = {
-          natural_scroll = true;
-          disable_while_typing = true;
-          middle_button_emulation = true;
-          tap-and-drag = true;
+          touchpad = {
+            natural_scroll = true;
+            disable_while_typing = true;
+            middle_button_emulation = true;
+            tap-and-drag = true;
+          };
         };
-      };
 
-      debug.disable_logs = false;
+        debug.disable_logs = false;
 
-      xwayland.force_zero_scaling = true;
+        xwayland.force_zero_scaling = true;
 
-      misc = {
-        disable_hyprland_logo = true;
-        disable_splash_rendering = true;
+        misc = {
+          disable_hyprland_logo = true;
+          disable_splash_rendering = true;
 
-        enable_swallow = true;
-        swallow_regex = "^(wezterm)$";
-        vfr = false;
-      };
+          enable_swallow = true;
+          swallow_regex = "^(wezterm)$";
+          vfr = false;
+        };
 
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-        no_gaps_when_only = 0;
-        force_split = 2;
-      };
+        dwindle = {
+          pseudotile = true;
+          preserve_split = true;
+          no_gaps_when_only = 0;
+          force_split = 2;
+        };
 
-      gestures = {
-        workspace_swipe = false;
+        gestures = {
+          workspace_swipe = false;
+        };
       };
     };
   };
