@@ -9,7 +9,7 @@ let
   cfg = config.modules.programs.tmux;
 in
 {
-  options.modules.progams.tmux.enable = mkEnableOption "Enable Tmux";
+  options.modules.programs.tmux.enable = mkEnableOption "Enable Tmux";
   config = mkIf cfg.enable {
     programs.tmux = {
       enable = true;
