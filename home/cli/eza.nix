@@ -9,7 +9,7 @@ let
 in
 {
   options.modules.cli.eza.enable = mkEnableOption "Enable Eza";
-  config = mkIf cfg.eza.enable {
+  config = mkIf cfg.enable {
     programs.eza = {
       enable = true;
       enableZshIntegration = true;
