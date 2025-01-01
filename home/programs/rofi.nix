@@ -14,7 +14,7 @@ in
     local-overlays.rofi-plugins
   ];
 
-  options.modules.desktop.hyprland.enable = mkEnableOption "Enable Hyprland";
+  options.modules.programs.rofi.enable = mkEnableOption "Enable Rofi";
   config = mkIf cfg.enable {
     programs = {
       rofi = {
