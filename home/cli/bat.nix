@@ -21,10 +21,10 @@ in
           src = pkgs.fetchFromGitHub {
             owner = "folke";
             repo = "tokyonight.nvim";
-            rev = "f247ee700b569ed43f39320413a13ba9b0aef0db"; # Replace with latest commit
-            sha256 = "sha256-axjZVZOI+WIv85FfMG+lxftDKlDIw/HzQKyJVFkL33M=";
+            rev = "45d22cf0e1b93476d3b6d362d720412b3d34465c"; # Replace with latest commit
+            sha256 = "sha256-TJ/a6N6Cc1T0wdMxMopma1NtwL7rMYbZ6F0zFI1zaIA=";
           };
-          file = "extras/sublime/tokyonight_storm.tmTheme";
+          file = "extras/sublime/tokyonight_night.tmTheme";
         };
       };
       extraPackages = with pkgs.bat-extras; [
