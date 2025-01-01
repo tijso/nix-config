@@ -6,7 +6,7 @@
   imports = [
     ./bat.nix
     ./eza.nix
-    ./fastfetch
+    ./fastfetch.nix
     ./fish.nix
     ./starship.nix
     ./zsh.nix
