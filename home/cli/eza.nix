@@ -4,9 +4,12 @@
   ...
 }:
 with lib;
+let
+  cfg = config.modules.cli.eza;
+in
 {
-  options.eza.enable = mkEnableOption "eza settings";
-  config = mkIf config.eza.enable {
+  options.modules.cli.eza.enable = mkEnableOption "Enable Eza";
+  config = mkIf cfg.eza.enable {
     programs.eza = {
       enable = true;
       enableZshIntegration = true;
