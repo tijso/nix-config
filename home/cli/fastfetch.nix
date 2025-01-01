@@ -79,7 +79,7 @@ in
           };
         };
 
-        logo = {
+        ascii = {
           type = "small";
           colors = [
             "#24EAF7"
