@@ -10,9 +10,6 @@
     ./desktop
     ./development
     # ./editors
-    # ./environments/gnome.nix
-    # ./environments/gtk.nix
-    # ./environments/hyprland
     ./mpv
     # ./software
     ./terminals
