@@ -8,7 +8,7 @@
     inputs.nix-colors.homeManagerModule
     ./cli
     # ./cli/bat.nix
-    # ./cli/eza.nix
+    ./cli/eza.nix
     # ./editors
     ./environments/gtk.nix
     ./environments/gnome.nix
@@ -23,7 +23,7 @@
   modules = {
     cli = {
       bat.enable = true;
-      eza.enable = true;
+      # eza.enable = true;
     };
   };
 

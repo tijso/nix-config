@@ -5,9 +5,12 @@
   ...
 }:
 with lib;
+let
+  cfg = config.modules.cli.bat;
+in
 {
-  options.bat.enable = mkEnableOption "bat settings";
-  config = mkIf config.bat.enable {
+  options.cli.bat.enable = mkEnableOption "bat settings";
+  config = mkIf cfg.enable {
     programs.bat = {
       enable = true;
       catppuccin.enable = true;
