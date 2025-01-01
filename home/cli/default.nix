@@ -9,7 +9,7 @@
     ./fastfetch
     ./fish.nix
     ./starship.nix
-    # ./zsh.nix
+    ./zsh.nix
   ];
 
   programs.fzf = {
