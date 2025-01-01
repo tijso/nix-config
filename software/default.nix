@@ -1,6 +1,7 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ./thunar.nix
-    ./virtualization.nix
+    # ./virtualization.nix
   ];
 }
