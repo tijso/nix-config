@@ -22,7 +22,7 @@
     cli = {
       bat.enable = true;
       eza.enable = true;
-      zsh.enable = true;
+      zsh.enable = false;
     };
   };
 
