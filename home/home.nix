@@ -41,6 +41,7 @@
       tmux.enable = true;
     };
     terminals = {
+      kitty.enable = true;
       wezterm.enable = true;
     };
   };
