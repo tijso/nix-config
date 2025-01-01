@@ -11,7 +11,6 @@ in
 {
   options.modules.programs.tmux.enable = mkEnableOption "Enable Tmux";
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [ tmux ];
     programs.tmux = {
       enable = true;
       mouse = true;
