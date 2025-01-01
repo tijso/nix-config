@@ -40,6 +40,9 @@
       thunar.enable = true;
       tmux.enable = true;
     };
+    terminals = {
+      wezterm.enable = true;
+    };
   };
 
   home.packages = with pkgs; [
