@@ -11,6 +11,7 @@ in
 {
   options.modules.programs.tmux.enable = mkEnableOption "Enable Tmux";
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [ tmux ];
     programs.tmux = {
       enable = true;
       mouse = true;
@@ -81,7 +82,7 @@ in
         # fix ESC delay in vim
         set -s escape-time 0
       '';
-      shell = "${pkgs.zsh}/bin/zsh";
+      shell = "${pkgs.fish}/bin/fish";
     };
   };
 }
