@@ -1,9 +1,11 @@
 {
   pkgs,
   config,
+lib,
   ...
 }:
 let
+   cfg = config.modules.programs.rofi;
   local-overlays = import ../overlays {inherit inputs;};
 in
 {

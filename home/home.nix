@@ -11,7 +11,7 @@
     ./development
     # ./editors
     ./mpv
-    # ./software
+    ./programs
     ./terminals
     # ./tmux
   ];
@@ -35,6 +35,12 @@
       go.enable = true;
       lazygit.enable = true;
       nixdev.enable = true;
+    };
+    programs = {
+      mpv.enable = true;
+      rofi.enable = false;
+      thunar.enable = true;
+      tmux.enable = false;
     };
   };
 
