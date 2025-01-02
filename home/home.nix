@@ -46,7 +46,7 @@
     };
     theming = {
       gtk.enable = true;
-      stylix.enable = false;
+      # stylix.enable = false;
     };
   };
 
