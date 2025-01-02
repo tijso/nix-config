@@ -7,7 +7,7 @@
 }:
 with lib;
 let
-  cfg = config.styles.stylix;
+  cfg = config.theming.stylix;
 in
 {
   imports = with inputs; [
@@ -15,8 +15,8 @@ in
     # catppuccin.homeManagerModules.catppuccin
   ];
 
-  options.styles.stylix = {
-    enable = lib.mkEnableOption "Enable stylix";
+  options.theming.stylix = {
+    enable = lib.mkEnableOption "Enable Stylix";
   };
 
   config = lib.mkIf cfg.enable {
