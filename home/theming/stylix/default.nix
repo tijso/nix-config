@@ -4,9 +4,12 @@
   config,
   inputs,
   ...
-}: let
+}:
+with lib;
+let
   cfg = config.styles.stylix;
-in {
+in
+{
   imports = with inputs; [
     stylix.homeManagerModules.stylix
     # catppuccin.homeManagerModules.catppuccin
@@ -18,7 +21,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       google-fonts
       plemoljp
     ];

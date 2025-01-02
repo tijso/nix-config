@@ -12,6 +12,7 @@
     # ./editors
     ./programs
     ./terminals
+    ./theming
   ];
 
   modules = {
@@ -24,7 +25,6 @@
       zsh.enable = false;
     };
     desktop = {
-      gtk.enable = true;
       gnome.enable = true;
       hyprland.enable = false;
     };
@@ -43,6 +43,10 @@
     terminals = {
       kitty.enable = true;
       wezterm.enable = true;
+    };
+    theming = {
+      gtk.enable = true;
+      stylix.enable = false;
     };
   };
 
