@@ -33,6 +33,7 @@
       go.enable = true;
       lazygit.enable = true;
       nixdev.enable = true;
+      virtualization.enable = true;
     };
     editors = {
       helix.enable = false;
