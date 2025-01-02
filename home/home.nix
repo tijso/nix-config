@@ -9,7 +9,7 @@
     ./cli
     ./desktop
     ./development
-    # ./editors
+    ./editors
     ./programs
     ./terminals
     ./theming
@@ -33,6 +33,9 @@
       go.enable = true;
       lazygit.enable = true;
       nixdev.enable = true;
+    };
+    editors = {
+      helix.enable = true;
     };
     programs = {
       mpv.enable = true;
