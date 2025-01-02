@@ -35,7 +35,7 @@
       nixdev.enable = true;
     };
     editors = {
-      helix.enable = true;
+      helix.enable = false;
     };
     programs = {
       mpv.enable = true;
