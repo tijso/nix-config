@@ -11,7 +11,7 @@ in
 {
   options.modules.development.virtualization.enable = mkEnableOption "Enable Virtualization";
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
       qemu
       quickemu
     ];
