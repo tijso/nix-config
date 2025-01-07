@@ -26,7 +26,7 @@
     lm_sensors
     lshw
     mpd
-    streamdeck-ui
+    deckmaster
     # papirus-icon-theme
     pavucontrol
     pciutils
