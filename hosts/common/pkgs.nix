@@ -26,7 +26,6 @@
     lm_sensors
     lshw
     mpd
-    deckmaster
     # papirus-icon-theme
     pavucontrol
     pciutils
