@@ -32,14 +32,14 @@ in
       };
 
       iconTheme = {
-        name = "Fluent-teal-dark";
-        package = pkgs.fluent-icon-theme.override { colorVariants = [ "teal" ]; };
-        # name = "Papirus-Dark";
+        # name = "Fluent-teal-dark";
+        # package = pkgs.fluent-icon-theme.override { colorVariants = [ "teal" ]; };
+        name = "Papirus-Dark";
         # package = pkgs.papirus-icon-theme;
-        # package = pkgs.catppuccin-papirus-folders.override {
-        #   flavor = "mocha";
-        #   accent = "teal";
-        # };
+        package = pkgs.catppuccin-papirus-folders.override {
+          flavor = "mocha";
+          accent = "teal";
+        };
       };
 
       cursorTheme = {
