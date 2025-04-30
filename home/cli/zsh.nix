@@ -79,7 +79,7 @@ in
         save = 5000;
         path = "$HOME/.local/share/zsh/zsh_history";
       };
-      initExtra = ''
+      initContent = ''
         bindkey -e
         bindkey '^p' history-search-backward
         bindkey '^n' history-search-forward
