@@ -192,7 +192,9 @@ in
 
         # List Commands
         ls = "eza";
-        la = "eza -lah";
+        ll = "eza -l";
+        lla = "eza -la";
+        la = "eza -a";
         lt = "eza --tree";
 
         # Neovim
