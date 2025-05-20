@@ -36,6 +36,7 @@
     };
     editors = {
       helix.enable = false;
+      nvim.enable = false;
     };
     programs = {
       mpv.enable = true;
