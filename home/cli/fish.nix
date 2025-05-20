@@ -44,6 +44,39 @@ in
         # set -g fish_pager_color_completion  cdd6f4
         # set -g fish_pager_color_description 6c7086
 
+        # Kanagawa
+        set -l foreground DCD7BA normal
+        set -l selection 2D4F67 brcyan
+        set -l comment 727169 brblack
+        set -l red C34043 red
+        set -l orange FF9E64 brred
+        set -l yellow C0A36E yellow
+        set -l green 76946A green
+        set -l purple 957FB8 magenta
+        set -l cyan 7AA89F cyan
+        set -l pink D27E99 brmagenta
+
+        set -g fish_color_normal $foreground
+        set -g fish_color_command $cyan
+        set -g fish_color_keyword $pink
+        set -g fish_color_quote $yellow
+        set -g fish_color_redirection $foreground
+        set -g fish_color_end $orange
+        set -g fish_color_error $red
+        set -g fish_color_param $purple
+        set -g fish_color_comment $comment
+        set -g fish_color_selection --background=$selection
+        set -g fish_color_search_match --background=$selection
+        set -g fish_color_operator $green
+        set -g fish_color_escape $pink
+        set -g fish_color_autosuggestion $comment
+
+        # Completion Pager Colors
+        set -g fish_pager_color_progress $comment
+        set -g fish_pager_color_prefix $cyan
+        set -g fish_pager_color_completion $foreground
+        set -g fish_pager_color_description $comment
+
         # CoolNight
         # set -g fish_color_normal CBE0F0
         # set -g fish_color_command 44FFB1
@@ -83,39 +116,39 @@ in
         # set -g fish_pager_color_selected_description 214969
 
         # Eldritch
-        set -g fish_color_normal ebfafa
-        set -g fish_color_command 37f499
-        set -g fish_color_keyword a48cf2
-        set -g fish_color_quote f1fc79
-        set -g fish_color_redirection ebfafa
-        set -g fish_color_end a48cf2
-        set -g fish_color_option f7c67f
-        set -g fish_color_error f16c75
-        set -g fish_color_param 04d1f9
-        set -g fish_color_comment 7081d0
-        set -g fish_color_selection --background=76639e
-        set -g fish_color_search_match --background=76639e
-        set -g fish_color_operator a48cf2
-        set -g fish_color_escape a48cf2
-        set -g fish_color_autosuggestion 7081d0
-        set -g fish_color_status f16c75
-        set -g fish_color_cancel f16c75 --reverse
-        set -g fish_color_history_current --bold
-        set -g fish_color_valid_path --underline
+        # set -g fish_color_normal ebfafa
+        # set -g fish_color_command 37f499
+        # set -g fish_color_keyword a48cf2
+        # set -g fish_color_quote f1fc79
+        # set -g fish_color_redirection ebfafa
+        # set -g fish_color_end a48cf2
+        # set -g fish_color_option f7c67f
+        # set -g fish_color_error f16c75
+        # set -g fish_color_param 04d1f9
+        # set -g fish_color_comment 7081d0
+        # set -g fish_color_selection --background=76639e
+        # set -g fish_color_search_match --background=76639e
+        # set -g fish_color_operator a48cf2
+        # set -g fish_color_escape a48cf2
+        # set -g fish_color_autosuggestion 7081d0
+        # set -g fish_color_status f16c75
+        # set -g fish_color_cancel f16c75 --reverse
+        # set -g fish_color_history_current --bold
+        # set -g fish_color_valid_path --underline
 
         # Default prompt colors
-        set -g fish_color_cwd a48cf2
-        set -g fish_color_cwd_root f265b5
-        set -g fish_color_host 04d1f9
-        set -g fish_color_host_remote 04d1f9
-        set -g fish_color_user 37f499
+        # set -g fish_color_cwd a48cf2
+        # set -g fish_color_cwd_root f265b5
+        # set -g fish_color_host 04d1f9
+        # set -g fish_color_host_remote 04d1f9
+        # set -g fish_color_user 37f499
 
         # Completion Pager Colors
-        set -g fish_pager_color_progress 7081d0
-        set -g fish_pager_color_prefix 04d1f9
-        set -g fish_pager_color_completion ebfafa
-        set -g fish_pager_color_description 7081d0
-        set -g fish_pager_color_selected_background --background=76639e
+        # set -g fish_pager_color_progress 7081d0
+        # set -g fish_pager_color_prefix 04d1f9
+        # set -g fish_pager_color_completion ebfafa
+        # set -g fish_pager_color_description 7081d0
+        # set -g fish_pager_color_selected_background --background=76639e
 
         # Tokonight
         # set -l foreground c0caf5
