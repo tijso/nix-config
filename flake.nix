@@ -33,6 +33,7 @@
 
     # My Nvim Config
     # nvim.url = "github:tijso/nvim";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     # Custom Flakes
     nixvim.url = "github:tijso/nixvim";
@@ -51,6 +52,7 @@
       systems,
       nix-colors,
       nixos-cosmic,
+      # neovim-nightly-overlay,
       nixvim,
       catppuccin,
       hyprland,
