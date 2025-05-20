@@ -33,9 +33,12 @@
 
     # My Nvim Config
     # nvim.url = "github:tijso/nvim";
-    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-nightly-overlay = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
-    # Custom Flakes
+    # Nixvim
     nixvim.url = "github:tijso/nixvim";
 
     # Terminal
