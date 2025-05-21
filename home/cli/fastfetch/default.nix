@@ -93,6 +93,7 @@ in
           {
             type = "wmtheme";
             key = "│ ├󰉼 ";
+            keyColor = "green";
           }
           {
             type = "terminal";
