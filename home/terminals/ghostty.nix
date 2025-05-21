@@ -57,7 +57,7 @@ in
       font-family-italic = Maple Mono NF Italic
 
       # Window Settings 
-      title = "GhosTTY"
+      # title = "GhosTTY"
       window-decoration = true
       window-height = 32
       window-width = 110
