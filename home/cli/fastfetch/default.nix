@@ -43,12 +43,12 @@ in
             # type = "custom";
             # format = " OS -> ";
             type = "os";
-            key = "Distro";
+            key = "│  OS";
             keyColor = "green";
           }
           {
             type = "host";
-            key = "󰌢 Machine";
+            key = "│ 󰌢 Machine";
             keyColor = "cyan";
           }
           {
