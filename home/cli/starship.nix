@@ -15,91 +15,141 @@ in
       enableZshIntegration = true;
       enableFishIntegration = true;
       settings = {
-        format = ''
-          [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
-          [└](fg:#${config.colorScheme.palette.base0A}) $os$character
-        '';
+    format = """
+    [░▒▓](os_bg)\
+    $os\
+    $username\
+    [](bg:dir_bg fg:os_bg)\
+    $directory\
+    [](fg:dir_bg bg:git_bg)\
+    $git_branch\
+    $git_status\
+    [](fg:git_bg bg:lang_bg)\
+    $nodejs\
+    $rust\
+    $golang\
+    [](fg:lang_bg bg:background)\
+    \n$character"""
 
-        character = {
-          format = "$symbol";
-          success_symbol = "[->](fg:#${config.colorScheme.palette.base0A}) ";
-          error_symbol = "[┤](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
-        };
+    [palettes.carbonfox]
+    red = "#ee5396"
+    green = "#25be6a"
+    purple = "#be95ff"
+    yellow = "#08bdba"
+    os_bg = "#7b7c7e"
+    os_fg = "#0c0c0c"
+    dir_bg = "#25be6a"
+    dir_fg = "#161616"
+    git_bg = "#08bdba"
+    git_fg = "#252525"
+    lang_bg = "#78a9ff"
+    lang_fg = "#353535"
 
-        username = {
-          show_always = false;
-          style_user = "fg:#${config.colorScheme.palette.base03}";
-          style_root = "fg:#${config.colorScheme.palette.base03}";
-          format = "[$user@]($style)";
-        };
+    [os]
+    disabled = false
+    style = "bg:os_bg fg:os_fg"
 
-        hostname = {
-          ssh_only = false;
-          format = "[$hostname]($style) ";
-          style = "fg:#${config.colorScheme.palette.base0C}";
-        };
+    [os.symbols]
+    Windows = "󰍲"
+    Ubuntu = "󰕈"
+    SUSE = ""
+    Raspbian = "󰐿"
+    Mint = " 󰣭 "
+    Macos = "󰀵"
+    Manjaro = ""
+    Linux = "󰌽"
+    Gentoo = "󰣨"
+    Fedora = "󰣛"
+    Alpine = ""
+    Amazon = ""
+    Android = ""
+    Arch = "󰣇"
+    Artix = "󰣇"
+    CentOS = ""
+    Debian = "󰣚"
+    Redhat = "󱄛"
+    RedHatEnterprise = "󱄛"
 
-        directory = {
-          truncation_length = 1;
-          truncation_symbol = "";
-          fish_style_pwd_dir_length = 1;
-          style = "fg:#${config.colorScheme.palette.base07}";
-        };
+    [username]
+    show_always = true
+    style_user = "bg:os_bg fg:os_fg"
+    style_root = "bg:os_bg fg:os_fg"
+    format = "[ $user ]($style)"
 
-        os = with config.colorScheme.palette; {
-          disabled = false;
-          style = "fg:#${base0D}";
-          symbols = {
-            # Arch = "[ ]($style)";
-            NixOS = "[ ]($style)";
-            # Linux = "[  ](fg:fg $style)";
-          };
-        };
+    [directory]
+    style = "fg:dir_fg bg:dir_bg"
+    format = "[ $path ]($style)"
+    truncation_length = 3
+    truncation_symbol = "…/"
 
-        git_branch = {
-          style = "fg:#${config.colorScheme.palette.base0E}";
-        };
+    [directory.substitutions]
+    "Documents" = "󰈙 "
+    "Downloads" = " "
+    "Music" = " "
+    "Pictures" = " "
+    "src" = " "
 
-        git_status = {
-          conflicted = " ";
-          ahead = " ";
-          behind = " 󱊾 ";
-          diverged = "󱡷 ";
-          untracked = "";
-          stashed = " ";
-          modified = " ";
-          staged = " ";
-          renamed = " ";
-          deleted = "󰆴 ";
-          style = "fg:#${config.colorScheme.palette.base0E}";
-        };
+    [git_branch]
+    symbol = ""
+    style = "bg:git_bg"
+    format = '[[ $symbol $branch ](fg:git_fg bg:git_bg)]($style)'
 
-        golang = {
-          format = "[$symbol $version]($style)";
-          symbol = " ";
-          style = "fg:#${config.colorScheme.palette.base0C}";
-        };
+    [git_status]
+    style = "bg:git_bg"
+    format = '[[($all_status$ahead_behind )](fg:git_fg bg:git_bg)]($style)'
 
-        rust = {
-          format = "[$symbol$version]($style)";
-          symbol = "";
-          style = "fg:#${config.colorScheme.palette.base0C}";
-        };
+    [nodejs]
+    symbol = ""
+    style = "bg:lang_bg"
+    format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
 
-        python = {
-          format = "[$symbol$version]($style)";
-          symbol = "";
-          style = "fg:#${config.colorScheme.palette.base0A}";
-        };
+    [c]
+    symbol = " "
+    style = "bg:lang_bg"
+    format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
 
-        nix_shell = {
-          format = "[$symbol$state($name)]($style) ";
-          style = "fg:#${config.colorScheme.palette.base0D}";
-          symbol = " ";
-          impure_msg = "";
-          pure_msg = "pure ";
-        };
-      };
-    };
-  };
-}
+    [rust]
+    symbol = ""
+    style = "bg:lang_bg"
+    format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+    [golang]
+    symbol = ""
+    style = "bg:lang_bg"
+    format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+    [php]
+    symbol = ""
+    style = "bg:lang_bg"
+    format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+    [java]
+    symbol = " "
+    style = "bg:lang_bg"
+    format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+    [kotlin]
+    symbol = ""
+    style = "bg:lang_bg"
+    format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+    [haskell]
+    symbol = ""
+    style = "bg:lang_bg"
+    format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+    [python]
+    symbol = ""
+    style = "bg:lang_bg"
+    format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+    [character]
+    disabled = false
+    success_symbol = '[](bold fg:#25be6a)'
+    error_symbol = '[](bold fg:#ee5396)'
+    vimcmd_symbol = '[](bold fg:green)'
+    vimcmd_replace_one_symbol = '[](bold fg:purple)'
+    vimcmd_replace_symbol = '[](bold fg:purple)'
+    vimcmd_visual_symbol = '[](bold fg:yellow)'
+  '';
+        }
