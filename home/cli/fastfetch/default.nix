@@ -42,29 +42,34 @@ in
           {
             # type = "custom";
             # format = " OS -> ";
-            type = "os";
             key = "│  OS";
             keyColor = "green";
+            type = "os";
           }
           {
-            type = "host";
             key = "│ 󰌢 Machine";
             keyColor = "cyan";
+            type = "host";
           }
           {
-            type = "cpu";
+            key = "│ ├ Kernel";
+            keyColor = "blue";
+            type = "kernel";
+          }
+          {
             key = "│  CPU";
             keyColor = "green";
+            type = "cpu";
           }
           {
-            type = "gpu";
-            key = "│ 󰍛 GPU ";
+            key = "│ 󰍛 GPU";
             keyColor = "cyan";
+            type = "gpu";
           }
           {
-            type = "memory";
             key = "│ 󰑭 Memory";
             keyColor = "blue";
+            type = "memory";
           }
           {
             type = "custom";
@@ -74,12 +79,6 @@ in
           {
             type = "custom";
             format = "┌──────────────────────Software──────────────────────┐";
-          }
-
-          {
-            type = "kernel";
-            key = "│ ├ ";
-            keyColor = "blue";
           }
           {
             type = "packages";
