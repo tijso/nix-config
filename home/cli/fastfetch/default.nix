@@ -53,17 +53,17 @@ in
           }
           {
             type = "cpu";
-            key = "│  ";
+            key = "│  CPU";
             keyColor = "green";
           }
           {
             type = "gpu";
-            key = "│ 󰍛 ";
+            key = "│ 󰍛 GPU ";
             keyColor = "cyan";
           }
           {
             type = "memory";
-            key = "│ 󰑭 ";
+            key = "│ 󰑭 Memory";
             keyColor = "blue";
           }
           {
