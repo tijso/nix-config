@@ -47,6 +47,7 @@
     terminals = {
       kitty.enable = true;
       wezterm.enable = true;
+      ghostty.enable = true;
     };
     theming = {
       gtk.enable = true;
