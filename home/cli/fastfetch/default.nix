@@ -64,23 +64,28 @@ in
             # format = " OS -> ";
             type = "os";
             key = "Distro";
+            keyColor = "green";
           }
           {
             type = "kernel";
             key = "│ ├ ";
+            keyColor = "blue";
           }
           {
             type = "packages";
             key = "│ ├󰏖 ";
+            keyColor = "cyan";
           }
           {
             type = "shell";
             key = "└ └ ";
+            keyColor = "green";
           }
           "break"
           {
             type = "wm";
             key = " WM";
+            keyColor = "blue";
           }
           {
             type = "wmtheme";
@@ -89,6 +94,7 @@ in
           {
             type = "terminal";
             key = "└ └ ";
+            keyColor = "cyan";
           }
           {
             type = "custom";
