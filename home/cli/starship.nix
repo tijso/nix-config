@@ -16,17 +16,8 @@ in
       enableFishIntegration = true;
       settings = {
         format = ''
-          [░▒▓](fg:#${config.colorScheme.palette.base0A})\ 
-          $hostname$directory\
-          $nix_shell\
-          $golang\
-          $rust$python\
-          $git_branch\
-          $git_status\
-          $cmd_duration\
-          [░▒▓](fg:#${config.colorScheme.palette.base0A})\ 
-          $os\
-          $character\
+          [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
+          [└](fg:#${config.colorScheme.palette.base0A}) $os$character
         '';
 
         character = {
