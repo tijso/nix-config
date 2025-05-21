@@ -153,6 +153,28 @@ in
         # set -g fish_pager_color_description $comment
         # set -g fish_pager_color_selected_background --background=$selection 
 
+        # Carbonfox
+        set -g fish_color_normal f2f4f8
+        set -g fish_color_command 33b1ff
+        set -g fish_color_keyword ff7eb6
+        set -g fish_color_quote 08bdba
+        set -g fish_color_redirection f2f4f8
+        set -g fish_color_end 3ddbd9
+        set -g fish_color_error ee5396
+        set -g fish_color_param be95ff
+        set -g fish_color_comment 6e6f70
+        set -g fish_color_selection --background=2a2a2a
+        set -g fish_color_search_match --background=2a2a2a
+        set -g fish_color_operator $green
+        set -g fish_color_escape ff7eb6
+        set -g fish_color_autosuggestion 6e6f70
+
+        # Completion Pager Colors
+        set -g fish_pager_color_progress 6e6f70
+        set -g fish_pager_color_prefix 33b1ff
+        set -g fish_pager_color_completion f2f4f8
+        set -g fish_pager_color_description 6e6f70
+
         # Kanagawa
         # set -g fish_color_normal DCD7BA
         # set -g fish_color_command 7AA89F
