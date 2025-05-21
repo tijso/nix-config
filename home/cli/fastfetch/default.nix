@@ -41,14 +41,17 @@ in
           {
             type = "cpu";
             key = "│  ";
+            keyColor = "green";
           }
           {
             type = "gpu";
             key = "│ 󰍛 ";
+            keyColor = "cyan";
           }
           {
             type = "memory";
             key = "│ 󰑭 ";
+            keyColor = "blue";
           }
           {
             type = "custom";
@@ -121,6 +124,7 @@ in
           {
             type = "uptime";
             key = "│  ";
+            keyColor = "green";
           }
           {
             type = "custom";
