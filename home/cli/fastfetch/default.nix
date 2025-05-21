@@ -36,7 +36,20 @@ in
           "break"
           {
             type = "custom";
-            format = "┌──────────────────────Hardware──────────────────────┐";
+            format = "┌────────────────────────────────────────────┐";
+          }
+          "break"
+          {
+            # type = "custom";
+            # format = " OS -> ";
+            type = "os";
+            key = "Distro";
+            keyColor = "green";
+          }
+          {
+            type = "host";
+            key = "󰌢 Machine";
+            keyColor = "cyan";
           }
           {
             type = "cpu";
@@ -62,13 +75,7 @@ in
             type = "custom";
             format = "┌──────────────────────Software──────────────────────┐";
           }
-          {
-            # type = "custom";
-            # format = " OS -> ";
-            type = "os";
-            key = "Distro";
-            keyColor = "green";
-          }
+
           {
             type = "kernel";
             key = "│ ├ ";
