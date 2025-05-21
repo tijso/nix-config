@@ -106,33 +106,7 @@ in
             keyColor = "blue";
             type = "memory";
           }
-          {
-            type = "custom";
-            format = "└────────────────────────────────────────────────────┘";
-          }
-          {
-            type = "custom";
-            format = "└────────────────────────────────────────────────────┘";
-          }
           "break"
-          {
-            type = "custom";
-            format = "┌────────────────────Uptime / Age────────────────────┐";
-          }
-          {
-            type = "command";
-            key = "│  ";
-            text =
-              #bash
-              ''
-                birth_install=$(stat -c %W /)
-                current=$(date +%s)
-                delta=$((current - birth_install))
-                delta_days=$((delta / 86400))
-                echo $delta_days days
-              '';
-          }
-
           {
             type = "custom";
             format = "└────────────────────────────────────────────────────┘";
