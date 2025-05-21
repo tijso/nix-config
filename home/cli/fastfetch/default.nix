@@ -52,9 +52,44 @@ in
             type = "host";
           }
           {
-            key = "│ ├ Kernel";
+            key = "│  Kernel";
             keyColor = "blue";
             type = "kernel";
+          }
+          {
+            key = "│  Uptime";
+            keyColor = "green";
+            type = "uptime";
+          }
+          {
+            key = "│ 󰏖 Packages";
+            keyColor = "cyan";
+            type = "packages";
+          }
+          {
+            key = "│   WM";
+            keyColor = "blue";
+            type = "wm";
+          }
+          {
+            key = "│ 󰉼 Theme";
+            keyColor = "cyan";
+            type = "wmtheme";
+          }
+          {
+            key = "│  Shell";
+            keyColor = "green";
+            type = "shell";
+          }
+          {
+            key = "│  Terminal";
+            keyColor = "cyan";
+            type = "terminal";
+          }
+          {
+            key = "│  Font  ";
+            keyColor = "blue";
+            type = "terminalfont";
           }
           {
             key = "│  CPU";
@@ -74,37 +109,6 @@ in
           {
             type = "custom";
             format = "└────────────────────────────────────────────────────┘";
-          }
-          "break"
-          {
-            type = "custom";
-            format = "┌──────────────────────Software──────────────────────┐";
-          }
-          {
-            type = "packages";
-            key = "│ ├󰏖 ";
-            keyColor = "cyan";
-          }
-          {
-            type = "shell";
-            key = "└ └ ";
-            keyColor = "green";
-          }
-          "break"
-          {
-            type = "wm";
-            key = " WM";
-            keyColor = "blue";
-          }
-          {
-            type = "wmtheme";
-            key = "│ ├󰉼 ";
-            keyColor = "green";
-          }
-          {
-            type = "terminal";
-            key = "└ └ ";
-            keyColor = "cyan";
           }
           {
             type = "custom";
@@ -128,11 +132,7 @@ in
                 echo $delta_days days
               '';
           }
-          {
-            type = "uptime";
-            key = "│  ";
-            keyColor = "green";
-          }
+
           {
             type = "custom";
             format = "└────────────────────────────────────────────────────┘";
