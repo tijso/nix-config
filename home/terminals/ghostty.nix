@@ -22,32 +22,56 @@ in
       # selection-foreground = #c8d3f5
 
       # Carbonfox
-      background = #161616
-      foreground = #f2f4f8
-      selection-background = #2a2a2a
-      selection-foreground = #f2f4f8
-      cursor-color = #f2f4f8
+      # background = #161616
+      # foreground = #f2f4f8
+      # selection-background = #2a2a2a
+      # selection-foreground = #f2f4f8
+      # cursor-color = #f2f4f8
 
-      palette = 0=#282828
-      palette = 1=#ee5396
-      palette = 2=#25be6a
-      palette = 3=#08bdba
-      palette = 4=#78a9ff
-      palette = 5=#be95ff
-      palette = 6=#33b1ff
-      palette = 7=#dfdfe0
+      # palette = 0=#282828
+      # palette = 1=#ee5396
+      # palette = 2=#25be6a
+      # palette = 3=#08bdba
+      # palette = 4=#78a9ff
+      # palette = 5=#be95ff
+      # palette = 6=#33b1ff
+      # palette = 7=#dfdfe0
 
-      palette = 8=#484848
-      palette = 9=#f16da6
-      palette = 10=#46c880
-      palette = 11=#2dc7c4
-      palette = 12=#8cb6ff
-      palette = 13=#c8a5ff
-      palette = 14=#52bdff
-      palette = 15=#e4e4e5
+      # palette = 8=#484848
+      # palette = 9=#f16da6
+      # palette = 10=#46c880
+      # palette = 11=#2dc7c4
+      # palette = 12=#8cb6ff
+      # palette = 13=#c8a5ff
+      # palette = 14=#52bdff
+      # palette = 15=#e4e4e5
 
       # extended colors
-      palette = 16=#3ddbd9
+      # palette = 16=#3ddbd9
+      #
+      # Tokyonight_Moon
+      background = #222436
+      foreground = #c8d3f5
+      cursor-color = #c8d3f5
+      selection-background = #2d3f76
+      selection-foreground = #c8d3f5
+
+      palette = 0=#1b1d2b
+      palette = 1=#ff757f
+      palette = 2=#c3e88d
+      palette = 3=#ffc777
+      palette = 4=#82aaff
+      palette = 5=#c099ff
+      palette = 6=#86e1fc
+      palette = 7=#828bb8
+      palette = 8=#444a73
+      palette = 9=#ff8d94
+      palette = 10=#c7fb6d
+      palette = 11=#ffd8ab
+      palette = 12=#9ab8ff
+      palette = 13=#caabff
+      palette = 14=#b2ebff
+      palette = 15=#c8d3f5
 
       # Font
       font-size = 18
