@@ -75,7 +75,7 @@
     pamixer
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-moon;
+  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night;
 
   home = {
     username = "tijso";
@@ -92,11 +92,6 @@
     enable = true;
     enableFishIntegration = true;
   };
-
-  # home.file.".config/ghostty/config" = {
-  #   source = ../../config/ghostty/config;
-  #   recursive = true;
-  # };
 
   # programs.direnv = {
   #   enable = true;
