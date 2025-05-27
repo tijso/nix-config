@@ -329,11 +329,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1748358622,
-        "narHash": "sha256-T9QvU3Ohor5LD2jl8OQgYMjLSU+hvrwsZ8gjVGLBovY=",
+        "lastModified": 1748374007,
+        "narHash": "sha256-7PSKzswfo+jdXSLAaQmiKGz4+xwLs/wr5tihaMv76tQ=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "24915a3a9b0bb8c4dc8b5a365cc0bc3a03ee36f0",
+        "rev": "9b327ddfd1ad4cfef7a04a178e9f0aed16e95e0a",
         "type": "github"
       },
       "original": {
@@ -680,11 +680,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1748358057,
-        "narHash": "sha256-JrIw2CvtXFUzFiUl+Nlw0TRxFfBzfix+ay2Dq0e/HAI=",
+        "lastModified": 1748381338,
+        "narHash": "sha256-OYUeQEF8MtB8+t8+Llomz1E6Pg5b4gL/bhuyCn6V6RY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "495e5187df01bad31fbe7faf4bc20feade7132d8",
+        "rev": "f870c6ccc8951fc48aeb293cf3e98ade6ac42668",
         "type": "github"
       },
       "original": {
@@ -750,11 +750,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1746032508,
-        "narHash": "sha256-lrvRKnMjnAOnE15B80b7fbWV2WPwEVldT3qHpRBjuOw=",
+        "lastModified": 1748382160,
+        "narHash": "sha256-I8R4V4f3okQJZsxz+QujrgiUuBLRklQYH5vU5Krwljg=",
         "owner": "tijso",
         "repo": "nixvim",
-        "rev": "60f2eec51831a6bdd0a2e8ed2f36fc4edaaa521f",
+        "rev": "dd7357b3201af06d7880dd283acb85b2c6a01713",
         "type": "github"
       },
       "original": {
