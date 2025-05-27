@@ -117,29 +117,29 @@ in
         # set -g fish_pager_color_description 7081d0
         # set -g fish_pager_color_selected_background --background=76639e
 
-        # Tokonight_Night
-        set -g fish_color_normal c0caf5
-        set -g fish_color_command 7dcfff
-        set -g fish_color_keyword bb9af7
-        set -g fish_color_quote e0af68
-        set -g fish_color_redirection c0caf5
-        set -g fish_color_end ff9e64
-        set -g fish_color_option bb9af7
-        set -g fish_color_error f7768e
-        set -g fish_color_param 9d7cd8
-        set -g fish_color_comment 565f89
-        set -g fish_color_selection --background=283457
-        set -g fish_color_search_match --background=283457
-        set -g fish_color_operator 9ece6a
-        set -g fish_color_escape bb9af7
-        set -g fish_color_autosuggestion 565f89
+        # Tokonight_Moon
+        set -g fish_color_normal c8d3f5
+        set -g fish_color_command 86e1fc
+        set -g fish_color_keyword c099ff
+        set -g fish_color_quote ffc777
+        set -g fish_color_redirection c8d3f5
+        set -g fish_color_end ff966c
+        set -g fish_color_option c099ff
+        set -g fish_color_error ff757f
+        set -g fish_color_param fca7ea
+        set -g fish_color_comment  636da6
+        set -g fish_color_selection --background=2d3f76
+        set -g fish_color_search_match --background=2d3f76
+        set -g fish_color_operator c3e88d
+        set -g fish_color_escape c099ff
+        set -g fish_color_autosuggestion 636da6
 
         # Completion Pager Colors
-        set -g fish_pager_color_progress 565f89
-        set -g fish_pager_color_prefix 7dcfff
-        set -g fish_pager_color_completion c0caf5
-        set -g fish_pager_color_description 565f89
-        set -g fish_pager_color_selected_background --background=283457 
+        set -g fish_pager_color_progress 636da6
+        set -g fish_pager_color_prefix 86e1fc
+        set -g fish_pager_color_completion c8d3f5
+        set -g fish_pager_color_description 636da6
+        set -g fish_pager_color_selected_background --background=2d3f76 
 
         # Carbonfox
         # set -g fish_color_normal f2f4f8
