@@ -44,29 +44,59 @@ in
       # extended colors
       # palette = 16=#3ddbd9
 
-      # Tokyonight_Moon
-      background = #222436
-      foreground = #c8d3f5
-      cursor-color = #c8d3f5
-      selection-background = #2d3f76
-      selection-foreground = #c8d3f5
+      # Nightfox 
+      background = #192330
+      foreground = #cdcecf
+      selection-background = #2b3b51
+      selection-foreground = #cdcecf
+      cursor-color = #cdcecf
 
-      palette = 0=#1b1d2b
-      palette = 1=#ff757f
-      palette = 2=#c3e88d
-      palette = 3=#ffc777
-      palette = 4=#82aaff
-      palette = 5=#c099ff
-      palette = 6=#86e1fc
-      palette = 7=#828bb8
-      palette = 8=#444a73
-      palette = 9=#ff8d94
-      palette = 10=#c7fb6d
-      palette = 11=#ffd8ab
-      palette = 12=#9ab8ff
-      palette = 13=#caabff
-      palette = 14=#b2ebff
-      palette = 15=#c8d3f5
+      # normal
+      palette = 0=#393b44
+      palette = 1=#c94f6d
+      palette = 2=#81b29a
+      palette = 3=#dbc074
+      palette = 4=#719cd6
+      palette = 5=#9d79d6
+      palette = 6=#63cdcf
+      palette = 7=#dfdfe0
+
+      # bright
+      palette = 8=#575860
+      palette = 9=#d16983
+      palette = 10=#8ebaa4
+      palette = 11=#e0c989
+      palette = 12=#86abdc
+      palette = 13=#baa1e2
+      palette = 14=#7ad5d6
+      palette = 15=#e4e4e5
+
+      # extended colors
+      palette = 16=#f4a261
+
+      # Tokyonight_Moon
+      # background = #222436
+      # foreground = #c8d3f5
+      # cursor-color = #c8d3f5
+      # selection-background = #2d3f76
+      # selection-foreground = #c8d3f5
+
+      # palette = 0=#1b1d2b
+      # palette = 1=#ff757f
+      # palette = 2=#c3e88d
+      # palette = 3=#ffc777
+      # palette = 4=#82aaff
+      # palette = 5=#c099ff
+      # palette = 6=#86e1fc
+      # palette = 7=#828bb8
+      # palette = 8=#444a73
+      # palette = 9=#ff8d94
+      # palette = 10=#c7fb6d
+      # palette = 11=#ffd8ab
+      # palette = 12=#9ab8ff
+      # palette = 13=#caabff
+      # palette = 14=#b2ebff
+      # palette = 15=#c8d3f5
 
       # Font
       font-size = 18
