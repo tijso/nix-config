@@ -44,35 +44,30 @@ in
       # extended colors
       # palette = 16=#3ddbd9
 
-      # Nightfox 
-      background = #192330
-      foreground = #cdcecf
-      selection-background = #2b3b51
-      selection-foreground = #cdcecf
-      cursor-color = #cdcecf
+      # Nightfly
+      background = #011627
+      foreground = #bdc1c6
+      selection-background = #b2ceee
+      selection-foreground = #080808
+      cursor-color = #9ca1aa
 
-      # normal
-      palette = 0=#393b44
-      palette = 1=#c94f6d
-      palette = 2=#81b29a
-      palette = 3=#dbc074
-      palette = 4=#719cd6
-      palette = 5=#9d79d6
-      palette = 6=#63cdcf
-      palette = 7=#dfdfe0
+      palette = 0=#1d3b53
+      palette = 1=#fc514e
+      palette = 2=#a1cd5e
+      palette = 3=#e3d18a
+      palette = 4=#82aaff
+      palette = 5=#c792ea
+      palette = 6=#7fdbca
+      palette = 7=#a1aab8
 
-      # bright
-      palette = 8=#575860
-      palette = 9=#d16983
-      palette = 10=#8ebaa4
-      palette = 11=#e0c989
-      palette = 12=#86abdc
-      palette = 13=#baa1e2
-      palette = 14=#7ad5d6
-      palette = 15=#e4e4e5
-
-      # extended colors
-      palette = 16=#f4a261
+      palette = 8=#7c8f8f
+      palette = 9=#ff5874
+      palette = 10=#21c7a8
+      palette = 11=#ecc48d
+      palette = 12=#82aaff
+      palette = 13=#ae81ff
+      palette = 14=#7fdbca
+      palette = 15=#d6deeb
 
       # Tokyonight_Moon
       # background = #222436
