@@ -118,28 +118,50 @@ in
         # set -g fish_pager_color_selected_background --background=76639e
 
         # Tokonight_Moon
-        set -g fish_color_normal c8d3f5
-        set -g fish_color_command 86e1fc
-        set -g fish_color_keyword c099ff
-        set -g fish_color_quote ffc777
-        set -g fish_color_redirection c8d3f5
-        set -g fish_color_end ff966c
-        set -g fish_color_option c099ff
-        set -g fish_color_error ff757f
-        set -g fish_color_param fca7ea
-        set -g fish_color_comment  636da6
-        set -g fish_color_selection --background=2d3f76
-        set -g fish_color_search_match --background=2d3f76
-        set -g fish_color_operator c3e88d
-        set -g fish_color_escape c099ff
-        set -g fish_color_autosuggestion 636da6
+        # set -g fish_color_normal c8d3f5
+        # set -g fish_color_command 86e1fc
+        # set -g fish_color_keyword c099ff
+        # set -g fish_color_quote ffc777
+        # set -g fish_color_redirection c8d3f5
+        # set -g fish_color_end ff966c
+        # set -g fish_color_option c099ff
+        # set -g fish_color_error ff757f
+        # set -g fish_color_param fca7ea
+        # set -g fish_color_comment  636da6
+        # set -g fish_color_selection --background=2d3f76
+        # set -g fish_color_search_match --background=2d3f76
+        # set -g fish_color_operator c3e88d
+        # set -g fish_color_escape c099ff
+        # set -g fish_color_autosuggestion 636da6
 
         # Completion Pager Colors
-        set -g fish_pager_color_progress 636da6
-        set -g fish_pager_color_prefix 86e1fc
-        set -g fish_pager_color_completion c8d3f5
-        set -g fish_pager_color_description 636da6
-        set -g fish_pager_color_selected_background --background=2d3f76 
+        # set -g fish_pager_color_progress 636da6
+        # set -g fish_pager_color_prefix 86e1fc
+        # set -g fish_pager_color_completion c8d3f5
+        # set -g fish_pager_color_description 636da6
+        # set -g fish_pager_color_selected_background --background=2d3f76 
+
+        # Nightfox
+        set -g fish_color_normal cdcecf
+        set -g fish_color_command 63cdcf
+        set -g fish_color_keyword d67ad2
+        set -g fish_color_quote dbc074
+        set -g fish_color_redirection cdcecf
+        set -g fish_color_end f4a261
+        set -g fish_color_error c94f6d
+        set -g fish_color_param 9d79d6
+        set -g fish_color_comment 738091
+        set -g fish_color_selection --background=2b3b51
+        set -g fish_color_search_match --background=2b3b51
+        set -g fish_color_operator 81b29a
+        set -g fish_color_escape d67ad2
+        set -g fish_color_autosuggestion 738091
+
+        # Completion Pager Colors
+        set -g fish_pager_color_progress 738091
+        set -g fish_pager_color_prefix 63cdcf
+        set -g fish_pager_color_completion cdcecf
+        set -g fish_pager_color_description 738091
 
         # Carbonfox
         # set -g fish_color_normal f2f4f8
