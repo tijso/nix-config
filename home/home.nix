@@ -75,7 +75,7 @@
     pamixer
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.kanagawa;
+  colorScheme = inputs.nix-colors.colorSchemes.night-owlish-light;
 
   home = {
     username = "tijso";
