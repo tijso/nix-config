@@ -45,12 +45,12 @@
       tmux.enable = true;
     };
     terminals = {
-      kitty.enable = true;
+      kitty.enable = false;
       wezterm.enable = true;
       ghostty.enable = true;
     };
     theming = {
-      gtk.enable = true;
+      gtk.enable = false;
       # stylix.enable = false;
     };
   };
