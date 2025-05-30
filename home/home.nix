@@ -50,7 +50,7 @@
       ghostty.enable = true;
     };
     theming = {
-      gtk.enable = false;
+      gtk.enable = true;
       # stylix.enable = false;
     };
   };

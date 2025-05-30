@@ -9,7 +9,7 @@ let
   cfg = config.modules.theming.gtk;
 in
 {
-  options.modules.desktop.gtk.enable = mkEnableOption "Enable Gtk";
+  options.modules.theming.gtk.enable = mkEnableOption "Enable Gtk";
   config = mkIf cfg.enable {
     gtk = {
       enable = true;
