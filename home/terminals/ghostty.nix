@@ -14,44 +14,6 @@ in
     programs.ghostty = {
       enable = true;
       package = pkgs.ghostty;
-      enableFishIntegration = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
-      installBatSyntax = true; # The file doesn't seem to exist in the pkg
-      settings = {
-        font-size = 18;
-        font-family = Maple Mono NF;
-        font-family-bold = Maple Mono NF Bold;
-        font-family-bold-italic = Maple Mono NF Bold Italic;
-        font-family-italic = Maple Mono NF Italic;
-        window-decoration = true;
-        window-height = 32;
-        window-width = 110;
-        background-opacity = 0.95;
-        background-blur-radius = 60;
-        cursor-style = bar;
-        cursor-style-blink = true;
-        mouse-hide-while-typing = true;
-        clipboard-read = true;
-        clipboard-write = true;
-        clipboard-paste-protection = false;
-        #copy-on-select = clipboard;
-        scrollback-limit = 100 _000;
-        wait-after-command = false;
-        window-save-state = always;
-
-        gtk-single-instance = true;
-        gtk-tabs-location = hidden;
-
-        unfocused-split-opacity = 0.5;
-        quick-terminal-position = center;
-
-        shell-integration = detect;
-        shell-integration-features = [
-          no-cursor
-          sudo
-        ];
-      };
     };
     home.file."./.config/ghostty/config".text = ''
       # Carbonfox
@@ -132,45 +94,46 @@ in
       # palette = 15=#c8d3f5
 
       # Font
-      # font-size = 18
-      # font-family = Maple Mono NF 
-      # font-family-bold = Maple Mono NF Bold
-      # font-family-bold-italic = Maple Mono NF Bold Italic
-      # font-family-italic = Maple Mono NF Italic
+      font-size = 18
+      font-family = Maple Mono NF 
+      font-family-bold = Maple Mono NF Bold
+      font-family-bold-italic = Maple Mono NF Bold Italic
+      font-family-italic = Maple Mono NF Italic
 
       # Window Settings 
-      # window-decoration = true
-      # window-height = 32
-      # window-width = 110
+      window-decoration = true
+      window-height = 32
+      window-width = 110
+      adjust-cell-height = 10%
 
       # Transparency
-      # background-opacity = 0.95
-      # background-blur-radius = 60
+      background-opacity = 0.95
+      background-blur-radius = 60
 
       # Cursor Style
-      # cursor-style = bar
-      # cursor-style-blink = true
-      # mouse-hide-while-typing = true
+      cursor-style = bar
+      cursor-style-blink = true
+      mouse-hide-while-typing = true
 
       # Clipboard Settings
-      # clipboard-read = allow
-      # clipboard-write = allow
-      # clipboard-paste-protection = false
+      clipboard-read = allow
+      clipboard-write = allow
+      clipboard-paste-protection = false
       #copy-on-select = clipboard
 
       # Misc
-      # scrollback-limit = 100_000
-      # wait-after-command = false
-      # window-save-state = always
+      scrollback-limit = 100_000
+      wait-after-command = false
+      window-save-state = always
 
-      # gtk-single-instance = true
-      # gtk-tabs-location = hidden
+      gtk-single-instance = true
+      gtk-tabs-location = hidden
 
-      # unfocused-split-opacity = 0.5
-      # quick-terminal-position = center
+      unfocused-split-opacity = 0.5
+      quick-terminal-position = center
 
-      # shell-integration = detect
-      # shell-integration-features = no-cursor,sudo
+      shell-integration = detect
+      shell-integration-features = no-cursor,sudo
 
       # Keybindings
       keybind = alt+s>r=reload_config
