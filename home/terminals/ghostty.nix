@@ -164,13 +164,10 @@ in
       keybind = shift+ctrl+k=new_split:up
       keybind = shift+ctrl+l=new_split:right
 
-      # keybind = alt+s>\=new_split:right
-      # keybind = alt+s>-=new_split:down
-
-      keybind = alt+s>j=goto_split:bottom
-      keybind = alt+s>k=goto_split:top
-      keybind = alt+s>h=goto_split:left
-      keybind = alt+s>l=goto_split:right
+      keybind = alt+s+h=goto_split:left
+      keybind = alt+s+j=goto_split:bottom
+      keybind = alt+s+k=goto_split:top
+      keybind = alt+s+l=goto_split:right
 
       keybind = alt+s>z=toggle_split_zoom
       keybind = alt+s>e=equalize_splits
