@@ -14,6 +14,10 @@ in
     programs.ghostty = {
       enable = true;
       package = pkgs.ghostty;
+      enableFishIntegration = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      installBatSyntax = true; # The file doesn't seem to exist in the pkg
     };
     home.file."./.config/ghostty/config".text = ''
       # Carbonfox
