@@ -14,6 +14,19 @@ in
     programs.ghostty = {
       enable = true;
       package = pkgs.ghostty;
+      settings = {
+        font-size = 18;
+        font-family = Maple Mono NF;
+        font-family-bold = Maple Mono NF Bold;
+        font-family-bold-italic = Maple Mono NF Bold Italic;
+        font-family-italic = Maple Mono NF Italic;
+
+        window-decoration = true;
+        window-height = 32;
+        window-width = 110;
+        background-opacity = 0.95;
+        background-blur-radius = 60;
+      };
     };
     home.file."./.config/ghostty/config".text = ''
       # Carbonfox
@@ -94,21 +107,21 @@ in
       # palette = 15=#c8d3f5
 
       # Font
-      font-size = 18
-      font-family = Maple Mono NF 
-      font-family-bold = Maple Mono NF Bold
-      font-family-bold-italic = Maple Mono NF Bold Italic
-      font-family-italic = Maple Mono NF Italic
+      # font-size = 18
+      # font-family = Maple Mono NF 
+      # font-family-bold = Maple Mono NF Bold
+      # font-family-bold-italic = Maple Mono NF Bold Italic
+      # font-family-italic = Maple Mono NF Italic
 
       # Window Settings 
-      window-decoration = true
-      window-height = 32
-      window-width = 110
-      adjust-cell-height = 10%
+      # window-decoration = true
+      # window-height = 32
+      # window-width = 110
+      # adjust-cell-height = 10%
 
       # Transparency
-      background-opacity = 0.95
-      background-blur-radius = 60
+      # background-opacity = 0.95
+      # background-blur-radius = 60
 
       # Cursor Style
       cursor-style = bar
