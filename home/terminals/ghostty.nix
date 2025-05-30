@@ -159,15 +159,15 @@ in
       keybind = alt+s>9=goto_tab:9
 
       # split
-      keybind = shift+ctrl+h=new_split:left
-      keybind = shift+ctrl+j=new_split:down
-      keybind = shift+ctrl+k=new_split:up
-      keybind = shift+ctrl+l=new_split:right
+      keybind = ctrl+shift+h=new_split:left
+      keybind = ctrl+shift+j=new_split:down
+      keybind = ctrl+shift+k=new_split:up
+      keybind = ctrl+shift+l=new_split:right
 
-      keybind = alt+s+h=goto_split:left
-      keybind = alt+s+j=goto_split:bottom
-      keybind = alt+s+k=goto_split:top
-      keybind = alt+s+l=goto_split:right
+      keybind = alt+super+h=goto_split:left
+      keybind = alt+super+j=goto_split:bottom
+      keybind = alt+super+k=goto_split:top
+      keybind = alt+super+l=goto_split:right
 
       keybind = alt+s>z=toggle_split_zoom
       keybind = alt+s>e=equalize_splits
