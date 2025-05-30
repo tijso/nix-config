@@ -141,22 +141,22 @@ in
       keybind = alt+s>n=new_window
 
       # tabs
-      keybind = alt+s>c=new_tab
-      keybind = alt+s>shift+l=next_tab
-      keybind = alt+s>shift+h=previous_tab
-      keybind = alt+s>comma=move_tab:-1
-      keybind = alt+s>period=move_tab:1
+      keybind = ctrl+shift+n=new_tab
+      keybind = ctrl+shift+]=next_tab
+      keybind = ctrl+shift+[=previous_tab
+      keybind = ctrl+shift+comma=move_tab:-1
+      keybind = ctrl+shift+period=move_tab:1
 
       # quick tab switch
-      keybind = alt+s>1=goto_tab:1
-      keybind = alt+s>2=goto_tab:2
-      keybind = alt+s>3=goto_tab:3
-      keybind = alt+s>4=goto_tab:4
-      keybind = alt+s>5=goto_tab:5
-      keybind = alt+s>6=goto_tab:6
-      keybind = alt+s>7=goto_tab:7
-      keybind = alt+s>8=goto_tab:8
-      keybind = alt+s>9=goto_tab:9
+      keybind = ctrl+shift+1=goto_tab:1
+      keybind = ctrl+shift+2=goto_tab:2
+      keybind = ctrl+shift+3=goto_tab:3
+      keybind = ctrl+shift+4=goto_tab:4
+      keybind = ctrl+shift+5=goto_tab:5
+      keybind = ctrl+shift+6=goto_tab:6
+      keybind = ctrl+shift+7=goto_tab:7
+      keybind = ctrl+shift+8=goto_tab:8
+      keybind = ctrl+shift+9=goto_tab:9
 
       # split
       keybind = ctrl+shift+h=new_split:left
@@ -169,8 +169,12 @@ in
       keybind = alt+super+k=goto_split:top
       keybind = alt+super+l=goto_split:right
 
-      keybind = alt+s>z=toggle_split_zoom
-      keybind = alt+s>e=equalize_splits
+      keybind = ctrl+shift+z=toggle_split_zoom
+      keybind = ctrl+shift+up=resize_split:up,10
+      keybind = ctrl+shift+down=resize_split:down,10
+      keybind = ctrl+shift+left=resize_split:left,10
+      keybind = ctrl+shift+right=resize_split:right,10
+      keybind = ctrl+shift+0=equalize_splits
     '';
   };
 }
