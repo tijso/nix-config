@@ -23,7 +23,7 @@ in
         #     "outline"
         #     "float"
         #   ];
-        };
+        # };
         # name = "Catppuccin-Mocha-Standard-Teal-Dark";
         # package = pkgs.catppuccin-gtk.override {
         #   accents = ["teal"];
