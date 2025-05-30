@@ -111,7 +111,7 @@ in
       background-blur-radius = 60
 
       # Cursor Style
-      cursor-style = block
+      cursor-style = bar
       cursor-style-blink = true
       mouse-hide-while-typing = true
 
