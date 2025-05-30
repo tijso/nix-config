@@ -133,7 +133,7 @@ in
       quick-terminal-position = center
 
       shell-integration = detect
-      shell-integration-features = cursor,sudo
+      shell-integration-features = no-cursor,sudo
 
       # Keybindings
       keybind = alt+s>r=reload_config
