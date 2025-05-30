@@ -159,10 +159,10 @@ in
       keybind = alt+s>9=goto_tab:9
 
       # split
-      keybind = shift+ctrl>h=new_split:left
-      keybind = shift+ctrl>j=new_split:down
-      keybind = shift+ctrl>k=new_split:up
-      keybind = shift+ctrl>l=new_split:right
+      keybind = shift+ctrl+h=new_split:left
+      keybind = shift+ctrl+j=new_split:down
+      keybind = shift+ctrl+k=new_split:up
+      keybind = shift+ctrl+l=new_split:right
 
       # keybind = alt+s>\=new_split:right
       # keybind = alt+s>-=new_split:down
