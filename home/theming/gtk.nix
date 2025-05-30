@@ -14,13 +14,15 @@ in
     gtk = {
       enable = true;
       theme = {
-        name = "Tokyonight-Dark-BL";
-        package = pkgs.tokyonight-gtk-theme.override {
-          themeVariants = [ "teal" ];
-          tweakVariants = [
-            "outline"
-            "float"
-          ];
+        name = "Nightfox-Dark-BL";
+        package = pkgs.nightfox-gtk-theme;
+        # name = "Tokyonight-Dark-BL";
+        # package = pkgs.tokyonight-gtk-theme.override {
+        #   themeVariants = [ "teal" ];
+        #   tweakVariants = [
+        #     "outline"
+        #     "float"
+        #   ];
         };
         # name = "Catppuccin-Mocha-Standard-Teal-Dark";
         # package = pkgs.catppuccin-gtk.override {
