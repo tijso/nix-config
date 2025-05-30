@@ -24,6 +24,7 @@ in
         window-decoration = true;
         window-height = 32;
         window-width = 110;
+
         background-opacity = 0.95;
         background-blur-radius = 60;
       };
