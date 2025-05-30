@@ -16,10 +16,10 @@ in
       package = pkgs.ghostty;
       settings = {
         font-size = 18;
-        font-family = Maple Mono NF;
-        font-family-bold = Maple Mono NF Bold;
-        font-family-bold-italic = Maple Mono NF Bold Italic;
-        font-family-italic = Maple Mono NF Italic;
+        font-family = "Maple Mono NF";
+        font-family-bold = "Maple Mono NF Bold";
+        font-family-bold-italic = "Maple Mono NF Bold Italic";
+        font-family-italic = "Maple Mono NF Italic";
 
         window-decoration = true;
         window-height = 32;
