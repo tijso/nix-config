@@ -3,7 +3,18 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+    # extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+    extraModulePackages = [
+      (config.boot.kernelPackages.v4l2loopback.overrideAttrs (old: {
+        version = "0.15.0";
+        src = pkgs.fetchFromGitHub {
+          owner = "umlaeute";
+          repo = "v4l2loopback";
+          rev = "v0.15.0";
+          sha256 = "sha256-fa3f8GDoQTkPppAysrkA7kHuU5z2P2pqI8dKhuKYh04=";
+        };
+      }))
+    ];
     kernel.sysctl = {
       "vm.max_map_count" = 2147483642;
     };
