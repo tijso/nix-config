@@ -32,8 +32,8 @@ in
         cursor-style = bar;
         cursor-style-blink = true;
         mouse-hide-while-typing = true;
-        clipboard-read = allow;
-        clipboard-write = allow;
+        clipboard-read = true;
+        clipboard-write = true;
         clipboard-paste-protection = false;
         #copy-on-select = clipboard;
         scrollback-limit = 100 _000;
@@ -47,7 +47,10 @@ in
         quick-terminal-position = center;
 
         shell-integration = detect;
-        # shell-integration-features = no-cursor,sudo;
+        shell-integration-features = [
+          no-cursor
+          sudo
+        ];
       };
     };
     home.file."./.config/ghostty/config".text = ''
@@ -156,18 +159,18 @@ in
       #copy-on-select = clipboard
 
       # Misc
-      scrollback-limit = 100_000
-      wait-after-command = false
-      window-save-state = always
+      # scrollback-limit = 100_000
+      # wait-after-command = false
+      # window-save-state = always
 
-      gtk-single-instance = true
-      gtk-tabs-location = hidden
+      # gtk-single-instance = true
+      # gtk-tabs-location = hidden
 
-      unfocused-split-opacity = 0.5
-      quick-terminal-position = center
+      # unfocused-split-opacity = 0.5
+      # quick-terminal-position = center
 
-      shell-integration = detect
-      shell-integration-features = no-cursor,sudo
+      # shell-integration = detect
+      # shell-integration-features = no-cursor,sudo
 
       # Keybindings
       keybind = alt+s>r=reload_config
