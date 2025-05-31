@@ -36,12 +36,9 @@ in
         #copy-on-select = clipboard
 
         # Misc
-        scrollback-limit = 100 _000;
         wait-after-command = false;
         window-save-state = always;
-
         gtk-single-instance = true;
-
         shell-integration = detect;
         shell-integration-features = no-cursor;
 
