@@ -34,7 +34,7 @@ in
 
         # Clipboard
         clipboard-paste-protection = false;
-        #copy-on-select = clipboard
+        copy-on-select = "clipboard";
 
         # Misc
         gtk-single-instance = true;
