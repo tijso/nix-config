@@ -107,22 +107,6 @@ in
       # palette = 14=#b2ebff
       # palette = 15=#c8d3f5
 
-      # Font
-      # font-size = 18
-      # font-family = Maple Mono NF 
-      # font-family-bold = Maple Mono NF Bold
-      # font-family-bold-italic = Maple Mono NF Bold Italic
-      # font-family-italic = Maple Mono NF Italic
-
-      # Window Settings 
-      # window-decoration = true
-      # window-height = 32
-      # window-width = 110
-      # adjust-cell-height = 10%
-
-      # Transparency
-      # background-opacity = 0.95
-      # background-blur-radius = 60
 
       # Cursor Style
       cursor-style = bar
