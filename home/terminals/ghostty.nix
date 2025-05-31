@@ -16,9 +16,9 @@ in
       package = pkgs.ghostty;
       settings = {
         font-family = "Maple Mono NF";
-        font-family-bold = "Maple Mono NF Bold";
-        font-family-bold-italic = "Maple Mono NF Bold Italic";
-        font-family-italic = "Maple Mono NF Italic";
+        # font-family-bold = "Maple Mono NF Bold";
+        # font-family-bold-italic = "Maple Mono NF Bold Italic";
+        # font-family-italic = "Maple Mono NF Italic";
         font-size = 18;
 
         window-decoration = true;
@@ -27,6 +27,7 @@ in
 
         background-opacity = 0.95;
         background-blur-radius = 60;
+        unfocused-split-opacity = 0.9;
       };
     };
     home.file."./.config/ghostty/config".text = ''
