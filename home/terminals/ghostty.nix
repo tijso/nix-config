@@ -136,6 +136,32 @@ in
             "15=#c8d3f5"
           ];
         };
+        Coolnight = {
+          background = "011423";
+          foreground = "cbe0f0";
+          cursor-color = "47ff9c";
+          cursor-text = "011423";
+
+          palette = [
+            "0=#214969"
+            "1=#e52e2e"
+            "2=#44ffb1"
+            "3=#ffe073"
+            "4=#0fc5ed"
+            "5=#a277ff"
+            "6=#24eaf7"
+            "7=#24eaf7"
+            "8=#214969"
+            "9=#e52e2e"
+            "10=#44ffb1"
+            "11=#ffe073"
+            "12=#a277ff"
+            "13=#a277ff"
+            "14=#24eaf7"
+            "15=#24eaf7"
+          ];
+        };
+
         Carbonfox = {
           background = "161616";
           foreground = "f2f4f8";
