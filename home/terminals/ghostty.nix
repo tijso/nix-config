@@ -37,10 +37,10 @@ in
         #copy-on-select = clipboard
 
         # Misc
-        wait-after-command = false;
         gtk-single-instance = true;
+        shell-integration-features = "no-cursor,";
         cursor-style = "block";
-        shell-integration-features = "no-cursor";
+        adjust-cell-height = "35%";
         confirm-close-surface = false;
         keybind = [
           "alt+s>r=reload_config"
