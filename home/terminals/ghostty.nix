@@ -40,7 +40,7 @@ in
         wait-after-command = false;
         gtk-single-instance = true;
         cursor-style = "block";
-        shell-intergration-features = "no-cursor";
+        shell-integration-features = "no-cursor";
         confirm-close-surface = false;
         keybind = [
           "alt+s>r=reload_config"
