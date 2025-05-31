@@ -32,20 +32,20 @@ in
         background-blur-radius = 60;
         unfocused-split-opacity = 0.9;
 
-        # Clipboard Settings
+        # Clipboard
+        clipboard-paste-protection = false;
         # clipboard-read = allow;
         # clipboard-write = allow;
-        clipboard-paste-protection = false;
         #copy-on-select = clipboard
 
         # Misc
         wait-after-command = false;
         window-save-state = always;
         gtk-single-instance = true;
-        shell-integration-features = no-cursor;
+        cursor-style = "block";
+        confirm-close-surface = false;
 
         keybind = [
-          # Keybindings
           "alt+s>r=reload_config"
           "alt+s>x=close_surface"
           "alt+s>n=new_window"
