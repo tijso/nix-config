@@ -40,6 +40,8 @@ in
         gtk-single-instance = true;
         shell-integration-features = "no-cursor";
         cursor-style = "block";
+        mouse-hide-while-typing = true;
+        mouse-scroll-multiplier = 2;
         confirm-close-surface = false;
         keybind = [
           "alt+s>r=reload_config"
