@@ -38,7 +38,7 @@ in
 
         # Misc
         gtk-single-instance = true;
-        shell-integration-features = "no-cursor,";
+        shell-integration-features = "no-cursor";
         cursor-style = "block";
         adjust-cell-height = "35%";
         confirm-close-surface = false;
