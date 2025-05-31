@@ -40,7 +40,6 @@ in
         gtk-single-instance = true;
         shell-integration-features = "no-cursor";
         cursor-style = "block";
-        adjust-cell-height = "35%";
         confirm-close-surface = false;
         keybind = [
           "alt+s>r=reload_config"
