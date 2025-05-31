@@ -41,9 +41,6 @@ in
         window-save-state = always;
 
         gtk-single-instance = true;
-        # gtk-tabs-location = hidden;
-
-        quick-terminal-position = center;
 
         shell-integration = detect;
         shell-integration-features = no-cursor;
