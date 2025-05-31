@@ -82,7 +82,7 @@ in
           "ctrl+shift+right=resize_split:right,10"
           "ctrl+shift+0=equalize_splits"
         ];
-        theme = "Coolnight";
+        theme = "Nightfly";
       };
       themes = {
         Nightfly = {
@@ -111,7 +111,7 @@ in
             "15=#d6deeb"
           ];
         };
-        Coolnight = {
+        Tokyonight_Moon = {
           background = "222436";
           foreground = "c8d3f5";
           cursor-color = "c8d3f5";
