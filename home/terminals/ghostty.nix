@@ -13,6 +13,9 @@ in
   config = mkIf cfg.enable {
     programs.ghostty = {
       enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
       package = pkgs.ghostty;
       settings = {
         font-family = "Maple Mono NF";
@@ -39,7 +42,6 @@ in
         wait-after-command = false;
         window-save-state = always;
         gtk-single-instance = true;
-        shell-integration = detect;
         shell-integration-features = no-cursor;
 
         keybind = [
