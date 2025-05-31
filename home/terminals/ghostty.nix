@@ -34,13 +34,10 @@ in
 
         # Clipboard
         clipboard-paste-protection = false;
-        # clipboard-read = allow;
-        # clipboard-write = allow;
         #copy-on-select = clipboard
 
         # Misc
         wait-after-command = false;
-        window-save-state = always;
         gtk-single-instance = true;
         cursor-style = "block";
         confirm-close-surface = false;
