@@ -22,7 +22,7 @@ in
         font-family-bold = "Maple Mono NF Bold";
         font-family-bold-italic = "Maple Mono NF Bold Italic";
         font-family-italic = "Maple Mono NF Italic";
-        font-size = 18;
+        font-size = 16;
 
         window-decoration = true;
         window-height = 32;
@@ -41,7 +41,6 @@ in
         gtk-single-instance = true;
         cursor-style = "block";
         confirm-close-surface = false;
-
         keybind = [
           "alt+s>r=reload_config"
           "alt+s>x=close_surface"
@@ -112,6 +111,57 @@ in
             "15=#d6deeb"
           ];
         };
+        Coolnight = {
+          background = "222436";
+          foreground = "c8d3f5";
+          cursor-color = "c8d3f5";
+          selection-background = "2d3f76";
+          selection-foreground = "c8d3f5";
+          palette = [
+            "0=#1b1d2b"
+            "1=#ff757f"
+            "2=#c3e88d"
+            "3=#ffc777"
+            "4=#82aaff"
+            "5=#c099ff"
+            "6=#86e1fc"
+            "7=#828bb8"
+            "8=#444a73"
+            "9=#ff8d94"
+            "10=#c7fb6d"
+            "11=#ffd8ab"
+            "12=#9ab8ff"
+            "13=#caabff"
+            "14=#b2ebff"
+            "15=#c8d3f5"
+          ];
+        };
+        Carbonfox = {
+          background = "161616";
+          foreground = "f2f4f8";
+          selection-background = "2a2a2a";
+          selection-foreground = "f2f4f8";
+          cursor-color = "f2f4f8";
+          palette = [
+            "0=#282828"
+            "1=#ee5396"
+            "2=#25be6a"
+            "3=#08bdba"
+            "4=#78a9ff"
+            "5=#be95ff"
+            "6=#33b1ff"
+            "7=#dfdfe0"
+            "8=#484848"
+            "9=#f16da6"
+            "10=#46c880"
+            "11=#2dc7c4"
+            "12=#8cb6ff"
+            "13=#c8a5ff"
+            "14=#52bdff"
+            "15=#e4e4e5"
+            "16=#3ddbd9"
+          ];
+        };
       };
     };
 
@@ -143,31 +193,6 @@ in
 
     # extended colors
     # palette = 16=#3ddbd9
-
-    # Nightfly
-    # background = #011627
-    # foreground = #bdc1c6
-    # selection-background = #b2ceee
-    # selection-foreground = #080808
-    # cursor-color = #9ca1aa
-
-    # palette = 0=#1d3b53
-    # palette = 1=#fc514e
-    # palette = 2=#a1cd5e
-    # palette = 3=#e3d18a
-    # palette = 4=#82aaff
-    # palette = 5=#c792ea
-    # palette = 6=#7fdbca
-    # palette = 7=#a1aab8
-
-    # palette = 8=#7c8f8f
-    # palette = 9=#ff5874
-    # palette = 10=#21c7a8
-    # palette = 11=#ecc48d
-    # palette = 12=#82aaff
-    # palette = 13=#ae81ff
-    # palette = 14=#7fdbca
-    # palette = 15=#d6deeb
 
     # Tokyonight_Moon
     # background = #222436
