@@ -41,7 +41,7 @@ in
         window-save-state = always;
 
         gtk-single-instance = true;
-        gtk-tabs-location = hidden;
+        # gtk-tabs-location = hidden;
 
         quick-terminal-position = center;
 
