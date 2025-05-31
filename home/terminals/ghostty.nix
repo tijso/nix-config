@@ -82,7 +82,7 @@ in
           "ctrl+shift+right=resize_split:right,10"
           "ctrl+shift+0=equalize_splits"
         ];
-        theme = "Nightfly";
+        theme = "Coolnight";
       };
       themes = {
         Nightfly = {
@@ -141,7 +141,6 @@ in
           foreground = "cbe0f0";
           cursor-color = "47ff9c";
           cursor-text = "011423";
-
           palette = [
             "0=#214969"
             "1=#e52e2e"
@@ -161,7 +160,6 @@ in
             "15=#24eaf7"
           ];
         };
-
         Carbonfox = {
           background = "161616";
           foreground = "f2f4f8";
