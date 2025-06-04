@@ -76,9 +76,29 @@
   ];
 
   # colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
-  colorScheme = inputs.nix-colors.lib.colorSchemesFromPictures {
-    name = "moonfly";
-    colors = import ./theming/themes/moonfly.yaml;
+
+  colorScheme = {
+    slug = "custom-dark";
+    name = "Moonfly";
+    author = "tijso";
+    palette = {
+      base00 = "080808"; # background
+      base01 = "323437"; # color0 (darker background)
+      base02 = "949494"; # color8 (selection background)
+      base03 = "c6c6c6"; # color7 (comments)
+      base04 = "bdbdbd"; # foreground (dark foreground)
+      base05 = "bdbdbd"; # foreground (default foreground)
+      base06 = "e4e4e4"; # color15 (light foreground)
+      base07 = "e4e4e4"; # color15 (lightest foreground)
+      base08 = "ff5d5d"; # color1 (red)
+      base09 = "e3c78a"; # color3 (orange/yellow)
+      base0A = "c6c684"; # color11 (yellow)
+      base0B = "8cc85f"; # color2 (green)
+      base0C = "79dac8"; # color6 (cyan)
+      base0D = "80a0ff"; # color4 (blue)
+      base0E = "cf87e8"; # color5 (magenta)
+      base0F = "ff5189"; # color9 (bright red/pink)
+    };
   };
 
   home = {
