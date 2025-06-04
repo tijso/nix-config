@@ -49,6 +49,7 @@
       maple-mono.NF
       monaspace
       fira-code
+      iosevka
       material-icons
       cascadia-code
       nerd-fonts.hack
