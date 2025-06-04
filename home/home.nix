@@ -76,7 +76,7 @@
   ];
 
   # colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
-  colorScheme = inputs.nix-colors.colorSchemes.base16Scheme {
+  colorScheme = inputs.nix-colors.lib.colorSchemesFromPictures {
     name = "moonfly";
     colors = import ./theming/themes/moonfly.yaml;
   };
