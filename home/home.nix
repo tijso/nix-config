@@ -75,7 +75,11 @@
     pamixer
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
+  # colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
+  colorScheme = inputs.nix-colors.colorSchemes.base16Scheme {
+    name = "moonfly";
+    colors = import ./theming/themes/moonfly.yaml;
+  };
 
   home = {
     username = "tijso";
