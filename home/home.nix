@@ -76,7 +76,6 @@
   ];
 
   # colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
-
   colorScheme = {
     slug = "custom-dark";
     name = "Moonfly";
