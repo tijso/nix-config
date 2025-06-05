@@ -242,7 +242,6 @@
         ]
       },
       "locked": {
-        "lastModified": 1749131129,
         "narHash": "sha256-tJ+93i7N4QttM75bE8T09LlSU3Mv6Dfi9WaVBvlWilo=",
         "owner": "nix-community",
         "repo": "home-manager",
