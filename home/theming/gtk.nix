@@ -14,8 +14,8 @@ in
     gtk = {
       enable = true;
       theme = {
-        name = "Nightfox-Dark-BL";
-        package = pkgs.nightfox-gtk-theme;
+        name = "Kanagawa-BL-GS";
+        package = pkgs.kanagawa-gtk-theme;
         # name = "Tokyonight-Dark-BL";
         # package = pkgs.tokyonight-gtk-theme.override {
         #   themeVariants = [ "teal" ];
@@ -23,13 +23,6 @@ in
         #     "outline"
         #     "float"
         #   ];
-        # };
-        # name = "Catppuccin-Mocha-Standard-Teal-Dark";
-        # package = pkgs.catppuccin-gtk.override {
-        #   accents = ["teal"];
-        #   size = "standard";
-        #   tweaks = ["normal"];
-        #   variant = "mocha";
         # };
       };
 
