@@ -77,26 +77,26 @@
 
   # colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
   colorScheme = {
-    slug = "moonfly";
-    name = "Moonfly";
-    author = "bluz71";
+    slug = "kanagawa";
+    name = "Kanagawa";
+    author = "rebelot";
     palette = {
-      base00 = "080808";
-      base01 = "323437";
-      base02 = "949494";
-      base03 = "c6c6c6";
-      base04 = "bdbdbd";
-      base05 = "bdbdbd";
-      base06 = "e4e4e4";
-      base07 = "e4e4e4";
-      base08 = "ff5d5d";
-      base09 = "e3c78a";
-      base0A = "c6c684";
-      base0B = "8cc85f";
-      base0C = "79dac8";
-      base0D = "80a0ff";
-      base0E = "cf87e8";
-      base0F = "ff5189";
+      base00 = "1F1F28";
+      base01 = "2A2A37";
+      base02 = "223249";
+      base03 = "727169";
+      base04 = "C8C093";
+      base05 = "DCD7BA";
+      base06 = "938AA9";
+      base07 = "363646";
+      base08 = "C34043";
+      base09 = "FFA066";
+      base0A = "DCA561";
+      base0B = "98BB6C";
+      base0C = "7FB4CA";
+      base0D = "7E9CD8";
+      base0E = "957FB8";
+      base0F = "D27E99";
     };
   };
 
