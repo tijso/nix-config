@@ -12,11 +12,11 @@ in
   options.modules.terminals.ghostty.enable = mkEnableOption "Enable Ghostty";
   config = mkIf cfg.enable {
     programs.ghostty = {
-      enable = true;
+      # enable = true;
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableFishIntegration = true;
-      # package = pkgs.ghostty;
+      package = pkgs.ghostty;
       settings = {
         font-family = "Maple Mono NF";
         font-family-bold = "Maple Mono NF Bold";
