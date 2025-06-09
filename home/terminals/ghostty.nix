@@ -85,7 +85,7 @@ in
           "ctrl+shift+right=resize_split:right,10"
           "ctrl+shift+0=equalize_splits"
         ];
-        theme = "Coolnight";
+        theme = "Kanagawa-wave";
       };
       themes = {
         Nightfly = {
