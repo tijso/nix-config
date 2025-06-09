@@ -16,7 +16,7 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-
+          "$hostname"
           "$username"
           "$directory"
           "$git_branch"
@@ -102,15 +102,10 @@ in
         #   style = "fg:#${config.colorScheme.palette.base0C}";
         # };
 
-        # os = with config.colorScheme.palette; {
-        #   disabled = false;
-        #   style = "fg:#${base0D}";
-        #   symbols = {
-        #     # Arch = "[ ]($style)";
-        #     NixOS = "[ ]($style)";
-        #     # Linux = "[  ](fg:fg $style)";
-        #   };
-        # };
+        hostname = {
+          format = "[ $ssh_symbol$hostname ](bold bg:#24273a fg:#E8E3E3)";
+          disabled = false;
+        };
 
         git_branch = {
           format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
