@@ -82,6 +82,15 @@ in
           symbol = " ";
         };
 
+        time = {
+          disabled = false;
+          format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
+          style = "bg:overlay fg:rose";
+          time_format = "%I:%M%P";
+          use_12hr = true;
+
+        };
+
         username = {
           # show_always = false;
           # style_user = "fg:#${config.colorScheme.palette.base03}";
