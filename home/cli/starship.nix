@@ -99,17 +99,17 @@ in
         };
 
         git_branch = {
-          format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           style = "bg:overlay fg:foam";
-          symbol = "";
+          symbol = "";
         };
 
         git_status = {
           disabled = false;
           style = "bg:overlay fg:love";
           # style = "fg:#${config.colorScheme.palette.base0E}";
-          format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
+          format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
           up_to_date = "[ ✓ ](bg:overlay fg:iris)";
           untracked = "[?($count)](bg:overlay fg:gold)";
           stashed = "[$](bg:overlay fg:iris)";
