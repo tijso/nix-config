@@ -132,6 +132,14 @@ in
           symbol = " ";
         };
 
+        c = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
+
+        };
+
         rust = {
           format = "[$symbol$version]($style)";
           symbol = "";
@@ -189,7 +197,6 @@ in
           disabled = false;
           symbol = "󰆥 ";
         };
-
       };
     };
   };
