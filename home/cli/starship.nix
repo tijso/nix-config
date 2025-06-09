@@ -36,14 +36,11 @@ in
           "$conda"
           "$python"
           "$time"
+          "$shell"
           "$line_break"
           "$character"
-          # "[󱞪](fg:iris)"
         ];
-        # format = ''
-        #   [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
-        #   [└](fg:#${config.colorScheme.palette.base0A}) $os$character
-        # '';
+
         palette = "rose-pine";
 
         palettes.rose-pine = {
