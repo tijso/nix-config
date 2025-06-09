@@ -52,14 +52,14 @@ in
         };
 
         character = {
-          success_symbol = "[ •   ](#31748f bold)";
-          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
+          success_symbol = "[ •   ](#31748f bold) ";
+          error_symbol = "[ •  󰅙 ](#eb6f92 bold) ";
           # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
           # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
         };
 
         directory = {
-          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)";
+          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base07}";
           fish_style_pwd_dir_length = 1;
           style = "bg:overlay fg:pine";
@@ -93,7 +93,7 @@ in
 
         username = {
           disabled = false;
-          format = "[](fg:overlay)[ 󰧱 $user@ ]($style)[](fg:overlay)";
+          format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay) ";
           # format = "[$user@]($style)";
           show_always = true;
           style_root = "bg:overlay fg:iris";
