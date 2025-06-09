@@ -36,7 +36,7 @@ in
           "$os"
           "$line_break"
           "$character"
-          "[󱞪](fg:iris)"
+          # "[󱞪](fg:iris)"
         ];
 
         palette = "rose-pine";
@@ -52,7 +52,7 @@ in
         };
 
         directory = {
-          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base07}";
           fish_style_pwd_dir_length = 1;
           style = "bg:overlay fg:pine";
