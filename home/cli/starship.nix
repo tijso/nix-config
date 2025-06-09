@@ -36,7 +36,9 @@ in
           "$conda"
           "$python"
           "$time"
-          "[󱞪](fg:iris)"
+          "$line_break"
+          "$character"
+          # "[󱞪](fg:iris)"
         ];
         # format = ''
         #   [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
