@@ -17,7 +17,6 @@ in
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableFishIntegration = true;
-      # package = pkgs.ghostty;
       package = inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default;
       settings = {
         font-family = "Maple Mono NF";
