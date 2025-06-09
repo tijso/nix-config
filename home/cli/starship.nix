@@ -93,7 +93,7 @@ in
 
         username = {
           disabled = false;
-          format = "[](fg:overlay)[ 󰧱 $user ]($style)at[](fg:overlay)";
+          format = "[](fg:overlay)[ 󰧱 $user@ ]($style)[](fg:overlay)";
           # format = "[$user@]($style)";
           show_always = true;
           style_root = "bg:overlay fg:iris";
