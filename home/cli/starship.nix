@@ -16,64 +16,137 @@ in
       enableFishIntegration = true;
       settings = {
         format = ''
-          [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
-          [└](fg:#${config.colorScheme.palette.base0A}) $os$character
+          $username\
+          $directory\
+          $git_branch\
+          $git_status\
+          $fill\
+          $c\
+          $elixir\
+          $elm\
+          $golang\
+          $haskell\
+          $java\
+          $julia\
+          $nodejs\
+          $nim\
+          $rust\
+          $scala\
+          $conda\
+          $python\
+          $time
+            \
+          [󱞪](fg:iris) \
         '';
+        # format = ''
+        #   [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
+        #   [└](fg:#${config.colorScheme.palette.base0A}) $os$character
+        # '';
+        palette = "rose-pine";
 
-        character = {
-          format = "$symbol";
-          success_symbol = "[->](fg:#${config.colorScheme.palette.base0A}) ";
-          error_symbol = "[┤](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
-        };
-
-        username = {
-          show_always = false;
-          style_user = "fg:#${config.colorScheme.palette.base03}";
-          style_root = "fg:#${config.colorScheme.palette.base03}";
-          format = "[$user@]($style)";
-        };
-
-        hostname = {
-          ssh_only = false;
-          format = "[$hostname]($style) ";
-          style = "fg:#${config.colorScheme.palette.base0C}";
+        palettes.rose-pine = {
+          overlay = "#26233a";
+          love = "#eb6f92";
+          gold = "#f6c177";
+          rose = "#ebbcba";
+          pine = "#31748f";
+          foam = "#9ccfd8";
+          iris = "#c4a7e7";
         };
 
         directory = {
-          truncation_length = 1;
-          truncation_symbol = "";
+          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
+          # style = "fg:#${config.colorScheme.palette.base07}";
           fish_style_pwd_dir_length = 1;
-          style = "fg:#${config.colorScheme.palette.base07}";
-        };
-
-        os = with config.colorScheme.palette; {
-          disabled = false;
-          style = "fg:#${base0D}";
-          symbols = {
-            # Arch = "[ ]($style)";
-            NixOS = "[ ]($style)";
-            # Linux = "[  ](fg:fg $style)";
+          style = "bg:overlay fg:pine";
+          truncation_length = 3;
+          truncation_symbol = "…/";
+          substitutions = {
+            Documents = "󰈙";
+            Downloads = " ";
+            Music = " ";
+            Pictures = " ";
           };
         };
 
+        fill = {
+          style = "fg:overlay";
+          symbol = " ";
+        };
+
+        # character = {
+        #   format = "$symbol";
+        #   success_symbol = "[->](fg:#${config.colorScheme.palette.base0A}) ";
+        #   error_symbol = "[┤](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
+        # };
+
+        username = {
+          # show_always = false;
+          # style_user = "fg:#${config.colorScheme.palette.base03}";
+          # style_root = "fg:#${config.colorScheme.palette.base03}";
+          # format = "[$user@]($style)";
+          disabled = false;
+          format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay) ";
+          show_always = true;
+          style_root = "bg:overlay fg:iris";
+          style_user = "bg:overlay fg:iris";
+        };
+
+        # hostname = {
+        #   ssh_only = false;
+        #   format = "[$hostname]($style) ";
+        #   style = "fg:#${config.colorScheme.palette.base0C}";
+        # };
+
+        # os = with config.colorScheme.palette; {
+        #   disabled = false;
+        #   style = "fg:#${base0D}";
+        #   symbols = {
+        #     # Arch = "[ ]($style)";
+        #     NixOS = "[ ]($style)";
+        #     # Linux = "[  ](fg:fg $style)";
+        #   };
+        # };
+
         git_branch = {
-          style = "fg:#${config.colorScheme.palette.base0E}";
+          format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
+          style = "bg:overlay fg:foam";
+          symbol = "";
         };
 
         git_status = {
-          conflicted = " ";
-          ahead = " ";
-          behind = " 󱊾 ";
-          diverged = "󱡷 ";
-          untracked = "";
-          stashed = " ";
-          modified = " ";
-          staged = " ";
-          renamed = " ";
-          deleted = "󰆴 ";
-          style = "fg:#${config.colorScheme.palette.base0E}";
+          disabled = false;
+          style = "bg:overlay fg:love";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
+          format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
+          up_to_date = "[ ✓ ](bg:overlay fg:iris)";
+          untracked = "[?($count)](bg:overlay fg:gold)";
+          stashed = "[$](bg:overlay fg:iris)";
+          modified = "[!($count)](bg:overlay fg:gold)";
+          renamed = "[»($count)](bg:overlay fg:iris)";
+          deleted = "[✘($count)](style)";
+          staged = "[++($count)](bg:overlay fg:gold)";
+          ahead = "[⇡($count)](bg:overlay fg:foam)";
+          diverged = "⇕[[](bg:overlay fg:iris)[⇡($ahead_count)](bg:overlay fg:foam)[⇣($behind_count)](bg:overlay fg:rose)[]]";
+          behind = "[⇣($count)](bg:overlay fg:rose)";
         };
 
+        # git_status = {
+        #   conflicted = " ";
+        #   ahead = " ";
+        #   behind = " 󱊾 ";
+        #   diverged = "󱡷 ";
+        #   untracked = "";
+        #   stashed = " ";
+        #   modified = " ";
+        #   staged = " ";
+        #   renamed = " ";
+        #   deleted = "󰆴 ";
+        #   style = "fg:#${config.colorScheme.palette.base0E}";
+        # };
+
+        # Languages
         golang = {
           format = "[$symbol $version]($style)";
           symbol = " ";
