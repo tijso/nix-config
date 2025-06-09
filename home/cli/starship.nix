@@ -52,8 +52,8 @@ in
         };
 
         character = {
-          success_symbol = "[ •   ](#31748f bold) ";
-          error_symbol = "[ •  󰅙 ](#eb6f92 bold) ";
+          success_symbol = "[ •   ](#31748f bold)";
+          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
           # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
           # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
         };
