@@ -39,6 +39,8 @@ in
           "$character"
         ];
 
+        add_newline = true;
+
         palette = "rose-pine";
 
         palettes.rose-pine = {
@@ -65,12 +67,13 @@ in
           style = "bg:overlay fg:pine";
           truncation_length = 3;
           truncation_symbol = "…/";
-          substitutions = {
-            Documents = "󰈙";
-            Downloads = " ";
-            Music = " ";
-            Pictures = " ";
-          };
+        };
+
+        directory.substitutions = {
+          Documents = "󰈙";
+          Downloads = " ";
+          Music = " ";
+          Pictures = " ";
         };
 
         fill = {
@@ -93,9 +96,9 @@ in
 
         username = {
           disabled = false;
+          show_always = false;
           format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay) ";
           # format = "[$user@]($style)";
-          show_always = true;
           style_root = "bg:overlay fg:iris";
           # style_root = "fg:#${config.colorScheme.palette.base03}";
           style_user = "bg:overlay fg:iris";
