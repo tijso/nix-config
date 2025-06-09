@@ -52,7 +52,7 @@ in
         };
 
         directory = {
-          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base07}";
           fish_style_pwd_dir_length = 1;
           style = "bg:overlay fg:pine";
@@ -88,7 +88,7 @@ in
           # style_root = "fg:#${config.colorScheme.palette.base03}";
           # format = "[$user@]($style)";
           disabled = false;
-          format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay) ";
           show_always = true;
           style_root = "bg:overlay fg:iris";
           style_user = "bg:overlay fg:iris";
