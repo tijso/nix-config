@@ -85,6 +85,7 @@ in
 
         cmd_duration = {
           format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
+          style = "bg:overlay fg:rose";
         };
 
         # time = {
@@ -93,7 +94,6 @@ in
         #   style = "bg:overlay fg:rose";
         #   time_format = "%I:%M%P";
         #   use_12hr = true;
-        #
         # };
 
         username = {
