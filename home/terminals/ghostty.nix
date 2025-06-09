@@ -16,6 +16,7 @@ in
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableFishIntegration = true;
+      package = ghosttyPkg;
       # package = pkgs.ghostty;
       settings = {
         font-family = "Maple Mono NF";
@@ -84,7 +85,7 @@ in
           "ctrl+shift+right=resize_split:right,10"
           "ctrl+shift+0=equalize_splits"
         ];
-        theme = "Kanagawa-wave";
+        theme = "Coolnight";
       };
       themes = {
         Nightfly = {
