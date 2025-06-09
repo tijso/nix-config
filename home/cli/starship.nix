@@ -96,8 +96,8 @@ in
 
         username = {
           disabled = false;
-          show_always = false;
-          format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay) ";
+          show_always = true;
+          format = "[](fg:overlay)[ 󰧱 $user ]($style)@[](fg:overlay) ";
           # format = "[$user@]($style)";
           style_root = "bg:overlay fg:iris";
           # style_root = "fg:#${config.colorScheme.palette.base03}";
