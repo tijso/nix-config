@@ -23,6 +23,12 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    # Niri
+    # niri = {
+    #   url = "github:sodiboo/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     # Theming
     nix-colors.url = "github:misterio77/nix-colors";
     catppuccin.url = "github:catppuccin/nix";
@@ -42,9 +48,10 @@
     nixvim.url = "github:tijso/nixvim";
 
     # Terminal
-    # ghostty = {
-    #   url = "github:ghostty-org/ghostty";
-    # };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
+
   };
 
   outputs =
@@ -60,7 +67,7 @@
       catppuccin,
       hyprland,
       grub2-themes,
-      # ghostty,
+      ghostty,
       ...
     }@inputs:
     let
