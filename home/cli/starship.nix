@@ -141,9 +141,12 @@ in
         };
 
         rust = {
-          format = "[$symbol$version]($style)";
-          symbol = "";
-          style = "fg:#${config.colorScheme.palette.base0C}";
+          style = "bg:overlay fg:pine";
+          # style = "fg:#${config.colorScheme.palette.base0C}";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          # format = "[$symbol$version]($style)";
+          disabled = false;
+          symbol = " ";
         };
 
         python = {
@@ -155,13 +158,13 @@ in
           symbol = " ";
         };
 
-        nix_shell = {
-          format = "[$symbol$state($name)]($style) ";
-          style = "fg:#${config.colorScheme.palette.base0D}";
-          symbol = " ";
-          impure_msg = "";
-          pure_msg = "pure ";
-        };
+        # nix_shell = {
+        #   format = "[$symbol$state($name)]($style) ";
+        #   style = "fg:#${config.colorScheme.palette.base0D}";
+        #   symbol = " ";
+        #   impure_msg = "";
+        #   pure_msg = "pure ";
+        # };
 
         haskell = {
           style = "bg:overlay fg:pine";
