@@ -36,6 +36,7 @@ in
           "$os"
           "$line_break"
           "$character"
+          "[󱞪](fg:iris)"
         ];
 
         palette = "rose-pine";
