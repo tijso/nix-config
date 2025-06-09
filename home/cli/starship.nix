@@ -53,8 +53,8 @@ in
         };
 
         character = {
-          success_symbol = "[ •   ](#c4a7e7 bold)";
-          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
+          success_symbol = "[](fg:overlay)[ •   ](#c4a7e7 bold)[](fg:overlay) ";
+          error_symbol = "[](fg:overlay)[ •  󰅙 ](#eb6f92 bold)[](fg:overlay) ";
           # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
           # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
         };
@@ -84,29 +84,28 @@ in
           style = "bg:overlay fg:rose";
         };
 
-        # time = {
-        #   disabled = false;
-        #   format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
-        #   style = "bg:overlay fg:rose";
-        #   time_format = "%I:%M%P";
-        #   use_12hr = true;
-        # };
+        time = {
+          disabled = true;
+          format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
+          style = "bg:overlay fg:rose";
+          time_format = "%I:%M%P";
+          use_12hr = true;
+        };
 
         username = {
-          # show_always = false;
-          # style_user = "fg:#${config.colorScheme.palette.base03}";
-          # style_root = "fg:#${config.colorScheme.palette.base03}";
-          # format = "[$user@]($style)";
           disabled = false;
           format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay) ";
+          # format = "[$user@]($style)";
           show_always = true;
           style_root = "bg:overlay fg:iris";
+          # style_root = "fg:#${config.colorScheme.palette.base03}";
           style_user = "bg:overlay fg:iris";
+          # style_user = "fg:#${config.colorScheme.palette.base03}";
         };
 
         hostname = {
-          format = "[ $ssh_symbol$hostname ](bold bg:#24273a fg:#E8E3E3)";
           disabled = false;
+          format = "[ $ssh_symbol$hostname ](bold bg:#24273a fg:#E8E3E3)";
         };
 
         git_branch = {
