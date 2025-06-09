@@ -15,29 +15,29 @@ in
       enableZshIntegration = true;
       enableFishIntegration = true;
       settings = {
-        format = ''
-          $username\
-          $directory\
-          $git_branch\
-          $git_status\
-          $fill\
-          $c\
-          $elixir\
-          $elm\
-          $golang\
-          $haskell\
-          $java\
-          $julia\
-          $nodejs\
-          $nim\
-          $rust\
-          $scala\
-          $conda\
-          $python\
-          $time
-            \
-          [󱞪](fg:iris) \
-        '';
+        format = lib.concatStrings [
+
+          "$username"
+          "$directory"
+          "$git_branch"
+          "$git_status"
+          "$fill"
+          "$c"
+          "$elixir"
+          "$elm"
+          "$golang"
+          "$haskell"
+          "$java"
+          "$julia"
+          "$nodejs"
+          "$nim"
+          "$rust"
+          "$scala"
+          "$conda"
+          "$python"
+          "$time"
+          "[󱞪](fg:iris)"
+        ];
         # format = ''
         #   [┌](fg:#${config.colorScheme.palette.base0A}) $hostname$directory$nix_shell$golang$rust$python$git_branch$git_status$cmd_duration
         #   [└](fg:#${config.colorScheme.palette.base0A}) $os$character
