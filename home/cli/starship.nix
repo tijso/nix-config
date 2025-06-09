@@ -79,10 +79,6 @@ in
           symbol = " ";
         };
 
-        # cmd_duration = {
-        #   format = "[ $duration ]($style)[ 󱑂  ](bg:#ca9ee6 fg:#24273a)";
-        # };
-
         cmd_duration = {
           format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
           style = "bg:overlay fg:rose";
