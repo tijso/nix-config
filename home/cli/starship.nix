@@ -66,13 +66,13 @@ in
           };
         };
 
-        cmd_duration = {
-          format = "[ $duration ]($style)[ 󱑂  ](bg:#ca9ee6 fg:#24273a)";
-        };
-
+        # cmd_duration = {
+        #   format = "[ $duration ]($style)[ 󱑂  ](bg:#ca9ee6 fg:#24273a)";
+        # };
+        #
         character = {
-          success_symbol = "[ •   ](#8caaee bold)";
-          error_symbol = "[ •  󰅙 ](#e78284 bold)";
+          success_symbol = "[ •   ](#c4a7e7 bold)";
+          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
           # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
           # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
         };
