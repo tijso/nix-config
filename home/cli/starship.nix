@@ -32,6 +32,7 @@ in
           "$scala"
           "$python"
           "$time"
+          "$cmd_duration"
           "$shell"
           "$os"
           "$line_break"
@@ -51,6 +52,13 @@ in
           iris = "#c4a7e7";
         };
 
+        character = {
+          success_symbol = "[ •   ](#c4a7e7 bold)";
+          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
+          # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
+          # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
+        };
+
         directory = {
           format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base07}";
@@ -66,30 +74,27 @@ in
           };
         };
 
-        # cmd_duration = {
-        #   format = "[ $duration ]($style)[ 󱑂  ](bg:#ca9ee6 fg:#24273a)";
-        # };
-        #
-        character = {
-          success_symbol = "[ •   ](#c4a7e7 bold)";
-          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
-          # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
-          # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
-        };
-
         fill = {
           style = "fg:overlay";
           symbol = " ";
         };
 
-        time = {
-          disabled = false;
-          format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
-          style = "bg:overlay fg:rose";
-          time_format = "%I:%M%P";
-          use_12hr = true;
+        # cmd_duration = {
+        #   format = "[ $duration ]($style)[ 󱑂  ](bg:#ca9ee6 fg:#24273a)";
+        # };
 
+        cmd_duration = {
+          format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
         };
+
+        # time = {
+        #   disabled = false;
+        #   format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
+        #   style = "bg:overlay fg:rose";
+        #   time_format = "%I:%M%P";
+        #   use_12hr = true;
+        #
+        # };
 
         username = {
           # show_always = false;
