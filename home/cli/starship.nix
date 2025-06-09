@@ -23,20 +23,17 @@ in
           "$git_status"
           "$fill"
           "$c"
-          "$elixir"
-          "$elm"
           "$golang"
           "$haskell"
           "$java"
-          "$julia"
           "$nodejs"
           "$nim"
           "$rust"
           "$scala"
-          "$conda"
           "$python"
           "$time"
           "$shell"
+          "$os"
           "$line_break"
           "$character"
         ];
@@ -96,12 +93,6 @@ in
           style_user = "bg:overlay fg:iris";
         };
 
-        # hostname = {
-        #   ssh_only = false;
-        #   format = "[$hostname]($style) ";
-        #   style = "fg:#${config.colorScheme.palette.base0C}";
-        # };
-
         hostname = {
           format = "[ $ssh_symbol$hostname ](bold bg:#24273a fg:#E8E3E3)";
           disabled = false;
@@ -131,25 +122,14 @@ in
           behind = "[⇣($count)](bg:overlay fg:rose)";
         };
 
-        # git_status = {
-        #   conflicted = " ";
-        #   ahead = " ";
-        #   behind = " 󱊾 ";
-        #   diverged = "󱡷 ";
-        #   untracked = "";
-        #   stashed = " ";
-        #   modified = " ";
-        #   staged = " ";
-        #   renamed = " ";
-        #   deleted = "󰆴 ";
-        #   style = "fg:#${config.colorScheme.palette.base0E}";
-        # };
-
         # Languages
         golang = {
-          format = "[$symbol $version]($style)";
+          style = "bg:overlay fg:pine";
+          # style = "fg:#${config.colorScheme.palette.base0C}";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          # format = "[$symbol $version]($style)";
+          disabled = false;
           symbol = " ";
-          style = "fg:#${config.colorScheme.palette.base0C}";
         };
 
         rust = {
@@ -159,9 +139,12 @@ in
         };
 
         python = {
-          format = "[$symbol$version]($style)";
-          symbol = "";
-          style = "fg:#${config.colorScheme.palette.base0A}";
+          style = "bg:overlay fg:pine";
+          # style = "fg:#${config.colorScheme.palette.base0A}";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          # format = "[$symbol$version]($style)";
+          disabled = false;
+          symbol = " ";
         };
 
         nix_shell = {
@@ -171,6 +154,42 @@ in
           impure_msg = "";
           pure_msg = "pure ";
         };
+
+        haskell = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
+        };
+
+        java = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
+        };
+
+        scala = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
+        };
+
+        nodejs = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = "󰎙 ";
+        };
+
+        nim = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = "󰆥 ";
+        };
+
       };
     };
   };
