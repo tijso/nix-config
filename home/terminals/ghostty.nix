@@ -16,7 +16,6 @@ in
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableFishIntegration = true;
-      package = ghosttyPkg;
       # package = pkgs.ghostty;
       settings = {
         font-family = "Maple Mono NF";
