@@ -19,7 +19,7 @@ in
           "[ ](fg:overlay)"
           "$os"
           "$username"
-          "[](bg:pine fg:overlay)"
+          "[](bg:overlay fg:overlay)"
           "$directory"
           "[](fg:pine bg:overlay)"
           "$git_branch"
