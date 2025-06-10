@@ -17,6 +17,7 @@ in
       settings = {
         format = lib.concatStrings [
           "$os"
+          "$username"
           # "$hostname"
           "$directory"
           "$git_branch"
@@ -115,8 +116,8 @@ in
           # os = with config.colorScheme.palette; {
           disabled = false;
           format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
-          style = "bg:overlay fg:iris";
           # style = "fg:#${base0D}";
+          style = "bg:overlay fg:foam";
           symbols = {
             NixOS = "[ ]($style)";
             # Arch = "[ ]($style)";
