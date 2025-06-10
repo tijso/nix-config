@@ -17,6 +17,7 @@ in
       settings = {
         format = lib.concatStrings [
           "$hostname"
+          "$os"
           "$directory"
           "$git_branch"
           "$git_status"
@@ -33,7 +34,6 @@ in
           "$time"
           "$cmd_duration"
           "$shell"
-          "$os"
           "$line_break"
           "$character"
         ];
@@ -114,7 +114,7 @@ in
         os = {
           # os = with config.colorScheme.palette; {
           disabled = false;
-          format = "on [](fg:overlay)[ $name ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $name ]($style)[](fg:overlay) ";
           style = "bg:overlay fg:iris";
           # style = "fg:#${base0D}";
           symbols = {
