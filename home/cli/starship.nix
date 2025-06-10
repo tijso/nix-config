@@ -16,6 +16,7 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
+          "[ ](#5e81ac)"
           "$os"
           "$username"
           # "$hostname"
@@ -35,6 +36,7 @@ in
           "nix_shell"
           "$time"
           "$cmd_duration"
+          "[ ](fg:overlay)"
           "$line_break"
           "$character"
         ];
@@ -61,7 +63,8 @@ in
         };
 
         directory = {
-          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
+          format = "[ $path ]($style)";
+          # format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base07}";
           fish_style_pwd_dir_length = 1;
           style = "bg:overlay fg:pine";
@@ -82,13 +85,15 @@ in
         };
 
         cmd_duration = {
-          format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
+          format = "[ $duration 󱑂 ]($style)";
+          # format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
           style = "bg:overlay fg:rose";
         };
 
         time = {
           disabled = true;
-          format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
+          format = "[ $time 󰴈 ]($style)";
+          # format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
           style = "bg:overlay fg:rose";
           time_format = "%I:%M%P";
           use_12hr = true;
@@ -97,7 +102,8 @@ in
         username = {
           disabled = false;
           show_always = true;
-          format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
+          format = "[ $user ]($style)";
+          # format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
           style_root = "bg:overlay fg:iris";
           # style_root = "fg:#${config.colorScheme.palette.base03}";
           style_user = "bg:overlay fg:iris";
@@ -107,14 +113,16 @@ in
         hostname = {
           disabled = false;
           ssh_only = false;
-          format = "[](fg:overlay)[ $ssh_symbol$hostname ]($style)[](fg:overlay) ";
+          format = "[ $ssh_symbol$hostname ]($style)";
+          # format = "[](fg:overlay)[ $ssh_symbol$hostname ]($style)[](fg:overlay) ";
           style = "bg:overlay fg:iris";
         };
 
         os = {
           # os = with config.colorScheme.palette; {
           disabled = false;
-          format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
+          format = "[ $symbol ]($style)";
+          # format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
           # style = "fg:#${base0D}";
           style = "bg:overlay fg:foam";
           symbols = {
@@ -125,7 +133,8 @@ in
         };
 
         git_branch = {
-          format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
+          format = "[ $symbol $branch ]($style)";
+          # format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           style = "bg:overlay fg:foam";
           symbol = "";
@@ -135,7 +144,8 @@ in
           disabled = false;
           style = "bg:overlay fg:love";
           # style = "fg:#${config.colorScheme.palette.base0E}";
-          format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
+          format = "([$all_status$ahead_behind]($style))";
+          # format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
           up_to_date = "[ ✓ ](bg:overlay fg:iris)";
           untracked = "[?($count)](bg:overlay fg:gold)";
           stashed = "[$](bg:overlay fg:iris)";
