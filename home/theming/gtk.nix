@@ -16,8 +16,6 @@ in
       theme = {
         name = "Rose-Pine";
         package = pkgs.rose-pine-gtk-theme;
-        # name = "Kanagawa-BL-GS";
-        # package = pkgs.kanagawa-gtk-theme;
         # name = "Tokyonight-Dark-BL";
         # package = pkgs.tokyonight-gtk-theme.override {
         #   themeVariants = [ "teal" ];
@@ -29,8 +27,8 @@ in
       };
 
       iconTheme = {
-        name = "Fluent-teal-dark";
-        package = pkgs.fluent-icon-theme.override { colorVariants = [ "teal" ]; };
+        name = "Rose-Pine";
+        package = pkgs.rose-pine-icon-theme;
         # name = "Fluent-teal-dark";
         # package = pkgs.fluent-icon-theme.override { colorVariants = [ "teal" ]; };
         # name = "Papirus-Dark";
@@ -42,8 +40,6 @@ in
       };
 
       cursorTheme = {
-        # name = "Rose-Pine";
-        # package = pkgs.rose-pine-cursor;
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
         size = 24;
