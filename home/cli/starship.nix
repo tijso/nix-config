@@ -114,7 +114,7 @@ in
         os = {
           # os = with config.colorScheme.palette; {
           disabled = false;
-          format = "[](fg:overlay)[ $name ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
           style = "bg:overlay fg:iris";
           # style = "fg:#${base0D}";
           symbols = {
