@@ -17,7 +17,7 @@ in
       settings = {
         format = lib.concatStrings [
           "$hostname"
-          "$username"
+          # "$username"
           "$directory"
           "$git_branch"
           "$git_status"
@@ -107,7 +107,8 @@ in
 
         hostname = {
           disabled = false;
-          format = "[ $ssh_symbol$hostname ](bold bg:#24273a fg:#E8E3E3)";
+          format = "[](fg:overlay)[ $ssh_symbol$hostname ][](fg:overlay) ";
+          style = "bg:overlay fg:iris";
         };
 
         git_branch = {
