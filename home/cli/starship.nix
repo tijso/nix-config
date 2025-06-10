@@ -1,193 +1,230 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+{
+  config,
+  lib,
+  ...
+}:
+with lib;
+let
+  cfg = config.modules.cli.starship;
+in
+{
+  options.modules.cli.starship.enable = mkEnableOption "Enable Starship";
+  config = mkIf cfg.enable {
+    programs.starship = {
+      enable = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
+      settings = {
+        format = lib.concatStrings [
+          "$os"
+          "$username"
+          # "$hostname"
+          "$directory"
+          "$git_branch"
+          "$git_status"
+          "$fill"
+          "$c"
+          "$golang"
+          "$haskell"
+          "$java"
+          "$nodejs"
+          "$nim"
+          "$rust"
+          "$scala"
+          "$python"
+          "nix_shell"
+          "$time"
+          "$cmd_duration"
+          "$line_break"
+          "$character"
+        ];
 
-format = """
-[](color_love)\
-$os\
-$username\
-[](bg:color_gold fg:color_love)\
-$directory\
-[](fg:color_gold bg:color_pine)\
-$git_branch\
-$git_status\
-[](fg:color_pine bg:color_foam)\
-$c\
-$cpp\
-$rust\
-$golang\
-$nodejs\
-$php\
-$java\
-$kotlin\
-$haskell\
-$python\
-[](fg:color_foam bg:color_overlay)\
-$docker_context\
-$conda\
-$pixi\
-[](fg:color_overlay bg:color_surface)\
-$time\
-[ ](fg:color_surface)\
-$line_break$character"""
+        add_newline = true;
 
-palette = 'rose_pine'
+        palette = "rose-pine";
 
-[palettes.rose_pine]
-color_base = '#191724'
-color_surface = '#1f1d2e'
-color_overlay = '#26233a'
-color_muted = '#6e6a86'
-color_subtle = '#908caa'
-color_text = '#e0def4'
-color_love = '#eb6f92'
-color_gold = '#f6c177'
-color_rose = '#ebbcba'
-color_pine = '#31748f'
-color_foam = '#9ccfd8'
-color_iris = '#c4a7e7'
+        palettes.rose-pine = {
+          overlay = "#26233a";
+          love = "#eb6f92";
+          gold = "#f6c177";
+          rose = "#ebbcba";
+          pine = "#31748f";
+          foam = "#9ccfd8";
+          iris = "#c4a7e7";
+        };
 
-[os]
-disabled = false
-style = "bg:color_love fg:color_text"
+        character = {
+          success_symbol = "[ •   ](#31748f bold)";
+          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
+          # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
+          # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
+        };
 
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-EndeavourOS = ""
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-Pop = ""
+        directory = {
+          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
+          # style = "fg:#${config.colorScheme.palette.base07}";
+          fish_style_pwd_dir_length = 1;
+          style = "bg:overlay fg:pine";
+          truncation_length = 3;
+          truncation_symbol = "…/";
+        };
 
-[username]
-show_always = true
-style_user = "bg:color_love fg:color_text"
-style_root = "bg:color_love fg:color_text"
-format = '[ $user ]($style)'
+        directory.substitutions = {
+          Documents = "󰈙";
+          Downloads = " ";
+          Music = " ";
+          Pictures = " ";
+        };
 
-[directory]
-style = "fg:color_base bg:color_gold"
-format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
+        fill = {
+          style = "fg:overlay";
+          symbol = " ";
+        };
 
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
+        cmd_duration = {
+          format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
+          style = "bg:overlay fg:rose";
+        };
 
-[git_branch]
-symbol = ""
-style = "bg:color_pine"
-format = '[[ $symbol $branch ](fg:color_text bg:color_pine)]($style)'
+        time = {
+          disabled = true;
+          format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
+          style = "bg:overlay fg:rose";
+          time_format = "%I:%M%P";
+          use_12hr = true;
+        };
 
-[git_status]
-style = "bg:color_pine"
-format = '[[($all_status$ahead_behind )](fg:color_text bg:color_pine)]($style)'
+        username = {
+          disabled = false;
+          show_always = true;
+          format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
+          style_root = "bg:overlay fg:iris";
+          # style_root = "fg:#${config.colorScheme.palette.base03}";
+          style_user = "bg:overlay fg:iris";
+          # style_user = "fg:#${config.colorScheme.palette.base03}";
+        };
 
-[nodejs]
-symbol = ""
-style = "bg:color_foam"
-format = '[[ $symbol( $version) ](fg:color_base bg:color_foam)]($style)'
-disabled = false
-detect_folders = ["node_modules"]
-detect_files = ["package-lock.json", "pnpm-lock.yaml", "yarn.lock", "package.json"]
-detect_extensions = ["js", "mjs", "cjs"]
+        hostname = {
+          disabled = false;
+          ssh_only = false;
+          format = "[](fg:overlay)[ $ssh_symbol$hostname ]($style)[](fg:overlay) ";
+          style = "bg:overlay fg:iris";
+        };
 
-# Disable nodejs in home directory specifically
-[direnv]
-disabled = true
+        os = {
+          # os = with config.colorScheme.palette; {
+          disabled = false;
+          format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
+          # style = "fg:#${base0D}";
+          style = "bg:overlay fg:foam";
+          symbols = {
+            NixOS = "[ ]($style)";
+            # Arch = "[ ]($style)";
+            # Linux = "[  ](fg:fg $style)";
+          };
+        };
 
-[env_var.HOME]
-format = ""
+        git_branch = {
+          format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
+          style = "bg:overlay fg:foam";
+          symbol = "";
+        };
 
-[c]
-symbol = " "
-style = "bg:color_foam"
-format = '[[ $symbol( $version) ](fg:color_base bg:color_foam)]($style)'
+        git_status = {
+          disabled = false;
+          style = "bg:overlay fg:love";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
+          format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
+          up_to_date = "[ ✓ ](bg:overlay fg:iris)";
+          untracked = "[?($count)](bg:overlay fg:gold)";
+          stashed = "[$](bg:overlay fg:iris)";
+          modified = "[!($count)](bg:overlay fg:gold)";
+          renamed = "[»($count)](bg:overlay fg:iris)";
+          deleted = "[✘($count)](style)";
+          staged = "[++($count)](bg:overlay fg:gold)";
+          ahead = "[⇡($count)](bg:overlay fg:foam)";
+          diverged = "⇕[[](bg:overlay fg:iris)[⇡($ahead_count)](bg:overlay fg:foam)[⇣($behind_count)](bg:overlay fg:rose)[]]";
+          behind = "[⇣($count)](bg:overlay fg:rose)";
+        };
 
-[cpp]
-symbol = " "
-style = "bg:color_foam"
-format = '[[ $symbol( $version) ](fg:color_base bg:color_foam)]($style)'
+        # Languages
+        golang = {
+          style = "bg:overlay fg:pine";
+          # style = "fg:#${config.colorScheme.palette.base0C}";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
+        };
 
-[rust]
-symbol = ""
-style = "bg:color_foam"
-format = '[[ $symbol( $version) ](fg:color_base bg:color_foam)]($style)'
+        c = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
 
-[golang]
-symbol = ""
-style = "bg:color_foam"
-format = '[[ $symbol( $version) ](fg:color_base bg:color_foam)]($style)'
+        };
 
-[php]
-symbol = ""
-style = "bg:color_foam"
-format = '[[ $symbol( $version) ](fg:color_base bg:color_foam)]($style)'
+        rust = {
+          style = "bg:overlay fg:pine";
+          # style = "fg:#${config.colorScheme.palette.base0C}";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
+        };
 
-[java]
-symbol = ""
-style = "bg:color_foam"
-format = '[[ $symbol( $version) ](fg:color_base bg:color_foam)]($style)'
+        python = {
+          style = "bg:overlay fg:pine";
+          # style = "fg:#${config.colorScheme.palette.base0A}";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
+        };
 
-[kotlin]
-symbol = ""
-style = "bg:color_foam"
-format = '[[ $symbol( $version) ](fg:color_base bg:color_foam)]($style)'
+        nix_shell = {
+          # style = "fg:#${config.colorScheme.palette.base0D}";
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = "";
 
-[haskell]
-symbol = ""
-style = "bg:color_foam"
-format = '[[ $symbol( $version) ](fg:color_base bg:color_foam)]($style)'
+        };
 
-[python]
-symbol = ""
-style = "bg:color_foam"
-format = '[[ $symbol( $version) ](fg:color_base bg:color_foam)]($style)'
+        haskell = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
+        };
 
-[docker_context]
-symbol = ""
-style = "bg:color_overlay"
-format = '[[ $symbol( $context) ](fg:color_foam bg:color_overlay)]($style)'
+        java = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
+        };
 
-[conda]
-style = "bg:color_overlay"
-format = '[[ $symbol( $environment) ](fg:color_foam bg:color_overlay)]($style)'
+        scala = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = " ";
+        };
 
-[pixi]
-style = "bg:color_overlay"
-format = '[[ $symbol( $version)( $environment) ](fg:color_text bg:color_overlay)]($style)'
+        nodejs = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = "󰎙 ";
+        };
 
-[time]
-disabled = false
-time_format = "%R"
-style = "bg:color_surface"
-format = '[[  $time ](fg:color_text bg:color_surface)]($style)'
-
-[line_break]
-disabled = false
-
-[character]
-disabled = false
-success_symbol = '[➜](bold fg:color_pine)'
-error_symbol = '[➜](bold fg:color_love)'
-vimcmd_symbol = '[❯](bold fg:color_pine)'
-vimcmd_replace_one_symbol = '[❯](bold fg:color_iris)'
-vimcmd_replace_symbol = '[❯](bold fg:color_iris)'
-vimcmd_visual_symbol = '[❯](bold fg:color_gold)'
+        nim = {
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = "󰆥 ";
+        };
+      };
+    };
+  };
+}
