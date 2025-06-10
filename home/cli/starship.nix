@@ -16,35 +16,12 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          # "$os"
-          # "$username"
-          # "$directory"
-          # "$git_branch"
-          # "$git_status"
-          # "$fill"
-          # "$c"
-          # "$golang"
-          # "$haskell"
-          # "$java"
-          # "$nodejs"
-          # "$nim"
-          # "$rust"
-          # "$scala"
-          # "$python"
-          # "nix_shell"
-          # "$time"
-          # "$cmd_duration"
-          # "$line_break"
-          # "$character"
-
-          "[░▒▓](#a3aed2)"
-          "[  ](bg:#a3aed2 fg:#090c0c)"
-          "[](bg:#769ff0 fg:#a3aed2)"
+          "$os"
+          "$username"
           "$directory"
-          "[](fg:#769ff0 bg:#394260)"
           "$git_branch"
           "$git_status"
-          "[](fg:#394260 bg:#212736)"
+          "$fill"
           "$c"
           "$golang"
           "$haskell"
@@ -55,13 +32,10 @@ in
           "$scala"
           "$python"
           "nix_shell"
-          "[](fg:#212736 bg:#1d2230)"
           "$time"
-          "cmd_duration"
-          "[ ](fg:#1d2230)"
-          # "line_break"
+          "$cmd_duration"
+          "$line_break"
           "$character"
-
         ];
 
         add_newline = true;
@@ -86,8 +60,7 @@ in
         };
 
         directory = {
-          format = "[ $path ]($style)";
-          # format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base07}";
           fish_style_pwd_dir_length = 1;
           style = "bg:overlay fg:pine";
@@ -108,15 +81,13 @@ in
         };
 
         cmd_duration = {
-          format = "[ $duration 󱑂 ]($style)";
-          # format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
+          format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
           style = "bg:overlay fg:rose";
         };
 
         time = {
           disabled = true;
-          format = "[ $time 󰴈 ]($style)";
-          # format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
+          format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
           style = "bg:overlay fg:rose";
           time_format = "%I:%M%P";
           use_12hr = true;
@@ -125,8 +96,7 @@ in
         username = {
           disabled = false;
           show_always = true;
-          format = "[ $user ]($style)";
-          # format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
           style_root = "bg:overlay fg:iris";
           # style_root = "fg:#${config.colorScheme.palette.base03}";
           style_user = "bg:overlay fg:iris";
@@ -136,16 +106,14 @@ in
         hostname = {
           disabled = false;
           ssh_only = false;
-          format = "[ $ssh_symbol$hostname ]($style)";
-          # format = "[](fg:overlay)[ $ssh_symbol$hostname ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $ssh_symbol$hostname ]($style)[](fg:overlay) ";
           style = "bg:overlay fg:iris";
         };
 
         os = {
           # os = with config.colorScheme.palette; {
           disabled = false;
-          format = "[ $symbol ]($style)";
-          # format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
           # style = "fg:#${base0D}";
           style = "bg:overlay fg:foam";
           symbols = {
@@ -156,8 +124,7 @@ in
         };
 
         git_branch = {
-          format = "[ $symbol $branch ]($style)";
-          # format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           style = "bg:overlay fg:foam";
           symbol = "";
@@ -167,8 +134,7 @@ in
           disabled = false;
           style = "bg:overlay fg:love";
           # style = "fg:#${config.colorScheme.palette.base0E}";
-          format = "([$all_status$ahead_behind]($style))";
-          # format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
+          format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
           up_to_date = "[ ✓ ](bg:overlay fg:iris)";
           untracked = "[?($count)](bg:overlay fg:gold)";
           stashed = "[$](bg:overlay fg:iris)";
