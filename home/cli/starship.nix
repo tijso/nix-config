@@ -59,7 +59,7 @@ in
           "$time"
           "cmd_duration"
           "[ ](fg:#1d2230)"
-          "line_break"
+          # "line_break"
           "$character"
 
         ];
