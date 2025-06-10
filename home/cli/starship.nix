@@ -32,9 +32,10 @@ in
           "$rust"
           "$scala"
           "$python"
+          "nix_shell"
           "$time"
           "$cmd_duration"
-          "$shell"
+          "[ ](fg:base03)"
           "$line_break"
           "$character"
         ];
@@ -98,7 +99,6 @@ in
           disabled = false;
           show_always = true;
           format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
-          # format = "[$user@]($style)";
           style_root = "bg:overlay fg:iris";
           # style_root = "fg:#${config.colorScheme.palette.base03}";
           style_user = "bg:overlay fg:iris";
@@ -154,7 +154,6 @@ in
           style = "bg:overlay fg:pine";
           # style = "fg:#${config.colorScheme.palette.base0C}";
           format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
-          # format = "[$symbol $version]($style)";
           disabled = false;
           symbol = " ";
         };
@@ -171,7 +170,6 @@ in
           style = "bg:overlay fg:pine";
           # style = "fg:#${config.colorScheme.palette.base0C}";
           format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
-          # format = "[$symbol$version]($style)";
           disabled = false;
           symbol = " ";
         };
@@ -180,29 +178,29 @@ in
           style = "bg:overlay fg:pine";
           # style = "fg:#${config.colorScheme.palette.base0A}";
           format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
-          # format = "[$symbol$version]($style)";
           disabled = false;
           symbol = " ";
         };
 
-        # nix_shell = {
-        #   format = "[$symbol$state($name)]($style) ";
-        #   style = "fg:#${config.colorScheme.palette.base0D}";
-        #   symbol = " ";
-        #   impure_msg = "";
-        #   pure_msg = "pure ";
-        # };
+        nix_shell = {
+          # style = "fg:#${config.colorScheme.palette.base0D}";
+          style = "bg:overlay fg:pine";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          disabled = false;
+          symbol = "";
+
+        };
 
         haskell = {
           style = "bg:overlay fg:pine";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = " ";
         };
 
         java = {
           style = "bg:overlay fg:pine";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = " ";
         };
