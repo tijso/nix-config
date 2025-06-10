@@ -36,7 +36,7 @@ in
           "$scala"
           "$python"
           "nix_shell"
-          "[](fg:iris bg:surface)"
+          "[](fg:overlay bg:iris)"
           "$time"
           "$cmd_duration"
           "[ ](fg:overlay)"
