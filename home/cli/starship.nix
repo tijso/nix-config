@@ -19,12 +19,12 @@ in
           "[ ](fg:overlay)"
           "$os"
           "$username"
-          "[](bg:overlay fg:overlay)"
+          "[](bg:overlay fg:pine)"
           "$directory"
           "[](fg:pine bg:overlay)"
           "$git_branch"
           "$git_status"
-          "[](fg:pine bg:overlay)"
+          "[](fg:foam bg:iris)"
           "$fill"
           "$c"
           "$golang"
@@ -36,7 +36,7 @@ in
           "$scala"
           "$python"
           "nix_shell"
-          "[](fg:pine bg:overlay)"
+          "[](fg:iris bg:surface)"
           "$time"
           "$cmd_duration"
           "[ ](fg:overlay)"
@@ -56,6 +56,7 @@ in
           pine = "#31748f";
           foam = "#9ccfd8";
           iris = "#c4a7e7";
+          surface = "#1f1d2e";
         };
 
         character = {
