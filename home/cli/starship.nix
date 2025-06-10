@@ -112,8 +112,9 @@ in
         };
 
         os = {
+          # os = with config.colorScheme.palette; {
           disabled = false;
-          style = "fg:#${base0D}";
+          # style = "fg:#${base0D}";
           format = "[](fg:overlay)[ $name ]($style)[](fg:overlay) ";
           style = "bg:overlay fg:iris";
           symbols = {
@@ -122,16 +123,6 @@ in
             # Linux = "[  ](fg:fg $style)";
           };
         };
-
-        # os = with config.colorScheme.palette; {
-        #   disabled = false;
-        #   style = "fg:#${base0D}";
-        #   symbols = {
-        #     # Arch = "[ ]($style)";
-        #     NixOS = "[ ]($style)";
-        #     # Linux = "[  ](fg:fg $style)";
-        #   };
-        # };
 
         git_branch = {
           format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
