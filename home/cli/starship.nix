@@ -114,12 +114,12 @@ in
         os = {
           # os = with config.colorScheme.palette; {
           disabled = false;
-          # style = "fg:#${base0D}";
-          format = "[](fg:overlay)[ $name ]($style)[](fg:overlay) ";
+          format = "on [](fg:overlay)[ $name ]($style)[](fg:overlay) ";
           style = "bg:overlay fg:iris";
+          # style = "fg:#${base0D}";
           symbols = {
-            # Arch = "[ ]($style)";
             NixOS = "[ ]($style)";
+            # Arch = "[ ]($style)";
             # Linux = "[  ](fg:fg $style)";
           };
         };
