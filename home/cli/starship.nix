@@ -16,15 +16,12 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          "[](fg:overlay)"
           "$os"
           "$username"
-          "[](bg:overlay fg:pine)"
+          # "$hostname"
           "$directory"
-          "[](fg:pine bg:overlay)"
           "$git_branch"
           "$git_status"
-          "[](fg:overlay bg:iris)"
           "$fill"
           "$c"
           "$golang"
@@ -36,9 +33,8 @@ in
           "$scala"
           "$python"
           "nix_shell"
-          "[](fg:overlay bg:iris)"
+          "$time"
           "$cmd_duration"
-          "[ ](fg:overlay)"
           "$line_break"
           "$character"
         ];
@@ -55,7 +51,6 @@ in
           pine = "#31748f";
           foam = "#9ccfd8";
           iris = "#c4a7e7";
-          surface = "#1f1d2e";
         };
 
         character = {
@@ -66,8 +61,7 @@ in
         };
 
         directory = {
-          format = "[ $path ]($style)";
-          # format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base07}";
           fish_style_pwd_dir_length = 1;
           style = "bg:overlay fg:pine";
@@ -88,15 +82,13 @@ in
         };
 
         cmd_duration = {
-          format = "[ $duration 󱑂 ]($style)";
-          # format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
+          format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
           style = "bg:overlay fg:rose";
         };
 
         time = {
           disabled = true;
-          format = "[ $time 󰴈 ]($style)";
-          # format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
+          format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
           style = "bg:overlay fg:rose";
           time_format = "%I:%M%P";
           use_12hr = true;
@@ -105,8 +97,7 @@ in
         username = {
           disabled = false;
           show_always = true;
-          format = "[ $user ]($style)";
-          # format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
           style_root = "bg:overlay fg:iris";
           # style_root = "fg:#${config.colorScheme.palette.base03}";
           style_user = "bg:overlay fg:iris";
@@ -116,16 +107,14 @@ in
         hostname = {
           disabled = false;
           ssh_only = false;
-          format = "[ $ssh_symbol$hostname ]($style)";
-          # format = "[](fg:overlay)[ $ssh_symbol$hostname ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $ssh_symbol$hostname ]($style)[](fg:overlay) ";
           style = "bg:overlay fg:iris";
         };
 
         os = {
           # os = with config.colorScheme.palette; {
           disabled = false;
-          format = "[ $symbol ]($style)";
-          # format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
           # style = "fg:#${base0D}";
           style = "bg:overlay fg:foam";
           symbols = {
@@ -136,8 +125,7 @@ in
         };
 
         git_branch = {
-          format = "[ $symbol $branch ]($style)";
-          # format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
+          format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           style = "bg:overlay fg:foam";
           symbol = "";
@@ -147,8 +135,7 @@ in
           disabled = false;
           style = "bg:overlay fg:love";
           # style = "fg:#${config.colorScheme.palette.base0E}";
-          format = "([$all_status$ahead_behind]($style))";
-          # format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
+          format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
           up_to_date = "[ ✓ ](bg:overlay fg:iris)";
           untracked = "[?($count)](bg:overlay fg:gold)";
           stashed = "[$](bg:overlay fg:iris)";
