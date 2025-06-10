@@ -107,7 +107,7 @@ in
 
         hostname = {
           disabled = false;
-          show_always = true;
+          ssh_only = false;
           format = "[](fg:overlay)[ 󰧱 $ssh_symbol$hostname ][](fg:overlay) ";
           style = "bg:overlay fg:iris";
         };
