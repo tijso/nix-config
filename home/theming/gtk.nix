@@ -14,8 +14,10 @@ in
     gtk = {
       enable = true;
       theme = {
-        name = "Kanagawa-BL-GS";
-        package = pkgs.kanagawa-gtk-theme;
+        name = "Rose-Pine";
+        package = pkgs.rose-pine-gtk-theme;
+        # name = "Kanagawa-BL-GS";
+        # package = pkgs.kanagawa-gtk-theme;
         # name = "Tokyonight-Dark-BL";
         # package = pkgs.tokyonight-gtk-theme.override {
         #   themeVariants = [ "teal" ];
@@ -29,6 +31,8 @@ in
       iconTheme = {
         name = "Fluent-teal-dark";
         package = pkgs.fluent-icon-theme.override { colorVariants = [ "teal" ]; };
+        # name = "Fluent-teal-dark";
+        # package = pkgs.fluent-icon-theme.override { colorVariants = [ "teal" ]; };
         # name = "Papirus-Dark";
         # package = pkgs.papirus-icon-theme;
         # package = pkgs.catppuccin-papirus-folders.override {
@@ -38,8 +42,10 @@ in
       };
 
       cursorTheme = {
-        name = "Bibata-Modern-Ice";
-        package = pkgs.bibata-cursors;
+        name = "Rose-Pine";
+        package = pkgs.rose-pine-cursors;
+        # name = "Bibata-Modern-Ice";
+        # package = pkgs.bibata-cursors;
         size = 24;
       };
 
