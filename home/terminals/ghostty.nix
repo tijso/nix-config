@@ -40,7 +40,7 @@ in
         # Misc
         gtk-single-instance = true;
         shell-integration-features = "no-cursor";
-        cursor-style = "block";
+        cursor-style = "bar";
         mouse-hide-while-typing = true;
         mouse-scroll-multiplier = 2;
         confirm-close-surface = false;
