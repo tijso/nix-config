@@ -37,7 +37,6 @@ in
           "$python"
           "nix_shell"
           "[](fg:overlay bg:iris)"
-          "$time"
           "$cmd_duration"
           "[ ](fg:overlay)"
           "$line_break"
