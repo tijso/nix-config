@@ -16,7 +16,7 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          "[ ](fg:overlay)"
+          "[](fg:overlay)"
           "$os"
           "$username"
           "[](bg:overlay fg:pine)"
