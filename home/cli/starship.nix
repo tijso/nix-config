@@ -16,12 +16,35 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          "$os"
-          "$username"
+          # "$os"
+          # "$username"
+          # "$directory"
+          # "$git_branch"
+          # "$git_status"
+          # "$fill"
+          # "$c"
+          # "$golang"
+          # "$haskell"
+          # "$java"
+          # "$nodejs"
+          # "$nim"
+          # "$rust"
+          # "$scala"
+          # "$python"
+          # "nix_shell"
+          # "$time"
+          # "$cmd_duration"
+          # "$line_break"
+          # "$character"
+
+          "[░▒▓](#a3aed2)"
+          "[  ](bg:#a3aed2 fg:#090c0c)"
+          "[](bg:#769ff0 fg:#a3aed2)"
           "$directory"
+          "[](fg:#769ff0 bg:#394260)"
           "$git_branch"
           "$git_status"
-          "$fill"
+          "[](fg:#394260 bg:#212736)"
           "$c"
           "$golang"
           "$haskell"
@@ -32,9 +55,9 @@ in
           "$scala"
           "$python"
           "nix_shell"
+          "[](fg:#212736 bg:#1d2230)"
           "$time"
-          "$cmd_duration"
-          "$line_break"
+          "[ ](fg:#1d2230)"
           "$character"
         ];
 
@@ -60,7 +83,8 @@ in
         };
 
         directory = {
-          format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
+          format = "[ $path ]($style)";
+          # format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base07}";
           fish_style_pwd_dir_length = 1;
           style = "bg:overlay fg:pine";
@@ -81,13 +105,15 @@ in
         };
 
         cmd_duration = {
-          format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
+          format = "[ $duration 󱑂 ]($style)";
+          # format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
           style = "bg:overlay fg:rose";
         };
 
         time = {
           disabled = true;
-          format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
+          format = "[ $time 󰴈 ]($style)";
+          # format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
           style = "bg:overlay fg:rose";
           time_format = "%I:%M%P";
           use_12hr = true;
@@ -96,7 +122,8 @@ in
         username = {
           disabled = false;
           show_always = true;
-          format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
+          format = "[ $user ]($style)";
+          # format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
           style_root = "bg:overlay fg:iris";
           # style_root = "fg:#${config.colorScheme.palette.base03}";
           style_user = "bg:overlay fg:iris";
@@ -106,14 +133,16 @@ in
         hostname = {
           disabled = false;
           ssh_only = false;
-          format = "[](fg:overlay)[ $ssh_symbol$hostname ]($style)[](fg:overlay) ";
+          format = "[ $ssh_symbol$hostname ]($style)";
+          # format = "[](fg:overlay)[ $ssh_symbol$hostname ]($style)[](fg:overlay) ";
           style = "bg:overlay fg:iris";
         };
 
         os = {
           # os = with config.colorScheme.palette; {
           disabled = false;
-          format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
+          format = "[ $symbol ]($style)";
+          # format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
           # style = "fg:#${base0D}";
           style = "bg:overlay fg:foam";
           symbols = {
