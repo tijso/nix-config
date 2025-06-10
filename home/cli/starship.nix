@@ -18,7 +18,6 @@ in
         format = lib.concatStrings [
           "$os"
           "$username"
-          # "$hostname"
           "$directory"
           "$git_branch"
           "$git_status"
