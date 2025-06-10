@@ -17,7 +17,7 @@ in
       settings = {
         format = lib.concatStrings [
           "$os"
-          "$hostname"
+          # "$hostname"
           "$directory"
           "$git_branch"
           "$git_status"
