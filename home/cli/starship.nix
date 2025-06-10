@@ -24,7 +24,7 @@ in
           "[](fg:pine bg:overlay)"
           "$git_branch"
           "$git_status"
-          "[](fg:foam bg:iris)"
+          "[](fg:overlay bg:iris)"
           "$fill"
           "$c"
           "$golang"
