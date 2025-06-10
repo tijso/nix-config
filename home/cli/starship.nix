@@ -35,7 +35,6 @@ in
           "nix_shell"
           "$time"
           "$cmd_duration"
-          "[ ](fg:base03)"
           "$line_break"
           "$character"
         ];
@@ -214,7 +213,7 @@ in
 
         nodejs = {
           style = "bg:overlay fg:pine";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = "󰎙 ";
         };
