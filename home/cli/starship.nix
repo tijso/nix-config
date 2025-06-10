@@ -16,8 +16,8 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          "$hostname"
           "$os"
+          "$hostname"
           "$directory"
           "$git_branch"
           "$git_status"
