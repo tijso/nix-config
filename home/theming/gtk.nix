@@ -42,10 +42,10 @@ in
       };
 
       cursorTheme = {
-        name = "Rose-Pine";
-        package = pkgs.rose-pine-cursor;
-        # name = "Bibata-Modern-Ice";
-        # package = pkgs.bibata-cursors;
+        # name = "Rose-Pine";
+        # package = pkgs.rose-pine-cursor;
+        name = "Bibata-Modern-Ice";
+        package = pkgs.bibata-cursors;
         size = 24;
       };
 
