@@ -16,15 +16,11 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          # "[ ](#ebbcba)"
           # "$os"
           # "$hostname"
-          # "[](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
-          # "[](fg:#191724 bg:#26233a)"
           "$git_branch"
           "$git_status"
-          # "[](fg:#26233a bg:#191724)"
           "$fill"
           "$c"
           "$golang"
@@ -36,9 +32,7 @@ in
           "$scala"
           "$python"
           "$nix_shell"
-          # "[](fg:#191724 bg:#1f1d2e)"
           "$cmd_duration"
-          # "[ ](fg:#26233a)"
           "$line_break"
           "$character"
         ];
@@ -87,9 +81,9 @@ in
           Pictures = " ";
         };
 
-        # fill = {
-        #   symbol = "";
-        # };
+        fill = {
+          symbol = " ";
+        };
 
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
@@ -134,7 +128,7 @@ in
         };
 
         git_branch = {
-          format = "[ $symbol $branch ]($style)";
+          format = "[on](white)[$symbol$branch ]($style)";
           style = "fg:foam";
           # style = "bg:overlay fg:foam";
           # style = "fg:#${config.colorScheme.palette.base0E}";
