@@ -87,6 +87,10 @@ in
           Pictures = " ";
         };
 
+        fill = {
+          symbol = " ";
+        };
+
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
           style = "fg:rose";
