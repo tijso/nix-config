@@ -99,27 +99,17 @@ in
           format = "[$symbol]($style)";
         };
 
-        username = {
-          disabled = false;
-          show_always = true;
-          format = "[ $user ]($style)";
-          style_user = "bg:rose fg:base";
-          # style_user = "fg:#${config.colorScheme.palette.base03}";
-          style_root = "bg:love fg:base";
-          # style_root = "fg:#${config.colorScheme.palette.base03}";
-        };
-
         hostname = {
           disabled = false;
           ssh_only = false;
           format = "[ $ssh_symbol$hostname ]($style)";
-          style = "bg:rose fg:base";
+          style = "fg:rose";
         };
 
         os = {
           disabled = false;
           format = "[ $symbol ]($style)";
-          style = "bg:rose fg:base";
+          style = "fg:rose";
           # style = "fg:#${base0D}";
           symbols = {
             NixOS = "[ ]($style)";
