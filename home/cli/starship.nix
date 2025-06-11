@@ -71,7 +71,7 @@ in
         directory = {
           format = "[ $path ]($style)";
           fish_style_pwd_dir_length = 1;
-          style = "bg:overlay fg:iris";
+          style = "fg:iris";
           # style = "fg:#${config.colorScheme.palette.base07}";
           truncation_length = 3;
           truncation_symbol = "…/";
@@ -86,7 +86,7 @@ in
 
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
-          style = "bg:overlay fg:rose";
+          style = "fg:rose";
         };
 
         time = {
@@ -117,7 +117,7 @@ in
         os = {
           disabled = false;
           format = "[ $symbol ]($style)";
-          style = "bg:rose fg:base";
+          style = "fg:rose";
           # style = "fg:#${base0D}";
           symbols = {
             NixOS = "[ ]($style)";
@@ -127,7 +127,7 @@ in
 
         git_branch = {
           format = "[ $symbol $branch ]($style)";
-          style = "bg:overlay fg:foam";
+          style = "fg:foam";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           symbol = " ";
         };
