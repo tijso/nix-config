@@ -83,9 +83,9 @@ in
           Pictures = " ";
         };
 
-        # fill = {
-        #   symbol = " ";
-        # };
+        fill = {
+          symbol = " ";
+        };
 
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
