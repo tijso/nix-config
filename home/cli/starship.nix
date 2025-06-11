@@ -71,7 +71,7 @@ in
         directory = {
           format = "[ $path ]($style)";
           fish_style_pwd_dir_length = 1;
-          style = "bg:iris fg:subtle";
+          style = "bg:iris fg:style";
           # style = "fg:#${config.colorScheme.palette.base07}";
           truncation_length = 3;
           truncation_symbol = "…/";
