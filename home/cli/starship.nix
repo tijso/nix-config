@@ -35,7 +35,7 @@ in
           "$python"
           "$nix_shell"
           "[ ](fg:#191724 bg:#1f1d2e)"
-          "$time"
+          "$cmd_duration"
           "[ ](fg:#1f1d2e)"
           "$line_break"
           "$character"
