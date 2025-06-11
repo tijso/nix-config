@@ -23,7 +23,7 @@ in
           "[](fg:#c4a7e7 bg:#26233a)"
           "$git_branch"
           "$git_status"
-          "[](fg:#26233a bg:#191724)"
+          "[](#191724)"
           "$c"
           "$golang"
           "$haskell"
