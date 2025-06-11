@@ -131,7 +131,8 @@ in
 
         git_branch = {
           format = "[ $symbol $branch ]($style)";
-          style = "bg:overlay fg:foam";
+          style = "fg:foam";
+          # style = "bg:overlay fg:foam";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           symbol = " ";
         };
@@ -166,70 +167,80 @@ in
 
         # Languages
         golang = {
-          style = "bg:base fg:pine";
+          style = "fg:pine";
+          # style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         c = {
-          style = "bg:base fg:pine";
+          style = "fg:pine";
+          # style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         rust = {
-          style = "bg:base fg:pine";
+          style = "fg:pine";
+          # style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         python = {
-          style = "bg:base fg:gold";
+          style = "fg:gold";
+          # style = "bg:base fg:gold";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         nix_shell = {
-          style = "bg:base fg:foam";
+          style = "fg:foam";
+          # style = "bg:base fg:foam";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         haskell = {
-          style = "bg:base fg:iris";
+          style = "fg:iris";
+          # style = "bg:base fg:iris";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         java = {
-          style = "bg:base fg:love";
+          style = "fg:love";
+          # style = "bg:base fg:love";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         scala = {
-          style = "bg:base fg:love";
+          style = "fg:love";
+          # style = "bg:base fg:love";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         nodejs = {
-          style = "bg:base fg:foam";
+          style = "fg:foam";
+          # style = "bg:base fg:foam";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = "󰎙 ";
         };
 
         nim = {
-          style = "bg:base fg:gold";
+          style = "fg:gold";
+          # style = "bg:base fg:gold";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = "󰆥 ";
