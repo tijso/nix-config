@@ -153,7 +153,8 @@ in
         };
 
         git_branch = {
-          format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
+          format = "[ $symbol $branch ]($style)";
+          # format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           style = "bg:overlay fg:foam";
           symbol = "";
@@ -163,7 +164,8 @@ in
           disabled = false;
           style = "bg:overlay fg:love";
           # style = "fg:#${config.colorScheme.palette.base0E}";
-          format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
+          format = "([$all_status$ahead_behind]($style))";
+          # format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
           up_to_date = "[ ✓ ](bg:overlay fg:iris)";
           untracked = "[?($count)](bg:overlay fg:gold)";
           stashed = "[$](bg:overlay fg:iris)";
@@ -180,14 +182,16 @@ in
         golang = {
           style = "bg:overlay fg:pine";
           # style = "fg:#${config.colorScheme.palette.base0C}";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = "[ $symbol$version ]($style)";
+          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = " ";
         };
 
         c = {
           style = "bg:overlay fg:pine";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = "[ $symbol$version ]($style)";
+          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = " ";
 
@@ -196,7 +200,8 @@ in
         rust = {
           style = "bg:overlay fg:pine";
           # style = "fg:#${config.colorScheme.palette.base0C}";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = "[ $symbol$version ]($style)";
+          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = " ";
         };
@@ -204,7 +209,8 @@ in
         python = {
           style = "bg:overlay fg:pine";
           # style = "fg:#${config.colorScheme.palette.base0A}";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = "[ $symbol$version ]($style)";
+          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = " ";
         };
@@ -212,7 +218,8 @@ in
         nix_shell = {
           # style = "fg:#${config.colorScheme.palette.base0D}";
           style = "bg:overlay fg:pine";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = "[ $symbol$version ]($style)";
+          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = "";
 
@@ -220,28 +227,31 @@ in
 
         haskell = {
           style = "bg:overlay fg:pine";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = "[ $symbol$version ]($style)";
+          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = " ";
         };
 
         java = {
           style = "bg:overlay fg:pine";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         scala = {
           style = "bg:overlay fg:pine";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = "[ $symbol$version ]($style)";
+          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = " ";
         };
 
         nodejs = {
           style = "bg:overlay fg:pine";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          format = "[ $symbol$version ]($style)";
+          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = "󰎙 ";
         };
