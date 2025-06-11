@@ -18,12 +18,12 @@ in
         format = lib.concatStrings [
           "[░▒▓](#ebbcba)"
           "$os"
-          "[](bg:#c4a7e7 fg:#ebbcba)"
+          "[](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
-          "[](fg:#c4a7e7 bg:#26233a)"
+          "[](fg:#c4a7e7 bg:#26233a)"
           "$git_branch"
           "$git_status"
-          "[](fg:#26233a bg:#191724)"
+          "[](fg:#26233a bg:#191724)"
           "$c"
           "$golang"
           "$haskell"
@@ -34,9 +34,9 @@ in
           "$scala"
           "$python"
           "$nix_shell"
-          "[](fg:#191724 bg:#1f1d2e)"
+          "[](fg:#191724 bg:#1f1d2e)"
           "$time"
-          "[ ](fg:#1f1d2e)"
+          "[](fg:#1f1d2e)"
           "$line_break"
           "$character"
         ];
@@ -62,8 +62,10 @@ in
         };
 
         character = {
-          success_symbol = "[ •   ](#31748f bold)";
-          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
+          success_symbol = "[ •   ](#31748f bold)";
+          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
+          # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
+          # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
         };
 
         directory = {
