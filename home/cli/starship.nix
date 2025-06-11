@@ -16,14 +16,14 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          "[░▒▓](#a3aed2)"
+          "[░▒▓](#ebbcba)"
           "$os"
-          "[](bg:#769ff0 fg:#a3aed2)"
+          "[](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
-          "[](fg:#769ff0 bg:#394260)"
+          "[](fg:#c4a7e7 bg:#26233a)"
           "$git_branch"
           "$git_status"
-          "[](fg:#394260 bg:#212736)"
+          "[](fg:#26233a bg:#191724)"
           "$c"
           "$golang"
           "$haskell"
@@ -33,10 +33,10 @@ in
           "$rust"
           "$scala"
           "$python"
-          "nix_shell"
-          "[](fg:#212736 bg:#1d2230)"
+          "$nix_shell"
+          "[](fg:#191724 bg:#1f1d2e)"
           "$time"
-          "[ ](fg:#1d2230)"
+          "[ ](fg:#1f1d2e)"
           "$line_break"
           "$character"
         ];
@@ -44,37 +44,41 @@ in
         palette = "rose-pine";
 
         palettes.rose-pine = {
-          overlay = "#26233a";
-          love = "#eb6f92";
-          gold = "#f6c177";
-          rose = "#ebbcba";
-          pine = "#31748f";
-          foam = "#9ccfd8";
-          iris = "#c4a7e7";
+          base = "#191724"; # Base background
+          surface = "#1f1d2e"; # Surface background
+          overlay = "#26233a"; # Overlay background
+          muted = "#6e6a86"; # Muted text
+          subtle = "#908caa"; # Subtle text
+          text = "#e0def4"; # Main text
+          love = "#eb6f92"; # Love (red/pink)
+          gold = "#f6c177"; # Gold (yellow/orange)
+          rose = "#ebbcba"; # Rose (light pink)
+          pine = "#31748f"; # Pine (teal/cyan)
+          foam = "#9ccfd8"; # Foam (light cyan)
+          iris = "#c4a7e7"; # Iris (purple)
+          highlight_low = "#21202e";
+          highlight_med = "#403d52";
+          highlight_high = "#524f67";
         };
 
         character = {
-          success_symbol = "[ •   ](#31748f bold)";
-          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
-          # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
-          # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
+          success_symbol = "[ •   ](#31748f bold)";
+          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
         };
 
         directory = {
           format = "[ $path ]($style)";
-          # format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) ";
-          # style = "fg:#${config.colorScheme.palette.base07}";
           fish_style_pwd_dir_length = 1;
-          style = "bg:overlay fg:pine";
+          style = "bg:overlay fg:text";
           truncation_length = 3;
           truncation_symbol = "…/";
         };
 
         directory.substitutions = {
           Documents = "󰈙";
-          Downloads = " ";
-          Music = " ";
-          Pictures = " ";
+          Downloads = " ";
+          Music = " ";
+          Pictures = " ";
         };
 
         fill = {
@@ -84,15 +88,13 @@ in
 
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
-          # format = " [](fg:overlay)[ $duration 󱑂 ]($style)[](fg:overlay)";
           style = "bg:overlay fg:rose";
         };
 
         time = {
           disabled = true;
           format = "[ $time 󰴈 ]($style)";
-          # format = " [](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)";
-          style = "bg:overlay fg:rose";
+          style = "bg:surface fg:text";
           time_format = "%I:%M%P";
           use_12hr = true;
         };
@@ -101,142 +103,115 @@ in
           disabled = false;
           show_always = true;
           format = "[ $user ]($style)";
-          # format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) ";
-          style_root = "bg:overlay fg:iris";
-          # style_root = "fg:#${config.colorScheme.palette.base03}";
+          style_root = "bg:overlay fg:love";
           style_user = "bg:overlay fg:iris";
-          # style_user = "fg:#${config.colorScheme.palette.base03}";
         };
 
         hostname = {
           disabled = false;
           ssh_only = false;
           format = "[ $ssh_symbol$hostname ]($style)";
-          # format = "[](fg:overlay)[ $ssh_symbol$hostname ]($style)[](fg:overlay) ";
-          style = "bg:overlay fg:iris";
+          style = "bg:overlay fg:foam";
         };
 
         os = {
-          # os = with config.colorScheme.palette; {
           disabled = false;
           format = "[ $symbol ]($style)";
-          # format = "[](fg:overlay)[ $symbol ]($style)[](fg:overlay) ";
-          # style = "fg:#${base0D}";
-          style = "bg:overlay fg:foam";
+          style = "bg:rose fg:base";
           symbols = {
-            NixOS = "[ ]($style)";
-            # Arch = "[ ]($style)";
-            # Linux = "[  ](fg:fg $style)";
+            NixOS = "[ ]($style)";
           };
         };
 
         git_branch = {
           format = "[ $symbol $branch ]($style)";
-          # format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) ";
-          # style = "fg:#${config.colorScheme.palette.base0E}";
           style = "bg:overlay fg:foam";
-          symbol = "";
+          symbol = "";
         };
 
         git_status = {
           disabled = false;
           style = "bg:overlay fg:love";
-          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "([$all_status$ahead_behind]($style))";
-          # format = "[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) ";
-          up_to_date = "[ ✓ ](bg:overlay fg:iris)";
+          up_to_date = "[ ✓ ](bg:overlay fg:foam)";
           untracked = "[?($count)](bg:overlay fg:gold)";
           stashed = "[$](bg:overlay fg:iris)";
           modified = "[!($count)](bg:overlay fg:gold)";
           renamed = "[»($count)](bg:overlay fg:iris)";
-          deleted = "[✘($count)](style)";
-          staged = "[++($count)](bg:overlay fg:gold)";
+          deleted = "[✘($count)](bg:overlay fg:love)";
+          staged = "[++($count)](bg:overlay fg:foam)";
           ahead = "[⇡($count)](bg:overlay fg:foam)";
-          diverged = "⇕[[](bg:overlay fg:iris)[⇡($ahead_count)](bg:overlay fg:foam)[⇣($behind_count)](bg:overlay fg:rose)[]]";
-          behind = "[⇣($count)](bg:overlay fg:rose)";
+          diverged = "⇕[[](bg:overlay fg:iris)[⇡($ahead_count)](bg:overlay fg:foam)[⇣($behind_count)](bg:overlay fg:love)[]]";
+          behind = "[⇣($count)](bg:overlay fg:love)";
         };
 
         # Languages
         golang = {
-          style = "bg:overlay fg:pine";
-          # style = "fg:#${config.colorScheme.palette.base0C}";
+          style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
-          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
-          symbol = " ";
+          symbol = " ";
         };
 
         c = {
-          style = "bg:overlay fg:pine";
+          style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
-          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
-          symbol = " ";
-
+          symbol = " ";
         };
 
         rust = {
-          style = "bg:overlay fg:pine";
-          # style = "fg:#${config.colorScheme.palette.base0C}";
+          style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
-          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
-          symbol = " ";
+          symbol = " ";
         };
 
         python = {
-          style = "bg:overlay fg:pine";
-          # style = "fg:#${config.colorScheme.palette.base0A}";
+          style = "bg:base fg:gold";
           format = "[ $symbol$version ]($style)";
-          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
-          symbol = " ";
+          symbol = " ";
         };
 
         nix_shell = {
-          # style = "fg:#${config.colorScheme.palette.base0D}";
-          style = "bg:overlay fg:pine";
+          style = "bg:base fg:foam";
           format = "[ $symbol$version ]($style)";
-          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
-          symbol = "";
-
+          symbol = "";
         };
 
         haskell = {
-          style = "bg:overlay fg:pine";
+          style = "bg:base fg:iris";
           format = "[ $symbol$version ]($style)";
-          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
-          symbol = " ";
+          symbol = " ";
         };
 
         java = {
-          style = "bg:overlay fg:pine";
+          style = "bg:base fg:love";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = " ";
+          symbol = " ";
         };
 
         scala = {
-          style = "bg:overlay fg:pine";
+          style = "bg:base fg:love";
           format = "[ $symbol$version ]($style)";
-          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
-          symbol = " ";
+          symbol = " ";
         };
 
         nodejs = {
-          style = "bg:overlay fg:pine";
+          style = "bg:base fg:foam";
           format = "[ $symbol$version ]($style)";
-          # format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
           disabled = false;
           symbol = "󰎙 ";
         };
 
         nim = {
-          style = "bg:overlay fg:pine";
-          format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)";
+          style = "bg:base fg:gold";
+          format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = "󰆥 ";
         };
