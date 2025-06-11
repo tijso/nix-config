@@ -138,19 +138,30 @@ in
 
         git_status = {
           disabled = false;
-          style = "bg:overlay fg:love";
+          style = "fg:foam";
+          # style = "bg:overlay fg:love";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "([$all_status$ahead_behind]($style))";
-          up_to_date = "[ ✓ ](bg:overlay fg:foam)";
-          untracked = "[?($count)](bg:overlay fg:gold)";
-          stashed = "[$](bg:overlay fg:iris)";
-          modified = "[!($count)](bg:overlay fg:gold)";
-          renamed = "[»($count)](bg:overlay fg:iris)";
-          deleted = "[✘($count)](bg:overlay fg:love)";
-          staged = "[++($count)](bg:overlay fg:foam)";
-          ahead = "[⇡($count)](bg:overlay fg:foam)";
-          diverged = "⇕[[](bg:overlay fg:iris)[⇡($ahead_count)](bg:overlay fg:foam)[⇣($behind_count)](bg:overlay fg:love)[]]";
-          behind = "[⇣($count)](bg:overlay fg:love)";
+          up_to_date = "[ ✓ ](fg:foam)";
+          # up_to_date = "[ ✓ ](bg:overlay fg:foam)";
+          untracked = "[?($count)](fg:gold)";
+          # untracked = "[?($count)](bg:overlay fg:gold)";
+          stashed = "[$](fg:iris)";
+          # stashed = "[$](bg:overlay fg:iris)";
+          modified = "[!($count)](fg:gold)";
+          # modified = "[!($count)](bg:overlay fg:gold)";
+          renamed = "[»($count)](fg:iris)";
+          # renamed = "[»($count)](bg:overlay fg:iris)";
+          deleted = "[✘($count)](fg:love)";
+          # deleted = "[✘($count)](bg:overlay fg:love)";
+          staged = "[++($count)](fg:foam)";
+          # staged = "[++($count)](bg:overlay fg:foam)";
+          ahead = "[⇡($count)](fg:foam)";
+          # ahead = "[⇡($count)](bg:overlay fg:foam)";
+          diverged = "⇕[[](fg:iris)[⇡($ahead_count)](fg:foam)[⇣($behind_count)](fg:love)[]]";
+          # diverged = "⇕[[](bg:overlay fg:iris)[⇡($ahead_count)](bg:overlay fg:foam)[⇣($behind_count)](bg:overlay fg:love)[]]";
+          behind = "[⇣($count)](fg:love)";
+          # behind = "[⇣($count)](bg:overlay fg:love)";
         };
 
         # Languages
