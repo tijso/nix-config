@@ -17,7 +17,7 @@ in
       settings = {
         format = lib.concatStrings [
           "[░▒▓](#a3aed2)"
-          "[  ](bg:#a3aed2 fg:#090c0c)"
+          "$os"
           "[](bg:#769ff0 fg:#a3aed2)"
           "$directory"
           "[](fg:#769ff0 bg:#394260)"
