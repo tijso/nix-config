@@ -58,6 +58,7 @@ in
           "[](fg:#212736 bg:#1d2230)"
           "$time"
           "[ ](fg:#1d2230)"
+          "$line_break"
           "$character"
         ];
 
