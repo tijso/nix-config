@@ -119,7 +119,7 @@ in
         os = {
           disabled = false;
           format = "[ $symbol ]($style)";
-          style = "fg:pine";
+          style = "fg:#${pine}";
           # style = "bg:rose fg:base";
           # style = "fg:#${base0D}";
           symbols = {
@@ -142,84 +142,104 @@ in
           # style = "bg:overlay fg:love";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "([$all_status$ahead_behind]($style))";
-          up_to_date = "[ ✓ ](bg:overlay fg:foam)";
-          untracked = "[?($count)](bg:overlay fg:gold)";
-          stashed = "[$](bg:overlay fg:iris)";
-          modified = "[!($count)](bg:overlay fg:gold)";
-          renamed = "[»($count)](bg:overlay fg:iris)";
-          deleted = "[✘($count)](bg:overlay fg:love)";
-          staged = "[++($count)](bg:overlay fg:foam)";
-          ahead = "[⇡($count)](bg:overlay fg:foam)";
-          diverged = "⇕[[](bg:overlay fg:iris)[⇡($ahead_count)](bg:overlay fg:foam)[⇣($behind_count)](bg:overlay fg:love)[]]";
-          behind = "[⇣($count)](bg:overlay fg:love)";
+          up_to_date = "[ ✓ ](fg:foam)";
+          # up_to_date = "[ ✓ ](bg:overlay fg:foam)";
+          untracked = "[?($count)](fg:gold)";
+          # untracked = "[?($count)](bg:overlay fg:gold)";
+          stashed = "[$](fg:iris)";
+          # stashed = "[$](bg:overlay fg:iris)";
+          modified = "[!($count)](fg:gold)";
+          # modified = "[!($count)](bg:overlay fg:gold)";
+          renamed = "[»($count)](fg:iris)";
+          # renamed = "[»($count)](bg:overlay fg:iris)";
+          deleted = "[✘($count)](fg:love)";
+          # deleted = "[✘($count)](bg:overlay fg:love)";
+          staged = "[++($count)](fg:foam)";
+          # staged = "[++($count)](bg:overlay fg:foam)";
+          ahead = "[⇡($count)](fg:foam)";
+          # ahead = "[⇡($count)](bg:overlay fg:foam)";
+          diverged = "⇕[[](fg:iris)[⇡($ahead_count)](fg:foam)[⇣($behind_count)](fg:love)[]]";
+          # diverged = "⇕[[](bg:overlay fg:iris)[⇡($ahead_count)](bg:overlay fg:foam)[⇣($behind_count)](bg:overlay fg:love)[]]";
+          behind = "[⇣($count)](fg:love)";
+          # behind = "[⇣($count)](bg:overlay fg:love)";
         };
 
         # Languages
         golang = {
-          style = "bg:base fg:pine";
+          style = "fg:pine";
+          # style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         c = {
-          style = "bg:base fg:pine";
+          style = "fg:pine";
+          # style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         rust = {
-          style = "bg:base fg:pine";
+          style = "fg:pine";
+          # style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         python = {
-          style = "bg:base fg:gold";
+          style = "fg:gold";
+          # style = "bg:base fg:gold";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         nix_shell = {
-          style = "bg:base fg:foam";
+          style = "fg:foam";
+          # style = "bg:base fg:foam";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         haskell = {
-          style = "bg:base fg:iris";
+          style = "fg:iris";
+          # style = "bg:base fg:iris";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         java = {
-          style = "bg:base fg:love";
+          style = "fg:love";
+          # style = "bg:base fg:love";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         scala = {
-          style = "bg:base fg:love";
+          style = "fg:love";
+          # style = "bg:base fg:love";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
         };
 
         nodejs = {
-          style = "bg:base fg:foam";
+          style = "fg:foam";
+          # style = "bg:base fg:foam";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = "󰎙 ";
         };
 
         nim = {
-          style = "bg:base fg:gold";
+          style = "fg:gold";
+          # style = "bg:base fg:gold";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = "󰆥 ";
