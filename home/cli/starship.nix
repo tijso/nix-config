@@ -121,7 +121,7 @@ in
           format = "[ $symbol ]($style)";
           style = "bg:rose fg:base";
           symbols = {
-            NixOS = "[ ]($style)";
+            NixOS = "[ ]($style)";
           };
         };
 
