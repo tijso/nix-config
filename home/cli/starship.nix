@@ -23,6 +23,7 @@ in
           "$git_status"
           "$fill"
           "$c"
+          "$lua"
           "$golang"
           "$haskell"
           "$java"
@@ -31,7 +32,9 @@ in
           "$rust"
           "$scala"
           "$python"
+          "$docker_context"
           "$nix_shell"
+          "$jobs"
           "$cmd_duration"
           "$line_break"
           "$character"
@@ -68,7 +71,6 @@ in
           format = "[ $path ]($style)";
           fish_style_pwd_dir_length = 1;
           style = "fg:pine";
-          # style = "bg:overlay fg:iris";
           # style = "fg:#${config.colorScheme.palette.base07}";
           truncation_length = 3;
           truncation_symbol = "…/";
@@ -89,6 +91,13 @@ in
           format = "[ $duration 󱑂 ]($style)";
           style = "fg:rose";
           # style = "bg:overlay fg:rose";
+        };
+
+        jobs = {
+          symbol = " ";
+          style = "fg:love";
+          number_threshold = 1;
+          format = "[$symbol]($style)";
         };
 
         time = {
@@ -130,7 +139,6 @@ in
         git_branch = {
           format = "[on](fg:subtle) [$symbol$branch ]($style)";
           style = "fg:foam";
-          # style = "bg:overlay fg:foam";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           symbol = " ";
         };
@@ -138,38 +146,40 @@ in
         git_status = {
           disabled = false;
           style = "fg:foam";
-          # style = "bg:overlay fg:love";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "([$all_status$ahead_behind]($style))";
           up_to_date = "[ ✓ ](fg:foam)";
-          # up_to_date = "[ ✓ ](bg:overlay fg:foam)";
           untracked = "[?($count)](fg:gold)";
-          # untracked = "[?($count)](bg:overlay fg:gold)";
           stashed = "[$](fg:iris)";
-          # stashed = "[$](bg:overlay fg:iris)";
           modified = "[!($count)](fg:gold)";
-          # modified = "[!($count)](bg:overlay fg:gold)";
           renamed = "[»($count)](fg:iris)";
-          # renamed = "[»($count)](bg:overlay fg:iris)";
           deleted = "[✘($count)](fg:love)";
-          # deleted = "[✘($count)](bg:overlay fg:love)";
           staged = "[++($count)](fg:foam)";
-          # staged = "[++($count)](bg:overlay fg:foam)";
           ahead = "[⇡($count)](fg:foam)";
-          # ahead = "[⇡($count)](bg:overlay fg:foam)";
           diverged = "⇕[[](fg:iris)[⇡($ahead_count)](fg:foam)[⇣($behind_count)](fg:love)[]]";
-          # diverged = "⇕[[](bg:overlay fg:iris)[⇡($ahead_count)](bg:overlay fg:foam)[⇣($behind_count)](bg:overlay fg:love)[]]";
           behind = "[⇣($count)](fg:love)";
-          # behind = "[⇣($count)](bg:overlay fg:love)";
         };
 
-        # Languages
+        docker_context = {
+          symbol = " ";
+          style = "fg:pine";
+          format = "[$symbol]($style) $path";
+          detect_files = "['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']";
+          detect_extensions = "['Dockerfile']";
+        };
+
         golang = {
           style = "fg:pine";
-          # style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
+        };
+
+        lua = {
+          style = "fg:pine";
+          symbol = "  ";
+          format = "[ $symbol$version ]($style)";
+          disabled = false;
         };
 
         c = {
