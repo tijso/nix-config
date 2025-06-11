@@ -20,7 +20,7 @@ in
           "$os"
           "[](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
-          "[](fg:#c4a7e7 bg:#26233a)"
+          "[](fg:#191724 bg:#26233a)"
           "$git_branch"
           "$git_status"
           "[](fg:#26233a bg:#191724)"
