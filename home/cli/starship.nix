@@ -90,7 +90,6 @@ in
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
           style = "fg:rose";
-          # style = "bg:overlay fg:rose";
         };
 
         jobs = {
@@ -98,14 +97,6 @@ in
           style = "fg:love";
           number_threshold = 1;
           format = "[$symbol]($style)";
-        };
-
-        time = {
-          disabled = true;
-          format = "[ $time 󰴈 ]($style)";
-          style = "bg:surface fg:text";
-          time_format = "%I:%M%P";
-          use_12hr = true;
         };
 
         username = {
@@ -184,7 +175,6 @@ in
 
         c = {
           style = "fg:pine";
-          # style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
@@ -192,7 +182,6 @@ in
 
         rust = {
           style = "fg:pine";
-          # style = "bg:base fg:pine";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
@@ -200,7 +189,6 @@ in
 
         python = {
           style = "fg:gold";
-          # style = "bg:base fg:gold";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
@@ -208,7 +196,6 @@ in
 
         nix_shell = {
           style = "fg:foam";
-          # style = "bg:base fg:foam";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
@@ -216,7 +203,6 @@ in
 
         haskell = {
           style = "fg:iris";
-          # style = "bg:base fg:iris";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
@@ -224,7 +210,6 @@ in
 
         java = {
           style = "fg:love";
-          # style = "bg:base fg:love";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
@@ -232,7 +217,6 @@ in
 
         scala = {
           style = "fg:love";
-          # style = "bg:base fg:love";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = " ";
@@ -240,7 +224,6 @@ in
 
         nodejs = {
           style = "fg:foam";
-          # style = "bg:base fg:foam";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = "󰎙 ";
@@ -248,7 +231,6 @@ in
 
         nim = {
           style = "fg:gold";
-          # style = "bg:base fg:gold";
           format = "[ $symbol$version ]($style)";
           disabled = false;
           symbol = "󰆥 ";
