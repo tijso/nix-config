@@ -16,14 +16,14 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          "[](#ebbcba)"
+          # "[](#ebbcba)"
           "$os"
-          "[](bg:#c4a7e7 fg:#ebbcba)"
+          # "[](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
-          "[](fg:#c4a7e7 bg:#26233a)"
+          # "[](fg:#c4a7e7 bg:#26233a)"
           "$git_branch"
           "$git_status"
-          "[](fg:#26233a bg:#191724)"
+          # "[](fg:#26233a bg:#191724)"
           "$c"
           "$golang"
           "$haskell"
@@ -34,9 +34,9 @@ in
           "$scala"
           "$python"
           "$nix_shell"
-          "[](fg:#191724 bg:#26233a)"
+          # "[](fg:#191724 bg:#26233a)"
           "$cmd_duration"
-          "[ ](fg:#26233a)"
+          # "[ ](fg:#26233a)"
           "$line_break"
           "$character"
         ];
