@@ -88,7 +88,7 @@ in
         };
 
         fill = {
-          symbol = " ";
+          symbol = "";
         };
 
         cmd_duration = {
