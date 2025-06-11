@@ -86,7 +86,7 @@ in
 
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
-          style = "bg:overlay fg:rose";
+          style = "bg:base fg:rose";
         };
 
         time = {
