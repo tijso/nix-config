@@ -36,7 +36,7 @@ in
           "$nix_shell"
           "[](fg:#191724 bg:#1f1d2e)"
           "$cmd_duration"
-          "[ ](fg:#1f1d2e)"
+          "[ ](fg:#26233a)"
           "$line_break"
           "$character"
         ];
