@@ -18,12 +18,12 @@ in
         format = lib.concatStrings [
           "[░▒▓](#ebbcba)"
           "$os"
-          "[](bg:#c4a7e7 fg:#ebbcba)"
+          "[](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
-          "[](fg:#c4a7e7 bg:#26233a)"
+          "[](fg:#c4a7e7 bg:#26233a)"
           "$git_branch"
           "$git_status"
-          "[](fg:#26233a bg:#191724)"
+          "[](fg:#26233a bg:#191724)"
           "$c"
           "$golang"
           "$haskell"
@@ -34,7 +34,7 @@ in
           "$scala"
           "$python"
           "$nix_shell"
-          "[](fg:#191724 bg:#1f1d2e)"
+          "[](fg:#191724 bg:#1f1d2e)"
           "$time"
           "[ ](fg:#1f1d2e)"
           "$line_break"
@@ -71,7 +71,7 @@ in
         directory = {
           format = "[ $path ]($style)";
           fish_style_pwd_dir_length = 1;
-          style = "bg:base fg:text";
+          style = "bg:overlay fg:text";
           # style = "fg:#${config.colorScheme.palette.base07}";
           truncation_length = 3;
           truncation_symbol = "…/";
