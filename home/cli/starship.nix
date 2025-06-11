@@ -18,7 +18,7 @@ in
         format = lib.concatStrings [
           "[ ](#ebbcba)"
           "$os"
-          "$username"
+          "$hostname"
           "[ ](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
           "[ ](fg:#191724 bg:#26233a)"
@@ -112,7 +112,7 @@ in
           disabled = false;
           ssh_only = false;
           format = "[ $ssh_symbol$hostname ]($style)";
-          style = "bg:overlay fg:foam";
+          style = "bg:rose fg:base";
         };
 
         os = {
