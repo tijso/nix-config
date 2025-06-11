@@ -61,7 +61,7 @@ in
           "$character"
         ];
 
-        add_newline = true;
+        # add_newline = true;
 
         palette = "rose-pine";
 
