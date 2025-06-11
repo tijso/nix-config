@@ -34,7 +34,7 @@ in
           "$scala"
           "$python"
           "$nix_shell"
-          "[](fg:#26233a bg:#1f1d2e)"
+          "[](fg:#191724 bg:#26233a)"
           "$cmd_duration"
           "[ ](fg:#26233a)"
           "$line_break"
