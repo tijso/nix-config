@@ -18,6 +18,7 @@ in
         format = lib.concatStrings [
           "[░▒▓](#ebbcba)"
           "$os"
+          "$user"
           # "[](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
           # "[](fg:#191724 bg:#26233a)"
@@ -103,10 +104,10 @@ in
           disabled = false;
           show_always = true;
           format = "[ $user ]($style)";
-          style_root = "bg:overlay fg:love";
-          # style_root = "fg:#${config.colorScheme.palette.base03}";
-          style_user = "bg:overlay fg:iris";
+          style_user = "bg:rose fg:base";
           # style_user = "fg:#${config.colorScheme.palette.base03}";
+          style_root = "bg:love fg:base";
+          # style_root = "fg:#${config.colorScheme.palette.base03}";
         };
 
         hostname = {
