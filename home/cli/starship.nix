@@ -128,7 +128,7 @@ in
         };
 
         git_branch = {
-          format = "[on](fg:text) [$symbol$branch ]($style)";
+          format = "[on](fg:subtle) [$symbol$branch ]($style)";
           style = "fg:foam";
           # style = "bg:overlay fg:foam";
           # style = "fg:#${config.colorScheme.palette.base0E}";
