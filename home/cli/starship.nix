@@ -16,14 +16,14 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          # "[](#ebbcba)"
+          "[](#ebbcba)"
           "$os"
-          # "[](bg:#c4a7e7 fg:#ebbcba)"
+          "[](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
-          # "[](fg:#c4a7e7 bg:#26233a)"
+          "[](fg:#c4a7e7 bg:#26233a)"
           "$git_branch"
           "$git_status"
-          # "[](fg:#26233a bg:#191724)"
+          "[](fg:#26233a bg:#191724)"
           "$c"
           "$golang"
           "$haskell"
@@ -34,9 +34,9 @@ in
           "$scala"
           "$python"
           "$nix_shell"
-          # "[](fg:#191724 bg:#26233a)"
+          "[](fg:#191724 bg:#1f1d2e)"
           "$cmd_duration"
-          # "[ ](fg:#26233a)"
+          "[ ](fg:#26233a)"
           "$line_break"
           "$character"
         ];
@@ -71,7 +71,7 @@ in
         directory = {
           format = "[ $path ]($style)";
           fish_style_pwd_dir_length = 1;
-          style = "fg:iris";
+          style = "bg:iris fg:base";
           # style = "fg:#${config.colorScheme.palette.base07}";
           truncation_length = 3;
           truncation_symbol = "…/";
@@ -86,7 +86,7 @@ in
 
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
-          style = "fg:rose";
+          style = "bg:overlay fg:rose";
         };
 
         time = {
@@ -117,7 +117,7 @@ in
         os = {
           disabled = false;
           format = "[ $symbol ]($style)";
-          style = "fg:rose";
+          style = "bg:rose fg:base";
           # style = "fg:#${base0D}";
           symbols = {
             NixOS = "[ ]($style)";
@@ -127,7 +127,7 @@ in
 
         git_branch = {
           format = "[ $symbol $branch ]($style)";
-          style = "fg:foam";
+          style = "bg:overlay fg:foam";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           symbol = " ";
         };
