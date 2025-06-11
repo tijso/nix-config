@@ -18,7 +18,7 @@ in
         format = lib.concatStrings [
           "[░▒▓](#ebbcba)"
           "$os"
-          "[ ](fg:#c4a7e7)"
+          "[ ](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
           "[ ](fg:#c4a7e7 bg:#26233a)"
           "$git_branch"
