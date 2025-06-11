@@ -127,7 +127,7 @@ in
 
         git_branch = {
           format = "[ $symbol $branch ]($style)";
-          style = "bg:overlay fg:foam";
+          style = "bg:base fg:foam";
           # style = "fg:#${config.colorScheme.palette.base0E}";
           symbol = " ";
         };
