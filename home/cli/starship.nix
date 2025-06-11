@@ -119,7 +119,7 @@ in
         os = {
           disabled = false;
           format = "[ $symbol ]($style)";
-          style = "bg:pine fg:base";
+          style = "bg:rose fg:base";
           # style = "fg:#${base0D}";
           symbols = {
             NixOS = "[ ]($style)";
