@@ -16,208 +16,153 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          "[░▒▓](#ebbcba)"
+          "[ ](#5e81ac)"
           "$os"
-          "[ ](bg:#c4a7e7 fg:#ebbcba)"
+          "$username"
+          "[](bg:#81a1c1 fg:#5e81ac)"
           "$directory"
-          "[ ](fg:#c4a7e7 bg:#26233a)"
+          "[](fg:#81a1c1 bg:#8fbcbb)"
           "$git_branch"
           "$git_status"
-          "[ ](fg:#26233a bg:#191724)"
+          "[](fg:base07 bg:#a3be8c)"
           "$c"
-          "$golang"
-          "$haskell"
-          "$java"
-          "$nodejs"
-          "$nim"
+          "$cpp"
           "$rust"
-          "$scala"
+          "$golang"
+          "$nodejs"
+          "$php"
+          "$java"
+          "$kotlin"
+          "$haskell"
           "$python"
           "$nix_shell"
-          "[ ](fg:#191724 bg:#1f1d2e)"
-          "$cmd_duration"
-          "[ ](fg:#1f1d2e)"
+          "[](fg:#a3be8c bg:base03)"
+          "$time"
+          "[ ](fg:base03)"
           "$line_break"
           "$character"
         ];
 
-        palette = "rose-pine";
-
-        palettes.rose-pine = {
-          base = "#191724"; # Base background
-          surface = "#1f1d2e"; # Surface background
-          overlay = "#26233a"; # Overlay background
-          muted = "#6e6a86"; # Muted text
-          subtle = "#908caa"; # Subtle text
-          text = "#e0def4"; # Main text
-          love = "#eb6f92"; # Love (red/pink)
-          gold = "#f6c177"; # Gold (yellow/orange)
-          rose = "#ebbcba"; # Rose (light pink)
-          pine = "#31748f"; # Pine (teal/cyan)
-          foam = "#9ccfd8"; # Foam (light cyan)
-          iris = "#c4a7e7"; # Iris (purple)
-          highlight_low = "#21202e";
-          highlight_med = "#403d52";
-          highlight_high = "#524f67";
+        os = {
+          disabled = false;
+          style = "bg:#5e81ac fg:base06";
         };
 
-        character = {
-          success_symbol = "[ •   ](#31748f bold)";
-          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
-          # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
-          # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
+        os.symbols = {
+          NixOS = "";
+        };
+
+        username = {
+          show_always = true;
+          style_user = "bg:#5e81ac fg:base06";
+          style_root = "bg:#5e81ac fg:base06";
+          format = "[ $user ]($style)(bg:#5e81ac fg:base06)";
         };
 
         directory = {
+          style = "bg:#81a1c1 fg:base06";
           format = "[ $path ]($style)";
-          fish_style_pwd_dir_length = 1;
-          style = "bg:overlay fg:text";
-          # style = "fg:#${config.colorScheme.palette.base07}";
           truncation_length = 3;
-          truncation_symbol = "…/";
+          truncation_symbol = ".../";
         };
 
         directory.substitutions = {
           Documents = "󰈙";
-          Downloads = " ";
-          Music = " ";
-          Pictures = " ";
-        };
-
-        cmd_duration = {
-          format = "[ $duration 󱑂 ]($style)";
-          style = "bg:overlay fg:rose";
-        };
-
-        time = {
-          disabled = true;
-          format = "[ $time 󰴈 ]($style)";
-          style = "bg:surface fg:text";
-          time_format = "%I:%M%P";
-          use_12hr = true;
-        };
-
-        username = {
-          disabled = false;
-          show_always = true;
-          format = "[ $user ]($style)";
-          style_root = "bg:overlay fg:love";
-          # style_root = "fg:#${config.colorScheme.palette.base03}";
-          style_user = "bg:overlay fg:iris";
-          # style_user = "fg:#${config.colorScheme.palette.base03}";
-        };
-
-        hostname = {
-          disabled = false;
-          ssh_only = false;
-          format = "[ $ssh_symbol$hostname ]($style)";
-          style = "bg:overlay fg:foam";
-        };
-
-        os = {
-          disabled = false;
-          format = "[ $symbol ]($style)";
-          style = "bg:rose fg:base";
-          # style = "fg:#${base0D}";
-          symbols = {
-            NixOS = "[ ]($style)";
-            # Arch = "[ ]($style)";
-          };
+          Downloads = "";
+          Music = "󰝚";
+          Pictures = "";
         };
 
         git_branch = {
-          format = "[ $symbol $branch ]($style)";
-          style = "bg:overlay fg:foam";
-          # style = "fg:#${config.colorScheme.palette.base0E}";
-          symbol = " ";
+          symbol = "";
+          style = "bg:#8fbcbb";
+          format = "[[( $symbol $branch )](fg:#eceff4 bg:#8fbcbb)]($style)";
         };
 
         git_status = {
-          disabled = false;
-          style = "bg:overlay fg:love";
-          # style = "fg:#${config.colorScheme.palette.base0E}";
-          format = "([$all_status$ahead_behind]($style))";
-          up_to_date = "[ ✓ ](bg:overlay fg:foam)";
-          untracked = "[?($count)](bg:overlay fg:gold)";
-          stashed = "[$](bg:overlay fg:iris)";
-          modified = "[!($count)](bg:overlay fg:gold)";
-          renamed = "[»($count)](bg:overlay fg:iris)";
-          deleted = "[✘($count)](bg:overlay fg:love)";
-          staged = "[++($count)](bg:overlay fg:foam)";
-          ahead = "[⇡($count)](bg:overlay fg:foam)";
-          diverged = "⇕[[](bg:overlay fg:iris)[⇡($ahead_count)](bg:overlay fg:foam)[⇣($behind_count)](bg:overlay fg:love)[]]";
-          behind = "[⇣($count)](bg:overlay fg:love)";
-        };
-
-        # Languages
-        golang = {
-          style = "bg:base fg:pine";
-          format = "[ $symbol$version ]($style)";
-          disabled = false;
-          symbol = " ";
-        };
-
-        c = {
-          style = "bg:base fg:pine";
-          format = "[ $symbol$version ]($style)";
-          disabled = false;
-          symbol = " ";
-        };
-
-        rust = {
-          style = "bg:base fg:pine";
-          format = "[ $symbol$version ]($style)";
-          disabled = false;
-          symbol = " ";
-        };
-
-        python = {
-          style = "bg:base fg:gold";
-          format = "[ $symbol$version ]($style)";
-          disabled = false;
-          symbol = " ";
-        };
-
-        nix_shell = {
-          style = "bg:base fg:foam";
-          format = "[ $symbol$version ]($style)";
-          disabled = false;
-          symbol = " ";
-        };
-
-        haskell = {
-          style = "bg:base fg:iris";
-          format = "[ $symbol$version ]($style)";
-          disabled = false;
-          symbol = " ";
-        };
-
-        java = {
-          style = "bg:base fg:love";
-          format = "[ $symbol$version ]($style)";
-          disabled = false;
-          symbol = " ";
-        };
-
-        scala = {
-          style = "bg:base fg:love";
-          format = "[ $symbol$version ]($style)";
-          disabled = false;
-          symbol = " ";
+          style = "bg:#8fbcbb";
+          format = "[[($all_status$ahead_behind)](fg:#eceff4 bg:#8fbcbb)]($style)";
         };
 
         nodejs = {
-          style = "bg:base fg:foam";
-          format = "[ $symbol$version ]($style)";
-          disabled = false;
-          symbol = "󰎙 ";
+          symbol = "";
+          style = "bg:#a3be8c";
+          format = "[[ $symbol ($version) ](fg:base06 bg:#a3be8c)]($style)";
         };
 
-        nim = {
-          style = "bg:base fg:gold";
-          format = "[ $symbol$version ]($style)";
+        c = {
+          symbol = "";
+          style = "bg:#a3be8c";
+          format = "[[ $symbol ($version) ](fg:base06 bg:#a3be8c)]($style)";
+        };
+
+        cpp = {
           disabled = false;
-          symbol = "󰆥 ";
+          symbol = "";
+          style = "bg:#a3be8c";
+          format = "[[ $symbol ($version) ](fg:base06 bg:#a3be8c)]($style)";
+        };
+
+        rust = {
+          symbol = "";
+          style = "bg:#a3be8c";
+          format = "[[ $symbol ($version) ](fg:base06 bg:#a3be8c)]($style)";
+        };
+
+        php = {
+          symbol = "";
+          style = "bg:#a3be8c";
+          format = "[[ $symbol ($version) ](fg:base06 bg:#a3be8c)]($style)";
+        };
+
+        java = {
+          symbol = "";
+          style = "bg:#a3be8c";
+          format = "[[ $symbol ($version) ](fg:base06 bg:#a3be8c)]($style)";
+        };
+
+        kotlin = {
+          symbol = "";
+          style = "bg:#a3be8c";
+          format = "[[ $symbol ($version) ](fg:base06 bg:#a3be8c)]($style)";
+        };
+
+        haskell = {
+          symbol = "";
+          style = "bg:#a3be8c";
+          format = "[[ $symbol ($version) ](fg:base06 bg:#a3be8c)]($style)";
+        };
+
+        python = {
+          symbol = "";
+          style = "bg:#a3be8c";
+          format = "[[ $symbol ($version) ](fg:base06 bg:#a3be8c)]($style)";
+        };
+
+        nix_shell = {
+          disabled = false;
+          symbol = "";
+          style = "bg:#a3be8c";
+          format = "[[ $symbol ($version) ](fg:base06 bg:#a3be8c)]($style)";
+        };
+
+        time = {
+          disabled = false;
+          time_format = "%R";
+          style = "bg:base03";
+          format = "[[  $time ](fg:base06 bg:base03)]($style)";
+        };
+
+        scan_timeout = 10;
+
+        line_break = {
+          disabled = false;
+        };
+
+        character = {
+          disabled = false;
+          success_symbol = "[](bold fg:base0B)";
+          error_symbol = "[](bold fg:base08)";
         };
       };
     };
