@@ -16,7 +16,7 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          "[░▒▓](#ebbcba)"
+          "[](#ebbcba)"
           "$os"
           "[](bg:#c4a7e7 fg:#ebbcba)"
           "$directory"
