@@ -16,29 +16,8 @@ in
       enableFishIntegration = true;
       settings = {
         format = lib.concatStrings [
-          # "$os"
-          # "$username"
-          # "$directory"
-          # "$git_branch"
-          # "$git_status"
-          # "$fill"
-          # "$c"
-          # "$golang"
-          # "$haskell"
-          # "$java"
-          # "$nodejs"
-          # "$nim"
-          # "$rust"
-          # "$scala"
-          # "$python"
-          # "nix_shell"
-          # "$time"
-          # "$cmd_duration"
-          # "$line_break"
-          # "$character"
-
           "[░▒▓](#a3aed2)"
-          "[  ](bg:#a3aed2 fg:#090c0c)"
+          "[  ](bg:#a3aed2 fg:#090c0c)"
           "[](bg:#769ff0 fg:#a3aed2)"
           "$directory"
           "[](fg:#769ff0 bg:#394260)"
@@ -61,8 +40,6 @@ in
           "$line_break"
           "$character"
         ];
-
-        # add_newline = true;
 
         palette = "rose-pine";
 
