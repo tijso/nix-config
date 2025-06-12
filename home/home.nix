@@ -76,26 +76,27 @@
 
   # colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
   colorScheme = {
-    slug = "kanagawa";
-    name = "Kanagawa";
-    author = "rebelot";
+    slug = "rose-pine";
+    name = "Rosé Pine";
+    author = "Emilia Dunfelt <edun@dunfelt.se>";
+    variant = "dark";
     palette = {
-      base00 = "1F1F28";
-      base01 = "2A2A37";
-      base02 = "223249";
-      base03 = "727169";
-      base04 = "C8C093";
-      base05 = "DCD7BA";
-      base06 = "938AA9";
-      base07 = "363646";
-      base08 = "C34043";
-      base09 = "FFA066";
-      base0A = "DCA561";
-      base0B = "98BB6C";
-      base0C = "7FB4CA";
-      base0D = "7E9CD8";
-      base0E = "957FB8";
-      base0F = "D27E99";
+      base00 = "#191724";
+      base01 = "#1f1d2e";
+      base02 = "#26233a";
+      base03 = "#6e6a86";
+      base04 = "#908caa";
+      base05 = "#e0def4";
+      base06 = "#e0def4";
+      base07 = "#524f67";
+      base08 = "#eb6f92";
+      base09 = "#f6c177";
+      base0A = "#ebbcba";
+      base0B = "#31748f";
+      base0C = "#9ccfd8";
+      base0D = "#c4a7e7";
+      base0E = "#f6c177";
+      base0F = "#524f67";
     };
   };
 
