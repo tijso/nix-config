@@ -17,7 +17,7 @@ in
       settings = {
         format = lib.concatStrings [
           # "$os"
-          # "$hostname"
+          "$hostname"
           "$directory"
           "$git_branch"
           "$git_status"
@@ -32,7 +32,6 @@ in
           "$rust"
           "$scala"
           "$python"
-          "$docker_context"
           "$nix_shell"
           "$jobs"
           "$cmd_duration"
@@ -139,14 +138,6 @@ in
           ahead = "[⇡($count)](fg:foam)";
           diverged = "⇕[[](fg:iris)[⇡($ahead_count)](fg:foam)[⇣($behind_count)](fg:love)[]]";
           behind = "[⇣($count)](fg:love)";
-        };
-
-        docker_context = {
-          symbol = " ";
-          style = "fg:pine";
-          format = "[$symbol]($style) $path";
-          detect_files = "['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']";
-          detect_extensions = "['Dockerfile']";
         };
 
         golang = {
