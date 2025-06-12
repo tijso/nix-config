@@ -31,8 +31,12 @@
 
     # Theming
     nix-colors.url = "github:misterio77/nix-colors";
-    catppuccin.url = "github:catppuccin/nix";
-    # nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     grub2-themes = {
       url = "github:vinceliuice/grub2-themes";
     };
@@ -64,10 +68,10 @@
       nixos-cosmic,
       # neovim-nightly-overlay,
       nixvim,
-      catppuccin,
       hyprland,
       grub2-themes,
       ghostty,
+      stylix,
       ...
     }@inputs:
     let
@@ -104,8 +108,8 @@
               };
             }
             nixos-cosmic.nixosModules.default
-            catppuccin.nixosModules.catppuccin
             grub2-themes.nixosModules.default
+            stylix.nixosModules.stylix
           ];
         };
       };
