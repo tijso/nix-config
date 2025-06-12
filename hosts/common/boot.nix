@@ -1,7 +1,9 @@
 { pkgs, config, ... }:
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    # Set the kernel to 6.6, as there is some bug with the latest kernel in NixOS.
+    kernelPackages = pkgs.linuxPackages_6_6;
+    # kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "v4l2loopback" ];
     # extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     extraModulePackages = [
