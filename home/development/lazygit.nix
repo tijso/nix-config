@@ -16,26 +16,47 @@ in
       settings = {
         gui = {
           theme = {
+            lightTheme = false;
             activeBorderColor = [
-              "#24EAF7"
+              "#${config.colorScheme.palette.base0D}"
               "bold"
-            ]; # Cyan
-            inactiveBorderColor = [ "#214969" ]; # Dark blue
-            optionsTextColor = [ "#44FFB1" ]; # Green
-            selectedLineBgColor = [ "#033259" ]; # Selection background
-            selectedRangeBgColor = [ "#033259" ]; # Selection background
-            cherryPickedCommitBgColor = [ "#214969" ]; # Dark blue
-            cherryPickedCommitFgColor = [ "#A277FF" ]; # Purple
-            unstagedChangesColor = [ "#E52E2E" ]; # Red
-            defaultFgColor = [ "#CBE0F0" ]; # Foreground
-            searchingActiveBorderColor = [ "#FFE073" ]; # Yellow
-
-            # Additional theme settings using your colors
-            statusBarBgColor = [ "#011423" ]; # Background
-            commandBarBgColor = [ "#011423" ]; # Background
-            menuBgColor = [ "#011423" ]; # Background
-            menuFgColor = [ "#CBE0F0" ]; # Foreground
+            ];
+            inactiveBorderColor = [ "#${config.colorScheme.palette.base03}" ];
+            optionsTextColor = [ "#${config.colorScheme.palette.base0C}" ];
+            selectedLineBgColor = [ "#${config.colorScheme.palette.base02}" ];
+            selectedRangeBgColor = [ "#${config.colorScheme.palette.base02}" ];
+            cherryPickedCommitBgColor = [ "#${config.colorScheme.palette.base0A}" ];
+            cherryPickedCommitFgColor = [ "#${config.colorScheme.palette.base00}" ];
+            unstagedChangesColor = [ "#${config.colorScheme.palette.base08}" ];
+            defaultFgColor = [ "#${config.colorScheme.palette.base05}" ];
+            searchingActiveBorderColor = [ "#${config.colorScheme.palette.base09}" ];
           };
+
+          # Window dimensions
+          windowSize = "normal";
+          scrollHeight = 2;
+          scrollPastBottom = true;
+          sidePanelWidth = 0.3333;
+          expandFocusedSidePanel = false;
+          mainPanelSplitMode = "flexible";
+          enlargedSideViewLocation = "left";
+
+          # Display settings
+          showIcons = true;
+          showRandomTip = true;
+          showCommandLog = true;
+          showBottomLine = true;
+          showPanelJumps = true;
+          showBranchCommitHash = false;
+          showListFooter = true;
+          showFileTree = true;
+          showCommandLogOnStartup = false;
+
+          # Borders
+          border = "single"; # single, double, rounded, hidden
+          animateExplosion = true;
+          portraitMode = "auto";
+          filterMode = "substring";
         };
       };
     };
