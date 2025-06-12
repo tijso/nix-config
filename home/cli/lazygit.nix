@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.development.lazygit;
+  cfg = config.modules.cli.lazygit;
 in
 {
-  options.modules.development.lazygit.enable = mkEnableOption "Enable Lazygit";
+  options.modules.cli.lazygit.enable = mkEnableOption "Enable Lazygit";
   config = mkIf cfg.enable {
     programs.lazygit = {
       enable = true;

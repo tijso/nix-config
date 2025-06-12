@@ -10,6 +10,7 @@
     ./fish.nix
     ./starship.nix
     ./zsh.nix
+    ./lazygit.nix
   ];
 
   programs.fzf = {

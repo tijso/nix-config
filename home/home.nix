@@ -23,6 +23,7 @@
       fish.enable = true;
       starship.enable = true;
       zsh.enable = false;
+      lazygit.enable = true;
     };
     desktop = {
       gnome.enable = true;
@@ -31,7 +32,6 @@
     development = {
       git.enable = true;
       go.enable = true;
-      lazygit.enable = true;
       nixdev.enable = true;
     };
     editors = {
