@@ -39,26 +39,6 @@ in
           "$character"
         ];
 
-        palette = "rose-pine";
-
-        palettes.rose-pine = {
-          base = "#191724"; # Base background
-          surface = "#1f1d2e"; # Surface background
-          overlay = "#26233a"; # Overlay background
-          muted = "#6e6a86"; # Muted text
-          subtle = "#908caa"; # Subtle text
-          text = "#e0def4"; # Main text
-          love = "#eb6f92"; # Love (red/pink)
-          gold = "#f6c177"; # Gold (yellow/orange)
-          rose = "#ebbcba"; # Rose (light pink)
-          pine = "#31748f"; # Pine (teal/cyan)
-          foam = "#9ccfd8"; # Foam (light cyan)
-          iris = "#c4a7e7"; # Iris (purple)
-          highlight_low = "#21202e";
-          highlight_med = "#403d52";
-          highlight_high = "#524f67";
-        };
-
         character = {
           success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0B})";
           error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})";
