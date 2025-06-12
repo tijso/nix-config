@@ -122,7 +122,6 @@
           };
           modules = [
             ./home/home.nix
-            catppuccin.homeModules.catppuccin
           ];
         };
       };
