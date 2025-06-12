@@ -69,8 +69,8 @@ in
         directory = {
           format = "[ $path ]($style)";
           fish_style_pwd_dir_length = 1;
-          style = "fg:pine";
-          # style = "fg:#${config.colorScheme.palette.base07}";
+          # style = "fg:pine";
+          style = "fg:#${config.colorScheme.palette.base0C}";
           truncation_length = 3;
           truncation_symbol = "…/";
         };
