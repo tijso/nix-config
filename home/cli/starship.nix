@@ -60,8 +60,6 @@ in
         };
 
         character = {
-          # success_symbol = "[ •   ](#31748f bold)";
-          # error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
           success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0B}) ";
           error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
         };
@@ -87,14 +85,12 @@ in
 
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
-          # style = "fg:rose";
           style = "fg:#${config.colorScheme.palette.base0A}";
         };
 
         jobs = {
           symbol = " ";
-          style = "fg:love";
-          # style = "fg:#${config.colorScheme.palette.base0E}";
+          style = "fg:#${config.colorScheme.palette.base08}";
           number_threshold = 1;
           format = "[$symbol]($style)";
         };
@@ -103,15 +99,13 @@ in
           disabled = false;
           ssh_only = false;
           format = "[ $ssh_symbol$hostname ]($style)";
-          style = "fg:rose";
-          # style = "fg:#${config.colorScheme.palette.base0E}";
+          style = "fg:#${config.colorScheme.palette.base0A}";
         };
 
         os = {
           disabled = false;
           format = "[ $symbol ]($style)";
-          style = "fg:rose";
-          # style = "fg:#${config.colorScheme.palette.base0E}";
+          style = "fg:#${config.colorScheme.palette.base0A}";
           symbols = {
             NixOS = "[ ]($style)";
             # Arch = "[ ]($style)";
