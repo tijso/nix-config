@@ -69,8 +69,7 @@ in
         directory = {
           format = "[ $path ]($style)";
           fish_style_pwd_dir_length = 1;
-          # style = "fg:pine";
-          style = "fg:#${config.colorScheme.palette.base0C}";
+          style = "fg:#${config.colorScheme.palette.base0B}";
           truncation_length = 3;
           truncation_symbol = "…/";
         };
@@ -88,8 +87,8 @@ in
 
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
-          style = "fg:rose";
-          # style = "fg:#${config.colorScheme.palette.base0E}";
+          # style = "fg:rose";
+          style = "fg:#${config.colorScheme.palette.base0A}";
         };
 
         jobs = {
