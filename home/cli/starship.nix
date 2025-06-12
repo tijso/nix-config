@@ -114,15 +114,14 @@ in
 
         git_branch = {
           symbol = " ";
-          format = "[on](fg:subtle) [$symbol$branch ]($style)";
-          style = "fg:foam";
-          # style = "fg:#${config.colorScheme.palette.base0E}";
+          format = "[on](fg:#${config.colorScheme.palette.base04}) [$symbol$branch ]($style)";
+          # format = "[on](fg:subtle) [$symbol$branch ]($style)";
+          style = "fg:#${config.colorScheme.palette.base0C}";
         };
 
         git_status = {
           disabled = false;
-          style = "fg:foam";
-          # style = "fg:#${config.colorScheme.palette.base0E}";
+          style = "fg:#${config.colorScheme.palette.base0C}";
           format = "([$all_status$ahead_behind]($style))";
           up_to_date = "[ ✓ ](fg:foam)";
           untracked = "[?($count)](fg:gold)";
