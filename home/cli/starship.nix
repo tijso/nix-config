@@ -115,7 +115,6 @@ in
         git_branch = {
           symbol = " ";
           format = "[on](fg:#${config.colorScheme.palette.base04}) [$symbol$branch ]($style)";
-          # format = "[on](fg:subtle) [$symbol$branch ]($style)";
           style = "fg:#${config.colorScheme.palette.base0C}";
         };
 
@@ -123,16 +122,16 @@ in
           disabled = false;
           style = "fg:#${config.colorScheme.palette.base0C}";
           format = "([$all_status$ahead_behind]($style))";
-          up_to_date = "[ ✓ ](fg:foam)";
-          untracked = "[?($count)](fg:gold)";
-          stashed = "[$](fg:iris)";
-          modified = "[!($count)](fg:gold)";
-          renamed = "[»($count)](fg:iris)";
-          deleted = "[✘($count)](fg:love)";
-          staged = "[++($count)](fg:foam)";
-          ahead = "[⇡($count)](fg:foam)";
-          diverged = "⇕[[](fg:iris)[⇡($ahead_count)](fg:foam)[⇣($behind_count)](fg:love)[]]";
-          behind = "[⇣($count)](fg:love)";
+          up_to_date = "[ ✓ ](fg:#${config.colorScheme.palette.base0C})";
+          untracked = "[?($count)](fg:#${config.colorScheme.palette.base09})";
+          stashed = "[$](fg:#${config.colorScheme.palette.base0D})";
+          modified = "[!($count)](fg:#${config.colorScheme.palette.base09})";
+          renamed = "[»($count)](fg:#${config.colorScheme.palette.base0D})";
+          deleted = "[✘($count)](fg:#${config.colorScheme.palette.base08})";
+          staged = "[++($count)](fg:#${config.colorScheme.palette.base0C})";
+          ahead = "[⇡($count)](fg:#${config.colorScheme.palette.base0C})";
+          diverged = "⇕[[](fg:iris)[⇡($ahead_count)](fg:foam)[⇣($behind_count)](fg:#${config.colorScheme.palette.base08})[]]";
+          behind = "[⇣($count)](fg:#${config.colorScheme.palette.base08})";
         };
 
         golang = {
