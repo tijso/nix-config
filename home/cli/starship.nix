@@ -60,10 +60,10 @@ in
         };
 
         character = {
-          success_symbol = "[ •   ](#31748f bold)";
-          error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
-          # success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
-          # error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
+          # success_symbol = "[ •   ](#31748f bold)";
+          # error_symbol = "[ •  󰅙 ](#eb6f92 bold)";
+          success_symbol = "[ •   ](fg:#${config.colorScheme.palette.base0A}) ";
+          error_symbol = "[ •  󰅙 ](fg:#${config.colorScheme.palette.base08})[✘](fg:#${config.colorScheme.palette.base09})[├->](fg:#${config.colorScheme.palette.base0F}) ";
         };
 
         directory = {
@@ -89,11 +89,13 @@ in
         cmd_duration = {
           format = "[ $duration 󱑂 ]($style)";
           style = "fg:rose";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
         };
 
         jobs = {
           symbol = " ";
           style = "fg:love";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           number_threshold = 1;
           format = "[$symbol]($style)";
         };
@@ -103,13 +105,14 @@ in
           ssh_only = false;
           format = "[ $ssh_symbol$hostname ]($style)";
           style = "fg:rose";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
         };
 
         os = {
           disabled = false;
           format = "[ $symbol ]($style)";
           style = "fg:rose";
-          # style = "fg:#${base0D}";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           symbols = {
             NixOS = "[ ]($style)";
             # Arch = "[ ]($style)";
@@ -117,10 +120,10 @@ in
         };
 
         git_branch = {
+          symbol = " ";
           format = "[on](fg:subtle) [$symbol$branch ]($style)";
           style = "fg:foam";
           # style = "fg:#${config.colorScheme.palette.base0E}";
-          symbol = " ";
         };
 
         git_status = {
@@ -141,80 +144,91 @@ in
         };
 
         golang = {
+          symbol = " ";
           style = "fg:pine";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = " ";
         };
 
         lua = {
-          style = "fg:pine";
           symbol = "  ";
+          style = "fg:pine";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
         };
 
         c = {
+          symbol = " ";
           style = "fg:pine";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = " ";
         };
 
         rust = {
+          symbol = " ";
           style = "fg:pine";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = " ";
         };
 
         python = {
+          symbol = " ";
           style = "fg:gold";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = " ";
         };
 
         nix_shell = {
+          symbol = " ";
           style = "fg:foam";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = " ";
         };
 
         haskell = {
+          symbol = " ";
           style = "fg:iris";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = " ";
         };
 
         java = {
+          symbol = " ";
           style = "fg:love";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = " ";
         };
 
         scala = {
+          symbol = " ";
           style = "fg:love";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = " ";
         };
 
         nodejs = {
+          symbol = "󰎙 ";
           style = "fg:foam";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = "󰎙 ";
         };
 
         nim = {
+          symbol = "󰆥 ";
           style = "fg:gold";
+          # style = "fg:#${config.colorScheme.palette.base0E}";
           format = "[ $symbol$version ]($style)";
           disabled = false;
-          symbol = "󰆥 ";
         };
       };
     };
