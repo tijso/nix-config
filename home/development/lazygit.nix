@@ -33,7 +33,7 @@ in
           };
 
           # Window dimensions
-          windowSize = "normal";
+          screenMode = "normal";
           scrollHeight = 2;
           scrollPastBottom = true;
           sidePanelWidth = 0.3333;
