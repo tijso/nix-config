@@ -32,10 +32,10 @@
     # Theming
     nix-colors.url = "github:misterio77/nix-colors";
 
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # stylix = {
+    #   url = "github:danth/stylix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     grub2-themes = {
       url = "github:vinceliuice/grub2-themes";
@@ -71,7 +71,7 @@
       hyprland,
       grub2-themes,
       ghostty,
-      stylix,
+      # stylix,
       ...
     }@inputs:
     let
@@ -109,7 +109,7 @@
             }
             nixos-cosmic.nixosModules.default
             grub2-themes.nixosModules.default
-            stylix.nixosModules.stylix
+            # stylix.nixosModules.stylix
           ];
         };
       };

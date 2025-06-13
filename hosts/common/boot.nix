@@ -5,7 +5,6 @@
     kernelPackages = pkgs.linuxPackages_6_6;
     # kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "v4l2loopback" ];
-    # extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     extraModulePackages = [
       (config.boot.kernelPackages.v4l2loopback.overrideAttrs (old: {
         version = "0.15.0";
@@ -22,7 +21,7 @@
     };
     plymouth = {
       enable = true;
-      theme = "cybernetic";
+      theme = "rings";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
           selected_themes = [
