@@ -13,7 +13,12 @@
     ./programs
     ./terminals
     ./theming
+    ./modules
   ];
+
+  myHome = {
+    zsh.enable = true;
+  };
 
   modules = {
     cli = {
@@ -22,7 +27,7 @@
       fastfetch.enable = true;
       fish.enable = true;
       starship.enable = true;
-      zsh.enable = false;
+      # zsh.enable = false;
       lazygit.enable = true;
     };
     desktop = {
