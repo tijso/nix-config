@@ -7,7 +7,7 @@ with lib;
 
 {
   options.myHome.cli.zsh.enable = mkEnableOption "Enable Zsh";
-  config = mkIf config.myHome.zsh.enable {
+  config = mkIf config.myHome.cli.zsh.enable {
     programs.zsh = {
       enable = true;
       autocd = true;
