@@ -17,7 +17,9 @@
   ];
 
   myHome = {
-    zsh.enable = true;
+    cli = {
+      zsh.enable = true;
+    };
   };
 
   modules = {
