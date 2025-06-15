@@ -25,6 +25,11 @@
       starship.enable = true;
       zsh.enable = true;
     };
+    terminals = {
+      ghostty.enable = true;
+      wezterm.enable = true;
+      kitty.enable = true;
+    };
   };
 
   modules = {
