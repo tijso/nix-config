@@ -1,9 +1,9 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ./audio.nix
     ./bluetooth.nix
     ./boot.nix
-    ./disks.nix
     ./graphics.nix
     ./network.nix
     ./nix.nix
