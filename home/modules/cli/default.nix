@@ -6,11 +6,11 @@
   imports = [
     ./bat.nix
     ./eza.nix
-    # ./fastfetch
-    # ./fish.nix
-    # ./starship.nix
+    ./fastfetch
+    ./fish.nix
+    ./starship.nix
     ./zsh.nix
-    # ./lazygit.nix
+    ./lazygit.nix
   ];
 
   programs.fzf = {
