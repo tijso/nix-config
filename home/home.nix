@@ -12,15 +12,15 @@
   ];
 
   myHome = {
+    tmux.enable = true;
+    mpv.enable = false;
     cli = {
       bat.enable = true;
       eza.enable = true;
       fastfetch.enable = true;
       fish.enable = true;
       lazygit.enable = true;
-      mpv.enable = false;
       starship.enable = true;
-      tmux.enable = true;
       zsh.enable = true;
     };
     terminals = {
