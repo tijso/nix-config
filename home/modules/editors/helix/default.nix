@@ -4,12 +4,10 @@
   ...
 }:
 with lib;
-let
-  cfg = config.modules.editors.helix;
-in
+
 {
-  options.modules.editors.helix.enable = mkEnableOption "Enable Helix";
-  config = mkIf cfg.enable {
+  options.myHome.editors.helix.enable = mkEnableOption "Enable Helix";
+  config = mkIf config.myHome.editors.helix.enable {
     programs.helix = {
       enable = true;
       settings = {

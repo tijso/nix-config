@@ -8,7 +8,6 @@
     inputs.nix-colors.homeManagerModule
     ./desktop
     ./development
-    ./editors
     ./programs
     ./theming
     ./modules
@@ -29,6 +28,10 @@
       wezterm.enable = true;
       kitty.enable = true;
     };
+    editors = {
+      helix.enable = true;
+      nvim.enable = false;
+    };
   };
 
   modules = {
@@ -40,10 +43,6 @@
       git.enable = true;
       go.enable = true;
       nixdev.enable = true;
-    };
-    editors = {
-      helix.enable = false;
-      nvim.enable = false;
     };
     programs = {
       mpv.enable = true;
