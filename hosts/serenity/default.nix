@@ -16,17 +16,20 @@
   ];
 
   myModules = {
-    thunar.enable = true;
-    stylix.enable = false;
-    desktop = {
-      cosmic.enable = false;
-      gnome.enable = true;
-      hyprland.enable = false;
-    };
     core = { };
     audio.enable = true;
     bluetooth.enable = true;
+    boot.enable = true;
   };
+
+  desktop = {
+    cosmic.enable = false;
+    gnome.enable = true;
+    hyprland.enable = false;
+  };
+
+  thunar.enable = true;
+  stylix.enable = false;
 
   system.stateVersion = "23.11";
 }
