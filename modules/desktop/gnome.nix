@@ -8,13 +8,11 @@ with lib;
 {
   options.myModules.desktop.gnome.enable = mkEnableOption "Enable Gnome";
   config = mkIf config.myModules.desktop.gnome.enable {
-    services = {
-      displayManager = {
-        gdm.enable = true;
-        wayland = true;
-      };
-      desktopManager.gnome.enable = true;
+    services.displayManager.gdm = {
+      enable = true;
+      wayland = true;
     };
+    desktopManager.gnome.enable = true;
     environment.gnome.excludePackages = with pkgs; [
       gnome-tour
       gnome-photos
