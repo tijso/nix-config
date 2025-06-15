@@ -24,6 +24,7 @@
       network.enable = true;
       nix.enable = true;
       pkgs.enable = true;
+      security.enable = true;
     };
 
     desktop = {
