@@ -9,10 +9,10 @@
     ./users.nix
 
     ../../modules
-    ../common
+    # ../common
     # ../users/global.nix
     ../../development
-    ../../environments
+    # ../../environments
   ];
 
   myModules = {
