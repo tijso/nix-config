@@ -4,8 +4,9 @@
 }:
 {
   imports = [
-    ./hardware-configuration.nix
     # ./disks.nix
+    ./hardware-configuration.nix
+    ./users.nix
 
     ../../modules
     ../common
