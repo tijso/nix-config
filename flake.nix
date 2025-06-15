@@ -96,6 +96,7 @@
 
       nixosConfigurations = {
         serenity = lib.nixosSystem {
+          pkgs = pkgsFor.x86_64-linux;
           specialArgs = {
             inherit inputs outputs;
           };
@@ -122,6 +123,7 @@
           };
           modules = [
             ./home/home.nix
+            # ./hosts/serenity/home.nix
           ];
         };
       };
