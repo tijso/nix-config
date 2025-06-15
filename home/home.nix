@@ -13,7 +13,6 @@
   myHome = {
     mpv.enable = false;
     # rofi.enable = false;
-    thunar.enable = true;
     tmux.enable = true;
 
     cli = {

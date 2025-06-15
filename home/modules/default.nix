@@ -7,7 +7,6 @@
     # ./rofi
     ./terminals
     ./theming
-    ./thunar
     ./tmux
   ];
 }
