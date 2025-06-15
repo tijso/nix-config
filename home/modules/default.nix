@@ -4,7 +4,7 @@
     ./desktop
     ./editors
     ./mpv
-    ./rofi
+    # ./rofi
     ./terminals
     ./theming
     ./thunar
