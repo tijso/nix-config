@@ -9,10 +9,6 @@
     ./users.nix
 
     ../../modules
-    # ../common
-    # ../users/global.nix
-    ../../development
-    # ../../environments
   ];
 
   myModules = {
@@ -34,8 +30,9 @@
       hyprland.enable = false;
     };
 
-    thunar.enable = true;
+    development.enable = true;
     # stylix.enable = false;
+    thunar.enable = true;
   };
 
   system.stateVersion = "23.11";

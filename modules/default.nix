@@ -2,7 +2,7 @@
   imports = [
     ./core
     ./desktop
-    # ./development
+    ./development
     # ./stylix
     ./thunar
   ];
