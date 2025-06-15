@@ -6,12 +6,11 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModule
-    ./development
     ./modules
   ];
 
   myHome = {
-    mpv.enable = false;
+    # mpv.enable = false;
     # rofi.enable = false;
     tmux.enable = true;
 
