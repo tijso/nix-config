@@ -6,7 +6,7 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModule
-    ./cli
+    # ./cli
     ./desktop
     ./development
     ./editors
@@ -18,20 +18,26 @@
 
   myHome = {
     cli = {
+      bat.enable = true;
+      eza.enable = true;
+      fastfetch.enable = true;
+      fish.enable = true;
+      lazygit.enable = true;
+      starship.enable = true;
       zsh.enable = true;
     };
   };
 
   modules = {
-    cli = {
-      bat.enable = true;
-      eza.enable = true;
-      fastfetch.enable = true;
-      fish.enable = true;
-      starship.enable = true;
-      # zsh.enable = false;
-      lazygit.enable = true;
-    };
+    # cli = {
+    # bat.enable = true;
+    # eza.enable = true;
+    # fastfetch.enable = true;
+    # fish.enable = true;
+    # starship.enable = true;
+    # zsh.enable = false;
+    # lazygit.enable = true;
+    # };
     desktop = {
       gnome.enable = true;
       hyprland.enable = false;

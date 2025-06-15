@@ -4,12 +4,9 @@
   ...
 }:
 with lib;
-let
-  cfg = config.modules.cli.fastfetch;
-in
 {
-  options.modules.cli.fastfetch.enable = mkEnableOption "Enable Fastfetch";
-  config = mkIf cfg.enable {
+  options.myHome.cli.fastfetch.enable = mkEnableOption "Enable Fastfetch";
+  config = mkIf config.myHome.cli.fastfetch.enable {
     programs.fastfetch = {
       enable = true;
 

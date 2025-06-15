@@ -5,12 +5,10 @@
   ...
 }:
 with lib;
-let
-  cfg = config.modules.cli.lazygit;
-in
+
 {
-  options.modules.cli.lazygit.enable = mkEnableOption "Enable Lazygit";
-  config = mkIf cfg.enable {
+  options.myHome.cli.lazygit.enable = mkEnableOption "Enable Lazygit";
+  config = mkIf config.myHome.cli.lazygit.enable {
     programs.lazygit = {
       enable = true;
       settings = {

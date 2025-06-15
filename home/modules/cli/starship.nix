@@ -4,12 +4,9 @@
   ...
 }:
 with lib;
-let
-  cfg = config.modules.cli.starship;
-in
 {
-  options.modules.cli.starship.enable = mkEnableOption "Enable Starship";
-  config = mkIf cfg.enable {
+  options.myHome.cli.starship.enable = mkEnableOption "Enable Starship";
+  config = mkIf config.myHome.cli.starship.enable {
     programs.starship = {
       enable = true;
       enableZshIntegration = true;

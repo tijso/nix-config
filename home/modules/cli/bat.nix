@@ -5,12 +5,10 @@
   ...
 }:
 with lib;
-let
-  cfg = config.modules.cli.bat;
-in
+
 {
-  options.modules.cli.bat.enable = mkEnableOption "Enable Bat";
-  config = mkIf cfg.enable {
+  options.myHome.cli.bat.enable = mkEnableOption "Enable Bat";
+  config = mkIf config.myHome.cli.bat.enable {
     programs.bat = {
       enable = true;
       config = {

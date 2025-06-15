@@ -1,11 +1,9 @@
 { lib, config, ... }:
 with lib;
-let
-  cfg = config.modules.cli.fish;
-in
+
 {
-  options.modules.cli.fish.enable = mkEnableOption "Enable Fish";
-  config = mkIf cfg.enable {
+  options.myHome.cli.fish.enable = mkEnableOption "Enable Fish";
+  config = mkIf config.myHome.cli.fish.enable {
     programs.fish = {
       enable = true;
       shellInit = ''
