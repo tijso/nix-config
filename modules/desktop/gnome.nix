@@ -12,7 +12,7 @@ with lib;
       enable = true;
       wayland = true;
     };
-    desktopManager.gnome.enable = true;
+    services.desktopManager.gnome.enable = true;
     environment.gnome.excludePackages = with pkgs; [
       gnome-tour
       gnome-photos
