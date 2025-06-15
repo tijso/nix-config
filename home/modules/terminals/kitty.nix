@@ -7,7 +7,7 @@ with lib;
 
 {
   options.myHome.terminals.kitty.enable = mkEnableOption "Enable Kitty";
-  config = mkIf config.myHome.kitty.enable {
+  config = mkIf config.myHome.terminals.kitty.enable {
     programs.kitty = {
       enable = true;
       themeFile = "Catppuccin-Mocha";

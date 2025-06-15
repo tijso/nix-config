@@ -10,7 +10,6 @@
     ./development
     ./editors
     ./programs
-    ./terminals
     ./theming
     ./modules
   ];
