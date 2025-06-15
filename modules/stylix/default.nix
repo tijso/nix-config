@@ -6,19 +6,13 @@
   ...
 }:
 with lib;
-let
-  cfg = config.theming.stylix;
-in
 {
   imports = with inputs; [
     stylix.homeManagerModules.stylix
   ];
 
-  options.theming.stylix = {
-    enable = lib.mkEnableOption "Enable Stylix";
-  };
-
-  config = lib.mkIf cfg.enable {
+  options.myModules.stylix.enable = mkEnableOption "Enable Stylix";
+  config = mkIf config.myModules.stylix.enable {
     stylix = {
       enable = true;
       polarity = "dark";
@@ -50,45 +44,44 @@ in
       #     base0E = "f6c177";
       #     base0F = "524f67";
       #   };
-      };
+    };
 
-      opacity = {
-        terminal = opacity;
-        popups = opacity;
-      };
+    opacity = {
+      terminal = opacity;
+      popups = opacity;
+    };
 
-      cursor = {
-        name = "Bibata-Modern-Classic";
-        package = pkgs.bibata-cursors;
-        size = 24;
-      };
+    cursor = {
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
 
-      serif = {
-        name = "Source Serif";
-        package = pkgs.source-serif;
-      };
+    serif = {
+      name = "Source Serif";
+      package = pkgs.source-serif;
+    };
 
-      sansSerif = {
-        name = "Noto Sans";
-        package = pkgs.noto-fonts;
-      };
+    sansSerif = {
+      name = "Noto Sans";
+      package = pkgs.noto-fonts;
+    };
 
-      monospace = {
-        package = pkgs.maple-mono.NF;
-        name = "Maple Mono NF";
-      };
+    monospace = {
+      package = pkgs.maple-mono.NF;
+      name = "Maple Mono NF";
+    };
 
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
-      };
+    emoji = {
+      package = pkgs.noto-fonts-emoji;
+      name = "Noto Color Emoji";
+    };
 
-      fonts = {
-        sizes = {
-          terminal = 14;
-          applications = 12;
-          popups = 12;
-        };
+    fonts = {
+      sizes = {
+        terminal = 14;
+        applications = 12;
+        popups = 12;
       };
     };
   };

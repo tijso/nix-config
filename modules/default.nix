@@ -1,5 +1,7 @@
 {
   imports = [
     ./desktops
+    ./stylix
+    ./thunar
   ];
 }

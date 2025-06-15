@@ -7,8 +7,8 @@
 with lib;
 
 {
-  options.myHome.thunar.enable = mkEnableOption "Enable Thunar";
-  config = mkIf config.myHome.thunar.enable {
+  options.myModules.thunar.enable = mkEnableOption "Enable Thunar";
+  config = mkIf config.myModules.thunar.enable {
     programs = {
       thunar = {
         enable = true;
