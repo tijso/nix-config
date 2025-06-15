@@ -35,7 +35,7 @@
     };
 
     thunar.enable = true;
-    stylix.enable = false;
+    # stylix.enable = false;
   };
 
   system.stateVersion = "23.11";
