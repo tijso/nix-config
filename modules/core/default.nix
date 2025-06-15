@@ -4,7 +4,7 @@
     ./audio.nix
     ./bluetooth.nix
     ./boot.nix
-    ./graphics.nix
+    ./gpu.nix
     ./network.nix
     ./nix.nix
     ./pkgs.nix
