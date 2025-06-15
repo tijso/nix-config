@@ -9,8 +9,8 @@ with lib;
   options.myModules.desktop.gnome.enable = mkEnableOption "Enable Gnome";
   config = mkIf config.myModules.desktop.gnome.enable {
     services = {
-      displayManager.gdm = {
-        enable = true;
+      displayManager = {
+        gdm.enable = true;
         wayland.enable = true;
       };
       desktopManager.gnome.enable = true;
