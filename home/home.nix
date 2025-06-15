@@ -51,11 +51,6 @@
       thunar.enable = true;
       tmux.enable = true;
     };
-    terminals = {
-      kitty.enable = false;
-      wezterm.enable = true;
-      ghostty.enable = true;
-    };
     theming = {
       gtk.enable = true;
     };
