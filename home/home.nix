@@ -6,7 +6,6 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModule
-    ./desktop
     ./development
     ./programs
     ./theming
@@ -32,13 +31,13 @@
       helix.enable = true;
       nvim.enable = false;
     };
-  };
-
-  modules = {
     desktop = {
       gnome.enable = true;
       hyprland.enable = false;
     };
+  };
+
+  modules = {
     development = {
       git.enable = true;
       go.enable = true;
