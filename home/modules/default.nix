@@ -1,11 +1,13 @@
 {
   imports = [
     ./cli
-    ./terminals
-    ./editors
     ./desktop
-    ./theming
-    ./tmux
+    ./editors
     ./mpv
+    ./rofi
+    ./terminals
+    ./theming
+    ./thunar
+    ./tmux
   ];
 }

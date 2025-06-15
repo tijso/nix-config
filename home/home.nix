@@ -7,13 +7,15 @@
   imports = [
     inputs.nix-colors.homeManagerModule
     ./development
-    ./programs
     ./modules
   ];
 
   myHome = {
-    tmux.enable = true;
     mpv.enable = false;
+    rofi.enable = false;
+    thunar.enable = true;
+    tmux.enable = true;
+
     cli = {
       bat.enable = true;
       eza.enable = true;
@@ -23,22 +25,27 @@
       starship.enable = true;
       zsh.enable = true;
     };
+
     terminals = {
       ghostty.enable = true;
       kitty.enable = true;
       wezterm.enable = true;
     };
+
     editors = {
       helix.enable = true;
       nvim.enable = false;
     };
+
     desktop = {
       gnome.enable = true;
       hyprland.enable = false;
     };
+
     theming = {
       gtk.enable = true;
     };
+
   };
 
   modules = {
@@ -46,12 +53,6 @@
       git.enable = true;
       go.enable = true;
       nixdev.enable = true;
-    };
-    programs = {
-      mpv.enable = true;
-      # rofi.enable = true;
-      thunar.enable = true;
-      tmux.enable = true;
     };
   };
 
