@@ -2,8 +2,9 @@
   imports = [
     ./cli
     ./desktop
+    ./development
     ./editors
-    ./mpv
+    # ./mpv
     # ./rofi
     ./terminals
     ./theming
