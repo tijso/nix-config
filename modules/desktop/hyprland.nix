@@ -6,8 +6,8 @@
 }:
 with lib;
 {
-  options.myModules.desktop.enable = mkEnableOption "Enable Hyprland";
-  config = mkIf config.myModules.hyprland.enable {
+  options.myModules.desktop.hyprland.enable = mkEnableOption "Enable Hyprland";
+  config = mkIf config.myModules.desktop.hyprland.enable {
     services.displayManager.sddm = {
       enable = true;
       enableHidpi = true;

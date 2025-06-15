@@ -6,12 +6,13 @@
 }:
 with lib;
 {
-  options.myModules.desktop.enable = mkEnableOption "Enable Gnome";
-  config = mkIf config.myModules.gnome.enable {
+  options.myModules.desktop.gnome.enable = mkEnableOption "Enable Gnome";
+  config = mkIf config.myModules.desktop.gnome.enable {
     services = {
-      enable = true;
-      displayManager.gdm.enable = true;
-      wayland = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland.enable = true;
+      };
       desktopManager.gnome.enable = true;
     };
     environment.gnome.excludePackages = with pkgs; [

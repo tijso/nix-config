@@ -1,7 +1,7 @@
 {
   imports = [
     # ./core
-    # ./desktops
+    ./desktop
     # ./development
     # ./stylix
     ./thunar
