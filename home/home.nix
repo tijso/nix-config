@@ -8,7 +8,6 @@
     inputs.nix-colors.homeManagerModule
     ./development
     ./programs
-    ./theming
     ./modules
   ];
 
@@ -35,6 +34,9 @@
       gnome.enable = true;
       hyprland.enable = false;
     };
+    theming = {
+      gtk.enable = true;
+    };
   };
 
   modules = {
@@ -48,9 +50,6 @@
       # rofi.enable = true;
       thunar.enable = true;
       tmux.enable = true;
-    };
-    theming = {
-      gtk.enable = true;
     };
   };
 

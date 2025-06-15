@@ -4,5 +4,6 @@
     ./terminals
     ./editors
     ./desktop
+    ./theming
   ];
 }
