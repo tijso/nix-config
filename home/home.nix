@@ -24,10 +24,15 @@
       zsh.enable = true;
     };
 
-    terminals = {
-      ghostty.enable = true;
-      kitty.enable = true;
-      wezterm.enable = true;
+    desktop = {
+      gnome.enable = true;
+      hyprland.enable = false;
+    };
+
+    development = {
+      git.enable = true;
+      go.enable = true;
+      nixdev.enable = true;
     };
 
     editors = {
@@ -35,23 +40,16 @@
       nvim.enable = false;
     };
 
-    desktop = {
-      gnome.enable = true;
-      hyprland.enable = false;
+    terminals = {
+      ghostty.enable = true;
+      kitty.enable = true;
+      wezterm.enable = true;
     };
 
     theming = {
       gtk.enable = true;
     };
 
-  };
-
-  modules = {
-    development = {
-      git.enable = true;
-      go.enable = true;
-      nixdev.enable = true;
-    };
   };
 
   home.packages = with pkgs; [
