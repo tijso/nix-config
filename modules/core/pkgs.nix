@@ -3,27 +3,6 @@
   ...
 }:
 {
-  imports = [
-    ./hardware-configuration.nix
-
-    ../../modules
-    ../common
-    ../users/global.nix
-    ../../development
-    ../../environments
-  ];
-
-  myModules = {
-    thunar.enable = true;
-    stylix.enable = false;
-    core = { };
-    desktop = {
-      cosmic.enable = false;
-      gnome.enable = true;
-      hyprland.enable = false;
-    };
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -47,6 +26,7 @@
     lm_sensors
     lshw
     mpd
+    # papirus-icon-theme
     pavucontrol
     pciutils
     playerctl
@@ -76,6 +56,4 @@
       nerd-fonts.symbols-only
     ];
   };
-
-  system.stateVersion = "23.11";
 }
