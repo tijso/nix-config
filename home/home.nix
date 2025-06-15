@@ -18,13 +18,15 @@
       fastfetch.enable = true;
       fish.enable = true;
       lazygit.enable = true;
+      mpv.enable = false;
       starship.enable = true;
+      tmux.enable = true;
       zsh.enable = true;
     };
     terminals = {
       ghostty.enable = true;
-      wezterm.enable = true;
       kitty.enable = true;
+      wezterm.enable = true;
     };
     editors = {
       helix.enable = true;

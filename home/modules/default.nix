@@ -5,5 +5,7 @@
     ./editors
     ./desktop
     ./theming
+    ./tmux
+    ./mpv
   ];
 }
