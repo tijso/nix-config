@@ -15,7 +15,6 @@ with lib;
         plugins = with pkgs.xfce; [
           thunar-volman
           thunar-archive-plugin
-          file-roller
         ];
       };
     };
