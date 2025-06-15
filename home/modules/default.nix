@@ -6,5 +6,6 @@
     # ./desktop.nix
     ./cli
     ./terminals
+    ./editors
   ];
 }
