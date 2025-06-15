@@ -23,6 +23,7 @@
       gpu.enable = true;
       network.enable = true;
       nix.enable = true;
+      pkgs.enable = true;
     };
 
     desktop = {
