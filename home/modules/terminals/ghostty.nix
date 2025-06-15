@@ -9,7 +9,7 @@ with lib;
 
 {
   options.myHome.terminals.ghostty.enable = mkEnableOption "Enable Ghostty";
-  config = mkIf config.terminals.ghostty.enable {
+  config = mkIf config.myHome.terminals.ghostty.enable {
     programs.ghostty = {
       enable = true;
       enableBashIntegration = true;
