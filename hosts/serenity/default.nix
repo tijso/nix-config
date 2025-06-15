@@ -24,6 +24,7 @@
       hyprland.enable = false;
     };
     core = { };
+    audio.enable = true;
   };
 
   system.stateVersion = "23.11";
