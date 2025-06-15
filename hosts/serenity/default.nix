@@ -25,6 +25,7 @@
     };
     core = { };
     audio.enable = true;
+    bluetooth.enable = true;
   };
 
   system.stateVersion = "23.11";

@@ -10,6 +10,5 @@
     ./pkgs.nix
     ./security.nix
     ./services.nix
-    # ./tlp.nix
   ];
 }
