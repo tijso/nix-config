@@ -1,9 +1,8 @@
 { ... }:
 {
   imports = [
-    # ./cosmic.nix
+    ./cosmic.nix
     ./gnome.nix
-    # ./hyprland.nix
-    # ./sddm.nix
+    ./hyprland.nix
   ];
 }
