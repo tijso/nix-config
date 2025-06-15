@@ -10,7 +10,7 @@
 
     ../../modules
     ../common
-    ../users/global.nix
+    # ../users/global.nix
     ../../development
     ../../environments
   ];
@@ -25,9 +25,6 @@
     };
     core = { };
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "23.11";
 }
