@@ -21,6 +21,8 @@
       bluetooth.enable = true;
       boot.enable = true;
       gpu.enable = true;
+      network.enable = true;
+      nix.enable = true;
     };
 
     desktop = {
