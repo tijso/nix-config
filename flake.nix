@@ -83,13 +83,13 @@
         import nixpkgs {
           inherit system;
           config.allowUnfree = true;
+          overlays = builtins.attrValues (import ./overlays { inherit inputs; });
         }
       );
     in
     {
       inherit lib;
       overlays = import ./overlays { inherit inputs; };
-
       packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
       formatter = forEachSystem (pkgs: pkgs.alejandra);
@@ -122,7 +122,6 @@
             inherit inputs outputs;
           };
           modules = [
-            # ./home/home.nix
             ./hosts/serenity/home.nix
           ];
         };
