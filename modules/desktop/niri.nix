@@ -6,6 +6,10 @@
   ...
 }:
 with lib;
+let
+  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+  niri-session = "${pkgs.niri-unstable}/bin/niri-session";
+in
 {
 
   imports = [
@@ -22,7 +26,7 @@ with lib;
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd niri-session";
+          command = "${tuigreet}/bin/tuigreet --time --remember --cmd ${niri-session}";
           user = "tijso";
         };
       };
