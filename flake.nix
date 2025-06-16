@@ -24,10 +24,10 @@
     };
 
     # Niri
-    # niri = {
-    #   url = "github:sodiboo/niri-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Theming
     nix-colors.url = "github:misterio77/nix-colors";
@@ -68,6 +68,7 @@
       nixos-cosmic,
       # neovim-nightly-overlay,
       nixvim,
+      niri,
       hyprland,
       grub2-themes,
       ghostty,
