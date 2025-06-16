@@ -41,7 +41,7 @@
 
   myHome = {
     mpv.enable = false;
-    rofi.enable = false;
+    # rofi.enable = false;
     tmux.enable = true;
 
     cli = {
