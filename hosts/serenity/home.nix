@@ -40,8 +40,8 @@
   ];
 
   myHome = {
-    # mpv.enable = false;
-    # rofi.enable = false;
+    mpv.enable = false;
+    rofi.enable = false;
     tmux.enable = true;
 
     cli = {
