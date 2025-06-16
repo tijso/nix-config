@@ -122,8 +122,8 @@
             inherit inputs outputs;
           };
           modules = [
-            ./home/home.nix
-            # ./hosts/serenity/home.nix
+            # ./home/home.nix
+            ./hosts/serenity/home.nix
           ];
         };
       };

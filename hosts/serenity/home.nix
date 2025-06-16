@@ -40,7 +40,7 @@
   ];
 
   myHome = {
-    mpv.enable = false;
+    # mpv.enable = false;
     # rofi.enable = false;
     tmux.enable = true;
 
@@ -54,16 +54,15 @@
       zsh.enable = true;
     };
 
+    desktop = {
+      gnome.enable = true;
+      hyprland.enable = false;
+    };
+
     development = {
       git.enable = true;
       go.enable = true;
       nixdev.enable = true;
-    };
-
-    terminals = {
-      ghostty.enable = true;
-      kitty.enable = true;
-      wezterm.enable = true;
     };
 
     editors = {
@@ -71,14 +70,16 @@
       nvim.enable = false;
     };
 
-    desktop = {
-      gnome.enable = true;
-      hyprland.enable = false;
+    terminals = {
+      ghostty.enable = true;
+      kitty.enable = false;
+      wezterm.enable = true;
     };
 
     theming = {
       gtk.enable = true;
     };
+
   };
 
   # colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
