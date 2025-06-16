@@ -72,7 +72,7 @@
 
     terminals = {
       ghostty.enable = true;
-      kitty.enable = false;
+      kitty.enable = true;
       wezterm.enable = true;
     };
 
