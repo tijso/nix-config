@@ -7,12 +7,13 @@
 }:
 with lib;
 {
-  imports = [
-    inputs.niri.homeModules.niri
-  ];
 
   options.myModules.desktop.niri.enable = mkEnableOption "Enable Niri";
   config = mkIf config.myModules.desktop.niri.enable {
+
+    imports = [
+      inputs.niri.homeModules.niri
+    ];
     home.packages = with pkgs; [
       niri
       waybar
