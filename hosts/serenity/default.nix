@@ -28,6 +28,7 @@
       cosmic.enable = false;
       gnome.enable = true;
       hyprland.enable = false;
+      niri.enable = false;
     };
 
     development.enable = true;

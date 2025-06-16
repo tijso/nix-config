@@ -57,6 +57,7 @@
     desktop = {
       gnome.enable = true;
       hyprland.enable = false;
+      niri.enable = false;
     };
 
     development = {
