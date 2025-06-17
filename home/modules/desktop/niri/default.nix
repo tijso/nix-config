@@ -5,16 +5,16 @@
   ...
 }:
 with lib;
-let
-  inherit (config.lib.stylix) colors;
-in
+# let
+#   inherit (config.lib.stylix) colors;
+# in
 {
   imports = [
     ./binds.nix
     # ./style.nix
   ];
 
-  options.myModules.desktop.niri = {
+  options.myHome.desktop.niri = {
     enable = mkEnableOption "Enable Niri with theming";
     browser = mkOption {
       type = types.str;
@@ -23,7 +23,7 @@ in
     };
   };
 
-  config = mkIf config.myModules.desktop.niri.enable {
+  config = mkIf config.myHome.desktop.niri.enable {
     home.packages = with pkgs; [
       swww # wallpaper daemon
       grim # screenshot
@@ -77,14 +77,14 @@ in
           focus-ring = {
             enable = true;
             width = 3;
-            active.color = colors.base0D;
-            inactive.color = colors.base02;
+            # active.color = colors.base0D;
+            # inactive.color = colors.base02;
           };
           border = {
             enable = true;
             width = 2;
-            active.color = colors.base0D;
-            inactive.color = colors.base02;
+            # active.color = colors.base0D;
+            # inactive.color = colors.base02;
           };
         };
 
