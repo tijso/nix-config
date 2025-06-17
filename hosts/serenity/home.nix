@@ -46,6 +46,7 @@
     tmux.enable = true;
     fuzzel.enable = true;
     mako.enable = true;
+    waybar.enable = true;
 
     cli = {
       bat.enable = true;
