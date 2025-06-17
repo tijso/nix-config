@@ -28,13 +28,13 @@ with config.colorScheme.palette;
         };
 
         colors = {
-          background = "${base00}dd";
-          text = "${base05}ff";
-          match = "${base0D}ff";
-          selection = "${base02}ff";
-          selection-text = "${base05}ff";
-          selection-match = "${base0D}ff";
-          border = "${base0D}ff";
+          background = "${config.colorScheme.palette.base00}dd";
+          text = "${config.colorScheme.palette.base05}ff";
+          match = "${config.colorScheme.palette.base0D}ff";
+          selection = "${config.colorScheme.palette.base02}ff";
+          selection-text = "${config.colorScheme.palette.base05}ff";
+          selection-match = "${config.colorScheme.palette.base0D}ff";
+          border = "${config.colorScheme.palette.base0D}ff";
         };
         # colors = {
         #   background = "${colors.base00}dd";
