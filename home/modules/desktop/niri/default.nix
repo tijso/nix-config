@@ -11,10 +11,10 @@ with lib;
     inputs.niri.homeModules.niri
   ];
 
-  options.myModules.desktop.niri.enable = mkEnableOption "Enable Niri";
-  config = mkIf config.myModules.desktop.niri.enable {
+  options.myHome.desktop.niri.enable = mkEnableOption "Enable Niri";
+  config = mkIf config.myHome.desktop.niri.enable {
     home.packages = with pkgs; [
-      niri
+      # niri
       waybar
       fuzzel
     ];
