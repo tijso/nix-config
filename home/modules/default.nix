@@ -8,7 +8,5 @@
     # ./rofi
     ./terminals
     ./theming
-    ./tmux
-    ./fuzzel
   ];
 }

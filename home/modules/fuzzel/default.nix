@@ -6,6 +6,10 @@
 }:
 with lib;
 {
+  # home.packages = with pkgs; [
+  #   fuzzel
+  # ];
+
   options.myHome.fuzzel.enable = mkEnableOption "Enable Fuzzel";
 
   config = mkIf config.myHome.fuzzel.enable {

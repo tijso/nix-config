@@ -9,5 +9,6 @@
     ./modules/terminals
     ./modules/theming
     ./modules/tmux
+    ./modules/fuzzel
   ];
 }
