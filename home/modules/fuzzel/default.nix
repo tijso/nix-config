@@ -5,7 +5,6 @@
   ...
 }:
 with lib;
-with config.colorScheme.palette;
 {
   # home.packages = with pkgs; [
   #   fuzzel
