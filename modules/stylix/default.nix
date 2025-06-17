@@ -47,8 +47,19 @@ with lib;
     };
 
     opacity = {
-      terminal = opacity;
-      popups = opacity;
+      terminal = 0.9;
+      applications = 1.0;
+      popups = 0.8;
+      desktop = 1.0;
+    };
+
+    targets = {
+      alacritty.enable = true;
+      fuzzel.enable = true;
+      waybar.enable = true;
+      gtk.enable = true; # For GTK apps
+      qt.enable = true; # For Qt apps
+      vim.enable = true; # For Neovim
     };
 
     cursor = {
