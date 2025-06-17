@@ -44,6 +44,7 @@
     mpv.enable = false;
     # rofi.enable = false;
     tmux.enable = true;
+    fuzzel.enable = true;
 
     cli = {
       bat.enable = true;

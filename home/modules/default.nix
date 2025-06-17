@@ -9,5 +9,6 @@
     ./terminals
     ./theming
     ./tmux
+    ./fuzzel
   ];
 }
