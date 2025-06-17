@@ -45,7 +45,7 @@
     # rofi.enable = false;
     tmux.enable = true;
     fuzzel.enable = true;
-    mako.enable = true;
+    mako.enable = false;
     waybar.enable = false;
 
     cli = {
