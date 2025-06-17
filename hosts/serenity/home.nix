@@ -45,6 +45,7 @@
     # rofi.enable = false;
     tmux.enable = true;
     fuzzel.enable = true;
+    mako.enable = true;
 
     cli = {
       bat.enable = true;

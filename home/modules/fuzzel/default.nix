@@ -1,23 +1,17 @@
 {
-  pkgs,
   config,
   lib,
   ...
 }:
 with lib;
 {
-  # home.packages = with pkgs; [
-  #   fuzzel
-  # ];
-
   options.myHome.fuzzel.enable = mkEnableOption "Enable Fuzzel";
-
   config = mkIf config.myHome.fuzzel.enable {
     programs.fuzzel = {
       enable = true;
       settings = {
         main = {
-          font = "JetBrains Mono:size=12";
+          font = "JetBrains Mono:size=14";
           dpi-aware = "yes";
           show-actions = "yes";
           width = 50;
