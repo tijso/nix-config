@@ -5,6 +5,7 @@
   ...
 }:
 with lib;
+with config.colorScheme.palette;
 {
   # home.packages = with pkgs; [
   #   fuzzel
@@ -25,15 +26,25 @@ with lib;
           vertical-pad = 10;
           inner-pad = 10;
         };
+
         colors = {
-          background = "${colors.base00}dd";
-          text = "${colors.base05}ff";
-          match = "${colors.base0D}ff";
-          selection = "${colors.base02}ff";
-          selection-text = "${colors.base05}ff";
-          selection-match = "${colors.base0D}ff";
-          border = "${colors.base0D}ff";
+          background = "${base00}dd";
+          text = "${base05}ff";
+          match = "${base0D}ff";
+          selection = "${base02}ff";
+          selection-text = "${base05}ff";
+          selection-match = "${base0D}ff";
+          border = "${base0D}ff";
         };
+        # colors = {
+        #   background = "${colors.base00}dd";
+        #   text = "${colors.base05}ff";
+        #   match = "${colors.base0D}ff";
+        #   selection = "${colors.base02}ff";
+        #   selection-text = "${colors.base05}ff";
+        #   selection-match = "${colors.base0D}ff";
+        #   border = "${colors.base0D}ff";
+        # };
         border = {
           width = 2;
           radius = 12;
