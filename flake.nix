@@ -71,7 +71,6 @@
       niri,
       hyprland,
       grub2-themes,
-      ghostty,
       # stylix,
       ...
     }@inputs:
@@ -124,6 +123,8 @@
           };
           modules = [
             ./hosts/serenity/home.nix
+            niri.homeModules.niri
+            hyprland.homeManagerModules.default
           ];
         };
       };
