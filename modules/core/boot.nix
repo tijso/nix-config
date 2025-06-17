@@ -10,18 +10,47 @@ with lib;
     enable = mkEnableOption "Enable boot configuration";
     plymouth = {
       enable = mkEnableOption "Enable Plymouth boot splash";
+      theme = mkOption {
+        type = types.str;
+        default = "rings";
+        description = "Plymouth theme to use";
+      };
     };
     grubTheme = {
       enable = mkEnableOption "Enable GRUB theme";
+      resolution = mkOption {
+        type = types.str;
+        default = "1920x1080";
+        description = "GRUB theme resolution";
+      };
     };
   };
 
   config = mkIf config.myModules.core.boot.enable {
     boot = {
-      # Set the kernel to 6.6, as there is some bug with the latest kernel in NixOS.
+      # Kernel configuration
       kernelPackages = pkgs.linuxPackages_6_6;
       # kernelPackages = pkgs.linuxPackages_latest;
       kernelModules = [ "v4l2loopback" ];
+      kernelParams = [
+        "quiet"
+        "splash"
+        "plymouth.enable=1"
+      ];
+      consoleLogLevel = 0;
+
+      # System control parameters
+      kernel.sysctl = {
+        "vm.max_map_count" = 2147483642;
+      };
+
+      # Initial ramdisk configuration
+      initrd = {
+        verbose = false;
+        systemd.enable = true;
+      };
+
+      # V4L2 loopback module
       extraModulePackages = [
         (config.boot.kernelPackages.v4l2loopback.overrideAttrs (old: {
           version = "0.15.0";
@@ -33,13 +62,11 @@ with lib;
           };
         }))
       ];
-      kernel.sysctl = {
-        "vm.max_map_count" = 2147483642;
-      };
 
+      # Plymouth boot splash
       plymouth = mkIf config.myModules.core.boot.plymouth.enable {
         enable = true;
-        theme = "rings";
+        theme = config.myModules.core.boot.plymouth.theme;
         themePackages = with pkgs; [
           (adi1090x-plymouth-themes.override {
             selected_themes = [
@@ -52,9 +79,13 @@ with lib;
         ];
       };
 
+      # Boot loader configuration
       loader = {
-        efi.canTouchEfiVariables = true;
-        efi.efiSysMountPoint = "/boot";
+        efi = {
+          canTouchEfiVariables = true;
+          efiSysMountPoint = "/boot";
+        };
+
         grub = {
           enable = true;
           devices = [ "nodev" ];
@@ -62,10 +93,11 @@ with lib;
           useOSProber = true;
           configurationLimit = 10;
         };
+
         grub2-theme = mkIf config.myModules.core.boot.grubTheme.enable {
           theme = "whitesur";
           footer = true;
-          customResolution = "3840x2160";
+          customResolution = config.myModules.core.boot.grubTheme.resolution;
         };
       };
     };

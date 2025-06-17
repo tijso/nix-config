@@ -15,13 +15,24 @@
     core = {
       audio.enable = true;
       bluetooth.enable = true;
-      boot.enable = true;
+      # boot.enable = true;
       gpu.enable = true;
       network.enable = true;
       nix.enable = true;
       pkgs.enable = true;
       security.enable = true;
       services.enable = true;
+      boot = {
+        enable = true;
+        plymouth = {
+          enable = true;
+          theme = "rings";
+        };
+        grubTheme = {
+          enable = true;
+          resolution = "1920x1080";
+        };
+      };
     };
 
     desktop = {
