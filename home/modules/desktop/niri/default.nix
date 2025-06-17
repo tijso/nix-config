@@ -7,9 +7,7 @@
 }:
 with lib;
 {
-  imports = [
-    inputs.niri.homeModules.niri
-  ];
+  imports = [ ];
 
   options.myHome.desktop.niri.enable = mkEnableOption "Enable Niri";
   config = mkIf config.myHome.desktop.niri.enable {
