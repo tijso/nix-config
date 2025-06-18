@@ -9,7 +9,7 @@ with lib;
   imports = [
     ./binds.nix
     ./startup.nix
-    ./window-rules.nix
+    ./rules.nix
   ];
 
   options.myHome.desktop.niri = {
