@@ -1,10 +1,10 @@
 {
   pkgs,
-  inputs,
+  config,
   ...
 }:
 {
-  programs.niri.settings.binds = with inputs.niri.lib.niri.actions; {
+  programs.niri.settings.binds = with config.niri.lib.niri.actions; {
     "Mod+Return".action = spawn "ghostty";
     "Mod+Shift+Return".action = spawn "wezterm";
     "Mod+D".action = spawn "${pkgs.fuzzel}/bin/fuzzel";
