@@ -13,7 +13,7 @@ with lib;
   ];
 
   options.myHome.desktop.niri = {
-    enable = mkEnableOption "Enable Niri with theming";
+    enable = mkEnableOption "Enable Niri";
     browser = mkOption {
       type = types.str;
       default = "brave";
