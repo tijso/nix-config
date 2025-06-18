@@ -1,5 +1,7 @@
 { config, ... }:
 {
+  screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
+
   programs.niri.settings.binds = with config.lib.niri.actions; {
     # Applications - Ghostty as main terminal
     "Mod+Return".action = spawn "ghostty";
