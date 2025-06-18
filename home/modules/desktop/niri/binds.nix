@@ -59,14 +59,12 @@
     "Print".action.screenshot = {
       write-to-disk = true;
     };
-    "Ctrl+Print".action = screenshot-window;
+    "Ctrl+Print".action.screenshot-window = {
+      write-to-disk = true;
+    };
     "Alt+Print".action.screenshot = {
       show-pointer = false;
     };
-
-    # "Print".action.screenshot-screen = {write-to-disk = true;};
-    # "Mod+Shift+Alt+S".action = screenshot-window;
-    # "Mod+Shift+S".action.screenshot = {show-pointer = false;};
 
     # Media keys
     "XF86AudioRaiseVolume".action = spawn [
