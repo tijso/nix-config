@@ -1,9 +1,10 @@
-{ config, ... }:
 {
-  screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
-
-  programs.niri.settings.binds = with config.lib.niri.actions; {
-    # Applications - Ghostty as main terminal
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  programs.niri.settings.binds = with inputs.niri.lib.niri.actions; {
     "Mod+Return".action = spawn "ghostty";
     "Mod+Shift+Return".action = spawn "wezterm";
     "Mod+D".action = spawn "${pkgs.fuzzel}/bin/fuzzel";
