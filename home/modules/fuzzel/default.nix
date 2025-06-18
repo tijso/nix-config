@@ -12,14 +12,17 @@ with lib;
       settings = {
         main = {
           font = "JetBrains Mono:size=14";
-          dpi-aware = "yes";
-          show-actions = "yes";
-          width = 50;
-          horizontal-pad = 20;
-          vertical-pad = 10;
-          inner-pad = 10;
+          line-height = 25;
+          fields = "name,generic,comment,categories,filename,keywords";
+          terminal = "ghostty";
+          prompt = "' ➜  '";
+          icon-theme = "Fluent-teal-dark";
+          layer = "top";
+          lines = 10;
+          width = 35;
+          horizontal-pad = 25;
+          inner-pad = 5;
         };
-
         colors = {
           background = "${config.colorScheme.palette.base00}dd";
           text = "${config.colorScheme.palette.base05}ff";
@@ -29,18 +32,9 @@ with lib;
           selection-match = "${config.colorScheme.palette.base0D}ff";
           border = "${config.colorScheme.palette.base0D}ff";
         };
-        # colors = {
-        #   background = "${colors.base00}dd";
-        #   text = "${colors.base05}ff";
-        #   match = "${colors.base0D}ff";
-        #   selection = "${colors.base02}ff";
-        #   selection-text = "${colors.base05}ff";
-        #   selection-match = "${colors.base0D}ff";
-        #   border = "${colors.base0D}ff";
-        # };
         border = {
-          width = 2;
-          radius = 12;
+          radius = 15;
+          width = 3;
         };
       };
     };
