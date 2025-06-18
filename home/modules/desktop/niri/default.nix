@@ -22,15 +22,13 @@ with lib;
   };
 
   config = mkIf config.myHome.desktop.niri.enable {
-    # Packages
     home.packages = with pkgs; [
-      swww # wallpaper daemon
-      grim # screenshot
-      slurp # screen selection
-      wl-clipboard # clipboard utilities
+      swww
+      grim
+      slurp
+      wl-clipboard
     ];
 
-    # Niri configuration
     programs.niri = {
       enable = true;
       settings = {
