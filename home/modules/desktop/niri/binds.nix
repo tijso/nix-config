@@ -56,9 +56,13 @@
     "Mod+Ctrl+L".action = expel-window-from-column;
 
     # Screenshots
-    "Print".action = screenshot;
-    "Mod+Ctrl+Print".action = screenshot-screen;
-    "Mod+Alt+Print".action = screenshot-window;
+    "Print".action.screenshot = {
+      write-to-disk = true;
+    };
+    "Ctrl+Print".action = screenshot-window;
+    "Alt+Print".action.screenshot = {
+      show-pointer = false;
+    };
 
     # "Print".action.screenshot-screen = {write-to-disk = true;};
     # "Mod+Shift+Alt+S".action = screenshot-window;
