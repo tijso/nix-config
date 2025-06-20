@@ -13,7 +13,10 @@
     ./modules/desktop/hyprland
     ./modules/desktop/niri
 
-    ./modules/development
+    ./modules/development/direnv
+    ./modules/development/git
+    ./modules/development/go
+    ./modules/development/nixdev
 
     ./modules/editors
 
