@@ -12,6 +12,7 @@ with lib;
       interactiveShellInit = ''
         set fish_greeting
         # fastfetch
+        direnv hook fish | source
 
         # Rose-Pine
         set -g fish_color_normal e0def4
