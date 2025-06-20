@@ -68,6 +68,7 @@
       git.enable = true;
       go.enable = true;
       nixdev.enable = true;
+      direnv.enable = true;
     };
 
     editors = {
