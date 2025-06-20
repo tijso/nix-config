@@ -32,7 +32,7 @@ with lib;
     services.xserver.excludePackages = [ pkgs.xterm ];
 
     services.openssh.enable = true;
-    programs.ssh.startAgent = true;
+    # programs.ssh.startAgent = false;
     programs.dconf.enable = true;
   };
 }
