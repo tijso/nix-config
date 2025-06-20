@@ -1,6 +1,5 @@
 {
   imports = [
-    ./desktop
     ./development
     ./editors
     # ./mpv
