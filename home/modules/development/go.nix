@@ -24,7 +24,6 @@ with lib;
       golangci-lint
       gopls
       godef
-      gotools
       errcheck
       atlas
       sqlc
