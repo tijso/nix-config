@@ -46,11 +46,11 @@
       "Mod+3".action = focus-workspace 3;
       "Mod+4".action = focus-workspace 4;
       "Mod+5".action = focus-workspace 5;
-      "Mod+Shift+1".action = move-column-to-workspace 1;
-      "Mod+Shift+2".action = move-column-to-workspace 2;
-      "Mod+Shift+3".action = move-column-to-workspace 3;
-      "Mod+Shift+4".action = move-column-to-workspace 4;
-      "Mod+Shift+5".action = move-column-to-workspace 5;
+      "Mod+Shift+1".action = move-column-to-index 1;
+      "Mod+Shift+2".action = move-column-to-index 2;
+      "Mod+Shift+3".action = move-column-to-index 3;
+      "Mod+Shift+4".action = move-column-to-index 4;
+      "Mod+Shift+5".action = move-column-to-index 5;
       # Column resizing
       "Mod+R".action = switch-preset-column-width;
       "Mod+Shift+R".action = reset-window-height;
