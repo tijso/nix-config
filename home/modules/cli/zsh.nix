@@ -83,42 +83,42 @@ with lib;
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
         zstyle ':completion:*' menu no
       '';
-      shellAliases = {
-        home = "cd ~/";
-        config = "cd ~/nix-config";
-        personal = "cd ~/projects/personal";
-        github = "cd ~/projects/personal/github";
-        gitlab = "cd ~/projects/personal/gitlab";
-        mkdir = "mkdir -p";
-        cat = "bat --paging=never";
-        man = "tldr";
-        grep = "rg";
-        lg = "lazygit";
-        find = "fd";
-        img = "wezterm imgcat";
+      # shellAliases = {
+      #   home = "cd ~/";
+      #   config = "cd ~/nix-config";
+      #   personal = "cd ~/projects/personal";
+      #   github = "cd ~/projects/personal/github";
+      #   gitlab = "cd ~/projects/personal/gitlab";
+      #   mkdir = "mkdir -p";
+      #   cat = "bat --paging=never";
+      #   man = "tldr";
+      #   grep = "rg";
+      #   lg = "lazygit";
+      #   find = "fd";
+      #   img = "wezterm imgcat";
+      #
+      #   # List Commands
+      #   ls = "eza --icons --group-directories-first";
+      #   ll = "eza --icons --group-directories-first --lah";
+      #   lt = "eza --group-directories-first --tree";
+      #
+      #   # Neovim
+      #   vim = "nvim";
+      #   vi = "nvim";
+      #
+      #   # Nix
+      #   update = "sudo nix flake update";
+      #   rebuild = "sudo nixos-rebuild switch --flake .#serenity && notify-send \"Done\"";
+      #   hmr = "home-manager switch --flake .#tijso@serenity";
+      #   news = "home-manager news --flake .#tijso@serenity";
+      #
+      #   # Cli Trash Commands
+      #   tl = "trash-list";
+      #   te = "trash-empty";
+      #   tr = "trash-restore";
+      #   tm = "trash-rm";
 
-        # List Commands
-        ls = "eza --icons --group-directories-first";
-        ll = "eza --icons --group-directories-first --lah";
-        lt = "eza --group-directories-first --tree";
-
-        # Neovim
-        vim = "nvim";
-        vi = "nvim";
-
-        # Nix
-        update = "sudo nix flake update";
-        rebuild = "sudo nixos-rebuild switch --flake .#serenity && notify-send \"Done\"";
-        hmr = "home-manager switch --flake .#tijso@serenity";
-        news = "home-manager news --flake .#tijso@serenity";
-
-        # Cli Trash Commands
-        tl = "trash-list";
-        te = "trash-empty";
-        tr = "trash-restore";
-        tm = "trash-rm";
-
-      };
+      # };
     };
   };
 }
