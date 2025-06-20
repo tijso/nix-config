@@ -22,7 +22,6 @@ with lib;
       richgo
       golangci-lint-langserver
       golangci-lint
-      go-tools
       gopls
       godef
       gotools
