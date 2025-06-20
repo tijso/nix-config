@@ -16,7 +16,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       PAGER = "bat";
-      TERMINAL = "wezterm";
+      TERMINAL = "ghostty";
     };
   };
 
@@ -31,7 +31,6 @@
     ls = "eza -l";
     la = "eza -a";
     ll = "eza -la";
-    # la = "eza --icons -la";
     lt = "eza --tree";
 
     vi = "nvim";
@@ -40,15 +39,24 @@
     personal = "cd ~/projects/personal";
     github = "cd ~/projects/personal/github";
     gitlab = "cd ~/projects/personal/gitlab";
+
     mkdir = "mkdir -p";
     cat = "bat --paging=never";
     man = "tldr";
     grep = "rg";
     find = "fd";
-    lg = "lazygit";
-    img = "wezterm imgcat";
+
     ".." = "cd ..";
     "..." = "cd ../..";
+
+    lg = "lazygit";
+    img = "wezterm imgcat";
+
+    # # Cli Trash Commands
+    # tl = "trash-list";
+    # te = "trash-empty";
+    # tr = "trash-restore";
+    # tm = "trash-rm";
   };
 
   home.packages = with pkgs; [

@@ -262,44 +262,6 @@ with lib;
         # set -g fish_pager_color_selected_completion e4e4e4
         # set -g fish_pager_color_selected_description e4e4e4
       '';
-
-      # shellAliases = {
-      #   home = "cd ~/";
-      #   config = "cd ~/nix-config";
-      #   personal = "cd ~/projects/personal";
-      #   github = "cd ~/projects/personal/github";
-      #   gitlab = "cd ~/projects/personal/gitlab";
-      #   mkdir = "mkdir -p";
-      #   cat = "bat --paging=never";
-      #   man = "tldr";
-      #   grep = "rg";
-      #   find = "fd";
-      #   lg = "lazygit";
-      #   img = "wezterm imgcat";
-      #
-      #   # List Commands
-      #   ls = "eza";
-      #   ll = "eza -l";
-      #   lla = "eza -la";
-      #   la = "eza -a";
-      #   lt = "eza --tree";
-      #
-      #   # Neovim
-      #   vi = "nvim";
-      #   vim = "nvim";
-      #
-      #   # Nix
-      #   update = "sudo nix flake update";
-      #   rebuild = "sudo nixos-rebuild switch --flake .#serenity && notify-send \"Done\"";
-      #   hmr = "home-manager switch --flake .#tijso@serenity";
-      #   news = "home-manager news --flake .#tijso@serenity";
-      #
-      #   # Cli Trash Commands
-      #   tl = "trash-list";
-      #   te = "trash-empty";
-      #   tr = "trash-restore";
-      #   tm = "trash-rm";
-      # };
     };
   };
 }
