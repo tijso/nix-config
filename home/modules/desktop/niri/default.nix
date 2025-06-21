@@ -55,12 +55,12 @@ with lib;
           };
         };
 
-        output."eDP-1" = {
+        "eDP-1" = {
           scale = 1.0;
           transform.normal = { };
         };
 
-        output."DP-1" = {
+        "DP-1" = {
           mode = "2560x1440";
           scale = 1.0;
           focus-at-startup = true;
