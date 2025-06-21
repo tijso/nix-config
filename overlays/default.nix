@@ -8,7 +8,8 @@
 
   # Your custom modifications
   modifications = final: prev: {
-    # Example: Override a package
-    # firefox = prev.firefox.override { enablePlasmaBrowserIntegration = true; };
+    mpd = prev.mpd.override {
+      ioUringSupport = false;
+    };
   };
 }
