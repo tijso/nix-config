@@ -56,12 +56,6 @@ with lib;
         };
 
         outputs = {
-
-          "eDP-1" = {
-            scale = 1.0;
-            transform.normal = { };
-          };
-
           "DP-1" = {
             mode = {
               width = 2560;
