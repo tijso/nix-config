@@ -13,7 +13,7 @@
     in
     {
       "Mod+Return".action = spawn "ghostty";
-      "Mod+O".action = spawn show-hotkey-overlay;
+      "Mod+O".action = show-hotkey-overlay;
       "Mod+D".action = spawn "${pkgs.fuzzel}/bin/fuzzel";
       "Mod+B".action = spawn "${pkgs.brave}/bin/brave";
       "Mod+E".action = spawn "${pkgs.nautilus}/bin/nautilus";
