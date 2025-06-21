@@ -76,11 +76,11 @@ To update your system:
 
 ```bash
 # Update flake inputs
-nix flake update
+update = "cd ~/nix-config && nix flake update";
 
 # Rebuild NixOS
-sudo nixos-rebuild switch --flake .#serenity
+rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#serenity";
 
 # Rebuild Home Manager
-home-manager switch --flake .#tijso@serenity
+rebuild-home = "home-manager switch --flake ~/nix-config#tijso@serenity";
 ```
