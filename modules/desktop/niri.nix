@@ -68,5 +68,16 @@ with lib;
     services.dbus.enable = true;
     services.udev.enable = true;
     security.polkit.enable = true;
+
+    xdg.portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-wlr
+      ];
+
+      # You might also want to specify which portal to use for what
+      config.common.default = "*";
+    };
   };
 }
