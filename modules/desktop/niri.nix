@@ -19,6 +19,15 @@ with lib;
       package = pkgs.niri-unstable;
     };
 
+    environment.systemPackages = with pkgs; [
+      catppuccin-sddm
+      sddm-sugar-dark
+      libsForQt5.qt5.qtgraphicaleffects
+      wayland
+      wayland-protocols
+      wayland-utils
+    ];
+
     # services.greetd = {
     #   enable = true;
     #   settings = {
@@ -29,21 +38,6 @@ with lib;
     #   };
     # };
 
-    # Disable GNOME's SSH agent component to avoid conflicts
-    services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
-
-    # Start Ssh
-    programs.ssh.startAgent = true;
-
-    # You might need this to prevent SSH conflict
-    environment.variables = {
-      SSH_AUTH_SOCK = lib.mkForce "/run/user/1000/ssh-agent.socket";
-    };
-
-    # PAM configuration to unlock keyring on login
-    # security.pam.services.greetd.enableGnomeKeyring = true;
-    security.pam.services.login.enableGnomeKeyring = true;
-
     services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
@@ -52,12 +46,29 @@ with lib;
       theme = "catppuccin";
     };
 
-    # services.displayManager.sessionPackages = [ pkgs.niri ];
+    services.displayManager.sessionPackages = [ pkgs.niri-unstable ];
 
-    environment.systemPackages = with pkgs; [
-      catppuccin-sddm
-      sddm-sugar-dark
-      libsForQt5.qt5.qtgraphicaleffects
-    ];
+    # System services and authentication
+    programs.ssh.startAgent = true;
+    services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
+
+    # PAM configuration for keyring
+    # security.pam.services.greetd.enableGnomeKeyring = true;
+    security.pam.services.login.enableGnomeKeyring = true;
+    security.pam.services.sddm.enableGnomeKeyring = true;
+
+    # You might need this to prevent SSH conflict
+    environment.variables = {
+      SSH_AUTH_SOCK = lib.mkForce "/run/user/1000/ssh-agent.socket";
+      # Add these Wayland variables
+      MOZ_ENABLE_WAYLAND = "1";
+      NIXOS_OZONE_WL = "1";
+      WAYLAND_DISPLAY = "wayland-0";
+    };
+
+    # Enable necessary system services
+    services.dbus.enable = true;
+    services.udev.enable = true;
+    security.polkit.enable = true;
   };
 }

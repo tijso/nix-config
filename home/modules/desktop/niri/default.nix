@@ -27,6 +27,9 @@ with lib;
       grim
       slurp
       wl-clipboard
+      wf-recorder
+      wayshot
+      cliphist
     ];
 
     programs.niri = {
@@ -114,11 +117,6 @@ with lib;
         cursor = {
           theme = "Adwaita";
           size = 24;
-        };
-
-        environment = {
-          DISPLAY = ":0";
-          WAYLAND_DISPLAY = "wayland-0";
         };
       };
     };
