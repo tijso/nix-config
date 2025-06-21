@@ -80,12 +80,13 @@
   ];
 
   myHome = {
-    mpv.enable = false;
-    # rofi.enable = false;
-    tmux.enable = true;
-    fuzzel.enable = true;
-    mako.enable = false;
-    waybar.enable = false;
+    apps = {
+      fuzzel.enable = true;
+      mako.enable = false;
+      mpv.enable = false;
+      # rofi.enable = false;
+      tmux.enable = true;
+    };
 
     cli = {
       bat.enable = true;
@@ -101,6 +102,7 @@
       gnome.enable = true;
       hyprland.enable = false;
       niri.enable = false;
+      waybar.enable = false;
     };
 
     development = {
