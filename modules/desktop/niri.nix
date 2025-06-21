@@ -50,6 +50,7 @@ with lib;
 
     # System services and authentication
     programs.ssh.startAgent = true;
+    services.gnome.gnome-keyring.enable = lib.mkForce false;
     services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
 
     # PAM configuration for keyring
