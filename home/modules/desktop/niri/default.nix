@@ -64,7 +64,7 @@ with lib;
             };
             scale = 1.0;
             position = {
-              x = 0;
+              x = 2048;
               y = 0;
             };
           };
@@ -78,7 +78,7 @@ with lib;
             scale = 1.0;
             position = {
               x = 0;
-              y = 2560;
+              y = 0;
             };
           };
         };
