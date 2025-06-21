@@ -100,7 +100,7 @@ with lib;
 
           focus-ring = {
             enable = true;
-            width = 3;
+            width = 2;
             active.color = config.colorScheme.palette.base0D;
             inactive.color = config.colorScheme.palette.base02;
           };
