@@ -94,6 +94,7 @@
       fastfetch.enable = true;
       fish.enable = true;
       lazygit.enable = true;
+      ssh.enable = true;
       starship.enable = true;
       zsh.enable = true;
       ripgrep.enable = true;

@@ -12,6 +12,7 @@
     ./modules/cli/lazy
     ./modules/cli/nushell
     ./modules/cli/ripgrep
+    ./modules/cli/ssh
     ./modules/cli/starship
     ./modules/cli/zsh
 
