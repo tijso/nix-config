@@ -34,19 +34,16 @@ in
     };
 
     # Start Ssh
-    # programs.ssh.startAgent = false;
-
-    # Disable GNOME's SSH agent when using Niri
-    services.gnome.gnome-keyring.enable = lib.mkForce true;
-    programs.gnome-keyring.enable = lib.mkForce false;
-
-    # Enable your preferred SSH agent
     programs.ssh.startAgent = true;
 
     # You might need this to prevent SSH conflict
     environment.variables = {
       SSH_AUTH_SOCK = lib.mkForce "/run/user/1000/ssh-agent.socket";
     };
+
+    # PAM configuration to unlock keyring on login
+    security.pam.services.greetd.enableGnomeKeyring = true;
+    security.pam.services.login.enableGnomeKeyring = true;
 
     # services.displayManager.sddm = {
     #   enable = true;
