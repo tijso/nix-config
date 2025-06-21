@@ -86,16 +86,18 @@ with lib;
         };
 
         layout = {
-          gaps = 16;
-          center-focused-column = "never";
+          gaps = 8;
+          always-center-single-column = true;
           preset-column-widths = [
             { proportion = 1.0 / 3.0; }
             { proportion = 1.0 / 2.0; }
             { proportion = 2.0 / 3.0; }
+            { proportion = 3.0 / 4.0; }
           ];
           default-column-width = {
             proportion = 1.0 / 2.0;
           };
+
           focus-ring = {
             enable = true;
             width = 3;
@@ -110,8 +112,12 @@ with lib;
           };
         };
 
+        animations.enable = true;
+        clipboard.disable-primary = true;
+
         prefer-no-csd = true;
         hotkey-overlay.skip-at-startup = true;
+        screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
 
         cursor = {
           theme = "Adwaita";
