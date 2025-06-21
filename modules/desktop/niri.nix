@@ -22,6 +22,7 @@ in
       enable = true;
       package = pkgs.niri-unstable;
     };
+
     services.greetd = {
       enable = true;
       settings = {
@@ -33,7 +34,19 @@ in
     };
 
     # Start Ssh
-    programs.ssh.startAgent = false;
+    # programs.ssh.startAgent = false;
+
+    # Disable GNOME's SSH agent when using Niri
+    services.gnome.gnome-keyring.enable = lib.mkForce true;
+    programs.gnome-keyring.enable = lib.mkForce false;
+
+    # Enable your preferred SSH agent
+    programs.ssh.startAgent = true;
+
+    # You might need this to prevent SSH conflict
+    environment.variables = {
+      SSH_AUTH_SOCK = lib.mkForce "/run/user/1000/ssh-agent.socket";
+    };
 
     # services.displayManager.sddm = {
     #   enable = true;
