@@ -84,7 +84,7 @@
       fuzzel.enable = true;
       mako.enable = false;
       mpv.enable = false;
-      # rofi.enable = false;
+      rofi.enable = true;
       tmux.enable = true;
     };
 
