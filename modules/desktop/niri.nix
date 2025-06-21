@@ -28,33 +28,105 @@ with lib;
       wayland-utils
     ];
 
+    services.greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd ${pkgs.niri-unstable}/bin/niri-session";
+          user = "greeter";
+        };
+      };
+    };
+
+    # Uncomment below for graphical greeter (gtkgreet - most stable GUI option)
     # services.greetd = {
     #   enable = true;
     #   settings = {
     #     default_session = {
-    #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd ${pkgs.niri-unstable}/bin/niri-session";
-    #       user = "tijso";
+    #       command = "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l -s /etc/greetd/gtkgreet.css; swaymsg exit";
+    #       user = "greeter";
+    #     };
+    #   };
+    # };
+    #
+    # # GTK greeter styling
+    # environment.etc."greetd/gtkgreet.css".text = ''
+    #   window {
+    #     background-image: url("file:///etc/nixos/stylix/Wallpapers/Tunnel.png");
+    #     background-size: cover;
+    #     background-position: center;
+    #   }
+    #
+    #   box#body {
+    #     background-color: rgba(50, 50, 50, 0.9);
+    #     border-radius: 10px;
+    #     padding: 50px;
+    #   }
+    #
+    #   #clock, #date {
+    #     color: white;
+    #   }
+    #
+    #   #login_button, #restart_button, #shutdown_button {
+    #     color: white;
+    #     background-color: rgba(255, 255, 255, 0.1);
+    #     border-radius: 5px;
+    #     padding: 5px;
+    #   }
+    #
+    #   #login_button:hover, #restart_button:hover, #shutdown_button:hover {
+    #     background-color: rgba(255, 255, 255, 0.2);
+    #   }
+    # '';
+
+    # Alternative: ReGreet (modern, but newer/less tested)
+    # services.greetd = {
+    #   enable = true;
+    #   settings = {
+    #     default_session = {
+    #       command = "${pkgs.cage}/bin/cage -s -- ${pkgs.greetd.regreet}/bin/regreet";
+    #       user = "greeter";
+    #     };
+    #   };
+    # };
+    #
+    # programs.regreet = {
+    #   enable = true;
+    #   settings = {
+    #     background = {
+    #       path = "/etc/nixos/stylix/Wallpapers/Tunnel.png";
+    #       fit = "Cover";
+    #     };
+    #     appearance = {
+    #       greeting_msg = "Welcome back!";
+    #     };
+    #     GTK = {
+    #       application_prefer_dark_theme = true;
+    #       cursor_theme_name = "Adwaita";
+    #       font_name = "Cantarell 16";
+    #       icon_theme_name = "Adwaita";
+    #       theme_name = "Adwaita-dark";
     #     };
     #   };
     # };
 
-    services.displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      enableHidpi = true;
-      autoNumlock = true;
-      theme = "sugar-dark";
-      settings = {
-        Theme = {
-          Current = "sugar-dark";
-          Background = "../stylix/Wallpapers/Tunnel.png";
-          # ScreenWidth = "1920";
-          # ScreenHeight = "1080";
-          # ScaleImageCropped = "true";
-          # DimBackgroundImage = "0.0";
-        };
-      };
-    };
+    # services.displayManager.sddm = {
+    #   enable = true;
+    #   wayland.enable = true;
+    #   enableHidpi = true;
+    #   autoNumlock = true;
+    #   theme = "sugar-dark";
+    #   settings = {
+    #     Theme = {
+    #       Current = "sugar-dark";
+    #       Background = "../stylix/Wallpapers/Tunnel.png";
+    #       # ScreenWidth = "1920";
+    #       # ScreenHeight = "1080";
+    #       # ScaleImageCropped = "true";
+    #       # DimBackgroundImage = "0.0";
+    #     };
+    #   };
+    # };
 
     services.displayManager.sessionPackages = [ pkgs.niri-unstable ];
 
