@@ -47,7 +47,7 @@ with lib;
       settings = {
         Theme = {
           Current = "sugar-dark";
-          Background = "../stylix/Wallpapers/joker.png";
+          Background = "../stylix/Wallpapers/Tunnel.png";
         };
       };
     };
