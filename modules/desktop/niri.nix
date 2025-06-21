@@ -19,15 +19,15 @@ with lib;
       package = pkgs.niri-unstable;
     };
 
-    services.greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd ${pkgs.niri-unstable}/bin/niri-session";
-          user = "tijso";
-        };
-      };
-    };
+    # services.greetd = {
+    #   enable = true;
+    #   settings = {
+    #     default_session = {
+    #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd ${pkgs.niri-unstable}/bin/niri-session";
+    #       user = "tijso";
+    #     };
+    #   };
+    # };
 
     # Disable GNOME's SSH agent component to avoid conflicts
     services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
@@ -41,23 +41,23 @@ with lib;
     };
 
     # PAM configuration to unlock keyring on login
-    security.pam.services.greetd.enableGnomeKeyring = true;
+    # security.pam.services.greetd.enableGnomeKeyring = true;
     security.pam.services.login.enableGnomeKeyring = true;
 
-    # services.displayManager.sddm = {
-    #   enable = true;
-    #   wayland.enable = true;
-    #   enableHidpi = true;
-    #   autoNumlock = true;
-    #   theme = "catppuccin";
-    # };
+    services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      enableHidpi = true;
+      autoNumlock = true;
+      theme = "catppuccin";
+    };
 
     # services.displayManager.sessionPackages = [ pkgs.niri ];
 
-    # environment.systemPackages = with pkgs; [
-    #   catppuccin-sddm
-    #   sddm-sugar-dark
-    #   libsForQt5.qt5.qtgraphicaleffects
-    # ];
+    environment.systemPackages = with pkgs; [
+      catppuccin-sddm
+      sddm-sugar-dark
+      libsForQt5.qt5.qtgraphicaleffects
+    ];
   };
 }
