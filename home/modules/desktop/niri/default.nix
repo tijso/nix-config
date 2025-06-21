@@ -60,22 +60,39 @@ with lib;
           transform.normal = { };
         };
 
-        "DP-1" = {
-          mode = "2560x1440";
-          scale = 1.0;
-          focus-at-startup = true;
-          position = {
-            x = 2048;
-            y = 0;
-          };
-        };
+        # "DP-1" = {
+        #   mode = "2560x1440";
+        #   scale = 1.0;
+        #   focus-at-startup = true;
+        #   position = {
+        #     x = 2048;
+        #     y = 0;
+        #   };
+        # };
 
-        output."DP-2" = {
-          mode = "2048x1152";
+        "DP-1" = {
+          mode = {
+            width = 2560;
+            height = 1440;
+            refresh = null;
+          };
           scale = 1.0;
           position = {
             x = 0;
             y = 0;
+          };
+        };
+
+        "DP-2" = {
+          mode = {
+            width = 2048;
+            height = 1152;
+            refresh = null;
+          };
+          scale = 1.0;
+          position = {
+            x = 0;
+            y = 2560;
           };
         };
 
