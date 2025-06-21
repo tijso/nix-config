@@ -48,10 +48,10 @@ with lib;
         Theme = {
           Current = "sugar-dark";
           Background = "../stylix/Wallpapers/Tunnel.png";
-          ScreenWidth = "1920";
-          ScreenHeight = "1080";
-          ScaleImageCropped = "true";
-          DimBackgroundImage = "0.0";
+          # ScreenWidth = "1920";
+          # ScreenHeight = "1080";
+          # ScaleImageCropped = "true";
+          # DimBackgroundImage = "0.0";
         };
       };
     };
