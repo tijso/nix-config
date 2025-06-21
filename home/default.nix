@@ -2,7 +2,6 @@
   imports = [
     ./modules/apps/mako
     ./modules/apps/mpv
-    ./modules/apps/rofi
     ./modules/apps/tmux
     ./modules/apps/fuzzel
 
