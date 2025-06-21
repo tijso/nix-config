@@ -39,20 +39,20 @@ A complete NixOS and Home Manager configuration for daily use.
    sudo nixos-rebuild switch --flake .#serenity
    ```
 
-5. **Install Home Manager**
-   ```bash
-   nix shell nixpkgs#home-manager
-   ```
-
-6. **Apply the Home Manager configuration**
+5. **Apply the Home Manager configuration**
    ```bash
    home-manager switch --flake .#tijso@serenity
    ```
+   
+   > **Note:** If you get a "command not found" error, Home Manager isn't in your PATH yet. Run this first:
+   > ```bash
+   > nix shell nixpkgs#home-manager
+   > ```
 
 ## 🔧 What's Included
 
 - **Window Manager:** Niri (Wayland compositor)
-- **Terminal:** Your configured terminal setup
+- **Terminal:** Ghostty
 - **Development Tools:** Complete development environment
 - **Dotfiles:** All personal configurations managed declaratively
 
