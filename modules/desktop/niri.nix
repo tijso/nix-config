@@ -33,7 +33,7 @@ in
     };
 
     # Start Ssh
-    programs.ssh.startAgent = true;
+    programs.ssh.startAgent = false;
 
     # services.displayManager.sddm = {
     #   enable = true;
