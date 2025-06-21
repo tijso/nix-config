@@ -14,6 +14,7 @@
     homeDirectory = "/home/tijso";
     sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
+      BROWSER = "brave";
       EDITOR = "nvim";
       PAGER = "bat";
       TERMINAL = "ghostty";
