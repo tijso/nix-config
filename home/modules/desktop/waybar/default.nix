@@ -5,6 +5,7 @@
   ...
 }:
 with lib;
+
 {
   options.myHome.desktop.waybar.enable = mkEnableOption "Enable Waybar";
   config = mkIf config.myHome.desktop.waybar.enable {
@@ -124,63 +125,63 @@ with lib;
         }
 
         window#waybar {
-          background: alpha(${colors.base00}, 0.9);
-          border: 2px solid ${colors.base0D};
+          background: alpha(#${config.colorScheme.palette.base00}, 0.9);
+          border: 2px solid #${config.colorScheme.palette.base0D};
           border-radius: 12px;
-          color: ${colors.base05};
+          color: #${config.colorScheme.palette.base05};
         }
 
         #workspaces button {
           padding: 0 8px;
           background: transparent;
-          color: ${colors.base04};
+          color: #${config.colorScheme.palette.base04};
           border-radius: 8px;
           margin: 2px;
         }
 
         #workspaces button.active {
-          background: ${colors.base0D};
-          color: ${colors.base00};
+          background: #${config.colorScheme.palette.base0D};
+          color: #${config.colorScheme.palette.base00};
         }
 
         #workspaces button:hover {
-          background: alpha(${colors.base0D}, 0.3);
-          color: ${colors.base05};
+          background: alpha(#${config.colorScheme.palette.base0D}, 0.3);
+          color: #${config.colorScheme.palette.base05};
         }
 
         #custom-launcher {
           padding: 0 12px;
-          color: ${colors.base0D};
+          color: #${config.colorScheme.palette.base0D};
           font-size: 16px;
         }
 
         #window {
-          color: ${colors.base05};
+          color: #${config.colorScheme.palette.base05};
           font-weight: bold;
         }
 
         #clock {
           padding: 0 12px;
-          color: ${colors.base0A};
+          color: #${config.colorScheme.palette.base0A};
           font-weight: bold;
         }
 
         #pulseaudio, #network, #battery {
           padding: 0 8px;
-          color: ${colors.base05};
+          color: #${config.colorScheme.palette.base05};
         }
 
         #battery.warning {
-          color: ${colors.base0A};
+          color: #${config.colorScheme.palette.base0A};
         }
 
         #battery.critical {
-          color: ${colors.base08};
+          color: #${config.colorScheme.palette.base08};
         }
 
         #custom-power {
           padding: 0 12px;
-          color: ${colors.base08};
+          color: #${config.colorScheme.palette.base08};
           font-size: 16px;
         }
       '';
