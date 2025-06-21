@@ -11,6 +11,7 @@
     ./modules/cli/fish
     ./modules/cli/lazy
     ./modules/cli/nushell
+    ./modules/cli/ripgrep
     ./modules/cli/starship
     ./modules/cli/zsh
 

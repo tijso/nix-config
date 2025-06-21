@@ -95,6 +95,7 @@
       lazygit.enable = true;
       starship.enable = true;
       zsh.enable = true;
+      ripgrep.enable = true;
     };
 
     desktop = {
