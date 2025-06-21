@@ -43,20 +43,29 @@ with lib;
       wayland.enable = true;
       enableHidpi = true;
       autoNumlock = true;
-      theme = "catppuccin";
+      theme = "sddm-sugar-dark";
     };
 
     services.displayManager.sessionPackages = [ pkgs.niri-unstable ];
 
-    # System services and authentication
     programs.ssh.startAgent = true;
     services.gnome.gnome-keyring.enable = lib.mkForce false;
     services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
 
-    # PAM configuration for keyring
-    # security.pam.services.greetd.enableGnomeKeyring = true;
-    security.pam.services.login.enableGnomeKeyring = true;
-    security.pam.services.sddm.enableGnomeKeyring = true;
+    security.polkit.enable = true;
+    systemd.user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
 
     environment.variables = {
       MOZ_ENABLE_WAYLAND = "1";
@@ -64,10 +73,8 @@ with lib;
       WAYLAND_DISPLAY = "wayland-0";
     };
 
-    # Enable necessary system services
     services.dbus.enable = true;
     services.udev.enable = true;
-    security.polkit.enable = true;
 
     xdg.portal = {
       enable = true;
@@ -76,7 +83,6 @@ with lib;
         pkgs.xdg-desktop-portal-wlr
       ];
 
-      # You might also want to specify which portal to use for what
       config.common.default = "*";
     };
   };
