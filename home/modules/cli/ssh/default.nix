@@ -10,7 +10,6 @@ with lib;
     programs.ssh = {
       enable = true;
       addKeysToAgent = "yes";
-      startAgent = true;
       matchBlocks = {
         "github.com" = {
           hostname = "github.com";
