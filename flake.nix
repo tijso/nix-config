@@ -123,7 +123,7 @@
           };
           modules = [
             ./hosts/serenity/home.nix
-            niri.homeModules.niri
+            # niri.homeModules.niri
             hyprland.homeManagerModules.default
           ];
         };

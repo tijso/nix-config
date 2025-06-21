@@ -15,7 +15,6 @@
         "wipe"
         "--transition-duration"
         "2"
-        # "${pkgs.swww}/bin/swww """
       ];
     }
     { command = [ "${pkgs.mako}/bin/mako" ]; }
