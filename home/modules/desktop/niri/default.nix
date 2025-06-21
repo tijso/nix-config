@@ -112,8 +112,8 @@ with lib;
         hotkey-overlay.skip-at-startup = true;
 
         cursor = {
-          xcursor-theme = "Adwaita";
-          xcursor-size = 24;
+          cursor-theme = "Adwaita";
+          cursor-size = 24;
         };
 
         environment = {
