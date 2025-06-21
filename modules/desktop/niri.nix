@@ -57,10 +57,7 @@ with lib;
     security.pam.services.login.enableGnomeKeyring = true;
     security.pam.services.sddm.enableGnomeKeyring = true;
 
-    # You might need this to prevent SSH conflict
     environment.variables = {
-      SSH_AUTH_SOCK = lib.mkForce "/run/user/1000/ssh-agent.socket";
-      # Add these Wayland variables
       MOZ_ENABLE_WAYLAND = "1";
       NIXOS_OZONE_WL = "1";
       WAYLAND_DISPLAY = "wayland-0";
