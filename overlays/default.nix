@@ -6,10 +6,11 @@
   # Niri overlay from the flake
   niri = inputs.niri.overlays.niri;
 
-  # Your custom modifications
   modifications = final: prev: {
-    mpd = prev.mpd.override {
-      ioUringSupport = false;
-    };
+    mpd = prev.mpd.overrideAttrs (oldAttrs: {
+      mesonFlags = (oldAttrs.mesonFlags or [ ]) ++ [
+        "-Dio_uring=disabled"
+      ];
+    });
   };
 }
