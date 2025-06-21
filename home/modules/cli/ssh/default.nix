@@ -25,7 +25,5 @@ with lib;
       #     ServerAliveInterval 60
       # '';
     };
-
-    users.users.${config.home.username}.extraGroups = [ "ssh-agent" ];
   };
 }

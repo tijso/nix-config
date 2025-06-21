@@ -21,6 +21,7 @@
       "networkmanager"
       "storage"
       "libvirtd"
+      "ssh-agent"
     ];
     shell = pkgs.fish;
   };
