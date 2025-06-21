@@ -65,13 +65,12 @@ with lib;
               height = 1440;
               refresh = null;
             };
-            scale = 1.0;
+            scale = 1.25;
             position = {
               x = 2048;
               y = 0;
             };
           };
-
           "DP-2" = {
             mode = {
               width = 2048;
