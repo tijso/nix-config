@@ -5,8 +5,8 @@
 }:
 with lib;
 {
-  options.myHome.fuzzel.enable = mkEnableOption "Enable Fuzzel";
-  config = mkIf config.myHome.fuzzel.enable {
+  options.myHome.apps.fuzzel.enable = mkEnableOption "Enable Fuzzel";
+  config = mkIf config.myHome.apps.fuzzel.enable {
     programs.fuzzel = {
       enable = true;
       settings = {

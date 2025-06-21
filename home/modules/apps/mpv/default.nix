@@ -2,8 +2,8 @@
 with lib;
 
 {
-  options.myHome.mpv.enable = mkEnableOption "Enable Mpv";
-  config = mkIf config.myHome.mpv.enable {
+  options.myHome.apps.mpv.enable = mkEnableOption "Enable Mpv";
+  config = mkIf config.myHome.apps.mpv.enable {
     programs.mpv.enable = true;
 
     # anime4k

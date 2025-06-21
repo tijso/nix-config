@@ -9,8 +9,8 @@ let
   local-overlays = import ../overlays { inherit inputs; };
 in
 {
-  options.myHome.rofi.enable = mkEnableOption "Enable Rofi";
-  config = mkIf config.myHome.rofi.enable {
+  options.myHome.apps.rofi.enable = mkEnableOption "Enable Rofi";
+  config = mkIf config.myHome.apps.rofi.enable {
     nixpkgs.overlays = [
       local-overlays.rofi-plugins
     ];

@@ -5,8 +5,8 @@
 }:
 with lib;
 {
-  options.myHome.mako.enable = mkEnableOption "Enable Mako";
-  config = mkIf config.myHome.mako.enable {
+  options.myHome.apps.mako.enable = mkEnableOption "Enable Mako";
+  config = mkIf config.myHome.apps.mako.enable {
     services.mako = {
       enable = true;
       backgroundColor = "${config.colorScheme.palette.base00}";

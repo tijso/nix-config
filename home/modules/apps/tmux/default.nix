@@ -7,8 +7,8 @@
 with lib;
 
 {
-  options.myHome.tmux.enable = mkEnableOption "Enable Tmux";
-  config = mkIf config.myHome.tmux.enable {
+  options.myHome.apps.tmux.enable = mkEnableOption "Enable Tmux";
+  config = mkIf config.myHome.apps.tmux.enable {
     programs.tmux = {
       enable = true;
       mouse = true;

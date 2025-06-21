@@ -6,8 +6,8 @@
 }:
 with lib;
 {
-  options.myHome.waybar.enable = mkEnableOption "Enable Waybar";
-  config = mkIf config.myHome.waybar.enable {
+  options.myHome.desktop.waybar.enable = mkEnableOption "Enable Waybar";
+  config = mkIf config.myHome.desktop.waybar.enable {
     programs.waybar = {
       enable = true;
       settings = {
