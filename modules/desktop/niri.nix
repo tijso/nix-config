@@ -33,6 +33,9 @@ in
       };
     };
 
+    # Disable GNOME's SSH agent component to avoid conflicts
+    services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
+
     # Start Ssh
     programs.ssh.startAgent = true;
 
