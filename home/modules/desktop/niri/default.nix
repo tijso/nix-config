@@ -86,7 +86,7 @@ with lib;
         };
 
         layout = {
-          gaps = 8;
+          gaps = 14;
           always-center-single-column = true;
           preset-column-widths = [
             { proportion = 1.0 / 3.0; }
