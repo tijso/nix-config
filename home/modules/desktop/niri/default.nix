@@ -60,6 +60,25 @@ with lib;
           transform.normal = { };
         };
 
+        output."DP-1" = {
+          mode = "2560x1440";
+          scale = 1.0;
+          focus-at-startup = true;
+          position = {
+            x = 2048;
+            y = 0;
+          };
+        };
+
+        output."DP-2" = {
+          mode = "2048x1152";
+          scale = 1.0;
+          position = {
+            x = 0;
+            y = 0;
+          };
+        };
+
         layout = {
           gaps = 16;
           center-focused-column = "never";
@@ -74,14 +93,14 @@ with lib;
           focus-ring = {
             enable = true;
             width = 3;
-            # active.color = colors.base0D;
-            # inactive.color = colors.base02;
+            active.color = config.colorScheme.palette.base0D;
+            inactive.color = config.colorScheme.palette.base02;
           };
           border = {
             enable = true;
             width = 2;
-            # active.color = colors.base0D;
-            # inactive.color = colors.base02;
+            active.color = config.colorScheme.palette.base0D;
+            inactive.color = config.colorScheme.palette.base02;
           };
         };
 

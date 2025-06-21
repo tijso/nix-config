@@ -82,7 +82,7 @@
   myHome = {
     apps = {
       fuzzel.enable = true;
-      mako.enable = false;
+      mako.enable = true;
       mpv.enable = false;
       tmux.enable = true;
     };
@@ -99,10 +99,10 @@
     };
 
     desktop = {
-      gnome.enable = true;
+      gnome.enable = false;
       hyprland.enable = false;
-      niri.enable = false;
-      waybar.enable = false;
+      niri.enable = true;
+      waybar.enable = true;
     };
 
     development = {
