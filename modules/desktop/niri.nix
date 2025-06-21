@@ -21,7 +21,12 @@ with lib;
 
     environment.systemPackages = with pkgs; [
       catppuccin-sddm
-      sddm-sugar-dark
+      # sddm-sugar-dark
+      (sddm-sugar-dark.override {
+        settings = {
+          Background = "../stylix/Wallpapers/mikasa-eren.png";
+        };
+      })
       libsForQt5.qt5.qtgraphicaleffects
       wayland
       wayland-protocols
@@ -43,7 +48,7 @@ with lib;
       wayland.enable = true;
       enableHidpi = true;
       autoNumlock = true;
-      theme = "sddm-sugar-dark";
+      theme = "sugar-dark";
     };
 
     services.displayManager.sessionPackages = [ pkgs.niri-unstable ];
