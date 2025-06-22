@@ -131,7 +131,6 @@ with lib;
       BROWSER = config.myHome.desktop.niri.browser;
       MOZ_ENABLE_WAYLAND = "1";
       NIXOS_OZONE_WL = "1";
-      XDG_SESSION_TYPE = wayland;
     };
 
     # # XDG settings for default applications
