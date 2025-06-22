@@ -132,8 +132,6 @@ with lib;
       MOZ_ENABLE_WAYLAND = "1";
       NIXOS_OZONE_WL = "1";
       XDG_SESSION_TYPE = wayland;
-      XDG_CURRENT_DESKTOP = niri;
-      XDG_SESSION_DESKTOP = niri;
     };
 
     # # XDG settings for default applications
