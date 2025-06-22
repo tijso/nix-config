@@ -125,63 +125,63 @@ with lib;
         }
 
         window#waybar {
-          background: alpha(#${config.colorScheme.palette.base00}, 0.9);
-          border: 2px solid #${config.colorScheme.palette.base0D};
+          background: alpha(#${config.lib.stylix.colors.base00}, 0.9);
+          border: 2px solid #${config.lib.stylix.colors.base0D};
           border-radius: 12px;
-          color: #${config.colorScheme.palette.base05};
+          color: #${config.lib.stylix.colors.base05};
         }
 
         #workspaces button {
           padding: 0 8px;
           background: transparent;
-          color: #${config.colorScheme.palette.base04};
+          color: #${config.lib.stylix.colors.base04};
           border-radius: 8px;
           margin: 2px;
         }
 
         #workspaces button.active {
-          background: #${config.colorScheme.palette.base0D};
-          color: #${config.colorScheme.palette.base00};
+          background: #${config.lib.stylix.colors.base0D};
+          color: #${config.lib.stylix.colors.base00};
         }
 
         #workspaces button:hover {
-          background: alpha(#${config.colorScheme.palette.base0D}, 0.3);
-          color: #${config.colorScheme.palette.base05};
+          background: alpha(#${config.lib.stylix.colors.base0D}, 0.3);
+          color: #${config.lib.stylix.colors.base05};
         }
 
         #custom-launcher {
           padding: 0 12px;
-          color: #${config.colorScheme.palette.base0D};
+          color: #${config.lib.stylix.colors.base0D};
           font-size: 16px;
         }
 
         #window {
-          color: #${config.colorScheme.palette.base05};
+          color: #${config.lib.stylix.colors.base05};
           font-weight: bold;
         }
 
         #clock {
           padding: 0 12px;
-          color: #${config.colorScheme.palette.base0A};
+          color: #${config.lib.stylix.colors.base0A};
           font-weight: bold;
         }
 
         #pulseaudio, #network, #battery {
           padding: 0 8px;
-          color: #${config.colorScheme.palette.base05};
+          color: #${config.lib.stylix.colors.base05};
         }
 
         #battery.warning {
-          color: #${config.colorScheme.palette.base0A};
+          color: #${config.lib.stylix.colors.base0A};
         }
 
         #battery.critical {
-          color: #${config.colorScheme.palette.base08};
+          color: #${config.lib.stylix.colors.base08};
         }
 
         #custom-power {
           padding: 0 12px;
-          color: #${config.colorScheme.palette.base08};
+          color: #${config.lib.stylix.colors.base08};
           font-size: 16px;
         }
       '';
