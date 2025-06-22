@@ -6,8 +6,8 @@
 }:
 with lib;
 {
-  options.myHome.modules.stylix.enable = mkEnableOption "Enable Stylix";
-  config = mkIf config.myHome.modules.stylix.enable {
+  options.myHome.modules.theming.stylix.enable = mkEnableOption "Enable Stylix";
+  config = mkIf config.myHome.theming.stylix.enable {
     stylix = {
       enable = true;
       autoEnable = true;

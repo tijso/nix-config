@@ -81,8 +81,6 @@
   ];
 
   myHome = {
-    stylix.enable = false;
-
     apps = {
       fuzzel.enable = true;
       mako.enable = true;
@@ -128,6 +126,7 @@
 
     theming = {
       gtk.enable = true;
+      stylix.enable = false;
     };
 
   };

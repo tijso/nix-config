@@ -1,0 +1,73 @@
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+with lib;
+{
+  options.myHome.theming.gtk.enable = mkEnableOption "Enable GTK theming";
+  config = mkIf config.myHome.theming.gtk.enable {
+
+    # Icon theme - your aesthetic choice, not managed by Stylix
+    gtk.iconTheme = {
+      name = "Fluent-teal-dark";
+      package = pkgs.fluent-icon-theme.override {
+        colorVariants = [ "teal" ];
+      };
+    };
+
+    # Ensure Qt applications use GTK theming from Stylix
+    qt = {
+      enable = true;
+      platformTheme.name = "gtk";
+      style.name = "gtk2"; # Better integration
+    };
+
+    # GNOME/GTK application settings and behaviors
+    dconf = {
+      enable = true;
+      settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+          # Additional interface preferences
+          clock-show-seconds = false;
+          clock-show-weekday = true;
+          enable-animations = true;
+          gtk-enable-primary-paste = true;
+        };
+
+        # File manager preferences
+        "org/gtk/settings/file-chooser" = {
+          clock-format = "24h";
+          date-format = "regular";
+          location-mode = "path-bar";
+          show-hidden = false;
+          show-size-column = true;
+          show-type-column = true;
+          sidebar-width = 170;
+          sort-column = "name";
+          sort-directories-first = true;
+          sort-order = "ascending";
+          type-format = "category";
+        };
+
+        # Window manager preferences (if using GNOME components)
+        "org/gnome/desktop/wm/preferences" = {
+          button-layout = "appmenu:minimize,maximize,close";
+          focus-mode = "click";
+          resize-with-right-button = true;
+        };
+      };
+    };
+
+    # Optional: GTK application specific overrides if needed
+    # gtk3.extraCss = ''
+    #   /* Custom CSS for specific GTK3 apps */
+    # '';
+
+    # gtk4.extraCss = ''
+    #   /* Custom CSS for specific GTK4 apps */
+    # '';
+  };
+}
