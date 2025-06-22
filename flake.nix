@@ -79,7 +79,7 @@
             ./hosts/serenity
             inputs.nixos-cosmic.nixosModules.default
             inputs.grub2-themes.nixosModules.default
-            inputs.stylix.nixosModules.stylix
+            # inputs.stylix.nixosModules.stylix
           ];
         };
       };
