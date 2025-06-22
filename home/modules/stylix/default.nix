@@ -10,6 +10,7 @@ with lib;
   config = mkIf config.myHome.modules.stylix.enable {
     stylix = {
       enable = true;
+      autoEnable = true;
       polarity = "dark";
       image = ./Wallpapers/Tunnel.png;
       base16Scheme = "./themes/rose-pine.yaml";
@@ -22,12 +23,14 @@ with lib;
       };
 
       targets = {
-        fuzzel.enable = true;
-        ghostty.enable = false;
         gtk.enable = true;
-        neovim.enable = false;
         qt.enable = true;
+
+        fuzzel.enable = true;
         waybar.enable = true;
+
+        ghostty.enable = false;
+        neovim.enable = false;
       };
 
       cursor = {
@@ -57,6 +60,7 @@ with lib;
           terminal = 14;
           applications = 12;
           popups = 12;
+          desktop = 11;
         };
       };
     };
