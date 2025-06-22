@@ -1,6 +1,8 @@
 scheme: "Rosé Pine"
 author: "Emilia Dunfelt <edun@dunfelt.se>"
 slug: "rose-pine"
+variant : "dark"
+
 base00: "191724"
 base01: "1f1d2e"
 base02: "26233a"
@@ -17,3 +19,4 @@ base0C: "9ccfd8"
 base0D: "c4a7e7"
 base0E: "f6c177"
 base0F: "524f67"
+
