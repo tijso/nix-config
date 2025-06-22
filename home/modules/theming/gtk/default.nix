@@ -7,8 +7,8 @@
 with lib;
 
 {
-  options.myHome.modules.theming.gtk.enable = mkEnableOption "Enable Gtk";
-  config = mkIf config.myHome.modules.theming.gtk.enable {
+  options.myHome.theming.gtk.enable = mkEnableOption "Enable Gtk";
+  config = mkIf config.myHome.theming.gtk.enable {
     gtk = {
       iconTheme = {
         name = "Fluent-teal-dark";
