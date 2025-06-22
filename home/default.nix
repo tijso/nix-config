@@ -33,6 +33,7 @@
     ./modules/terminals/wezterm
 
     ./modules/theming/gtk
+    ./modules/stylix
 
   ];
 }

@@ -81,6 +81,8 @@
   ];
 
   myHome = {
+    stylix.enable = false;
+
     apps = {
       fuzzel.enable = true;
       mako.enable = true;
