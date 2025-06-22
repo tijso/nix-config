@@ -7,6 +7,12 @@
   programs.niri.settings.spawn-at-startup = [
     { command = [ "${pkgs.waybar}/bin/waybar" ]; }
     { command = [ "${pkgs.mako}/bin/mako" ]; }
+    {
+      command = [
+        "${pkgs._1password-gui}/bin/1password"
+        "--silent"
+      ];
+    }
   ];
 
   # SWWW service and wallpaper setup
