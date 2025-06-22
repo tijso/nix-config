@@ -32,7 +32,7 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    grub2-themes.url = "github:vinceliuice/grub2-themes";
+    # grub2-themes.url = "github:vinceliuice/grub2-themes";
 
     nixvim.url = "github:tijso/nixvim";
     ghostty.url = "github:ghostty-org/ghostty";
@@ -76,7 +76,7 @@
           modules = [
             ./hosts/serenity
             inputs.nixos-cosmic.nixosModules.default
-            inputs.grub2-themes.nixosModules.default
+            # inputs.grub2-themes.nixosModules.default
             inputs.stylix.nixosModules.stylix
           ];
         };
