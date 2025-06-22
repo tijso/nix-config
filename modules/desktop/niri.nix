@@ -26,6 +26,7 @@ with lib;
       wayland
       wayland-protocols
       wayland-utils
+      wlr-randr
     ];
 
     services.greetd = {

@@ -38,7 +38,6 @@ with lib;
       v4l-utils
       vim
       wget
-      wlrandr
       xdg-utils
       zip
     ];
