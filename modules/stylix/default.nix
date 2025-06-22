@@ -14,7 +14,7 @@ with lib;
 
       # System wallpaper and colors
       image = ./Berserk.png;
-      base16Scheme = "./themes/rose-pine.yaml";
+      base16Scheme = ./themes/rose-pine.yaml;
 
       targets = {
         grub.enable = true;

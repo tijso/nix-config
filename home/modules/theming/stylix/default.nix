@@ -13,7 +13,7 @@ with lib;
       autoEnable = true;
       polarity = "dark";
       image = ./tunnel.png;
-      base16Scheme = "./themes/rose-pine.yaml";
+      base16Scheme = ./themes/rose-pine.yaml;
 
       opacity = {
         terminal = 0.9;
@@ -31,6 +31,9 @@ with lib;
 
         ghostty.enable = false;
         neovim.enable = false;
+        fish.enable = false;
+        starsthip.enable = false;
+        wezterm.enable = false;
       };
 
       cursor = {
