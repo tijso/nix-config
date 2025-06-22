@@ -4,7 +4,7 @@
     ./core/_1password
     ./desktop
     ./development
-    # ./stylix
+    ./stylix
     ./thunar
   ];
 }
