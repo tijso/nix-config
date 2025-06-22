@@ -10,9 +10,9 @@ with lib;
     services.mako = {
       enable = true;
       settings = {
-        background-color = "#${config.colorScheme.palette.base00}";
-        text-color = "#${config.colorScheme.palette.base05}";
-        border-color = "#${config.colorScheme.palette.base0D}";
+        background-color = "#${config.lib.stylix.colors.base00}";
+        text-color = "#${config.lib.stylix.colors.base05}";
+        border-color = "#${config.lib.stylix.colors.base0D}";
         border-radius = 12;
         border-size = 2;
         font = "JetBrains Mono 14";

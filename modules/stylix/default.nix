@@ -1,13 +1,11 @@
-# /etc/nixos/stylix.nix - ONLY system components
 {
   lib,
-  pkgs,
   config,
   ...
 }:
 with lib;
 {
-  options.myModules.stylix.enable = mkEnableOption "Enable system-level Stylix";
+  options.myModules.stylix.enable = mkEnableOption "Enable Stylix";
   config = mkIf config.myModules.stylix.enable {
     stylix = {
       enable = true;
@@ -23,18 +21,6 @@ with lib;
         plymouth.enable = true;
         greetd.enable = true;
         console.enable = true;
-
-        # Basic system fonts
-        fonts = {
-          monospace = {
-            name = "FiraCode Nerd Font";
-            package = pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; };
-          };
-          sansSerif = {
-            name = "Noto Sans";
-            package = pkgs.noto-fonts;
-          };
-        };
       };
     };
 

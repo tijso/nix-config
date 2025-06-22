@@ -10,20 +10,6 @@ with lib;
   options.myHome.theming.gtk.enable = mkEnableOption "Enable Gtk";
   config = mkIf config.myHome.theming.gtk.enable {
     gtk = {
-      enable = true;
-      theme = {
-        name = "Rose-Pine";
-        package = pkgs.rose-pine-gtk-theme;
-        # name = "Tokyonight-Dark-BL";
-        # package = pkgs.tokyonight-gtk-theme.override {
-        #   themeVariants = [ "teal" ];
-        #   tweakVariants = [
-        #     "outline"
-        #     "float"
-        #   ];
-        # };
-      };
-
       iconTheme = {
         name = "Fluent-teal-dark";
         package = pkgs.fluent-icon-theme.override { colorVariants = [ "teal" ]; };
@@ -34,29 +20,12 @@ with lib;
         #   accent = "teal";
         # };
       };
-
-      cursorTheme = {
-        name = "Bibata-Modern-Ice";
-        package = pkgs.bibata-cursors;
-        size = 24;
-      };
-
-      gtk3.extraConfig = {
-        Settings = ''
-          gtk-application-prefer-dark-theme=1
-        '';
-      };
-
-      gtk4.extraConfig = {
-        Settings = ''
-          gtk-application-prefer-dark-theme=1
-        '';
-      };
     };
 
     qt = {
       enable = true;
       platformTheme.name = "gtk";
+      style.name = "gtk2";
     };
 
     dconf = {
@@ -64,6 +33,30 @@ with lib;
       settings = {
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
+          clock-show-seconds = false;
+          clock-show-weekday = true;
+          enable-animations = true;
+          gtk-enable-primary-paste = true;
+        };
+
+        "org/gtk/settings/file-chooser" = {
+          clock-format = "24h";
+          date-format = "regular";
+          location-mode = "path-bar";
+          show-hidden = false;
+          show-size-column = true;
+          show-type-column = true;
+          sidebar-width = 170;
+          sort-column = "name";
+          sort-directories-first = true;
+          sort-order = "ascending";
+          type-format = "category";
+        };
+
+        "org/gnome/desktop/wm/preferences" = {
+          button-layout = "appmenu:minimize,maximize,close";
+          focus-mode = "click";
+          resize-with-right-button = true;
         };
       };
     };
