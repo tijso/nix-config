@@ -25,14 +25,14 @@
       _1password.enable = true;
       boot = {
         enable = true;
-        plymouth = {
-          enable = true;
-          theme = "rings";
-        };
-        grubTheme = {
-          enable = true;
-          resolution = "1920x1080";
-        };
+        # plymouth = {
+        #   enable = true;
+        #   theme = "rings";
+        # };
+        # grubTheme = {
+        #   enable = true;
+        #   resolution = "1920x1080";
+        # };
       };
     };
 

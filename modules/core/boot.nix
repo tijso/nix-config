@@ -94,11 +94,11 @@ with lib;
           configurationLimit = 10;
         };
 
-        grub2-theme = mkIf config.myModules.core.boot.grubTheme.enable {
-          theme = "whitesur";
-          footer = true;
-          customResolution = config.myModules.core.boot.grubTheme.resolution;
-        };
+        # grub2-theme = mkIf config.myModules.core.boot.grubTheme.enable {
+        #   theme = "whitesur";
+        #   footer = true;
+        #   customResolution = config.myModules.core.boot.grubTheme.resolution;
+        # };
       };
     };
   };
