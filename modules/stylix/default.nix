@@ -1,72 +1,46 @@
+# /etc/nixos/stylix.nix - ONLY system components
 {
   lib,
   pkgs,
   config,
-  inputs,
   ...
 }:
 with lib;
 {
-  imports = with inputs; [
-    stylix.homeManagerModules.stylix
-  ];
-
-  options.myModules.stylix.enable = mkEnableOption "Enable Stylix";
+  options.myModules.stylix.enable = mkEnableOption "Enable system-level Stylix";
   config = mkIf config.myModules.stylix.enable {
     stylix = {
       enable = true;
       polarity = "dark";
-      image = ./Wallpapers/castle-landscape.jpg;
-      base16Scheme = "./themes/rose-pine.yaml";
-    };
 
-    opacity = {
-      terminal = 0.9;
-      applications = 1.0;
-      popups = 0.8;
-      desktop = 1.0;
-    };
+      # System wallpaper and colors
+      image = ./assets/wallpapers/system-wallpaper.png;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
 
-    targets = {
-      alacritty.enable = true;
-      fuzzel.enable = true;
-      waybar.enable = true;
-      gtk.enable = true; # For GTK apps
-      qt.enable = true; # For Qt apps
-      vim.enable = true; # For Neovim
-    };
+      targets = {
+        grub.enable = true;
+        plymouth.enable = true;
+        lightdm.enable = true;
+        console.enable = true;
 
-    cursor = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
-      size = 24;
-    };
+        # Home-Manager takes take of the rest
+        gtk.enable = false;
+        qt.enable = false;
+        firefox.enable = false;
+        fuzzel.enable = false;
+        waybar.enable = false;
+      };
 
-    serif = {
-      name = "Source Serif";
-      package = pkgs.source-serif;
-    };
-
-    sansSerif = {
-      name = "Noto Sans";
-      package = pkgs.noto-fonts;
-    };
-
-    monospace = {
-      package = pkgs.maple-mono.NF;
-      name = "Maple Mono NF";
-    };
-
-    emoji = {
-      package = pkgs.noto-fonts-emoji;
-      name = "Noto Color Emoji";
-    };
-
-    fonts = {
-      sizes = {
-        terminal = 14;
-        applications = 12;
-        popups = 12;
+      # Basic system fonts
+      fonts = {
+        monospace = {
+          name = "FiraCode Nerd Font";
+          package = pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; };
+        };
+        sansSerif = {
+          name = "Noto Sans";
+          package = pkgs.noto-fonts;
+        };
       };
     };
   };
