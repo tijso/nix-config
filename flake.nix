@@ -1,10 +1,9 @@
 {
-  description = "Your new nix config";
+  description = "System-Config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # Flakes
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,31 +30,15 @@
 
     # Theming
     nix-colors.url = "github:misterio77/nix-colors";
-
     # stylix = {
     #   url = "github:danth/stylix";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    grub2-themes.url = "github:vinceliuice/grub2-themes";
 
-    grub2-themes = {
-      url = "github:vinceliuice/grub2-themes";
-    };
-
-    # My Nvim Config
-    # nvim.url = "github:tijso/nvim";
-    # neovim-nightly-overlay = {
-    #   url = "github:nix-community/neovim-nightly-overlay";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # Nixvim
+    # Development
     nixvim.url = "github:tijso/nixvim";
-
-    # Terminal
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
-
+    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs =
@@ -64,14 +47,6 @@
       nixpkgs,
       home-manager,
       systems,
-      nix-colors,
-      nixos-cosmic,
-      # neovim-nightly-overlay,
-      nixvim,
-      niri,
-      hyprland,
-      grub2-themes,
-      # stylix,
       ...
     }@inputs:
     let
@@ -102,15 +77,9 @@
           };
           modules = [
             ./hosts/serenity
-            {
-              nix.settings = {
-                substituters = [ "https://cosmic.cachix.org/" ];
-                trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-              };
-            }
-            nixos-cosmic.nixosModules.default
-            grub2-themes.nixosModules.default
-            # stylix.nixosModules.stylix
+            inputs.nixos-cosmic.nixosModules.default
+            inputs.grub2-themes.nixosModules.default
+            inputs.stylix.nixosModules.stylix
           ];
         };
       };
@@ -123,8 +92,11 @@
           };
           modules = [
             ./hosts/serenity/home.nix
-            niri.homeModules.niri
-            hyprland.homeManagerModules.default
+            inputs.niri.homeModules.niri
+            inputs.hyprland.homeManagerModules.default
+            inputs.nixvim.homeManagerModules.default
+            inputs.nix-colors.homeManagerModules.default
+            # inputs.stylix.homeManagerModules.stylix
           ];
         };
       };
