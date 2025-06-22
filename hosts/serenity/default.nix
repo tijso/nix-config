@@ -44,7 +44,7 @@
     };
 
     development.enable = true;
-    stylix.enable = false;
+    stylix.enable = true;
     thunar.enable = true;
   };
 

@@ -28,15 +28,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Theming
-    nix-colors.url = "github:misterio77/nix-colors";
-    # stylix = {
-    #   url = "github:danth/stylix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     grub2-themes.url = "github:vinceliuice/grub2-themes";
 
-    # Development
     nixvim.url = "github:tijso/nixvim";
     ghostty.url = "github:ghostty-org/ghostty";
   };
@@ -80,7 +77,7 @@
             ./hosts/serenity
             inputs.nixos-cosmic.nixosModules.default
             inputs.grub2-themes.nixosModules.default
-            # inputs.stylix.nixosModules.stylix
+            inputs.stylix.nixosModules.stylix
           ];
         };
       };
@@ -95,8 +92,7 @@
             ./hosts/serenity/home.nix
             inputs.niri.homeModules.niri
             inputs.hyprland.homeManagerModules.default
-            inputs.nix-colors.homeManagerModules.default
-            # inputs.stylix.homeManagerModules.stylix
+            inputs.stylix.homeManagerModules.stylix
           ];
         };
       };
