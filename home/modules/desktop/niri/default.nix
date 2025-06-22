@@ -61,8 +61,8 @@ with lib;
         outputs = {
           "DP-1" = {
             mode = {
-              width = 2560;
-              height = 1440;
+              width = 3840;
+              height = 2160;
               refresh = null;
             };
             scale = 1.25;
@@ -73,9 +73,9 @@ with lib;
           };
           "DP-2" = {
             mode = {
-              width = 2048;
-              height = 1152;
-              refresh = null;
+              width = 2560;
+              height = 1440;
+              refresh = 144.0;
             };
             scale = 1.0;
             position = {
