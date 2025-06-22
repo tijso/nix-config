@@ -22,6 +22,7 @@
       pkgs.enable = true;
       security.enable = true;
       services.enable = true;
+      _1password.enable = true;
       boot = {
         enable = true;
         plymouth = {
