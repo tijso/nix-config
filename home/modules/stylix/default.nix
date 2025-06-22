@@ -7,9 +7,9 @@
 }:
 with lib;
 {
-  imports = with inputs; [
-    stylix.homeManagerModules.stylix
-  ];
+  # imports = with inputs; [
+  #   stylix.homeManagerModules.stylix
+  # ];
 
   options.myHome.modules.stylix.enable = mkEnableOption "Enable Stylix";
   config = mkIf config.myHome.modules.stylix.enable {
