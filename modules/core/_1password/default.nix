@@ -6,7 +6,7 @@
 }:
 with lib;
 {
-  options.myModules._1password.pkgs.enable = mkEnableOption " Enable _1password";
+  options.myModules.core._1password.pkgs.enable = mkEnableOption " Enable _1password";
   config = mkIf config.myModules.core._1password.enable {
     environment.systemPackages = with pkgs; [
       _1password-gui
