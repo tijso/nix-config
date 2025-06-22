@@ -32,7 +32,7 @@ with lib;
         ghostty.enable = false;
         neovim.enable = false;
         fish.enable = false;
-        starsthip.enable = false;
+        starship.enable = false;
         wezterm.enable = false;
       };
 
