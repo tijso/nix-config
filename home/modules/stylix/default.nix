@@ -13,55 +13,51 @@ with lib;
       polarity = "dark";
       image = ./Wallpapers/Tunnel.png;
       base16Scheme = "./themes/rose-pine.yaml";
-    };
 
-    opacity = {
-      terminal = 0.9;
-      applications = 1.0;
-      popups = 0.8;
-      desktop = 1.0;
-    };
+      opacity = {
+        terminal = 0.9;
+        applications = 1.0;
+        popups = 0.8;
+        desktop = 1.0;
+      };
 
-    targets = {
-      alacritty.enable = true;
-      fuzzel.enable = true;
-      waybar.enable = true;
-      gtk.enable = true; # For GTK apps
-      qt.enable = true; # For Qt apps
-      vim.enable = true; # For Neovim
-    };
+      targets = {
+        fuzzel.enable = true;
+        ghostty.enable = false;
+        gtk.enable = true;
+        neovim.enable = false;
+        qt.enable = true;
+        waybar.enable = true;
+      };
 
-    cursor = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
-      size = 24;
-    };
+      cursor = {
+        name = "Bibata-Modern-Classic";
+        package = pkgs.bibata-cursors;
+        size = 24;
+      };
 
-    serif = {
-      name = "Source Serif";
-      package = pkgs.source-serif;
-    };
-
-    sansSerif = {
-      name = "Noto Sans";
-      package = pkgs.noto-fonts;
-    };
-
-    monospace = {
-      package = pkgs.maple-mono.NF;
-      name = "Maple Mono NF";
-    };
-
-    emoji = {
-      package = pkgs.noto-fonts-emoji;
-      name = "Noto Color Emoji";
-    };
-
-    fonts = {
-      sizes = {
-        terminal = 14;
-        applications = 12;
-        popups = 12;
+      fonts = {
+        serif = {
+          name = "Source Serif";
+          package = pkgs.source-serif;
+        };
+        sansSerif = {
+          name = "Noto Sans";
+          package = pkgs.noto-fonts;
+        };
+        monospace = {
+          package = pkgs.maple-mono-NF;
+          name = "Maple Mono NF";
+        };
+        emoji = {
+          package = pkgs.noto-fonts-emoji;
+          name = "Noto Color Emoji";
+        };
+        sizes = {
+          terminal = 14;
+          applications = 12;
+          popups = 12;
+        };
       };
     };
   };
