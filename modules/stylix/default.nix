@@ -19,7 +19,7 @@ with lib;
       targets = {
         grub.enable = true;
         plymouth.enable = true;
-        greetd.enable = true;
+        # greetd.enable = true;
         console.enable = true;
       };
     };
