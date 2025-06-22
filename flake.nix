@@ -47,6 +47,7 @@
       nixpkgs,
       home-manager,
       systems,
+      nixvim,
       ...
     }@inputs:
     let
@@ -94,7 +95,6 @@
             ./hosts/serenity/home.nix
             inputs.niri.homeModules.niri
             inputs.hyprland.homeManagerModules.default
-            inputs.nixvim.homeManagerModules.default
             inputs.nix-colors.homeManagerModules.default
             # inputs.stylix.homeManagerModules.stylix
           ];
