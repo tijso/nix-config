@@ -16,18 +16,18 @@ with lib;
           theme = {
             lightTheme = false;
             activeBorderColor = [
-              "#${config.colorScheme.palette.base0D}"
+              "#${config.lib.stylix.colors.base0D}"
               "bold"
             ];
-            inactiveBorderColor = [ "#${config.colorScheme.palette.base03}" ];
-            optionsTextColor = [ "#${config.colorScheme.palette.base0C}" ];
-            selectedLineBgColor = [ "#${config.colorScheme.palette.base02}" ];
-            selectedRangeBgColor = [ "#${config.colorScheme.palette.base02}" ];
-            cherryPickedCommitBgColor = [ "#${config.colorScheme.palette.base0A}" ];
-            cherryPickedCommitFgColor = [ "#${config.colorScheme.palette.base00}" ];
-            unstagedChangesColor = [ "#${config.colorScheme.palette.base08}" ];
-            defaultFgColor = [ "#${config.colorScheme.palette.base05}" ];
-            searchingActiveBorderColor = [ "#${config.colorScheme.palette.base09}" ];
+            inactiveBorderColor = [ "#${config.lib.stylix.colors.base03}" ];
+            optionsTextColor = [ "#${config.lib.stylix.colors.base0C}" ];
+            selectedLineBgColor = [ "#${config.lib.stylix.colors.base02}" ];
+            selectedRangeBgColor = [ "#${config.lib.stylix.colors.base02}" ];
+            cherryPickedCommitBgColor = [ "#${config.lib.stylix.colors.base0A}" ];
+            cherryPickedCommitFgColor = [ "#${config.lib.stylix.colors.base00}" ];
+            unstagedChangesColor = [ "#${config.lib.stylix.colors.base08}" ];
+            defaultFgColor = [ "#${config.lib.stylix.colors.base05}" ];
+            searchingActiveBorderColor = [ "#${config.lib.stylix.colors.base09}" ];
           };
 
           # Window dimensions
