@@ -66,17 +66,17 @@ with lib;
       # Plymouth boot splash
       plymouth = mkIf config.myModules.core.boot.plymouth.enable {
         enable = true;
-        theme = config.myModules.core.boot.plymouth.theme;
-        themePackages = with pkgs; [
-          (adi1090x-plymouth-themes.override {
-            selected_themes = [
-              "rings"
-              "optimus"
-              "cybernetic"
-              "lone"
-            ];
-          })
-        ];
+        # theme = config.myModules.core.boot.plymouth.theme;
+        # themePackages = with pkgs; [
+        #   (adi1090x-plymouth-themes.override {
+        #     selected_themes = [
+        #       "rings"
+        #       "optimus"
+        #       "cybernetic"
+        #       "lone"
+        #     ];
+        #   })
+        # ];
       };
 
       # Boot loader configuration
