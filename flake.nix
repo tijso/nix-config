@@ -92,7 +92,7 @@
             ./hosts/serenity/home.nix
             inputs.niri.homeModules.niri
             inputs.hyprland.homeManagerModules.default
-            inputs.stylix.homeManagerModules.stylix
+            inputs.stylix.homeModules.stylix
           ];
         };
       };
