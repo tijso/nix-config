@@ -39,7 +39,7 @@ in
           ];
 
           "custom/launcher" = {
-            format = " ";
+            format = " ";
             on-click = "${pkgs.fuzzel}/bin/fuzzel";
             tooltip = false;
           };
@@ -83,6 +83,7 @@ in
               headset = "";
             };
             on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+            on-click-right = "swaync-client -t -sw";
             scroll-step = 5;
             tooltip = true;
           };
@@ -249,7 +250,7 @@ in
           border-radius: 16px;
         }
 
-        #pulseaudio, #network, #battery {
+        #pulseaudio, #network, #battery, #custom-notification {
           font-weight: bold;
           background: #${config.lib.stylix.colors.base0F};
           color: #${config.lib.stylix.colors.base00};
@@ -260,7 +261,7 @@ in
           transition: ${betterTransition};
         }
 
-        #pulseaudio:hover, #network:hover, #battery:hover {
+        #pulseaudio:hover, #network:hover, #battery:hover, #custom-notification:hover {
           background: alpha(#${config.lib.stylix.colors.base0F}, 0.8);
           transition: ${betterTransition};
         }
@@ -280,22 +281,6 @@ in
           to {
             background: alpha(#${config.lib.stylix.colors.base08}, 0.5);
           }
-        }
-
-        #custom-notification {
-          font-weight: bold;
-          background: #${config.lib.stylix.colors.base0F};
-          color: #${config.lib.stylix.colors.base00};
-          margin: 4px 0px;
-          margin-right: 7px;
-          border-radius: 10px 24px 10px 24px;
-          padding: 0px 16px;
-          transition: ${betterTransition};
-        }
-
-        #custom-notification:hover {
-          background: alpha(#${config.lib.stylix.colors.base0F}, 0.8);
-          transition: ${betterTransition};
         }
 
         #custom-power {
