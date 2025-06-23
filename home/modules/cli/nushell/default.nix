@@ -56,7 +56,6 @@ with lib;
         def personal [] { cd ~/projects/personal }
         def github [] { cd ~/projects/personal/github }
         def gitlab [] { cd ~/projects/personal/gitlab }
-        def mkdir [path: string] { mkdir -p $path }
 
         ${config.myHome.cli.nushell.extraConfig}
       '';
