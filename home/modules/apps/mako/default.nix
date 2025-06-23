@@ -15,7 +15,7 @@ with lib;
         border-color = "#${config.lib.stylix.colors.base0D}";
         border-radius = 12;
         border-size = 2;
-        font = "JetBrains Mono 14";
+        font = mkForce "JetBrains Mono 14";
         padding = "12";
         margin = "12";
         width = 350;
