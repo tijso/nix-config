@@ -29,16 +29,25 @@ with lib;
       wlr-randr
     ];
 
+    # services.greetd = {
+    #   enable = true;
+    #   settings = {
+    #     default_session = {
+    #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd ${pkgs.niri-unstable}/bin/niri-session";
+    #       user = "greeter";
+    #     };
+    #   };
+    # };
+
     services.greetd = {
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd ${pkgs.niri-unstable}/bin/niri-session";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-user-session --asterisks --sessions --power-shutdown 'shutdown -h now' --power-reboot 'reboot'";
           user = "greeter";
         };
       };
     };
-
     # services.displayManager.sddm = {
     #   enable = true;
     #   wayland.enable = true;
