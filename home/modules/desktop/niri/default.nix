@@ -101,14 +101,14 @@ with lib;
           focus-ring = {
             enable = true;
             width = 2;
-            active.color = config.config.lib.stylix.colors.base0D;
-            inactive.color = config.config.lib.stylix.colors.base02;
+            active.color = config.lib.stylix.colors.base0D;
+            inactive.color = config.lib.stylix.colors.base02;
           };
           border = {
             enable = true;
             width = 2;
-            active.color = config.config.lib.stylix.colors.base0D;
-            inactive.color = config.config.lib.stylix.colors.base02;
+            active.color = config.lib.stylix.colors.base0D;
+            inactive.color = config.lib.stylix.colors.base02;
           };
         };
 
