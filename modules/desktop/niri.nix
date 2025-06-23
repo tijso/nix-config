@@ -39,32 +39,23 @@ with lib;
     #   };
     # };
 
-    services.greetd = {
+    services.displayManager.sddm = {
       enable = true;
+      wayland.enable = true;
+      enableHidpi = true;
+      autoNumlock = true;
+      # theme = "sugar-dark";
       settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-user-session --asterisks --sessions --power-shutdown 'shutdown -h now' --power-reboot 'reboot'";
-          user = "greeter";
+        Theme = {
+          # Current = "sugar-dark";
+          # Background = "../stylix/Wallpapers/Tunnel.png";
+          ScreenWidth = "1920";
+          ScreenHeight = "1080";
+          ScaleImageCropped = "true";
+          DimBackgroundImage = "0.0";
         };
       };
     };
-    # services.displayManager.sddm = {
-    #   enable = true;
-    #   wayland.enable = true;
-    #   enableHidpi = true;
-    #   autoNumlock = true;
-    #   theme = "sugar-dark";
-    #   settings = {
-    #     Theme = {
-    #       Current = "sugar-dark";
-    #       Background = "../stylix/Wallpapers/Tunnel.png";
-    #       # ScreenWidth = "1920";
-    #       # ScreenHeight = "1080";
-    #       # ScaleImageCropped = "true";
-    #       # DimBackgroundImage = "0.0";
-    #     };
-    #   };
-    # };
 
     services.displayManager.sessionPackages = [ pkgs.niri-unstable ];
 
