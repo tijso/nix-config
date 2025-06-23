@@ -43,7 +43,6 @@
   myHome = {
     apps = {
       fuzzel.enable = true;
-      # mako.enable = true;
       mpv.enable = false;
       tmux.enable = true;
     };
@@ -65,9 +64,9 @@
       gnome.enable = false;
       hyprland.enable = false;
       niri.enable = true;
+      swaync.enable = true;
       waybar.enable = true;
       wlogout.enable = true;
-      swaync.enable = true;
     };
 
     development = {

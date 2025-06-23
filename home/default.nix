@@ -1,6 +1,5 @@
 {
   imports = [
-    # ./modules/apps/mako
     ./modules/apps/mpv
     ./modules/apps/tmux
     ./modules/apps/fuzzel
