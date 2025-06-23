@@ -6,6 +6,9 @@
 }:
 with lib;
 
+let
+  betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
+in
 {
   options.myHome.desktop.waybar.enable = mkEnableOption "Enable Waybar";
   config = mkIf config.myHome.desktop.waybar.enable {
@@ -15,11 +18,11 @@ with lib;
         mainBar = {
           layer = "top";
           position = "top";
-          height = 35;
-          spacing = 8;
-          margin-top = 8;
-          margin-left = 12;
-          margin-right = 12;
+          height = 40;
+          spacing = 0;
+          margin-top = 4;
+          margin-left = 8;
+          margin-right = 8;
 
           modules-left = [
             "custom/launcher"
@@ -56,13 +59,14 @@ with lib;
               "(.*) - Brave" = " $1";
               "(.*) - Visual Studio Code" = "󰨞 $1";
               "(.*) - Ghostty" = " $1";
+              "" = " 🙈 No Windows? ";
             };
           };
 
           clock = {
             format = "{:%H:%M}";
             format-alt = "{:%A, %B %d, %Y (%R)}";
-            tooltip-format = "<tt><small>{calendar}</small></tt>";
+            tooltip-format = "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>";
           };
 
           pulseaudio = {
@@ -74,9 +78,12 @@ with lib;
                 "󰖀"
                 "󰕾"
               ];
+              headphone = "";
+              headset = "";
             };
             on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
             scroll-step = 5;
+            tooltip = true;
           };
 
           network = {
@@ -84,6 +91,13 @@ with lib;
             format-ethernet = "󰈀 Connected";
             format-disconnected = "󰤭 Disconnected";
             tooltip-format = "{ifname}: {ipaddr}";
+            format-icons = [
+              "󰤯"
+              "󰤟"
+              "󰤢"
+              "󰤥"
+              "󰤨"
+            ];
           };
 
           battery = {
@@ -101,10 +115,12 @@ with lib;
               "󰁹"
             ];
             format-charging = "󰂄 {capacity}%";
+            format-plugged = "󱘖 {capacity}%";
             states = {
               warning = 30;
               critical = 15;
             };
+            tooltip = true;
           };
 
           "custom/power" = {
@@ -117,72 +133,149 @@ with lib;
 
       style = ''
         * {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 13px;
+          font-family: "JetBrains Mono Nerd Font", "JetBrains Mono", monospace;
+          font-size: 14px;
           border: none;
           border-radius: 0;
           min-height: 0;
         }
 
         window#waybar {
-          background: alpha(#${config.lib.stylix.colors.base00}, 0.9);
-          border: 2px solid #${config.lib.stylix.colors.base0D};
+          background: rgba(0, 0, 0, 0);
+        }
+
+        tooltip {
+          background: #${config.lib.stylix.colors.base00};
+          border: 1px solid #${config.lib.stylix.colors.base08};
           border-radius: 12px;
           color: #${config.lib.stylix.colors.base05};
         }
 
+        tooltip label {
+          color: #${config.lib.stylix.colors.base05};
+        }
+
+        #workspaces {
+          color: #${config.lib.stylix.colors.base00};
+          background: #${config.lib.stylix.colors.base01};
+          margin: 4px 4px;
+          padding: 5px 5px;
+          border-radius: 16px;
+        }
+
         #workspaces button {
-          padding: 0 8px;
-          background: transparent;
-          color: #${config.lib.stylix.colors.base04};
-          border-radius: 8px;
-          margin: 2px;
+          font-weight: bold;
+          padding: 0px 8px;
+          margin: 0px 3px;
+          border-radius: 16px;
+          color: #${config.lib.stylix.colors.base00};
+          background: linear-gradient(45deg, #${config.lib.stylix.colors.base08}, #${config.lib.stylix.colors.base0D});
+          opacity: 0.5;
+          transition: ${betterTransition};
+          min-width: 30px;
         }
 
         #workspaces button.active {
-          background: #${config.lib.stylix.colors.base0D};
+          font-weight: bold;
+          padding: 0px 8px;
+          margin: 0px 3px;
+          border-radius: 16px;
           color: #${config.lib.stylix.colors.base00};
+          background: linear-gradient(45deg, #${config.lib.stylix.colors.base08}, #${config.lib.stylix.colors.base0D});
+          transition: ${betterTransition};
+          opacity: 1.0;
+          min-width: 40px;
         }
 
         #workspaces button:hover {
-          background: alpha(#${config.lib.stylix.colors.base0D}, 0.3);
-          color: #${config.lib.stylix.colors.base05};
+          font-weight: bold;
+          border-radius: 16px;
+          color: #${config.lib.stylix.colors.base00};
+          background: linear-gradient(45deg, #${config.lib.stylix.colors.base08}, #${config.lib.stylix.colors.base0D});
+          opacity: 0.8;
+          transition: ${betterTransition};
         }
 
         #custom-launcher {
-          padding: 0 12px;
-          color: #${config.lib.stylix.colors.base0D};
-          font-size: 16px;
+          color: #${config.lib.stylix.colors.base0B};
+          background: #${config.lib.stylix.colors.base02};
+          font-size: 20px;
+          font-weight: bold;
+          margin: 4px 0px;
+          margin-left: 0px;
+          padding: 0px 20px 0px 15px;
+          border-radius: 0px 0px 24px 0px;
         }
 
         #window {
-          color: #${config.lib.stylix.colors.base05};
           font-weight: bold;
+          margin: 4px 0px;
+          margin-left: 7px;
+          padding: 0px 18px;
+          background: #${config.lib.stylix.colors.base04};
+          color: #${config.lib.stylix.colors.base00};
+          border-radius: 24px 10px 24px 10px;
         }
 
         #clock {
-          padding: 0 12px;
-          color: #${config.lib.stylix.colors.base0A};
           font-weight: bold;
+          font-size: 15px;
+          color: #${config.lib.stylix.colors.base00};
+          background: linear-gradient(90deg, #${config.lib.stylix.colors.base0E}, #${config.lib.stylix.colors.base0C});
+          margin: 4px 0px;
+          padding: 0px 20px;
+          border-radius: 16px;
         }
 
         #pulseaudio, #network, #battery {
-          padding: 0 8px;
-          color: #${config.lib.stylix.colors.base05};
+          font-weight: bold;
+          background: #${config.lib.stylix.colors.base0F};
+          color: #${config.lib.stylix.colors.base00};
+          margin: 4px 0px;
+          margin-right: 7px;
+          border-radius: 10px 24px 10px 24px;
+          padding: 0px 16px;
+          transition: ${betterTransition};
+        }
+
+        #pulseaudio:hover, #network:hover, #battery:hover {
+          background: alpha(#${config.lib.stylix.colors.base0F}, 0.8);
+          transition: ${betterTransition};
         }
 
         #battery.warning {
-          color: #${config.lib.stylix.colors.base0A};
+          background: #${config.lib.stylix.colors.base0A};
+          color: #${config.lib.stylix.colors.base00};
         }
 
         #battery.critical {
-          color: #${config.lib.stylix.colors.base08};
+          background: #${config.lib.stylix.colors.base08};
+          color: #${config.lib.stylix.colors.base07};
+          animation: blink 0.5s linear infinite alternate;
+        }
+
+        @keyframes blink {
+          to {
+            background: alpha(#${config.lib.stylix.colors.base08}, 0.5);
+          }
         }
 
         #custom-power {
-          padding: 0 12px;
           color: #${config.lib.stylix.colors.base08};
-          font-size: 16px;
+          background: #${config.lib.stylix.colors.base02};
+          font-size: 18px;
+          font-weight: bold;
+          margin: 4px 0px;
+          margin-right: 0px;
+          padding: 0px 15px 0px 20px;
+          border-radius: 0px 0px 0px 24px;
+          transition: ${betterTransition};
+        }
+
+        #custom-power:hover {
+          background: alpha(#${config.lib.stylix.colors.base08}, 0.2);
+          color: #${config.lib.stylix.colors.base08};
+          transition: ${betterTransition};
         }
       '';
     };
