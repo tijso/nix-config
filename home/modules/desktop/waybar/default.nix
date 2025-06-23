@@ -38,7 +38,7 @@ in
           ];
 
           "custom/launcher" = {
-            format = " ";
+            format = "";
             on-click = "${pkgs.fuzzel}/bin/fuzzel";
             tooltip = false;
           };
@@ -197,7 +197,6 @@ in
         }
 
         #custom-launcher {
-          icons: "";
           color: #${config.lib.stylix.colors.base0B};
           background: #${config.lib.stylix.colors.base02};
           font-size: 20px;
