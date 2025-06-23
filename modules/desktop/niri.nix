@@ -44,11 +44,11 @@ with lib;
       wayland.enable = true;
       enableHidpi = true;
       autoNumlock = true;
-      # theme = "sugar-dark";
+      theme = "sugar-dark";
       settings = {
         Theme = {
-          # Current = "sugar-dark";
-          # Background = "../stylix/Wallpapers/Tunnel.png";
+          Current = "sugar-dark";
+          Background = "../stylix/Wallpapers/Tunnel.png";
           ScreenWidth = "1920";
           ScreenHeight = "1080";
           ScaleImageCropped = "true";

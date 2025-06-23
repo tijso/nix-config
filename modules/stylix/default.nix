@@ -20,7 +20,6 @@ with lib;
         grub.enable = true;
         plymouth.enable = true;
         # greetd.enable = true;
-        sddm.enable = true;
         console.enable = true;
       };
     };
