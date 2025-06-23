@@ -43,7 +43,7 @@
 
   services.unclutter = {
     enable = true;
-    timeout = 1; # Hide cursor after 1 second of inactivity
+    timeout = 1;
     extraOptions = [
       "exclude-root"
       "ignore-scrolling"
