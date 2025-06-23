@@ -1,6 +1,6 @@
 {
   imports = [
-    ./modules/apps/mako
+    # ./modules/apps/mako
     ./modules/apps/mpv
     ./modules/apps/tmux
     ./modules/apps/fuzzel
@@ -23,6 +23,7 @@
     ./modules/desktop/hyprland
     ./modules/desktop/niri
     ./modules/desktop/waybar
+    ./modules/desktop/swaync
 
     ./modules/development/direnv
     ./modules/development/git

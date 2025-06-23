@@ -34,6 +34,7 @@ in
             "pulseaudio"
             "network"
             "battery"
+            "custom/notification"
             "custom/power"
           ];
 
@@ -121,6 +122,27 @@ in
               critical = 15;
             };
             tooltip = true;
+          };
+
+          "custom/notification" = {
+            tooltip = false;
+            format = "{icon}";
+            format-icons = {
+              notification = "<span foreground='red'><sup></sup></span>";
+              none = "";
+              dnd-notification = "<span foreground='red'><sup></sup></span>";
+              dnd-none = "";
+              inhibited-notification = "<span foreground='red'><sup></sup></span>";
+              inhibited-none = "";
+              dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
+              dnd-inhibited-none = "";
+            };
+            return-type = "json";
+            exec-if = "which swaync-client";
+            exec = "swaync-client -swb";
+            on-click = "swaync-client -t -sw";
+            on-click-right = "swaync-client -d -sw";
+            escape = true;
           };
 
           "custom/power" = {
@@ -258,6 +280,22 @@ in
           to {
             background: alpha(#${config.lib.stylix.colors.base08}, 0.5);
           }
+        }
+
+        #custom-notification {
+          font-weight: bold;
+          background: #${config.lib.stylix.colors.base0F};
+          color: #${config.lib.stylix.colors.base00};
+          margin: 4px 0px;
+          margin-right: 7px;
+          border-radius: 10px 24px 10px 24px;
+          padding: 0px 16px;
+          transition: ${betterTransition};
+        }
+
+        #custom-notification:hover {
+          background: alpha(#${config.lib.stylix.colors.base0F}, 0.8);
+          transition: ${betterTransition};
         }
 
         #custom-power {
