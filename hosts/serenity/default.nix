@@ -1,5 +1,4 @@
 {
-  pkgs,
   ...
 }:
 {
@@ -40,6 +39,15 @@
     development.enable = true;
     stylix.enable = true;
     thunar.enable = true;
+  };
+
+  services.unclutter = {
+    enable = true;
+    timeout = 1; # Hide cursor after 1 second of inactivity
+    extraOptions = [
+      "exclude-root"
+      "ignore-scrolling"
+    ];
   };
 
   system.stateVersion = "23.11";

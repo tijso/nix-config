@@ -35,13 +35,4 @@ with lib;
     # programs.ssh.startAgent = false;
     programs.dconf.enable = true;
   };
-
-  services.unclutter = {
-    enable = true;
-    timeout = 1; # Hide cursor after 1 second of inactivity
-    extraOptions = [
-      "exclude-root"
-      "ignore-scrolling"
-    ];
-  };
 }
