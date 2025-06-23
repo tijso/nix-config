@@ -52,7 +52,7 @@ with lib;
           package = pkgs.noto-fonts;
         };
         monospace = {
-          package = pkgs.maple-mono-NF;
+          package = pkgs.maple-mono.NF;
           name = "Maple Mono NF";
         };
         emoji = {
