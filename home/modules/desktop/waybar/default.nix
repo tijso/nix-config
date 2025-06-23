@@ -197,7 +197,7 @@ in
         }
 
         #custom-launcher {
-          color: #${config.lib.stylix.colors.base0B};
+          color: #${config.lib.stylix.colors.base08};
           background: #${config.lib.stylix.colors.base02};
           font-size: 20px;
           font-weight: bold;
