@@ -66,6 +66,7 @@
       hyprland.enable = false;
       niri.enable = true;
       waybar.enable = true;
+      wlogout.enable = true;
       swaync.enable = true;
     };
 

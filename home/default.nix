@@ -24,6 +24,7 @@
     ./modules/desktop/niri
     ./modules/desktop/waybar
     ./modules/desktop/swaync
+    ./modules/desktop/wlogout
 
     ./modules/development/direnv
     ./modules/development/git
