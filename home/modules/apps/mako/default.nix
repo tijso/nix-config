@@ -10,7 +10,7 @@ with lib;
     services.mako = {
       enable = true;
       settings = {
-        background-color = "#${config.lib.stylix.colors.base00}";
+        background-color = mkForce "#${config.lib.stylix.colors.base00}";
         text-color = "#${config.lib.stylix.colors.base05}";
         border-color = "#${config.lib.stylix.colors.base0D}";
         border-radius = 12;
