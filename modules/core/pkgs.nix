@@ -54,6 +54,7 @@ with lib;
         iosevka
         material-icons
         cascadia-code
+        nerd-fonts-jetbrains-mono
         nerd-fonts.hack
         nerd-fonts.symbols-only
       ];
