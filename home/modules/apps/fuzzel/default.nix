@@ -23,17 +23,6 @@ with lib;
           horizontal-pad = 25;
           inner-pad = 5;
         };
-
-        colors = {
-          background = "${config.lib.stylix.colors.base00}dd";
-          text = "${config.lib.stylix.colors.base05}ff";
-          match = "${config.lib.stylix.colors.base0D}ff";
-          selection = "${config.lib.stylix.colors.base02}ff";
-          selection-text = "${config.lib.stylix.colors.base05}ff";
-          selection-match = "${config.lib.stylix.colors.base0D}ff";
-          border = "${config.lib.stylix.colors.base0D}ff";
-        };
-
         border = {
           radius = 15;
           width = 3;
