@@ -54,10 +54,11 @@
       fastfetch.enable = true;
       fish.enable = true;
       lazygit.enable = true;
+      nushell.enable = true;
+      ripgrep.enable = true;
       ssh.enable = true;
       starship.enable = true;
       zsh.enable = true;
-      ripgrep.enable = true;
     };
 
     desktop = {
