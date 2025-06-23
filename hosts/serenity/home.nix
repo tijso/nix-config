@@ -41,7 +41,7 @@
     gitlab = "cd ~/projects/personal/gitlab";
 
     mkdir = "mkdir -p";
-    cat = "bat --paging=never";
+    cat = "bat";
     man = "tldr";
     grep = "rg";
     find = "fd";
