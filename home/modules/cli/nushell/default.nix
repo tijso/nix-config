@@ -51,11 +51,11 @@ with lib;
           # Use Nushell's built-in file reading
           if ($info.size < 1MB) {
             if ($file | str ends-with .json) {
-              open $file | to json --pretty
+              open $file | to json --indent 2
             } else if ($file | str ends-with .csv) {
               open $file | first 10
-            } else if ($file | str ends-with .yaml or $file | str ends-with .yml) {
-              open $file | to yaml
+            } else if ($file | str ends-with .yaml) or ($file | str ends-with .yml) {
+              open $file
             } else {
               open $file | first 20 | each { |line| print $line }
             }
@@ -66,11 +66,7 @@ with lib;
 
         # Search - Nushell way with structured data
         def search [term: string] {
-          nix search nixpkgs $term 
-          | lines 
-          | where ($it | str contains $term)
-          | parse "{name} {description}"
-          | where name != null
+          ^nix search nixpkgs $term | lines | where ($it | str contains $term)
         }
 
         # Process management - Nushell way
@@ -185,12 +181,17 @@ with lib;
           glob $"($path)/**/*" 
           | where ($it | path type) == file
           | each { |file|
-            let matches = (open $file | lines | enumerate | where item =~ $pattern)
-            if ($matches | length) > 0 {
-              { file: $file, matches: ($matches | length) }
+            try {
+              let content = (open $file | lines)
+              let matches = ($content | where ($it | str contains $pattern) | length)
+              if $matches > 0 {
+                { file: $file, matches: $matches }
+              }
+            } catch {
+              null
             }
           }
-          | where matches != null
+          | where ($it != null)
           | sort-by matches --reverse
         }
 
