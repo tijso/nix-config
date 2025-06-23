@@ -83,6 +83,46 @@ with lib;
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
         zstyle ':completion:*' menu no
       '';
+
+      shellAliases = {
+        home = "cd ~/nix-config/home";
+        config = "cd ~/nix-config";
+        update = "cd ~/nix-config && nix flake update";
+        rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#serenity && notify-send \"Done\"";
+        rebuild-home = "home-manager switch --flake ~/nix-config#tijso@serenity";
+        news = "home-manager news --flake ~/nix-config#tijso@serenity";
+        clean = "sudo nix-collect-garbage -d && nix store optimise";
+        search = "nix search nixpkgs";
+
+        personal = "cd ~/projects/personal";
+        github = "cd ~/projects/personal/github";
+        gitlab = "cd ~/projects/personal/gitlab";
+
+        mkdir = "mkdir -p";
+        cat = "bat --paging=never";
+        man = "tldr";
+        grep = "rg";
+        find = "fd";
+
+        ".." = "cd ..";
+        "..." = "cd ../..";
+
+        lg = "lazygit";
+        img = "wezterm imgcat";
+
+        ls = "eza -l";
+        la = "eza -a";
+        ll = "eza -la";
+        lt = "eza --tree";
+
+        vi = "nvim";
+        vim = "nvim";
+
+        tl = "trash-list";
+        te = "trash-empty";
+        tr = "trash-restore";
+        tm = "trash-rm";
+      };
     };
   };
 }

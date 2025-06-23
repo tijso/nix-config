@@ -20,45 +20,6 @@
     };
   };
 
-  home.shellAliases = {
-    config = "cd ~/nix-config";
-    rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#serenity";
-    rebuild-home = "home-manager switch --flake ~/nix-config#tijso@serenity";
-    update = "cd ~/nix-config && nix flake update";
-    clean = "sudo nix-collect-garbage -d && nix store optimise";
-    search = "nix search nixpkgs";
-
-    ls = "eza -l";
-    la = "eza -a";
-    ll = "eza -la";
-    lt = "eza --tree";
-
-    vi = "nvim";
-    vim = "nvim";
-
-    personal = "cd ~/projects/personal";
-    github = "cd ~/projects/personal/github";
-    gitlab = "cd ~/projects/personal/gitlab";
-
-    mkdir = "mkdir -p";
-    cat = "bat";
-    man = "tldr";
-    grep = "rg";
-    find = "fd";
-
-    ".." = "cd ..";
-    "..." = "cd ../..";
-
-    lg = "lazygit";
-    img = "wezterm imgcat";
-
-    # # Cli Trash Commands
-    # tl = "trash-list";
-    # te = "trash-empty";
-    # tr = "trash-restore";
-    # tm = "trash-rm";
-  };
-
   home.packages = with pkgs; [
     inputs.nixvim.packages.x86_64-linux.default
     inputs.ghostty.packages.${pkgs.system}.default
