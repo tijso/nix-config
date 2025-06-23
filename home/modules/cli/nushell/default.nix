@@ -36,7 +36,7 @@ with lib;
         personal = "cd ~/projects/personal";
         github = "cd ~/projects/personal/github";
         gitlab = "cd ~/projects/personal/gitlab";
-        mkdir = "mkdir -p";
+        mkdir = "mkdir";
         cat = "bat --paging=never";
         man = "tldr";
         grep = "rg";
