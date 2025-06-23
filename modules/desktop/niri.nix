@@ -48,7 +48,7 @@ with lib;
       settings = {
         Theme = {
           Current = "sugar-dark";
-          Background = "../stylix/Wallpapers/Tunnel.png";
+          Background = "../stylix/Berserk.png";
           ScreenWidth = "1920";
           ScreenHeight = "1080";
           ScaleImageCropped = "true";
