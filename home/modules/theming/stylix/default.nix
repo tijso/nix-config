@@ -29,9 +29,10 @@ with lib;
         fuzzel.enable = true;
         waybar.enable = true;
 
-        ghostty.enable = false;
-        neovim.enable = false;
         fish.enable = false;
+        ghostty.enable = false;
+        helix.enable = false;
+        neovim.enable = false;
         starship.enable = false;
         wezterm.enable = false;
       };
