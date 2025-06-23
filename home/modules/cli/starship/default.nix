@@ -11,6 +11,7 @@ with lib;
       enable = true;
       enableZshIntegration = true;
       enableFishIntegration = true;
+      enableNushellIntegration = true;
       settings = {
         format = lib.concatStrings [
           # "$os"
