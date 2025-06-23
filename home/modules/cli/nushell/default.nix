@@ -110,10 +110,10 @@ with lib;
 
         # Git operations - leveraging Nushell's structured data
         def gst [] {
-          git status --porcelain 
+          ^git status --porcelain 
           | lines 
           | parse "{status} {file}"
-          | update status { |row|
+          | upsert status { |row|
             match $row.status {
               " M" => "Modified",
               "??" => "Untracked", 
@@ -125,16 +125,16 @@ with lib;
         }
 
         def glog [count: int = 10] {
-          git log --oneline -n $count
+          ^git log --oneline -n $count
           | lines
           | parse "{hash} {message}"
-          | update hash { |row| $row.hash | str substring 0..7 }
+          | upsert hash { |row| $row.hash | str substring 0..7 }
         }
 
         # Nix operations with better feedback
         def rebuild [] {
           print "🏗️ Starting system rebuild..."
-          let result = (do { sudo nixos-rebuild switch --flake ~/nix-config#serenity } | complete)
+          let result = (do { ^sudo nixos-rebuild switch --flake ~/nix-config#serenity } | complete)
           if $result.exit_code == 0 {
             print "✅ System rebuild successful!"
           } else {
@@ -145,7 +145,7 @@ with lib;
 
         def rebuild-home [] {
           print "🏠 Rebuilding home configuration..."
-          let result = (do { home-manager switch --flake ~/nix-config#tijso@serenity } | complete)
+          let result = (do { ^home-manager switch --flake ~/nix-config#tijso@serenity } | complete)
           if $result.exit_code == 0 {
             print "✅ Home rebuild successful!"
           } else {
@@ -157,22 +157,22 @@ with lib;
         def update [] {
           cd ~/nix-config
           print "📦 Updating flake inputs..."
-          nix flake update
+          ^nix flake update
           
           # Show what changed using Nushell
-          git diff --name-only | lines | each { |file|
+          ^git diff --name-only | lines | each { |file|
             print $"📄 Updated: ($file)"
           }
         }
 
         def clean [] {
           print "🧹 Analyzing store before cleanup..."
-          let before = (du -sh /nix/store | parse "{size} {path}" | get size | first)
+          let before = (^du -sh /nix/store | parse "{size} {path}" | get size | first)
           
-          sudo nix-collect-garbage -d
-          nix store optimise
+          ^sudo nix-collect-garbage -d
+          ^nix store optimise
           
-          let after = (du -sh /nix/store | parse "{size} {path}" | get size | first)
+          let after = (^du -sh /nix/store | parse "{size} {path}" | get size | first)
           print $"✨ Cleanup complete! Went from ($before) to ($after)"
         }
 
