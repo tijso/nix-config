@@ -38,7 +38,7 @@ in
           ];
 
           "custom/launcher" = {
-            format = "";
+            format = " ";
             on-click = "${pkgs.fuzzel}/bin/fuzzel";
             tooltip = false;
           };
