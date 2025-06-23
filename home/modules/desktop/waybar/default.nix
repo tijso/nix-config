@@ -197,7 +197,7 @@ in
         }
 
         #custom-launcher {
-          format: "";
+          format-icons: "";
           color: #${config.lib.stylix.colors.base0B};
           background: #${config.lib.stylix.colors.base02};
           font-size: 20px;
