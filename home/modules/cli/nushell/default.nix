@@ -20,13 +20,12 @@ with lib;
   config = mkIf config.myHome.cli.nushell.enable {
     programs.nushell = {
       enable = true;
-
       shellAliases = {
         config = "cd ~/nix-config";
         rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#serenity";
         rebuild-home = "home-manager switch --flake ~/nix-config#tijso@serenity";
-        update = "cd ~/nix-config && nix flake update";
-        clean = "sudo nix-collect-garbage -d && nix store optimise";
+        update = "cd ~/nix-config nix flake update";
+        clean = "sudo nix-collect-garbage -d nix store optimise";
         search = "nix search nixpkgs";
         ls = "eza -l";
         la = "eza -a";
@@ -47,13 +46,14 @@ with lib;
       } // config.myHome.cli.nushell.extraAliases;
 
       configFile.text = ''
-        # Basic config
         $env.config = ($env.config | upsert show_banner false)
         $env.config = ($env.config | upsert edit_mode vi)
 
-        # Navigation functions
         def ".." [] { cd .. }
         def "..." [] { cd ../.. }
+
+        def update [] { cd ~/nix-config; nix flake update }
+        def clean [] { sudo nix-collect-garbage -d; nix store optimise }
 
         ${config.myHome.cli.nushell.extraConfig}
       '';
