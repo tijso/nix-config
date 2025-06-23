@@ -86,7 +86,7 @@ with lib;
         };
 
         layout = {
-          gaps = 14;
+          gaps = 15;
           always-center-single-column = true;
           preset-column-widths = [
             { proportion = 1.0 / 3.0; }
@@ -119,10 +119,10 @@ with lib;
         hotkey-overlay.skip-at-startup = true;
         screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
 
-        cursor = {
-          theme = "Adwaita";
-          size = 24;
-        };
+        # cursor = {
+        #   theme = "Adwaita";
+        #   size = 24;
+        # };
       };
     };
 
