@@ -118,11 +118,6 @@ with lib;
         prefer-no-csd = true;
         hotkey-overlay.skip-at-startup = true;
         screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
-
-        # cursor = {
-        #   theme = "Adwaita";
-        #   size = 24;
-        # };
       };
     };
 
