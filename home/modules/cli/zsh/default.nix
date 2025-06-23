@@ -94,6 +94,7 @@ with lib;
         clean = "sudo nix-collect-garbage -d && nix store optimise";
         search = "nix search nixpkgs";
 
+        projects = "cd ~/projects";
         personal = "cd ~/projects/personal";
         github = "cd ~/projects/personal/github";
         gitlab = "cd ~/projects/personal/gitlab";
