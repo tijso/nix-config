@@ -11,7 +11,7 @@ with lib;
       enable = true;
       settings = {
         main = {
-          font = "JetBrains Mono:size=14";
+          font = mkForce "JetBrains Mono:size=14";
           line-height = 25;
           fields = "name,generic,comment,categories,filename,keywords";
           terminal = "ghostty";
