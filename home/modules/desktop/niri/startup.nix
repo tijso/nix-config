@@ -37,7 +37,7 @@
       Type = "oneshot";
       # Add a small delay to ensure swww daemon is fully ready
       ExecStartPre = "${pkgs.coreutils}/bin/sleep 1";
-      ExecStart = "${pkgs.swww}/bin/swww img ${../../theming/Wallpapers/serenity.jpg} --transition-type wipe --transition-duration 2";
+      ExecStart = "${pkgs.swww}/bin/swww img ${./serenity.jpg} --transition-type wipe --transition-duration 2";
       # Add restart behavior
       RemainAfterExit = true;
     };
