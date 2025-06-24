@@ -4,15 +4,14 @@
   config,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myHome.theming.stylix.enable = mkEnableOption "Enable Stylix";
   config = mkIf config.myHome.theming.stylix.enable {
     stylix = {
       enable = true;
       autoEnable = true;
       polarity = "dark";
-      image = ./wallpaper.png;
+      image = mkForce ./wallpaper.png;
       base16Scheme = ./themes/rose-pine.yaml;
 
       opacity = {
