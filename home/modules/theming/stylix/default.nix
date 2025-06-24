@@ -26,7 +26,6 @@ with lib; {
         qt.enable = true;
 
         fuzzel.enable = true;
-        niri.enable = true;
         waybar.enable = true;
 
         fish.enable = false;
