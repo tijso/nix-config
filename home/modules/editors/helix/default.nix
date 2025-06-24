@@ -3,9 +3,7 @@
   lib,
   ...
 }:
-with lib;
-
-{
+with lib; {
   options.myHome.editors.helix.enable = mkEnableOption "Enable Helix";
   config = mkIf config.myHome.editors.helix.enable {
     programs.helix = {
@@ -80,10 +78,10 @@ with lib;
           name = "nix";
           auto-format = true;
           language-server = {
-            command = "rnix-lsp";
+            command = "nil";
           };
           formatter = {
-            command = "nixfmt";
+            command = "alejandra";
           };
         }
 
