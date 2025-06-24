@@ -9,11 +9,7 @@
 
   myModules = {
     core = {
-      audio = {
-        enable = true;
-        pipewire.enable = true;
-        firmware.enable = true;
-      };
+      audio.enable = true;
       bluetooth.enable = true;
       boot = {
         enable = true;
