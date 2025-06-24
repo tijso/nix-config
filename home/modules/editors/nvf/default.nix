@@ -12,9 +12,9 @@ with lib; {
         theme = {
           enable = true;
           name = "rose-pine";
-          # name = "solarized-osaka";
-          variant = "main";
+          style = "main";
           dark_variant = "main";
+          # name = "solarized-osaka";
         };
         lsp.enable = true;
         vimAlias = true;
