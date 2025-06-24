@@ -12,6 +12,9 @@ with lib; {
         theme = {
           enable = true;
           name = "rosepine";
+          # name = "solarized-osaka";
+          variant = "main";
+          dark_variant = "maian";
         };
         lsp.enable = true;
         vimAlias = true;
@@ -19,6 +22,8 @@ with lib; {
         withNodeJs = true;
         lineNumberMode = "relNumber";
         transparent = true;
+        bold = true;
+        italic = true;
         enableLuaLoader = true;
         preventJunkFiles = true;
         options = {
