@@ -17,6 +17,7 @@
 
     ./modules/editors/helix
     ./modules/editors/nvim
+    ./modules/editors/nvf
 
     ./modules/desktop/gnome
     ./modules/desktop/hyprland

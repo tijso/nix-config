@@ -33,7 +33,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim.url = "github:tijso/nixvim";
+    # nixvim.url = "github:tijso/nixvim";
+    nvf.url = "github:notashelf/nvf";
     ghostty.url = "github:ghostty-org/ghostty";
   };
 
@@ -43,7 +44,7 @@
       nixpkgs,
       home-manager,
       systems,
-      nixvim,
+      # nixvim,
       ...
     }@inputs:
     let
@@ -91,6 +92,7 @@
             inputs.niri.homeModules.niri
             inputs.hyprland.homeManagerModules.default
             inputs.stylix.homeModules.stylix
+            inputs.nvf.homeManagerModules.default
           ];
         };
       };
