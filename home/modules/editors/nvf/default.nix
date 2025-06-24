@@ -15,6 +15,10 @@ with lib; {
           name = "rose-pine";
           style = "main";
           transparent = true;
+          extraConfig = {
+            disable_italics = false;
+            disable_bold = false;
+          };
         };
         lsp.enable = true;
         vimAlias = true;
