@@ -33,68 +33,63 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixvim.url = "github:tijso/nixvim";
     nvf.url = "github:notashelf/nvf";
     ghostty.url = "github:ghostty-org/ghostty";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      systems,
-      # nixvim,
-      ...
-    }@inputs:
-    let
-      inherit (self) outputs;
-      lib = nixpkgs.lib // home-manager.lib;
-      forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
-      pkgsFor = lib.genAttrs (import systems) (
-        system:
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    systems,
+    ...
+  } @ inputs: let
+    inherit (self) outputs;
+    lib = nixpkgs.lib // home-manager.lib;
+    forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
+    pkgsFor = lib.genAttrs (import systems) (
+      system:
         import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = builtins.attrValues (import ./overlays { inherit inputs; });
+          overlays = builtins.attrValues (import ./overlays {inherit inputs;});
         }
-      );
-    in
-    {
-      inherit lib;
-      overlays = import ./overlays { inherit inputs; };
-      packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
-      devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
-      formatter = forEachSystem (pkgs: pkgs.alejandra);
+    );
+  in {
+    inherit lib;
+    overlays = import ./overlays {inherit inputs;};
+    packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
+    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
+    formatter = forEachSystem (pkgs: pkgs.alejandra);
 
-      nixosConfigurations = {
-        serenity = lib.nixosSystem {
-          pkgs = pkgsFor.x86_64-linux;
-          specialArgs = {
-            inherit inputs outputs;
-          };
-          modules = [
-            ./hosts/serenity
-            inputs.nixos-cosmic.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-          ];
+    nixosConfigurations = {
+      serenity = lib.nixosSystem {
+        pkgs = pkgsFor.x86_64-linux;
+        specialArgs = {
+          inherit inputs outputs;
         };
-      };
-
-      homeConfigurations = {
-        "tijso@serenity" = lib.homeManagerConfiguration {
-          pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = {
-            inherit inputs outputs;
-          };
-          modules = [
-            ./hosts/serenity/home.nix
-            inputs.niri.homeModules.niri
-            inputs.hyprland.homeManagerModules.default
-            inputs.stylix.homeModules.stylix
-            inputs.nvf.homeManagerModules.default
-          ];
-        };
+        modules = [
+          ./hosts/serenity
+          inputs.nixos-cosmic.nixosModules.default
+          inputs.stylix.nixosModules.stylix
+        ];
       };
     };
+
+    homeConfigurations = {
+      "tijso@serenity" = lib.homeManagerConfiguration {
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs outputs;
+        };
+        modules = [
+          ./hosts/serenity/home.nix
+          inputs.niri.homeModules.niri
+          inputs.hyprland.homeManagerModules.default
+          inputs.stylix.homeModules.stylix
+          inputs.nvf.homeManagerModules.default
+        ];
+      };
+    };
+  };
 }
