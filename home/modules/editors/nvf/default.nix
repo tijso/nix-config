@@ -13,7 +13,6 @@ with lib; {
           enable = true;
           name = "rose-pine";
           style = "main";
-          dark_variant = "main";
           # name = "solarized-osaka";
         };
         lsp.enable = true;
