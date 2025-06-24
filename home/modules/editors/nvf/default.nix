@@ -11,13 +11,14 @@ with lib; {
       settings.vim = {
         theme = {
           enable = true;
-          name = "rose-pine";
+          name = "rosepine";
         };
         lsp.enable = true;
         vimAlias = true;
         viAlias = true;
         withNodeJs = true;
         lineNumberMode = "relNumber";
+        transparent = true;
         enableLuaLoader = true;
         preventJunkFiles = true;
         options = {
@@ -164,7 +165,7 @@ with lib; {
 
         statusline.lualine = {
           enable = true;
-          theme = "rose-pine";
+          theme = "rosepine";
         };
 
         autopairs.nvim-autopairs.enable = true;
