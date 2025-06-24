@@ -20,7 +20,6 @@ with lib; {
         viAlias = true;
         withNodeJs = true;
         lineNumberMode = "relNumber";
-        transparent = true;
         enableLuaLoader = true;
         preventJunkFiles = true;
         options = {
