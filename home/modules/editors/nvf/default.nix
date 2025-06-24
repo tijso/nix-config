@@ -16,7 +16,6 @@ with lib; {
           style = "main";
           transparent = true;
           italic = true;
-          bold = true;
         };
         lsp.enable = true;
         vimAlias = true;
