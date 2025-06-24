@@ -1,7 +1,4 @@
-{
-  ...
-}:
-{
+{...}: {
   imports = [
     # ./disks.nix
     ./hardware-configuration.nix
@@ -21,6 +18,7 @@
       security.enable = true;
       services.enable = true;
       _1password.enable = true;
+      fonts.enable = true;
       boot = {
         enable = true;
         plymouth = {
