@@ -6,7 +6,6 @@
 with lib;
 {
   options.myHome.editors.nvf.enable = mkEnableOption "Enable nvf";
-
   config = mkIf config.myHome.editors.nvf.enable {
     programs.nvf = {
       enable = true;
@@ -14,34 +13,28 @@ with lib;
         vim = {
           viAlias = true;
           vimAlias = true;
-
           theme = {
             enable = true;
             name = "catppuccin";
             style = "mocha";
           };
-
           lsp = {
             enable = true;
             formatOnSave = true;
           };
-
           treesitter = {
             enable = true;
             context.enable = true;
           };
-
           autocomplete = {
             enable = true;
             type = "nvim-cmp";
           };
-
           filetree = {
             nvimTree = {
               enable = true;
             };
           };
-
           languages = {
             nix.enable = true;
             rust = {
@@ -62,26 +55,22 @@ with lib;
             };
             html = {
               enable = true;
-              format.enable = true;
+              # Remove format.enable = true; as it's not supported
             };
           };
-
           git = {
             enable = true;
             gitsigns.enable = true;
           };
-
           statusline = {
             lualine = {
               enable = true;
               theme = "catppuccin";
             };
           };
-
           telescope = {
             enable = true;
           };
-
           maps = {
             normal = {
               "<leader>e" = {
