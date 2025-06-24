@@ -35,6 +35,7 @@ with lib;
         neovim.enable = false;
         starship.enable = false;
         wezterm.enable = false;
+        nvf.enable = false;
       };
 
       cursor = {
