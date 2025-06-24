@@ -11,10 +11,10 @@ with lib; {
       settings.vim = {
         theme = {
           enable = true;
-          name = "rosepine";
+          name = "rose-pine";
           # name = "solarized-osaka";
           variant = "main";
-          dark_variant = "maian";
+          dark_variant = "main";
         };
         lsp.enable = true;
         vimAlias = true;
@@ -170,7 +170,7 @@ with lib; {
 
         statusline.lualine = {
           enable = true;
-          theme = "rosepine";
+          theme = "auto";
         };
 
         autopairs.nvim-autopairs.enable = true;
