@@ -12,7 +12,7 @@ with lib;
       enable = true;
       autoEnable = true;
       polarity = "dark";
-      image = ./tunnel.png;
+      image = ./wallpaper.png.png;
       base16Scheme = ./themes/rose-pine.yaml;
 
       opacity = {
