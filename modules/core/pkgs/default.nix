@@ -4,9 +4,7 @@
   lib,
   ...
 }:
-with lib;
-{
-
+with lib; {
   options.myModules.core.pkgs.enable = mkEnableOption "Enable Packages";
 
   config = mkIf config.myModules.core.pkgs.enable {
@@ -41,23 +39,5 @@ with lib;
       xdg-utils
       zip
     ];
-
-    fonts = {
-      fontDir.enable = true;
-      packages = with pkgs; [
-        jetbrains-mono
-        noto-fonts
-        noto-fonts-emoji
-        maple-mono.NF
-        monaspace
-        fira-code
-        iosevka
-        material-icons
-        cascadia-code
-        nerd-fonts.jetbrains-mono
-        nerd-fonts.hack
-        nerd-fonts.symbols-only
-      ];
-    };
   };
 }

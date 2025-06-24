@@ -9,22 +9,26 @@
 
   myModules = {
     core = {
-      audio.enable = true;
+      audio = {
+        enable = true;
+        pipewire.enable = true;
+        firmware.enable = true;
+      };
       bluetooth.enable = true;
-      gpu.enable = true;
-      network.enable = true;
-      nix.enable = true;
-      pkgs.enable = true;
-      security.enable = true;
-      services.enable = true;
-      _1password.enable = true;
-      fonts.enable = true;
       boot = {
         enable = true;
         plymouth = {
           enable = true;
         };
       };
+      _1password.enable = true;
+      fonts.enable = true;
+      gpu.enable = true;
+      network.enable = true;
+      nix.enable = true;
+      pkgs.enable = true;
+      security.enable = true;
+      services.enable = true;
     };
 
     desktop = {
