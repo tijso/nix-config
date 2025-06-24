@@ -27,8 +27,7 @@ with lib;
             context.enable = true;
           };
           autocomplete = {
-            enable = true;
-            type = "nvim-cmp";
+            nvim-cmp.enable = true;
           };
           filetree = {
             nvimTree = {
