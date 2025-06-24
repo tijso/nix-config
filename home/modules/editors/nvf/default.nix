@@ -11,9 +11,12 @@ with lib; {
       settings.vim = {
         theme = {
           enable = true;
+          # name = "solarized-osaka";
           name = "rose-pine";
           style = "main";
-          # name = "solarized-osaka";
+          transparent = true;
+          italic = true;
+          bold = true;
         };
         lsp.enable = true;
         vimAlias = true;
@@ -139,6 +142,12 @@ with lib; {
           zig.enable = true;
           python.enable = true;
           markdown.enable = true;
+          go = {
+            enable = true;
+            lsp.enable = true;
+            format.type = "gofumpt";
+            dap.enable = true;
+          };
           ts = {
             enable = true;
             lsp.enable = true;
