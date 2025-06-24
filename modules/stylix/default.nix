@@ -21,7 +21,6 @@ with lib;
         # greetd.enable = true;
         grub.enable = true;
         plymouth.enable = true;
-        sddm.enable = false;
       };
     };
 
