@@ -15,10 +15,21 @@ with lib; {
           name = "rose-pine";
           style = "main";
           transparent = true;
-          extraConfig = {
-            disable_italics = false;
-            disable_bold = false;
-          };
+          # extraConfig = {
+          #   disable_italics = false;
+          #   disable_bold = false;
+          # };
+          extraConfigLua = ''
+            vim.g.rose_pine_disable_background = true  -- for transparency
+            vim.g.rose_pine_disable_float_background = true
+            vim.g.rose_pine_disable_italics = false  -- enable italics
+            vim.g.rose_pine_bold_verticals = true   -- enable bold
+            vim.g.rose_pine_dim_nc_background = false
+
+            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+            vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+          '';
         };
         lsp.enable = true;
         vimAlias = true;
