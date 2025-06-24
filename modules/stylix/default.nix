@@ -13,14 +13,15 @@ with lib;
       polarity = "dark";
 
       # System wallpaper and colors
-      image = ./Berserk.png;
+      # image = ./Berserk.png;
       base16Scheme = ./themes/rose-pine.yaml;
 
       targets = {
+        console.enable = true;
+        # greetd.enable = true;
         grub.enable = true;
         plymouth.enable = true;
-        # greetd.enable = true;
-        console.enable = true;
+        sddm.enable = false;
       };
     };
 
