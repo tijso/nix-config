@@ -22,8 +22,10 @@ with lib; {
         withNodeJs = true;
         lineNumberMode = "relNumber";
         transparent = true;
-        bold = true;
-        italic = true;
+        style = {
+          bold = true;
+          italic = true;
+        };
         enableLuaLoader = true;
         preventJunkFiles = true;
         options = {
