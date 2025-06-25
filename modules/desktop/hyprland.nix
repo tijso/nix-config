@@ -37,6 +37,8 @@ with lib; {
     security.pam.services.sddm.enableGnomeKeyring = true;
 
     programs.ssh.startAgent = true;
+    # services.gnome.keyring.enable = lib.mkForce false;
+    # services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
     services.gnome = {
       keyring.enable = lib.mkForce false;
       gcr-ssh-agent.enable = lib.mkForce false;
