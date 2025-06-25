@@ -27,6 +27,7 @@
     gimp
     qbittorrent
     imagemagick
+    fd
   ];
 
   myHome = {
