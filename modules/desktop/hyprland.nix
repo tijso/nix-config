@@ -33,8 +33,10 @@ with lib; {
           };
         };
       };
-      gnome-keyring.enable = lib.mkForce false;
-      gcr.ssh-agent.enable = lib.mkForce false;
+      gnome = {
+        keyring.enable = lib.mkForce false;
+        gcr.ssh-agent.enable = lib.mkForce false;
+      };
     };
 
     programs.hyprland.enable = true;
