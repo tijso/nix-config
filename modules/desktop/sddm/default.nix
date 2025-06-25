@@ -5,10 +5,6 @@
   ...
 }:
 with lib; {
-  imports = [
-    inputs.niri.nixosModules.niri
-  ];
-
   options.myModules.desktop.sddm.enable = mkEnableOption "Enable Sddm";
   config = mkIf config.myModules.desktop.sddm.enable {
     services.displayManager.sddm = {
