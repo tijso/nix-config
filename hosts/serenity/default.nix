@@ -37,7 +37,7 @@
     desktop = {
       cosmic.enable = false;
       gnome.enable = false;
-      hyprland.enable = false;
+      hyprland.enable = true;
       niri.enable = true;
       sddm.enable = true;
     };
