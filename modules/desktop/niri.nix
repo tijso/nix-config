@@ -57,7 +57,6 @@ with lib; {
 
     services.displayManager.sessionPackages = [pkgs.niri-unstable];
 
-    programs.ssh.startAgent = true;
     services.gnome.gnome-keyring.enable = lib.mkForce false;
     services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
 
@@ -81,9 +80,6 @@ with lib; {
       NIXOS_OZONE_WL = "1";
       WAYLAND_DISPLAY = "wayland-0";
     };
-
-    services.dbus.enable = true;
-    services.udev.enable = true;
 
     xdg.portal = {
       enable = true;

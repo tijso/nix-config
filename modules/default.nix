@@ -6,6 +6,5 @@
     ./desktop
     ./development
     ./stylix
-    ./thunar
   ];
 }

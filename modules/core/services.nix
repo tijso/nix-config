@@ -29,16 +29,16 @@ with lib; {
       udisks2.enable = true;
       # upower.enable = true; # laptops/battery info
 
-      xserver = {
-        enable = true;
-        excludePackages = [pkgs.xterm];
-        desktopManager.xterm.enable = false;
-        desktopManager.runXdgAutostartIfNone = true;
-        xkb = {
-          layout = "us";
-          variant = "";
-        };
-      };
+      # xserver = {
+      #   enable = true;
+      #   excludePackages = [pkgs.xterm];
+      #   desktopManager.xterm.enable = false;
+      #   desktopManager.runXdgAutostartIfNone = true;
+      #   xkb = {
+      #     layout = "us";
+      #     variant = "";
+      #   };
+      # };
 
       smartd = {
         enable = true;

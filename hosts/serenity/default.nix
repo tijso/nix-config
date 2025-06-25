@@ -36,7 +36,6 @@
 
     development.enable = true;
     stylix.enable = true;
-    thunar.enable = true;
   };
 
   services.unclutter = {

@@ -11,7 +11,7 @@ with lib; {
       enable = true;
       autoEnable = true;
       polarity = "dark";
-      image = mkForce ./wallpaper.png;
+      image = ./wallpaper.png;
       base16Scheme = ./themes/rose-pine.yaml;
 
       opacity = {
