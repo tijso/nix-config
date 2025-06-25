@@ -4,20 +4,43 @@
   lib,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myModules.desktop.hyprland.enable = mkEnableOption "Enable Hyprland";
   config = mkIf config.myModules.desktop.hyprland.enable {
+    # services.displayManager.sddm = {
+    #   enable = true;
+    #   enableHidpi = true;
+    #   autoNumlock = true;
+    #   wayland.enable = true;
+    #   theme = "catppuccin";
+    # };
+
     services.displayManager.sddm = {
       enable = true;
+      wayland.enable = true;
       enableHidpi = true;
       autoNumlock = true;
-      wayland.enable = true;
-      theme = "catppuccin";
+      theme = "sugar-dark";
+      settings = {
+        Theme = {
+          Current = "sugar-dark";
+          Background = lib.mkForce "../stylix/Berserk.png";
+          ScreenWidth = "3840";
+          ScreenHeight = "2160";
+          ScaleImageCropped = "true";
+          DimBackgroundImage = "0.0";
+        };
+      };
     };
 
     programs.hyprland.enable = true;
     security.pam.services.sddm.enableGnomeKeyring = true;
+
+    programs.ssh.startAgent = true;
+    services.gnome = {
+      keyring.enable = lib.mkForce false;
+      gcr-ssh-agent.enable = lib.mkForce false;
+    };
 
     xdg.portal = {
       enable = true;
