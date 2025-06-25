@@ -1,5 +1,5 @@
 {
-  inputs,
+  pkgs,
   lib,
   config,
   ...
@@ -7,6 +7,11 @@
 with lib; {
   options.myModules.desktop.sddm.enable = mkEnableOption "Enable Sddm";
   config = mkIf config.myModules.desktop.sddm.enable {
+    environment.systemPackages = with pkgs; [
+      catppuccin-sddm
+      sddm-sugar-dark
+      libsForQt5.qt5.qtgraphicaleffects
+    ];
     services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
