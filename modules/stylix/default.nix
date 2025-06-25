@@ -3,8 +3,7 @@
   config,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myModules.stylix.enable = mkEnableOption "Enable Stylix";
   config = mkIf config.myModules.stylix.enable {
     stylix = {
@@ -13,7 +12,7 @@ with lib;
       polarity = "dark";
 
       # System wallpaper and colors
-      # image = ./Berserk.png;
+      image = ./themes/Berserk.png;
       base16Scheme = ./themes/rose-pine.yaml;
 
       targets = {
@@ -23,6 +22,5 @@ with lib;
         plymouth.enable = true;
       };
     };
-
   };
 }
