@@ -19,9 +19,6 @@ with lib; {
     };
 
     environment.systemPackages = with pkgs; [
-      catppuccin-sddm
-      sddm-sugar-dark
-      libsForQt5.qt5.qtgraphicaleffects
       wayland
       wayland-protocols
       wayland-utils

@@ -9,7 +9,7 @@
 
   assertions = [
     {
-      assertion = !(config.myModules.niri.enable && config.myModules.hyprland.enable);
+      assertion = !(config.myModules.desktop.niri.enable && config.myModules.desktop.hyprland.enable);
       message = "Don't enable both Niri and Hyprland at the same time!";
     }
   ];
