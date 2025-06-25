@@ -29,7 +29,6 @@ with lib; {
       wayland-utils
       wayland-protocols
       ydotool
-      xdg-desktop-portal-hyprland
       hyprpicker
     ];
     wayland.windowManager.hyprland = {

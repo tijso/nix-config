@@ -2,8 +2,7 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   imports = [
     ../../home
   ];
@@ -11,7 +10,7 @@
   home = {
     username = "tijso";
     homeDirectory = "/home/tijso";
-    sessionPath = [ "$HOME/.local/bin" ];
+    sessionPath = ["$HOME/.local/bin"];
     sessionVariables = {
       BROWSER = "brave";
       EDITOR = "nvim";
@@ -21,23 +20,13 @@
   };
 
   home.packages = with pkgs; [
-    # inputs.nixvim.packages.x86_64-linux.default
     inputs.ghostty.packages.${pkgs.system}.default
     tree
     btop
     inkscape
-    ookla-speedtest
-    gnome-disk-utility
-    telegram-desktop
     gimp
-    corefonts
-    cachix
     qbittorrent
-    ani-cli
     imagemagick
-    sxiv
-    optipng
-    pamixer
   ];
 
   myHome = {
@@ -91,7 +80,6 @@
       gtk.enable = true;
       stylix.enable = true;
     };
-
   };
 
   programs.nix-index = {

@@ -13,15 +13,17 @@ with lib; {
       binutils
       brave
       brightnessctl
+      cachix
+      corefonts
       coreutils
       curl
       dconf
       git
       gnumake
+      gsettings-desktop-schemas
       gtk-engine-murrine
       gtk_engines
-      gsettings-desktop-schemas
-      gnome-settings-daemon
+      gparted
       killall
       libnotify
       lm_sensors

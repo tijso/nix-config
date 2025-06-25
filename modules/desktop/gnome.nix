@@ -4,8 +4,7 @@
   lib,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myModules.desktop.gnome.enable = mkEnableOption "Enable Gnome";
   config = mkIf config.myModules.desktop.gnome.enable {
     services.displayManager.gdm = {
@@ -29,6 +28,10 @@ with lib;
     ];
 
     environment.systemPackages = with pkgs; [
+      gnome-disk-utility
+      gnome-settings-daemon
+      gnome-shell-extensions
+      gnome-tweaks
       gnomeExtensions.appindicator
       gnomeExtensions.blur-my-shell
       gnomeExtensions.compact-top-bar
@@ -39,8 +42,6 @@ with lib;
       gnomeExtensions.vitals
       gnomeExtensions.window-calls
       gradience
-      pkgs.gnome-shell-extensions
-      pkgs.gnome-tweaks
     ];
   };
 }
