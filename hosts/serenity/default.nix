@@ -1,10 +1,17 @@
-{...}: {
+{config, ...}: {
   imports = [
     # ./disks.nix
     ./hardware-configuration.nix
     ./users.nix
 
     ../../modules
+  ];
+
+  assertions = [
+    {
+      assertion = !(config.myModules.niri.enable && config.myModules.hyprland.enable);
+      message = "Don't enable both Niri and Hyprland at the same time!";
+    }
   ];
 
   myModules = {
@@ -32,6 +39,7 @@
       gnome.enable = false;
       hyprland.enable = false;
       niri.enable = true;
+      sddm.enable = true;
     };
 
     development.enable = true;

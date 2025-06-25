@@ -8,6 +8,7 @@
 with lib; {
   imports = [
     inputs.niri.nixosModules.niri
+    ./sddm
   ];
 
   options.myModules.desktop.niri.enable = mkEnableOption "Enable Niri";
@@ -37,23 +38,23 @@ with lib; {
     #   };
     # };
 
-    services.displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      enableHidpi = true;
-      autoNumlock = true;
-      theme = "sugar-dark";
-      settings = {
-        Theme = {
-          Current = "sugar-dark";
-          Background = "${config.stylix.image}";
-          ScreenWidth = "1920";
-          ScreenHeight = "1080";
-          ScaleImageCropped = "true";
-          DimBackgroundImage = "0.0";
-        };
-      };
-    };
+    # services.displayManager.sddm = {
+    #   enable = true;
+    #   wayland.enable = true;
+    #   enableHidpi = true;
+    #   autoNumlock = true;
+    #   theme = "sugar-dark";
+    #   settings = {
+    #     Theme = {
+    #       Current = "sugar-dark";
+    #       Background = "${config.stylix.image}";
+    #       ScreenWidth = "1920";
+    #       ScreenHeight = "1080";
+    #       ScaleImageCropped = "true";
+    #       DimBackgroundImage = "0.0";
+    #     };
+    #   };
+    # };
 
     services.displayManager.sessionPackages = [pkgs.niri-unstable];
 
