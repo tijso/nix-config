@@ -4,35 +4,56 @@
   lib,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myModules.core.services.enable = mkEnableOption "Enable Services";
-
   config = mkIf config.myModules.core.services.enable {
-    services.avahi.enable = true;
-    services.fstrim.enable = true;
-    services.gvfs.enable = true;
+    programs.ssh.startAgent = true;
+    services = {
+      avahi.enable = true;
+      blueman.enable = true;
+      dbus.enable = true;
+      dconf.enable = true;
+      envfs.enable = true;
+      gnome.gnome-keyring.enable = true;
 
-    services.dbus.enable = true;
-    services.gnome.gnome-keyring.enable = true;
+      gvfs.enable = true;
+      libinput.enable = true;
+      nfs.server.enable = true;
+      openssh.enable = true;
+      # power-profiles-daemon.enable = true; # Use With Laptops
+      rpcbind.enable = true;
+      tumbler.enable = true;
+      udev.enable = true;
+      udisks2.enable = true;
+      # upower.enable = true; # laptops/battery info
 
-    services.libinput.enable = true;
-    services.libinput.touchpad.tapping = true;
+      xserver = {
+        enable = true;
+        excludePackages = [pkgs.xterm];
+        desktopManager.xterm.enable = false;
+        desktopManager.runXdgAutostartIfNone = true;
+        xkb = {
+          layout = "us";
+          variant = "";
+        };
+      };
 
-    services.power-profiles-daemon.enable = true;
-    services.upower.enable = true;
+      smartd = {
+        enable = true;
+        autodetect = true;
+      };
 
-    services.printing.drivers = [ pkgs.hplip ];
-    services.printing.enable = true;
+      fstrim = {
+        enable = true;
+        interval = "weekly";
+      };
 
-    services.tumbler.enable = true;
-    services.udisks2.enable = true;
-
-    services.xserver.enable = true;
-    services.xserver.excludePackages = [ pkgs.xterm ];
-
-    services.openssh.enable = true;
-    # programs.ssh.startAgent = false;
-    programs.dconf.enable = true;
+      printing = {
+        enable = false;
+        drivers = [
+          pkgs.hplipWithPlugin
+        ];
+      };
+    };
   };
 }
