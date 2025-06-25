@@ -7,15 +7,17 @@
 with lib; {
   options.myModules.core.services.enable = mkEnableOption "Enable Services";
   config = mkIf config.myModules.core.services.enable {
-    programs.ssh.startAgent = true;
+    programs = {
+      ssh.startAgent = true;
+      dconf.enable = true;
+    };
+
     services = {
       avahi.enable = true;
       blueman.enable = true;
       dbus.enable = true;
-      dconf.enable = true;
       envfs.enable = true;
       gnome.gnome-keyring.enable = true;
-
       gvfs.enable = true;
       libinput.enable = true;
       nfs.server.enable = true;
