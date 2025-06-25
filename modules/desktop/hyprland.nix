@@ -15,30 +15,29 @@ with lib; {
     #   theme = "catppuccin";
     # };
 
-    services = {
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        enableHidpi = true;
-        autoNumlock = true;
-        theme = "sugar-dark";
-        settings = {
-          Theme = {
-            Current = "sugar-dark";
-            Background = lib.mkForce "../stylix/Berserk.png";
-            ScreenWidth = "3840";
-            ScreenHeight = "2160";
-            ScaleImageCropped = "true";
-            DimBackgroundImage = "0.0";
-          };
+    services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      enableHidpi = true;
+      autoNumlock = true;
+      theme = "sugar-dark";
+      settings = {
+        Theme = {
+          Current = "sugar-dark";
+          Background = lib.mkForce "../stylix/Berserk.png";
+          ScreenWidth = "3840";
+          ScreenHeight = "2160";
+          ScaleImageCropped = "true";
+          DimBackgroundImage = "0.0";
         };
       };
-      gnome.keyring.enable = lib.mkForce false;
     };
 
-    programs.ssh.startAgent = true;
     programs.hyprland.enable = true;
     security.pam.services.sddm.enableGnomeKeyring = true;
+
+    programs.ssh.startAgent = true;
+    services.gnome.keyring.enable = lib.mkForce false;
 
     xdg.portal = {
       enable = true;
