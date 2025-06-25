@@ -9,26 +9,18 @@ with lib; {
 
   config = mkIf config.myModules.core.pkgs.enable {
     environment.systemPackages = with pkgs; [
-      bibata-cursors
       binutils
       brave
       brightnessctl
       cachix
-      corefonts
-      coreutils
-      curl
-      dconf
+      cifs-utils
       git
       gnumake
       gsettings-desktop-schemas
-      gtk-engine-murrine
-      gtk_engines
       gparted
-      killall
       libnotify
       lm_sensors
       lshw
-      mpd
       pavucontrol
       pciutils
       playerctl
@@ -37,7 +29,6 @@ with lib; {
       usbutils
       v4l-utils
       vim
-      wget
       xdg-utils
       zip
     ];
