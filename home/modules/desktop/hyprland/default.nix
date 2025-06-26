@@ -17,11 +17,9 @@ with lib; {
   options.myHome.desktop.hyprland.enable = mkEnableOption "Enable Hyprland";
   config = mkIf config.myHome.desktop.hyprland.enable {
     home.packages = with pkgs; [
-      cliphist
       grim
       slurp
       swappy
-      swaynotificationcenter
       swww
       wl-clipboard
       wl-color-picker
@@ -63,7 +61,7 @@ with lib; {
           disable_splash_rendering = true;
 
           enable_swallow = true;
-          swallow_regex = "^(wezterm)$";
+          swallow_regex = "^(ghostty)$";
           vfr = false;
         };
 

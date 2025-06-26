@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  inputs,
-  ...
-}: {
+{config, ...}: {
   wayland.windowManager.hyprland = {
     settings = {
       general = {
@@ -11,13 +6,14 @@
         gaps_out = "12";
         border_size = "3";
         layout = "dwindle";
-        # "col.active_border" = "$color8";
-        # "col.inactive_border" = "$color8";
+        "col.active_border" = "rgba(${config.lib.stylix.colors.base0D}ff)";
+        "col.inactive_border" = "rgba(${config.lib.stylix.colors.base03}aa)";
       };
 
       cursor = {
         inactive_timeout = 2;
         no_warps = true;
+        no_hardware_cursors = false;
       };
 
       decoration = {

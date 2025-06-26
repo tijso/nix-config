@@ -21,13 +21,14 @@
 
   home.packages = with pkgs; [
     inputs.ghostty.packages.${pkgs.system}.default
-    tree
     btop
-    inkscape
-    gimp
-    qbittorrent
-    imagemagick
+    cliphist
     fd
+    gimp
+    imagemagick
+    inkscape
+    qbittorrent
+    tree
   ];
 
   myHome = {
