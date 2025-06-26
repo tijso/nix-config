@@ -21,8 +21,12 @@
     # Service restarts (useful for development)
     "Mod+W".action = sh (
       builtins.concatStringsSep "; " [
-        "systemctl --user restart waybar.service"
-        "systemctl --user restart swww.service"
+        "systemctl --user stop waybar.service"
+        "systemctl --user stop swww.service"
+        "niri msg action quit"
+        # "sleep 2"
+        # "systemctl --user start waybar.service"
+        # "systemctl --user start swww.service"
       ]
     );
 
