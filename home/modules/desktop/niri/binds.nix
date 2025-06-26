@@ -23,10 +23,10 @@
       builtins.concatStringsSep "; " [
         "systemctl --user stop waybar.service"
         "systemctl --user stop swww.service"
-        "niri msg action quit"
-        "sleep 2"
-        "systemctl --user start waybar.service"
-        "systemctl --user start swww.service"
+        "niri msg action restart"
+        # "sleep 2"
+        # "systemctl --user start waybar.service"
+        # "systemctl --user start swww.service"
       ]
     );
 
