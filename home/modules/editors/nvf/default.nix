@@ -112,7 +112,7 @@ with lib; {
           # zen-mode-nvim = {
           #   package = pkgs.vimPlugins.zen-mode-nvim;
           #   enable = true;
-          };
+          # };
           # flash-nvim = {
           #   package = pkgs.vimPlugins.flash-nvim;
           #   enable = true;
