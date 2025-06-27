@@ -42,7 +42,6 @@ with lib; {
         confirm-close-surface = false;
         keybind = [
           "alt+shift+r=reload_config"
-          "alt+shift+x=close_surface"
           "alt+s>n=new_window"
 
           # Navigation
@@ -55,7 +54,7 @@ with lib; {
           "ctrl+alt+j=goto_split:down"
           "ctrl+alt+k=goto_split:up"
           "ctrl+alt+l=goto_split:right"
-          "ctrl+shift+w=close_split"
+          "ctrl+shift+w=close_surface"
 
           "ctrl+shift+z=toggle_split_zoom"
           "ctrl+shift+up=resize_split:up,10"
