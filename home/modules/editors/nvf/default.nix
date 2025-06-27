@@ -45,10 +45,7 @@ with lib; {
 
         maps = {
           normal = {
-            "<leader>e" = {
-              action = "<CMD>Neotree toggle<CR>";
-              silent = false;
-            };
+            # Removed the redundant "<leader>e" mapping as "<leader>fe" in keymaps covers it.
           };
         };
 
@@ -73,24 +70,7 @@ with lib; {
               vim.keymap.set('i', '<C-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
               vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
               vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-
-              -- Simple Claude integration via terminal
-              function ClaudeChat()
-                vim.cmd('split | terminal')
-                vim.cmd('startinsert')
-              end
-
-              function ClaudeRewrite()
-                local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-                local content = table.concat(lines, "\\n")
-                vim.fn.setreg('+', content)
-                vim.notify("Code copied to clipboard - paste in Claude chat!")
-                ClaudeChat()
-              end
-
-              vim.keymap.set('n', '<leader>cc', ClaudeChat, { desc = "Open Claude terminal" })
-              vim.keymap.set('n', '<leader>cr', ClaudeRewrite, { desc = "Copy code for Claude" })
-            '';
+            ''; # Removed Claude Lua functions from here
           };
 
           # Dependencies that might be needed
@@ -160,21 +140,8 @@ with lib; {
           }
 
           # AI KEYBINDINGS
-          # Simple Claude Integration
-          {
-            key = "<leader>cc";
-            mode = ["n"];
-            action = "<cmd>lua ClaudeChat()<cr>";
-            desc = "Open Claude terminal";
-          }
-          {
-            key = "<leader>cr";
-            mode = ["n"];
-            action = "<cmd>lua ClaudeRewrite()<cr>";
-            desc = "Copy code for Claude";
-          }
-
-          # Codeium/Windsurf Controls
+          # Removed Simple Claude Integration keybindings here
+          # Removed Codeium/Windsurf Controls as they are now handled directly in windsurf-vim.setup
           {
             key = "<leader>cd";
             mode = ["n"];
@@ -272,7 +239,7 @@ with lib; {
         filetree.neo-tree.enable = true;
         notify = {
           nvim-notify.enable = true;
-          nvim-notify.setupOpts.background_colour = "#${config.lib.stylix.colors.base01}";
+          nvim-notify.setupOpts.background_colour = "#${config.lib.stylix.colors.base0o}";
         };
         utility = {
           preview.markdownPreview.enable = true;
