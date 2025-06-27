@@ -60,70 +60,72 @@ with lib; {
           };
         };
 
-        # AI INTEGRATIONS - Add these plugins
-        extraPlugins = with pkgs.vimPlugins; [
+        # AI INTEGRATIONS
+        extraPlugins = {
           # Codeium for free AI completion
-          codeium-vim
+          codeium-vim = {
+            package = pkgs.vimPlugins.codeium-vim;
+            setup = ''
+              vim.g.codeium_disable_bindings = 1
+            '';
+          };
+
+          # Dependencies for gp.nvim
+          plenary-nvim = {
+            package = pkgs.vimPlugins.plenary-nvim;
+          };
+
+          nui-nvim = {
+            package = pkgs.vimPlugins.nui-nvim;
+          };
 
           # gp.nvim for Claude chat integration
-          gp-nvim
-          plenary-nvim
-          nui-nvim
-        ];
+          gp-nvim = {
+            package = pkgs.vimPlugins.gp-nvim;
+            setup = ''
+              require("gp").setup({
+                providers = {
+                  anthropic = {
+                    endpoint = "https://api.anthropic.com/v1/messages",
+                    secret = os.getenv("ANTHROPIC_API_KEY"),
+                  },
+                },
 
-        # AI Configuration
-        extraConfigLua = ''
-          -- Codeium Setup
-          vim.g.codeium_disable_bindings = 1
+                agents = {
+                  {
+                    provider = "anthropic",
+                    name = "Claude",
+                    chat = true,
+                    command = true,
+                    model = { model = "claude-3-5-sonnet-20241022", temperature = 0.1 },
+                  },
+                  {
+                    provider = "anthropic",
+                    name = "ClaudeCode",
+                    chat = false,
+                    command = true,
+                    model = { model = "claude-3-5-sonnet-20241022", temperature = 0.1 },
+                    system_prompt = "You are an AI working as a code editor. Please AVOID COMMENTARY and write only the code requested.",
+                  },
+                },
 
-          -- Custom Codeium keybindings
-          vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-          vim.keymap.set('i', '<C-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-          vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-          vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+                chat_dir = vim.fn.stdpath("data"):gsub("/$", "") .. "/gp/chats",
+                command_template = "🤖 {{agent}} ~ {{command}}",
 
-          -- GP.nvim Setup for Claude
-          require("gp").setup({
-            providers = {
-              anthropic = {
-                endpoint = "https://api.anthropic.com/v1/messages",
-                secret = os.getenv("ANTHROPIC_API_KEY"),
-              },
-            },
+                chat_shortcut_respond = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g><C-g>" },
+                chat_shortcut_delete = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>d" },
+                chat_shortcut_stop = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>s" },
+                chat_shortcut_new = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>c" },
+              })
 
-            agents = {
-              {
-                provider = "anthropic",
-                name = "Claude",
-                chat = true,
-                command = true,
-                model = { model = "claude-3-5-sonnet-20241022", temperature = 0.1 },
-                system_prompt = require("gp.defaults").chat_system_prompt,
-              },
-              {
-                provider = "anthropic",
-                name = "ClaudeCode",
-                chat = false,
-                command = true,
-                model = { model = "claude-3-5-sonnet-20241022", temperature = 0.1 },
-                system_prompt = "You are an AI working as a code editor. Please AVOID COMMENTARY and write only the code requested.",
-              },
-            },
-
-            -- Custom chat dir
-            chat_dir = vim.fn.stdpath("data"):gsub("/$", "") .. "/gp/chats",
-
-            -- UI settings
-            chat_template = require("gp.defaults").short_chat_template,
-            command_template = "🤖 {{agent}} ~ {{command}}",
-
-            -- Window settings
-            chat_shortcut_respond = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g><C-g>" },
-            chat_shortcut_delete = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>d" },
-            chat_shortcut_stop = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>s" },
-            chat_shortcut_new = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>c" },
-          })
-        '';
+              -- Custom Codeium keybindings
+              vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+              vim.keymap.set('i', '<C-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+              vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+              vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+            '';
+          };
+        };
 
         keymaps = [
           {
