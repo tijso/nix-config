@@ -38,7 +38,7 @@ with lib; {
           hidden = true;
           hlsearch = true;
           ignorecase = true;
-          insearch = true;
+          incsearch = true;
           scrolloff = 8;
           shiftwidth = 4;
           showcmd = false;
