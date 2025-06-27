@@ -261,14 +261,6 @@ with lib; {
           highlight-undo.enable = true;
           indent-blankline.enable = true;
           rainbow-delimiters.enable = true;
-          motion = {
-            hop.enable = false; # Set to false if using flash.nvim
-            leap.enable = false; # Set to false if using flash.nvim
-            precognition.enable = false;
-          };
-          images = {
-            image-nvim.enable = false;
-          };
         };
 
         statusline.lualine = {
@@ -305,6 +297,14 @@ with lib; {
           icon-picker.enable = true;
           surround.enable = true;
           diffview-nvim.enable = true;
+          motion = {
+            hop.enable = false; # Set to false if using flash.nvim
+            leap.enable = false; # Set to false if using flash.nvim
+            precognition.enable = false;
+          };
+          images = {
+            image-nvim.enable = false;
+          };
         };
         ui = {
           borders.enable = true;
