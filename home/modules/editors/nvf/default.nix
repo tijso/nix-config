@@ -17,19 +17,13 @@ with lib; {
           style = "main";
           transparent = true;
         };
-
-        # Global variables for leader keys and undo directory
-        extraConfig = ''
-          vim.g.mapleader = " " # Set leader key to spacebar
-          vim.g.maplocalleader = "\\" # Set local leader key
-          vim.opt.undodir = vim.fn.stdpath('data') .. "/undo" # Default undo directory
-        '';
-
+        leader = " ";
+        localleader = "\\";
         lsp.enable = true;
         vimAlias = true;
         viAlias = true;
         withNodeJs = true;
-        lineNumberMode = "relNumber"; # This is great for `number` and `relativenumber` combination
+        lineNumberMode = "relNumber";
         enableLuaLoader = true;
         preventJunkFiles = true;
 
@@ -113,7 +107,6 @@ with lib; {
             package = pkgs.vimPlugins.nui-nvim;
           };
           # Consider adding plugins like `zen-mode.nvim` or `twilight.nvim` for focus modes
-          # Example (check nvf docs for exact option):
           # zen-mode-nvim = { package = pkgs.vimPlugins.zen-mode-nvim; enable = true; };
         };
 
@@ -205,7 +198,6 @@ with lib; {
           lspSignature.enable = true;
           otter-nvim.enable = false;
           nvim-docs-view.enable = false;
-          # Consider adding `mason.nvim` for LSP server management.
           # Check nvf documentation for its specific option, e.g.:
           # mason.enable = true;
         };
