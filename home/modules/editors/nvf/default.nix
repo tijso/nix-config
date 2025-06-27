@@ -29,8 +29,30 @@ with lib; {
         enableLuaLoader = true;
         preventJunkFiles = true;
         options = {
+          background = "dark";
+          backupcopy = "yes";
+          cmdheight = 1;
+          cursorline = true;
+          encoding = "utf-8";
+          expandtab = true;
+          hidden = true;
+          hlsearch = true;
+          ignorecase = true;
+          insearch = true;
+          scrolloff = 8;
+          shiftwidth = 4;
+          showcmd = false;
+          showmode = false;
+          sidescrolloff = 8;
+          smartcase = true;
+          smartindent = true;
+          swapfile = false;
           tabstop = 4;
-          shiftwidth = 2;
+          termguicolors = true;
+          undofile = true;
+          updatetime = 300;
+          wildmenu = true;
+          wildmode = "list:longest,full";
           wrap = false;
         };
 
