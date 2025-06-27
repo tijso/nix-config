@@ -67,63 +67,39 @@ with lib; {
             package = pkgs.vimPlugins.windsurf-vim;
             setup = ''
               vim.g.codeium_disable_bindings = 1
+
+              -- Custom Windsurf/Codeium keybindings
+              vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+              vim.keymap.set('i', '<C-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+              vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+              vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+
+              -- Simple Claude integration via terminal
+              function ClaudeChat()
+                vim.cmd('split | terminal')
+                vim.cmd('startinsert')
+              end
+
+              function ClaudeRewrite()
+                local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+                local content = table.concat(lines, "\\n")
+                vim.fn.setreg('+', content)
+                vim.notify("Code copied to clipboard - paste in Claude chat!")
+                ClaudeChat()
+              end
+
+              vim.keymap.set('n', '<leader>cc', ClaudeChat, { desc = "Open Claude terminal" })
+              vim.keymap.set('n', '<leader>cr', ClaudeRewrite, { desc = "Copy code for Claude" })
             '';
           };
 
-          # Dependencies for gp.nvim
+          # Dependencies that might be needed
           plenary-nvim = {
             package = pkgs.vimPlugins.plenary-nvim;
           };
 
           nui-nvim = {
             package = pkgs.vimPlugins.nui-nvim;
-          };
-
-          # gp.nvim for Claude chat integration
-          gp-nvim = {
-            package = pkgs.vimPlugins.gp-nvim;
-            setup = ''
-              require("gp").setup({
-                providers = {
-                  anthropic = {
-                    endpoint = "https://api.anthropic.com/v1/messages",
-                    secret = os.getenv("ANTHROPIC_API_KEY"),
-                  },
-                },
-
-                agents = {
-                  {
-                    provider = "anthropic",
-                    name = "Claude",
-                    chat = true,
-                    command = true,
-                    model = { model = "claude-3-5-sonnet-20241022", temperature = 0.1 },
-                  },
-                  {
-                    provider = "anthropic",
-                    name = "ClaudeCode",
-                    chat = false,
-                    command = true,
-                    model = { model = "claude-3-5-sonnet-20241022", temperature = 0.1 },
-                    system_prompt = "You are an AI working as a code editor. Please AVOID COMMENTARY and write only the code requested.",
-                  },
-                },
-
-                chat_dir = vim.fn.stdpath("data"):gsub("/$", "") .. "/gp/chats",
-                command_template = "🤖 {{agent}} ~ {{command}}",
-
-                chat_shortcut_respond = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g><C-g>" },
-                chat_shortcut_delete = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>d" },
-                chat_shortcut_stop = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>s" },
-                chat_shortcut_new = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>c" },
-              })
-
-              -- Custom Codeium keybindings
-              vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-              vim.keymap.set('i', '<C-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-              vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-              vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-            '';
           };
         };
 
@@ -184,56 +160,18 @@ with lib; {
           }
 
           # AI KEYBINDINGS
-          # Claude Chat
+          # Simple Claude Integration
           {
             key = "<leader>cc";
-            mode = ["n" "v"];
-            action = "<cmd>GpChatNew<cr>";
-            desc = "New Claude chat";
+            mode = ["n"];
+            action = "<cmd>lua ClaudeChat()<cr>";
+            desc = "Open Claude terminal";
           }
-          {
-            key = "<leader>ct";
-            mode = ["n" "v"];
-            action = "<cmd>GpChatToggle<cr>";
-            desc = "Toggle Claude chat";
-          }
-          {
-            key = "<leader>cf";
-            mode = ["n" "v"];
-            action = "<cmd>GpChatFinder<cr>";
-            desc = "Find Claude chats";
-          }
-
-          # Claude Commands
           {
             key = "<leader>cr";
-            mode = ["n" "v"];
-            action = "<cmd>GpRewrite<cr>";
-            desc = "Claude rewrite selection";
-          }
-          {
-            key = "<leader>ca";
-            mode = ["n" "v"];
-            action = "<cmd>GpAppend<cr>";
-            desc = "Claude append to selection";
-          }
-          {
-            key = "<leader>cp";
-            mode = ["n" "v"];
-            action = "<cmd>GpPrepend<cr>";
-            desc = "Claude prepend to selection";
-          }
-          {
-            key = "<leader>ce";
-            mode = ["n" "v"];
-            action = "<cmd>GpEnew<cr>";
-            desc = "Claude edit in new buffer";
-          }
-          {
-            key = "<leader>cx";
-            mode = ["n" "v"];
-            action = "<cmd>GpContext<cr>";
-            desc = "Add selection to Claude context";
+            mode = ["n"];
+            action = "<cmd>lua ClaudeRewrite()<cr>";
+            desc = "Copy code for Claude";
           }
 
           # Codeium/Windsurf Controls
