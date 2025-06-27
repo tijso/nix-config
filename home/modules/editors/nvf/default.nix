@@ -5,12 +5,6 @@
   ...
 }:
 with lib; {
-  # This part is usually in your main home.nix, outside the specific nvf module
-  # home.packages = with pkgs; [
-  #   lazygit # <--- Ensure lazygit is added here!
-  #   # ... other general packages ...
-  # ];
-
   options.myHome.editors.nvf.enable = mkEnableOption "Enable Nvf";
   config = mkIf config.myHome.editors.nvf.enable {
     programs.nvf = {
