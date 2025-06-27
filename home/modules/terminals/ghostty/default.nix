@@ -52,8 +52,8 @@ with lib; {
           "ctrl+shift+l=new_split:right"
 
           "ctrl+alt+h=goto_split:left"
-          "ctrl+alt+j=goto_split:bottom"
-          "ctrl+alt+k=goto_split:top"
+          "ctrl+alt+j=goto_split:down"
+          "ctrl+alt+k=goto_split:up"
           "ctrl+alt+l=goto_split:right"
           "ctrl+shift+w=close_split"
 
