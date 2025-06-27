@@ -58,7 +58,6 @@ with lib; {
 
         # AI INTEGRATIONS
         extraPlugins = {
-          # Windsurf (formerly Codeium) for free AI completion
           windsurf-vim = {
             package = pkgs.vimPlugins.windsurf-vim;
             setup = ''
@@ -203,7 +202,7 @@ with lib; {
         };
         visuals = {
           nvim-web-devicons.enable = true;
-          nvim-cursorline.enable = true;
+          nvim-cursorline.enable = false;
           cinnamon-nvim.enable = true;
           fidget-nvim.enable = true;
           highlight-undo.enable = true;
