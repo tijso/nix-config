@@ -113,10 +113,10 @@ with lib; {
             package = pkgs.vimPlugins.zen-mode-nvim;
             enable = true;
           };
-          flash-nvim = {
-            package = pkgs.vimPlugins.flash-nvim;
-            enable = true;
-          };
+          # flash-nvim = {
+          #   package = pkgs.vimPlugins.flash-nvim;
+          #   enable = true;
+          # };
           # mason-nvim = {
           #   package = pkgs.vimPlugins.mason-nvim;
           #   enable = true;
@@ -298,8 +298,8 @@ with lib; {
           surround.enable = true;
           diffview-nvim.enable = true;
           motion = {
-            hop.enable = false; # Set to false if using flash.nvim
-            leap.enable = false; # Set to false if using flash.nvim
+            hop.enable = true; # Set to false if using flash.nvim
+            leap.enable = true; # Set to false if using flash.nvim
             precognition.enable = false;
           };
           images = {
