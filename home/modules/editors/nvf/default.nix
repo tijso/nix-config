@@ -23,24 +23,17 @@ with lib; {
           style = "main";
           transparent = true;
         };
-
-        # --- CORRECT WAY TO SET LEADER KEY IN NVF ---
-        # The `whichKey` plugin handles the leader key.
-        # localLeader defaults to '\' and is not directly configurable here.
-        # undodir is automatically managed when `undofile = true;`
-        leader = " "; # Sets vim.g.mapleader to space
-
-        lsp.enable = true;
-        vimAlias = true;
-        viAlias = true;
-        withNodeJs = true;
-        lineNumberMode = "relNumber"; # This is great for `number` and `relativenumber` combination
         enableLuaLoader = true;
+        leader = " ";
+        lineNumberMode = "relNumber";
+        lsp.enable = true;
         preventJunkFiles = true;
-
+        viAlias = true;
+        vimAlias = true;
+        withNodeJs = true;
         options = {
           tabstop = 4;
-          shiftwidth = 4; # FIX: Changed from 2 to 4 for consistency with tabstop
+          shiftwidth = 4;
           wrap = false;
           cursorline = true;
           expandtab = true;
@@ -50,29 +43,26 @@ with lib; {
           ignorecase = true;
           smartcase = true;
           termguicolors = true;
-          background = "dark"; # Assuming rose-pine is a dark theme
+          background = "dark";
           cmdheight = 1;
           showmode = false;
           showcmd = false;
           scrolloff = 8;
           sidescrolloff = 8;
           swapfile = false;
-          # backupcopy = "yes"; # FIX: Removed, as `backup = false` makes it redundant
-          backup = false; # Disable creation of *.bak backup files
+          backup = false;
           undofile = true;
           updatetime = 300;
           wildmenu = true;
           wildmode = "list:longest,full";
           encoding = "utf-8";
           hidden = true;
-
-          # --- General Neovim Options ---
-          backspace = "indent,eol,start"; # Essential for natural backspace behavior
-          splitright = true; # New vertical splits open to the right
-          splitbelow = true; # New horizontal splits open below
-          inccommand = "split"; # Live preview for :substitute commands
-          signcolumn = "yes"; # Always show sign column for diagnostics/git, prevents text jumping
-          fillchars = "vert:│"; # Makes vertical split lines look nicer with a pipe character
+          backspace = "indent,eol,start";
+          splitright = true;
+          splitbelow = true;
+          inccommand = "split";
+          signcolumn = "yes";
+          fillchars = "vert:│";
           # foldmethod = "indent"; # Uncomment if you want code folding by indentation
           # foldlevel = 99; # Uncomment if you want all folds open by default
         };
@@ -241,7 +231,7 @@ with lib; {
 
         languages = {
           enableFormat = true;
-          enableTreesitter = true; # Base Treesitter is enabled
+          enableTreesitter = true;
           treesitter.textobjects.enable = true;
           enableExtraDiagnostics = true;
           nix.enable = true;
@@ -300,8 +290,10 @@ with lib; {
         treesitter.context.enable = false;
         binds = {
           whichKey.enable = true;
-          whichKey.settings.options = {
-            leader = " ";
+          settings = {
+            options = {
+              leader = " ";
+            };
           };
           cheatsheet.enable = true;
         };
