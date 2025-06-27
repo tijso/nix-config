@@ -202,7 +202,7 @@ with lib; {
         };
         visuals = {
           nvim-web-devicons.enable = true;
-          nvim-cursorline.enable = false;
+          nvim-cursorline.enable = true;
           cinnamon-nvim.enable = true;
           fidget-nvim.enable = true;
           highlight-undo.enable = true;
@@ -262,7 +262,7 @@ with lib; {
             navbuddy.enable = false;
           };
           smartcolumn = {
-            enable = true;
+            enable = false;
           };
           fastaction.enable = true;
         };
