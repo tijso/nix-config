@@ -260,14 +260,12 @@ with lib; {
           fidget-nvim.enable = true;
           highlight-undo.enable = true;
           indent-blankline.enable = true;
+          # image-nvim.enable = false;
           rainbow-delimiters.enable = true;
           motion = {
             hop.enable = false; # Set to false if using flash.nvim
             leap.enable = false; # Set to false if using flash.nvim
             precognition.enable = false;
-          };
-          image-nvim = {
-            enable = false;
           };
         };
 
