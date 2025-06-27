@@ -41,8 +41,8 @@ with lib; {
         mouse-scroll-multiplier = 2;
         confirm-close-surface = false;
         keybind = [
-          "alt+s>r=reload_config"
-          "alt+s>x=close_surface"
+          "alt+shift+r=reload_config"
+          "alt+shift+x=close_surface"
           "alt+s>n=new_window"
 
           # Navigation
