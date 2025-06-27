@@ -5,6 +5,12 @@
   ...
 }:
 with lib; {
+  # This part is usually in your main home.nix, outside the specific nvf module
+  # home.packages = with pkgs; [
+  #   lazygit # <--- Ensure lazygit is added here!
+  #   # ... other general packages ...
+  # ];
+
   options.myHome.editors.nvf.enable = mkEnableOption "Enable Nvf";
   config = mkIf config.myHome.editors.nvf.enable {
     programs.nvf = {
@@ -17,49 +23,58 @@ with lib; {
           style = "main";
           transparent = true;
         };
-        leader = " ";
-        localleader = "\\";
+
+        # --- CORRECT WAY TO SET LEADER KEY IN NVF ---
+        # The `whichKey` plugin handles the leader key.
+        # localLeader defaults to '\' and is not directly configurable here.
+        # undodir is automatically managed when `undofile = true;`
+        leader = " "; # Sets vim.g.mapleader to space
+
         lsp.enable = true;
         vimAlias = true;
         viAlias = true;
         withNodeJs = true;
-        lineNumberMode = "relNumber";
+        lineNumberMode = "relNumber"; # This is great for `number` and `relativenumber` combination
         enableLuaLoader = true;
         preventJunkFiles = true;
 
         options = {
-          tabstop = 2;
-          shiftwidth = 2;
+          tabstop = 4;
+          shiftwidth = 4; # FIX: Changed from 2 to 4 for consistency with tabstop
           wrap = false;
+          cursorline = true;
+          expandtab = true;
           smartindent = true;
           incsearch = true;
           hlsearch = true;
           ignorecase = true;
           smartcase = true;
           termguicolors = true;
-          background = "dark";
+          background = "dark"; # Assuming rose-pine is a dark theme
           cmdheight = 1;
           showmode = false;
           showcmd = false;
           scrolloff = 8;
           sidescrolloff = 8;
           swapfile = false;
-          backupcopy = "yes";
+          # backupcopy = "yes"; # FIX: Removed, as `backup = false` makes it redundant
+          backup = false; # Disable creation of *.bak backup files
           undofile = true;
           updatetime = 300;
           wildmenu = true;
           wildmode = "list:longest,full";
           encoding = "utf-8";
           hidden = true;
-          backspace = "indent,eol,start";
-          splitright = true;
-          splitbelow = true;
-          inccommand = "split";
-          signcolumn = "yes";
-          fillchars = "vert:│";
-          backup = false;
-          # foldmethod = "indent";
-          # foldlevel = 99;
+
+          # --- General Neovim Options ---
+          backspace = "indent,eol,start"; # Essential for natural backspace behavior
+          splitright = true; # New vertical splits open to the right
+          splitbelow = true; # New horizontal splits open below
+          inccommand = "split"; # Live preview for :substitute commands
+          signcolumn = "yes"; # Always show sign column for diagnostics/git, prevents text jumping
+          fillchars = "vert:│"; # Makes vertical split lines look nicer with a pipe character
+          # foldmethod = "indent"; # Uncomment if you want code folding by indentation
+          # foldlevel = 99; # Uncomment if you want all folds open by default
         };
 
         clipboard = {
@@ -106,8 +121,23 @@ with lib; {
           nui-nvim = {
             package = pkgs.vimPlugins.nui-nvim;
           };
-          # Consider adding plugins like `zen-mode.nvim` or `twilight.nvim` for focus modes
-          # zen-mode-nvim = { package = pkgs.vimPlugins.zen-mode-nvim; enable = true; };
+
+          # toggleterm-nvim = {
+          #   package = pkgs.vimPlugins.toggleterm-nvim;
+          #   setup = "lua require('toggleterm').setup()"; # Default setup
+          # };
+          zen-mode-nvim = {
+            package = pkgs.vimPlugins.zen-mode-nvim;
+            enable = true;
+          };
+          flash-nvim = {
+            package = pkgs.vimPlugins.flash-nvim;
+            enable = true;
+          };
+          # mason-nvim = {
+          #   package = pkgs.vimPlugins.mason-nvim;
+          #   enable = true;
+          # };
         };
 
         keymaps = [
@@ -179,6 +209,15 @@ with lib; {
             action = "<cmd>Codeium enable<cr>";
             desc = "Enable Windsurf";
           }
+          {
+            key = "<leader>gg";
+            mode = ["n"];
+            # To use Toggleterm for floating LazyGit, uncomment the Toggleterm example in extraPlugins
+            # and change this action:
+            # action = ":lua require('toggleterm.terminal').Terminal:new({ cmd = 'lazygit', direction = 'float', hidden = true }):toggle()<CR>";
+            action = "<cmd>split | terminal lazygit<cr>"; # Opens lazygit in a horizontal split
+            desc = "Open LazyGit";
+          }
         ];
 
         telescope.enable = true;
@@ -198,14 +237,12 @@ with lib; {
           lspSignature.enable = true;
           otter-nvim.enable = false;
           nvim-docs-view.enable = false;
-          # Check nvf documentation for its specific option, e.g.:
-          # mason.enable = true;
         };
 
         languages = {
           enableFormat = true;
-          enableTreesitter = true;
-          # `treesitter.textobjects.enable = true;`
+          enableTreesitter = true; # Base Treesitter is enabled
+          treesitter.textobjects.enable = true;
           enableExtraDiagnostics = true;
           nix.enable = true;
           clang.enable = true;
@@ -241,8 +278,14 @@ with lib; {
           highlight-undo.enable = true;
           indent-blankline.enable = true;
           rainbow-delimiters.enable = true;
-          # Consider replacing hop/leap with `flash.nvim` for advanced motions.
-          # flash-nvim.enable = true;
+          motion = {
+            hop.enable = false; # Set to false if using flash.nvim
+            leap.enable = false; # Set to false if using flash.nvim
+            precognition.enable = false;
+          };
+          images = {
+            image-nvim.enable = false;
+          };
         };
 
         statusline.lualine = {
@@ -257,13 +300,15 @@ with lib; {
         treesitter.context.enable = false;
         binds = {
           whichKey.enable = true;
+          whichKey.settings.options = {
+            leader = " ";
+          };
           cheatsheet.enable = true;
         };
         git = {
           enable = true;
           gitsigns.enable = true;
           gitsigns.codeActions.enable = false;
-          # Consider adding `vim-fugitive` for comprehensive Git integration.
           # fugitive.enable = true;
         };
         projects.project-nvim.enable = true;
@@ -280,11 +325,7 @@ with lib; {
           icon-picker.enable = true;
           surround.enable = true;
           diffview-nvim.enable = true;
-          motion = {
-            hop.enable = true;
-            leap.enable = true;
-            precognition.enable = false;
-          };
+          # motion = { ... };
           images = {
             image-nvim.enable = false;
           };
