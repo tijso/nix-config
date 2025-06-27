@@ -232,7 +232,7 @@ with lib; {
         languages = {
           enableFormat = true;
           enableTreesitter = true;
-          treesitter.textobjects.enable = true;
+          # treesitter.textobjects.enable = true;
           enableExtraDiagnostics = true;
           nix.enable = true;
           clang.enable = true;
