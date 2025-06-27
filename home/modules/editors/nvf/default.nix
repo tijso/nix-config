@@ -17,43 +17,55 @@ with lib; {
           style = "main";
           transparent = true;
         };
-        # extraConfig = {
-        #   disable_italics = false;
-        #   disable_bold = false;
-        # };
+
+        # Global variables for leader keys and undo directory
+        extraConfig = ''
+          vim.g.mapleader = " " # Set leader key to spacebar
+          vim.g.maplocalleader = "\\" # Set local leader key
+          vim.opt.undodir = vim.fn.stdpath('data') .. "/undo" # Default undo directory
+        '';
+
         lsp.enable = true;
         vimAlias = true;
         viAlias = true;
         withNodeJs = true;
-        lineNumberMode = "relNumber";
+        lineNumberMode = "relNumber"; # This is great for `number` and `relativenumber` combination
         enableLuaLoader = true;
         preventJunkFiles = true;
+
         options = {
-          background = "dark";
-          backupcopy = "yes";
-          cmdheight = 1;
-          cursorline = true;
-          encoding = "utf-8";
-          expandtab = true;
-          hidden = true;
+          tabstop = 2;
+          shiftwidth = 2;
+          wrap = false;
+          smartindent = true;
+          incsearch = true;
           hlsearch = true;
           ignorecase = true;
-          incsearch = true;
-          scrolloff = 8;
-          shiftwidth = 4;
-          showcmd = false;
-          showmode = false;
-          sidescrolloff = 8;
           smartcase = true;
-          smartindent = true;
-          swapfile = false;
-          tabstop = 4;
           termguicolors = true;
+          background = "dark";
+          cmdheight = 1;
+          showmode = false;
+          showcmd = false;
+          scrolloff = 8;
+          sidescrolloff = 8;
+          swapfile = false;
+          backupcopy = "yes";
           undofile = true;
           updatetime = 300;
           wildmenu = true;
           wildmode = "list:longest,full";
-          wrap = false;
+          encoding = "utf-8";
+          hidden = true;
+          backspace = "indent,eol,start";
+          splitright = true;
+          splitbelow = true;
+          inccommand = "split";
+          signcolumn = "yes";
+          fillchars = "vert:│";
+          backup = false;
+          # foldmethod = "indent";
+          # foldlevel = 99;
         };
 
         clipboard = {
@@ -100,6 +112,9 @@ with lib; {
           nui-nvim = {
             package = pkgs.vimPlugins.nui-nvim;
           };
+          # Consider adding plugins like `zen-mode.nvim` or `twilight.nvim` for focus modes
+          # Example (check nvf docs for exact option):
+          # zen-mode-nvim = { package = pkgs.vimPlugins.zen-mode-nvim; enable = true; };
         };
 
         keymaps = [
@@ -190,11 +205,15 @@ with lib; {
           lspSignature.enable = true;
           otter-nvim.enable = false;
           nvim-docs-view.enable = false;
+          # Consider adding `mason.nvim` for LSP server management.
+          # Check nvf documentation for its specific option, e.g.:
+          # mason.enable = true;
         };
 
         languages = {
           enableFormat = true;
           enableTreesitter = true;
+          # `treesitter.textobjects.enable = true;`
           enableExtraDiagnostics = true;
           nix.enable = true;
           clang.enable = true;
@@ -230,6 +249,8 @@ with lib; {
           highlight-undo.enable = true;
           indent-blankline.enable = true;
           rainbow-delimiters.enable = true;
+          # Consider replacing hop/leap with `flash.nvim` for advanced motions.
+          # flash-nvim.enable = true;
         };
 
         statusline.lualine = {
@@ -250,6 +271,8 @@ with lib; {
           enable = true;
           gitsigns.enable = true;
           gitsigns.codeActions.enable = false;
+          # Consider adding `vim-fugitive` for comprehensive Git integration.
+          # fugitive.enable = true;
         };
         projects.project-nvim.enable = true;
         dashboard.dashboard-nvim.enable = true;
