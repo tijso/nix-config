@@ -266,8 +266,8 @@ with lib; {
             leap.enable = false; # Set to false if using flash.nvim
             precognition.enable = false;
           };
-          images = {
-            image-nvim.enable = false;
+          image-nvim = {
+            enable = false;
           };
         };
 
