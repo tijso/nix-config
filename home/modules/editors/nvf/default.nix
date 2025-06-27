@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 with lib; {
@@ -59,6 +60,71 @@ with lib; {
           };
         };
 
+        # AI INTEGRATIONS - Add these plugins
+        extraPlugins = with pkgs.vimPlugins; [
+          # Codeium for free AI completion
+          codeium-vim
+
+          # gp.nvim for Claude chat integration
+          gp-nvim
+          plenary-nvim
+          nui-nvim
+        ];
+
+        # AI Configuration
+        extraConfigLua = ''
+          -- Codeium Setup
+          vim.g.codeium_disable_bindings = 1
+
+          -- Custom Codeium keybindings
+          vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+          vim.keymap.set('i', '<C-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+          vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+          vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+
+          -- GP.nvim Setup for Claude
+          require("gp").setup({
+            providers = {
+              anthropic = {
+                endpoint = "https://api.anthropic.com/v1/messages",
+                secret = os.getenv("ANTHROPIC_API_KEY"),
+              },
+            },
+
+            agents = {
+              {
+                provider = "anthropic",
+                name = "Claude",
+                chat = true,
+                command = true,
+                model = { model = "claude-3-5-sonnet-20241022", temperature = 0.1 },
+                system_prompt = require("gp.defaults").chat_system_prompt,
+              },
+              {
+                provider = "anthropic",
+                name = "ClaudeCode",
+                chat = false,
+                command = true,
+                model = { model = "claude-3-5-sonnet-20241022", temperature = 0.1 },
+                system_prompt = "You are an AI working as a code editor. Please AVOID COMMENTARY and write only the code requested.",
+              },
+            },
+
+            -- Custom chat dir
+            chat_dir = vim.fn.stdpath("data"):gsub("/$", "") .. "/gp/chats",
+
+            -- UI settings
+            chat_template = require("gp.defaults").short_chat_template,
+            command_template = "🤖 {{agent}} ~ {{command}}",
+
+            -- Window settings
+            chat_shortcut_respond = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g><C-g>" },
+            chat_shortcut_delete = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>d" },
+            chat_shortcut_stop = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>s" },
+            chat_shortcut_new = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>c" },
+          })
+        '';
+
         keymaps = [
           {
             key = "jk";
@@ -113,6 +179,73 @@ with lib; {
             mode = ["i"];
             action = "<Right>";
             desc = "Move right in insert mode";
+          }
+
+          # AI KEYBINDINGS
+          # Claude Chat
+          {
+            key = "<leader>cc";
+            mode = ["n" "v"];
+            action = "<cmd>GpChatNew<cr>";
+            desc = "New Claude chat";
+          }
+          {
+            key = "<leader>ct";
+            mode = ["n" "v"];
+            action = "<cmd>GpChatToggle<cr>";
+            desc = "Toggle Claude chat";
+          }
+          {
+            key = "<leader>cf";
+            mode = ["n" "v"];
+            action = "<cmd>GpChatFinder<cr>";
+            desc = "Find Claude chats";
+          }
+
+          # Claude Commands
+          {
+            key = "<leader>cr";
+            mode = ["n" "v"];
+            action = "<cmd>GpRewrite<cr>";
+            desc = "Claude rewrite selection";
+          }
+          {
+            key = "<leader>ca";
+            mode = ["n" "v"];
+            action = "<cmd>GpAppend<cr>";
+            desc = "Claude append to selection";
+          }
+          {
+            key = "<leader>cp";
+            mode = ["n" "v"];
+            action = "<cmd>GpPrepend<cr>";
+            desc = "Claude prepend to selection";
+          }
+          {
+            key = "<leader>ce";
+            mode = ["n" "v"];
+            action = "<cmd>GpEnew<cr>";
+            desc = "Claude edit in new buffer";
+          }
+          {
+            key = "<leader>cx";
+            mode = ["n" "v"];
+            action = "<cmd>GpContext<cr>";
+            desc = "Add selection to Claude context";
+          }
+
+          # Codeium Controls
+          {
+            key = "<leader>cd";
+            mode = ["n"];
+            action = "<cmd>Codeium disable<cr>";
+            desc = "Disable Codeium";
+          }
+          {
+            key = "<leader>cs";
+            mode = ["n"];
+            action = "<cmd>Codeium enable<cr>";
+            desc = "Enable Codeium";
           }
         ];
 
