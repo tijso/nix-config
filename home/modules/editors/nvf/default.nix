@@ -45,7 +45,6 @@ with lib; {
 
         maps = {
           normal = {
-            # Removed the redundant "<leader>e" mapping as "<leader>fe" in keymaps covers it.
           };
         };
 
@@ -70,10 +69,9 @@ with lib; {
               vim.keymap.set('i', '<C-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
               vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
               vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-            ''; # Removed Claude Lua functions from here
+            '';
           };
 
-          # Dependencies that might be needed
           plenary-nvim = {
             package = pkgs.vimPlugins.plenary-nvim;
           };
@@ -140,8 +138,6 @@ with lib; {
           }
 
           # AI KEYBINDINGS
-          # Removed Simple Claude Integration keybindings here
-          # Removed Codeium/Windsurf Controls as they are now handled directly in windsurf-vim.setup
           {
             key = "<leader>cd";
             mode = ["n"];
@@ -239,7 +235,7 @@ with lib; {
         filetree.neo-tree.enable = true;
         notify = {
           nvim-notify.enable = true;
-          nvim-notify.setupOpts.background_colour = "#${config.lib.stylix.colors.base0o}";
+          nvim-notify.setupOpts.background_colour = "#${config.lib.stylix.colors.base00}";
         };
         utility = {
           preview.markdownPreview.enable = true;
