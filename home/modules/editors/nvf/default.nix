@@ -62,9 +62,9 @@ with lib; {
 
         # AI INTEGRATIONS
         extraPlugins = {
-          # Codeium for free AI completion
-          codeium-vim = {
-            package = pkgs.vimPlugins.codeium-vim;
+          # Windsurf (formerly Codeium) for free AI completion
+          windsurf-vim = {
+            package = pkgs.vimPlugins.windsurf-vim;
             setup = ''
               vim.g.codeium_disable_bindings = 1
             '';
@@ -236,18 +236,18 @@ with lib; {
             desc = "Add selection to Claude context";
           }
 
-          # Codeium Controls
+          # Codeium/Windsurf Controls
           {
             key = "<leader>cd";
             mode = ["n"];
             action = "<cmd>Codeium disable<cr>";
-            desc = "Disable Codeium";
+            desc = "Disable Windsurf";
           }
           {
             key = "<leader>cs";
             mode = ["n"];
             action = "<cmd>Codeium enable<cr>";
-            desc = "Enable Codeium";
+            desc = "Enable Windsurf";
           }
         ];
 
