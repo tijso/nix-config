@@ -290,11 +290,6 @@ with lib; {
         treesitter.context.enable = false;
         binds = {
           whichKey.enable = true;
-          settings = {
-            options = {
-              leader = " ";
-            };
-          };
           cheatsheet.enable = true;
         };
         git = {
