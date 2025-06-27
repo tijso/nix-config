@@ -109,9 +109,9 @@ with lib; {
           #   package = pkgs.vimPlugins.toggleterm-nvim;
           #   setup = "lua require('toggleterm').setup()"; # Default setup
           # };
-          zen-mode-nvim = {
-            package = pkgs.vimPlugins.zen-mode-nvim;
-            enable = true;
+          # zen-mode-nvim = {
+          #   package = pkgs.vimPlugins.zen-mode-nvim;
+          #   enable = true;
           };
           # flash-nvim = {
           #   package = pkgs.vimPlugins.flash-nvim;
