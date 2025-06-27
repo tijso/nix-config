@@ -23,10 +23,6 @@ with lib; {
           style = "main";
           transparent = true;
         };
-        extraConfigLua = ''
-          vim.g.mapleader = " "
-          vim.g.maplocalleader = " "
-        '';
         enableLuaLoader = true;
         lineNumberMode = "relNumber";
         lsp.enable = true;
