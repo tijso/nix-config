@@ -33,7 +33,7 @@ with lib; {
         enable = true;
         timeout = 3;
         threshold = 10;
-        extraOptions = ["-root"];
+        extraOptions = ["-root" "ignore-scrolling"];
       };
 
       smartd = {
