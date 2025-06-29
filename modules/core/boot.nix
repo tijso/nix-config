@@ -4,8 +4,7 @@
   lib,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myModules.core.boot = {
     enable = mkEnableOption "Enable boot configuration";
     plymouth = {
@@ -15,9 +14,9 @@ with lib;
 
   config = mkIf config.myModules.core.boot.enable {
     boot = {
-      kernelPackages = pkgs.linuxPackages_6_6;
-      # kernelPackages = pkgs.linuxPackages_latest;
-      kernelModules = [ "v4l2loopback" ];
+      # kernelPackages = pkgs.linuxPackages_6_6;
+      kernelPackages = pkgs.linuxPackages_latest;
+      kernelModules = ["v4l2loopback"];
       kernelParams = [
         "quiet"
         "splash"
@@ -50,7 +49,7 @@ with lib;
         };
         grub = {
           enable = true;
-          devices = [ "nodev" ];
+          devices = ["nodev"];
           efiSupport = true;
           useOSProber = true;
           configurationLimit = 10;
