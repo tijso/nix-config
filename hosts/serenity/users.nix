@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
 {
-  imports = [ ];
+  pkgs,
+  lib,
+  ...
+}: {
   time.timeZone = "America/Chicago";
   time.hardwareClockInLocalTime = true;
 
@@ -9,6 +11,7 @@
     font = "Lat2-Terminus16";
     keyMap = lib.mkForce "us";
     useXkbConfig = true;
+    packages = with pkgs; [terminus_font];
   };
 
   programs.fish.enable = true;
