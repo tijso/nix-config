@@ -46,5 +46,15 @@
     stylix.enable = true;
   };
 
+  services.unclutter = {
+    enable = true;
+    timeout = 3;
+    threshold = 10;
+    extraOptions = [
+      "exclude-root"
+      "ignore-scrolling"
+    ];
+  };
+
   system.stateVersion = "23.11";
 }

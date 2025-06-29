@@ -29,13 +29,6 @@ with lib; {
       udisks2.enable = true;
       # upower.enable = true; # laptops/battery info
 
-      unclutter = {
-        enable = true;
-        timeout = 3;
-        threshold = 10;
-        extraOptions = ["-root" "ignore-scrolling"];
-      };
-
       smartd = {
         enable = true;
         autodetect = true;
