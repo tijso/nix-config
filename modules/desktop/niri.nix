@@ -13,11 +13,13 @@ with lib; {
 
   options.myModules.desktop.niri.enable = mkEnableOption "Enable Niri";
   config = mkIf config.myModules.desktop.niri.enable {
-    programs.niri = {
-      enable = true;
-      package = pkgs.niri-unstable;
+    programs = {
+      xwayland.enable = true;
+      niri = {
+        enable = true;
+        package = pkgs.niri-unstable;
+      };
     };
-
     environment.systemPackages = with pkgs; [
       wayland
       wayland-protocols
@@ -35,28 +37,11 @@ with lib; {
     #   };
     # };
 
-    # services.displayManager.sddm = {
-    #   enable = true;
-    #   wayland.enable = true;
-    #   enableHidpi = true;
-    #   autoNumlock = true;
-    #   theme = "sugar-dark";
-    #   settings = {
-    #     Theme = {
-    #       Current = "sugar-dark";
-    #       Background = "${config.stylix.image}";
-    #       ScreenWidth = "1920";
-    #       ScreenHeight = "1080";
-    #       ScaleImageCropped = "true";
-    #       DimBackgroundImage = "0.0";
-    #     };
-    #   };
-    # };
-
-    services.displayManager.sessionPackages = [pkgs.niri-unstable];
-
-    services.gnome.gnome-keyring.enable = lib.mkForce false;
-    services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
+    services = {
+      displayManager.sessionPackages = [pkgs.niri-unstable];
+      gnome.gnome-keyring.enable = lib.mkForce false;
+      gnome.gcr-ssh-agent.enable = lib.mkForce false;
+    };
 
     security.polkit.enable = true;
     systemd.user.services.polkit-gnome-authentication-agent-1 = {
