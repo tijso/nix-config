@@ -37,31 +37,10 @@ with lib; {
     #   };
     # };
 
-    # xserver = {
-    #   enable = true;
-    #   excludePackages = [pkgs.xterm];
-    #   desktopManager.xterm.enable = false;
-    #   desktopManager.runXdgAutostartIfNone = true;
-    #   xkb = {
-    #     layout = "us";
-    #     variant = "";
-    #   };
-    # };
-
     services = {
       displayManager.sessionPackages = [pkgs.niri-unstable];
       gnome.gnome-keyring.enable = lib.mkForce false;
       gnome.gcr-ssh-agent.enable = lib.mkForce false;
-      xserver = {
-        enable = true;
-        excludePackages = [pkgs.xterm];
-        desktopManager.xterm.enable = false;
-        desktopManager.runXdgAutostartIfNone = true;
-        xkb = {
-          layout = "us";
-          variant = "";
-        };
-      };
     };
 
     security.polkit.enable = true;
