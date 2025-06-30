@@ -5,6 +5,7 @@
     ./core/fonts
     ./desktop
     ./desktop/sddm
+    ./desktop/greetd
     ./development
     ./stylix
   ];

@@ -11,8 +11,10 @@ with lib; {
   config = mkIf config.myModules.desktop.hyprland.enable {
     programs.hyprland.enable = true;
 
-    security.pam.services.sddm.enableGnomeKeyring = true;
-    # services.gnome-keyring.enable = lib.mkForce false;
+    services = {
+      gnome.gnome-keyring.enable = lib.mkForce false;
+      gnome.gcr-ssh-agent.enable = lib.mkForce false;
+    };
 
     xdg.portal = {
       enable = true;
@@ -30,11 +32,5 @@ with lib; {
         };
       };
     };
-
-    environment.systemPackages = with pkgs; [
-      catppuccin-sddm
-      sddm-sugar-dark
-      libsForQt5.qt5.qtgraphicaleffects
-    ];
   };
 }

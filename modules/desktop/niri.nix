@@ -9,6 +9,7 @@ with lib; {
   imports = [
     inputs.niri.nixosModules.niri
     ./sddm
+    # ./greetd
   ];
 
   options.myModules.desktop.niri.enable = mkEnableOption "Enable Niri";
