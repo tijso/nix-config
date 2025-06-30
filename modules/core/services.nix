@@ -21,13 +21,22 @@ with lib; {
       gvfs.enable = true;
       libinput.enable = true;
       nfs.server.enable = true;
-      openssh.enable = true;
       # power-profiles-daemon.enable = true; # Use With Laptops
       rpcbind.enable = true;
       tumbler.enable = true;
       udev.enable = true;
       udisks2.enable = true;
       # upower.enable = true; # laptops/battery info
+
+      openssh = {
+        enable = true;
+        settings = {
+          PermitRootLogin = "no"; # Prevent root from SSH login
+          PasswordAuthentication = true; # Users can SSH using kb and password
+          KbdInteractiveAuthentication = true;
+        };
+        ports = [22];
+      };
 
       pipewire = {
         enable = true;
@@ -36,6 +45,22 @@ with lib; {
         pulse.enable = true;
         wireplumber.enable = true;
         jack.enable = true;
+      };
+
+      journald = {
+        extraConfig = ''
+          SystemMaxUse=100M
+          SystemKeepFree=1G
+          SystemMaxFileSize=50M
+          RuntimeMaxUse=100M
+
+          Storage=persistent
+          Compress=yes
+          SyncIntervalSec=5m
+
+          MaxRetentionSec=1month
+          MaxFileSec=1week
+        '';
       };
 
       xserver = {

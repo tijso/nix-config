@@ -1,8 +1,5 @@
-{ ... }:
-{
+{...}: {
   imports = [
-    ./audio.nix
-    ./bluetooth.nix
     ./boot.nix
     ./gpu.nix
     ./network.nix

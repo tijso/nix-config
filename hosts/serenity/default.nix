@@ -16,8 +16,6 @@
 
   myModules = {
     core = {
-      audio.enable = true;
-      bluetooth.enable = true;
       boot = {
         enable = true;
         plymouth = {
