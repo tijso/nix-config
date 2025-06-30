@@ -29,26 +29,23 @@ with lib; {
       udisks2.enable = true;
       # upower.enable = true; # laptops/battery info
 
+      pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        wireplumber.enable = true;
+        jack.enable = true;
+      };
+
       xserver = {
         enable = true;
+        videoDrivers = ["amdgpu"];
         xkb = {
           layout = "us";
           # variant = "colemak_dh"
         };
       };
-      # libinput = {
-      #   enable = true;
-      #   touchpad = {
-      #     scrollMethod = "twofinger";
-      #     naturalScrolling = true;
-      #     middleEmulation = true;
-      #     accelSpeed = "5";
-      #     accelProfile = "adaptive";
-      #     disableWhileTyping = true;
-      #   };
-      #   mouse.accelProfile = "flat";
-      # };
-      # };
       console.useXkbConfig = true;
 
       unclutter = {
