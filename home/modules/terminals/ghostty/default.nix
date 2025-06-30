@@ -25,8 +25,8 @@ with lib; {
         window-height = 32;
         window-width = 110;
 
-        background-opacity = 0.90;
-        # background-blur-radius = 60;
+        background-opacity = 0.95;
+        background-blur-radius = 60;
         unfocused-split-opacity = 0.9;
 
         # Clipboard
