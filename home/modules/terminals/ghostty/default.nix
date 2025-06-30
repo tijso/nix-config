@@ -21,7 +21,7 @@ with lib; {
         font-family-italic = "Maple Mono NF Italic";
         font-size = 18;
 
-        window-decoration = true;
+        window-decoration = false;
         window-height = 32;
         window-width = 110;
 
