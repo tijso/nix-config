@@ -70,7 +70,6 @@ with lib; {
           layout = "us";
           # variant = "colemak_dh"
         };
-        console.useXkbConfig = true;
       };
 
       unclutter = {
