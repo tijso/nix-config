@@ -18,7 +18,7 @@ with lib; {
       dbus.enable = true;
       envfs.enable = true;
       gnome.gnome-keyring.enable = true;
-      gvfs.enable = true;
+      gvfs.enable = false;
       libinput.enable = true;
       nfs.server.enable = true;
       # power-profiles-daemon.enable = true; # Use With Laptops
