@@ -5,7 +5,7 @@
   ...
 }:
 with lib; {
-  imports = [./sddm];
+  imports = [../sddm];
 
   options.myModules.desktop.hyprland.enable = mkEnableOption "Enable Hyprland";
   config = mkIf config.myModules.desktop.hyprland.enable {
