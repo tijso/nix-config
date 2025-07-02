@@ -3,7 +3,7 @@
   imports = [
     ./cosmic.nix
     ./gnome.nix
-    ./hyprland.nix
+    # ./hyprland.nix
     ./niri.nix
   ];
 }
