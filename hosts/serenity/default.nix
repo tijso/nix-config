@@ -34,10 +34,10 @@
 
     desktop = {
       cosmic.enable = false;
-      gnome.enable = false;
+      gnome.enable = true;
       hyprland.enable = false;
-      niri.enable = true;
-      sddm.enable = true;
+      niri.enable = false;
+      sddm.enable = false;
       # greetd.enable = false;
     };
 
