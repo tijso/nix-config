@@ -8,7 +8,7 @@ with lib; {
   options.myModules.core.services.enable = mkEnableOption "Enable Services";
   config = mkIf config.myModules.core.services.enable {
     programs = {
-      ssh.startAgent = true;
+      # ssh.startAgent = true;
       dconf.enable = true;
     };
 
