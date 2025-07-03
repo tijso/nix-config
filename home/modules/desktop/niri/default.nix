@@ -47,6 +47,8 @@ with lib; {
           BROWSER = config.myHome.desktop.niri.browser;
           MOZ_ENABLE_WAYLAND = "1";
           NIXOS_OZONE_WL = "1";
+          QT_QPA_PLATFORM = "wayland";
+          DISPLAY = ":0";
         };
 
         input = {
@@ -117,7 +119,7 @@ with lib; {
 
           border = {
             enable = true;
-            width = 2;
+            width = 4;
             active.color = config.lib.stylix.colors.base0D;
             inactive.color = config.lib.stylix.colors.base02;
           };
