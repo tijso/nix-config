@@ -60,7 +60,7 @@
     "Mod+Shift+5".action = move-column-to-index 5;
 
     "Mod+R".action = switch-preset-column-width;
-    "Mod+Shift+R".action = switch-preset-window-hight;
+    "Mod+Shift+R".action = switch-preset-window-height;
     "Mod+Ctrl+R".action = reset-window-height;
     "Mod+F".action = maximize-column;
     "Mod+Shift+F".action = fullscreen-window;
