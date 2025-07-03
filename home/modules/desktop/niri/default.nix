@@ -43,8 +43,7 @@ with lib; {
         prefer-no-csd = true;
         hotkey-overlay.skip-at-startup = true;
         screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
-
-        home.sessionVariables = {
+        environment = {
           BROWSER = config.myHome.desktop.niri.browser;
           MOZ_ENABLE_WAYLAND = "1";
           NIXOS_OZONE_WL = "1";
