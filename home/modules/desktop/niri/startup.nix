@@ -1,8 +1,8 @@
 {pkgs, ...}: {
-  # Regular startup programs
   programs.niri.settings.spawn-at-startup = [
     {command = ["${pkgs.waybar}/bin/waybar"];}
     {command = ["${pkgs.mako}/bin/mako"];}
+    {command = ["xwayland-satellite"];}
     {
       command = [
         "${pkgs._1password-gui}/bin/1password"

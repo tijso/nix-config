@@ -38,7 +38,22 @@ with lib; {
     programs.niri = {
       enable = true;
       settings = {
+        animations.enable = true;
+        clipboard.disable-primary = true;
+        prefer-no-csd = true;
+        hotkey-overlay.skip-at-startup = true;
+        screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
+
+        home.sessionVariables = {
+          BROWSER = config.myHome.desktop.niri.browser;
+          MOZ_ENABLE_WAYLAND = "1";
+          NIXOS_OZONE_WL = "1";
+        };
+
         input = {
+          focus-follows-mouse.enable = true;
+          power-key-handling.enable = true;
+          workspace-auto-back-and-forth = true;
           keyboard = {
             xkb = {
               layout = "us";
@@ -48,16 +63,9 @@ with lib; {
             repeat-rate = 25;
           };
 
-          touchpad = {
-            tap = true;
-            dwt = true;
-            natural-scroll = true;
-            click-method = "clickfinger";
-          };
-
           mouse = {
             natural-scroll = false;
-            accel-speed = 0.2;
+            accel-profile = "adaptive";
           };
         };
 
@@ -74,6 +82,7 @@ with lib; {
               y = 0;
             };
           };
+
           "DP-2" = {
             mode = {
               width = 2560;
@@ -107,6 +116,7 @@ with lib; {
             active.color = config.lib.stylix.colors.base0D;
             inactive.color = config.lib.stylix.colors.base02;
           };
+
           border = {
             enable = true;
             width = 2;
@@ -114,21 +124,7 @@ with lib; {
             inactive.color = config.lib.stylix.colors.base02;
           };
         };
-
-        animations.enable = true;
-        clipboard.disable-primary = true;
-
-        prefer-no-csd = true;
-        hotkey-overlay.skip-at-startup = true;
-        screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
       };
-    };
-
-    # Session variables
-    home.sessionVariables = {
-      BROWSER = config.myHome.desktop.niri.browser;
-      MOZ_ENABLE_WAYLAND = "1";
-      NIXOS_OZONE_WL = "1";
     };
 
     # # XDG settings for default applications
@@ -142,14 +138,5 @@ with lib; {
     #     "x-scheme-handler/unknown" = "brave-browser.desktop";
     #   };
     # };
-
-    # Set wallpaper script
-    home.file."bin/set-wallpaper" = {
-      text = ''
-        #!/bin/sh
-        ${pkgs.swww}/bin/swww img "$1" --transition-type wipe --transition-duration 2
-      '';
-      executable = true;
-    };
   };
 }
