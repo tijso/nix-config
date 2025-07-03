@@ -98,16 +98,15 @@ with lib; {
 
         layout = {
           gaps = 15;
+          center-focused-column = "never";
           always-center-single-column = true;
+          default-column-width = {proportion = 0.750000;};
           preset-column-widths = [
-            {proportion = 1.0 / 3.0;}
-            {proportion = 1.0 / 2.0;}
-            {proportion = 2.0 / 3.0;}
-            {proportion = 3.0 / 4.0;}
+            {proportion = 0.330000;}
+            {proportion = 0.500000;}
+            {proportion = 0.750000;}
+            {proportion = 1.000000;}
           ];
-          default-column-width = {
-            proportion = 1.0 / 2.0;
-          };
 
           focus-ring = {
             enable = true;
@@ -121,6 +120,17 @@ with lib; {
             width = 2;
             active.color = config.lib.stylix.colors.base0D;
             inactive.color = config.lib.stylix.colors.base02;
+          };
+
+          tab-indicator = {
+            hide-when-single-tab = true;
+            place-within-column = true;
+            position = "left";
+            corner-radius = 20.0;
+            gap = -12.0;
+            gaps-between-tabs = 10.0;
+            width = 4.0;
+            length.total-proportion = 0.1;
           };
         };
       };
