@@ -45,8 +45,10 @@
     "Mod+Ctrl+Home".action = move-column-to-first;
     "Mod+Ctrl+End".action = move-column-to-last;
 
-    "Mod+Shift+Ctrl+J".action = move-column-to-monitor-down;
-    "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
+    "Mod+Ctrl+Alt+H".action = move-column-to-monitor-left;
+    "Mod+Ctrl+Alt+L".action = move-column-to-monitor-right;
+    "Mod+Ctrl+Alt+J".action = move-column-to-monitor-down;
+    "Mod+Ctrl+Alt+K".action = move-column-to-monitor-up;
 
     "Mod+1".action = focus-workspace 1;
     "Mod+2".action = focus-workspace 2;
