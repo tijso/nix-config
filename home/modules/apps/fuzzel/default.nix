@@ -3,8 +3,7 @@
   lib,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myHome.apps.fuzzel.enable = mkEnableOption "Enable Fuzzel";
   config = mkIf config.myHome.apps.fuzzel.enable {
     programs.fuzzel = {
@@ -16,7 +15,7 @@ with lib;
           fields = "name,generic,comment,categories,filename,keywords";
           terminal = "ghostty";
           prompt = "' ➜  '";
-          icon-theme = "Fluent-teal-dark";
+          # icon-theme = "Fluent-teal-dark";
           layer = "top";
           lines = 10;
           width = 35;
