@@ -37,8 +37,8 @@
       gnome.enable = false;
       hyprland.enable = false;
       niri.enable = true;
-      sddm.enable = false;
-      greetd.enable = true;
+      sddm.enable = true;
+      greetd.enable = false;
     };
 
     development.enable = true;
