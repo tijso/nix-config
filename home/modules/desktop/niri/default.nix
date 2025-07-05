@@ -24,7 +24,6 @@ with lib; {
     home.packages = with pkgs; [
       grim
       slurp
-      # swww
       wayland-protocols
       wayland-utils
       wayshot

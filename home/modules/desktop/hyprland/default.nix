@@ -20,7 +20,6 @@ with lib; {
       grim
       slurp
       swappy
-      swww
       wl-clipboard
       wl-color-picker
       wlr-randr
@@ -29,6 +28,12 @@ with lib; {
       ydotool
       hyprpicker
     ];
+
+    services.swww = {
+      enable = true;
+      package = pkgs.swww;
+    };
+
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
