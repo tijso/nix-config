@@ -38,7 +38,7 @@
       hyprland.enable = false;
       niri.enable = true;
       sddm.enable = false;
-      greetd.enable = false;
+      # greetd.enable = false;
     };
 
     development.enable = true;

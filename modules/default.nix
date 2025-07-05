@@ -6,7 +6,7 @@
 
     ./desktop/cosmic
     ./desktop/gnome
-    ./desktop/greetd
+    # ./desktop/greetd
     ./desktop/hyprland
     ./desktop/niri.nix
     ./desktop/sddm
