@@ -123,7 +123,7 @@ with lib; {
 
           border = {
             enable = true;
-            width = 4;
+            width = 2;
             active.color = config.lib.stylix.colors.base0D;
             inactive.color = config.lib.stylix.colors.base02;
           };
