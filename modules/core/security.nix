@@ -8,11 +8,6 @@ with lib; {
   options.myModules.core.security.enable = mkEnableOption "Enable Security";
 
   config = mkIf config.myModules.core.security.enable {
-    environment.systemPackages = with pkgs; [
-      polkit_gnome
-    ];
-
-    # Enable Yubikey support
     services.pcscd.enable = true;
     programs.seahorse.enable = true;
 
