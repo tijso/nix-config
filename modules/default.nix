@@ -8,7 +8,7 @@
     ./desktop/gnome
     ./desktop/greetd
     ./desktop/hyprland
-    ./desktop/niri
+    ./desktop/niri.nix
     ./desktop/sddm
 
     ./development
