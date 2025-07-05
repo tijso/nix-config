@@ -11,6 +11,13 @@ with lib; {
     programs._1password-gui = {
       enable = true;
       polkitPolicyOwners = ["tijso"];
+      package = pkgs._1password-gui.overrideAttrs (_: {
+        postFixup = ''
+          makeWrapper $out/bin/1password $out/bin/1password \
+            --add-flags "--enable-features=UseOzonePlatform" \
+            --add-flags "--ozone-platform=wayland"
+        '';
+      });
     };
   };
 }
