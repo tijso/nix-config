@@ -24,7 +24,7 @@ with lib; {
     home.packages = with pkgs; [
       grim
       slurp
-      swww
+      # swww
       wayland-protocols
       wayland-utils
       wayshot
@@ -34,6 +34,11 @@ with lib; {
       wlr-randr
       ydotool
     ];
+
+    services.swww = {
+      enable = true;
+      package = pkgs.swww;
+    };
 
     programs.niri = {
       enable = true;
