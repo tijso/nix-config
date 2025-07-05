@@ -11,11 +11,10 @@
     }
   ];
 
-  # SWWW service and wallpaper setup
-  # services.swww = {
-  #   enable = true;
-  #   package = pkgs.swww;
-  # };
+  services.swww = {
+    enable = true;
+    package = pkgs.swww;
+  };
 
   # Set wallpaper after swww starts
   # systemd.user.services.set-wallpaper = {
