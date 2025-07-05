@@ -42,6 +42,8 @@
         {app-id = "brave-browser";}
       ];
       open-maximized = true;
+      open-on-output = "DP-2";
+      opacity = 1.0;
     }
 
     {
