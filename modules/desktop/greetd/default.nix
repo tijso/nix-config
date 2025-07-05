@@ -5,8 +5,8 @@
   ...
 }:
 with lib; {
-  options.myModules.core.desktop.greetd.enable = mkEnableOption "Enable Greetd";
-  config = mkIf config.myModules.core.desktop.greetd.enable {
+  options.myModules.desktop.greetd.enable = mkEnableOption "Enable Greetd";
+  config = mkIf config.myModules.desktop.greetd.enable {
     services.greetd = {
       enable = true;
       settings = {
