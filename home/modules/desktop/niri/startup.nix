@@ -1,4 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
+  services.swww = {
+    enable = true;
+    package = pkgs.swww;
+  };
+
   programs.niri.settings.spawn-at-startup = [
     {command = ["${pkgs.waybar}/bin/waybar"];}
     {command = ["${pkgs.mako}/bin/mako"];}
@@ -9,12 +18,19 @@
         "--silent"
       ];
     }
-  ];
 
-  services.swww = {
-    enable = true;
-    package = pkgs.swww;
-  };
+    {
+      command = [
+        "${pkgs.swww}/bin/swww"
+        "img"
+        "${config.stylix.image}"
+        "--transition-type"
+        "wipe"
+        "--transition-duration"
+        "2"
+      ];
+    }
+  ];
 
   # Set wallpaper after swww starts
   # systemd.user.services.set-wallpaper = {
