@@ -8,7 +8,7 @@ with lib; {
   options.myModules.core.services.enable = mkEnableOption "Enable Services";
   config = mkIf config.myModules.core.services.enable {
     programs = {
-      # ssh.startAgent = true;
+      ssh.startAgent = true;
       dconf.enable = true;
     };
 
@@ -18,7 +18,7 @@ with lib; {
       dbus.enable = true;
       envfs.enable = true;
       gnome.gnome-keyring.enable = true;
-      # gvfs.enable = true;
+      gvfs.enable = true;
       libinput.enable = true;
       nfs.server.enable = true;
       # power-profiles-daemon.enable = true; # Use With Laptops
