@@ -27,6 +27,7 @@ with lib; {
 
         fuzzel.enable = true;
         waybar.enable = true;
+        niri.enable = true;
 
         fish.enable = false;
         ghostty.enable = false;
