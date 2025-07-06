@@ -59,7 +59,7 @@ with lib; {
           NIXOS_OZONE_WAYLAND_AUTO = "1";
           NIXOS_OZONE_WL = "1";
           XDG_CURRENT_DESKTOP = "Niri";
-          DISPLAY = "0";
+          # DISPLAY = "0";
         };
 
         input = {
