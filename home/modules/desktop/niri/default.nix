@@ -47,14 +47,6 @@ with lib; {
         prefer-no-csd = true;
         hotkey-overlay.skip-at-startup = true;
         screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
-        environment = {
-          BROWSER = config.myHome.desktop.niri.browser;
-          MOZ_ENABLE_WAYLAND = "1";
-          NIXOS_OZONE_WL = "1";
-          QT_QPA_PLATFORM = "wayland";
-          DISPLAY = ":0";
-        };
-
         input = {
           focus-follows-mouse.enable = true;
           power-key-handling.enable = true;
