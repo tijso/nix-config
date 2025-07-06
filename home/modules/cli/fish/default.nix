@@ -1,7 +1,9 @@
-{ lib, config, ... }:
-with lib;
-
 {
+  lib,
+  config,
+  ...
+}:
+with lib; {
   options.myHome.cli.fish.enable = mkEnableOption "Enable Fish";
   config = mkIf config.myHome.cli.fish.enable {
     programs.fish = {
@@ -17,10 +19,10 @@ with lib;
         clean = "sudo nix-collect-garbage -d && nix store optimise";
         search = "nix search nixpkgs";
 
-        projects = "cd ~/projects";
-        personal = "cd ~/projects/personal";
-        github = "cd ~/projects/personal/github";
-        gitlab = "cd ~/projects/personal/gitlab";
+        projects = "cd ~/Projects";
+        personal = "cd ~/Projects/Personal";
+        github = "cd ~/Projects/Personal/Github";
+        gitlab = "cd ~/Projects/Personal/Gitlab";
 
         mkdir = "mkdir -p";
         cat = "bat --paging=never";
@@ -230,7 +232,7 @@ with lib;
         # set -g fish_pager_color_prefix 86e1fc
         # set -g fish_pager_color_completion c8d3f5
         # set -g fish_pager_color_description 636da6
-        # set -g fish_pager_color_selected_background --background=2d3f76 
+        # set -g fish_pager_color_selected_background --background=2d3f76
 
         # Nightfly
         # set -g fish_color_autosuggestion 4b6479
