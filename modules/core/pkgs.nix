@@ -28,6 +28,7 @@ with lib; {
       unzip
       usbutils
       v4l-utils
+      vial
       vim
       xdg-utils
       zip

@@ -26,6 +26,9 @@
       "storage"
       "libvirtd"
       "ssh-agent"
+      "dialout"
+      "plugdev"
+      "input"
     ];
     shell = pkgs.fish;
   };

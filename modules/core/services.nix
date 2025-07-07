@@ -24,9 +24,20 @@ with lib; {
       # power-profiles-daemon.enable = true; # Use With Laptops
       rpcbind.enable = true;
       tumbler.enable = true;
-      udev.enable = true;
+      # udev.enable = true;
       udisks2.enable = true;
       # upower.enable = true; # laptops/battery info
+
+      udev = {
+        enable = true;
+        packages = with pkgs; [
+          vial
+          qmk-udev-rules
+        ];
+        extraRules = ''
+          KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0666", TAG+="uaccess"
+        '';
+      };
 
       openssh = {
         enable = true;
