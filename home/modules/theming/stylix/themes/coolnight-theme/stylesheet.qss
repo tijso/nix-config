@@ -1,0 +1,35 @@
+QWidget {
+    color: #CBE0F0;
+    background-color: #011423;
+}
+
+QPushButton {
+    color: #CBE0F0;
+    background-color: #011423;
+    border: 1px solid #47FF9C;
+}
+
+QPushButton:hover {
+    background-color: #033259;
+}
+
+QLineEdit {
+    background-color: #011423;
+    color: #CBE0F0;
+    border: 1px solid #47FF9C;
+}
+
+QListView {
+    background-color: #011423;
+    color: #CBE0F0;
+    alternate-background-color: #033259;
+}
+
+QMenuBar {
+    background-color: #011423;
+}
+
+QMenu {
+    background-color: #011423;
+    color: #CBE0F0;
+}
