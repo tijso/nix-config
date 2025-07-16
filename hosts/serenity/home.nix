@@ -24,7 +24,7 @@
     btop
     cliphist
     fd
-    gimp
+    # gimp
     imagemagick
     inkscape
     qbittorrent
