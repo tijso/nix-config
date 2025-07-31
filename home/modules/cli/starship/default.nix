@@ -3,8 +3,7 @@
   lib,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myHome.cli.starship.enable = mkEnableOption "Enable Starship";
   config = mkIf config.myHome.cli.starship.enable {
     programs.starship = {
@@ -38,8 +37,8 @@ with lib;
         ];
 
         character = {
-          success_symbol = "[ •   ](fg:#${config.lib.stylix.colors.base0B})";
-          error_symbol = "[ •  󰅙 ](fg:#${config.lib.stylix.colors.base08})";
+          success_symbol = "[ •  ](fg:#${config.lib.stylix.colors.base0B})";
+          error_symbol = "[ • 󰅙 ](fg:#${config.lib.stylix.colors.base08})";
         };
 
         directory = {
