@@ -28,6 +28,7 @@ with lib; {
         background-opacity = 0.95;
         # background-blur-radius = 60;
         unfocused-split-opacity = 0.9;
+        renderer = "software";
 
         # Clipboard
         clipboard-paste-protection = false;
