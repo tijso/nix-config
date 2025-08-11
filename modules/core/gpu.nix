@@ -10,6 +10,7 @@ with lib; {
   config = mkIf config.myModules.core.gpu.enable {
     hardware.graphics = {
       enable = true;
+      enable32Bit = true;
       extraPackages = with pkgs; [
         vulkan-loader
         vulkan-validation-layers
@@ -17,11 +18,6 @@ with lib; {
         # rocmPackages.clr.icd
         # amdvlk
       ];
-    };
-    hardware.opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
     };
 
     services.xserver.videoDrivers = ["amdgpu"];
