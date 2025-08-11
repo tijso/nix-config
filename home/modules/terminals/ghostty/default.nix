@@ -34,7 +34,7 @@ with lib; {
         copy-on-select = "clipboard";
 
         # Misc
-        # gtk-single-instance = true;
+        gtk-single-instance = true;
         shell-integration-features = "no-cursor";
         cursor-style = "bar";
         mouse-hide-while-typing = true;
