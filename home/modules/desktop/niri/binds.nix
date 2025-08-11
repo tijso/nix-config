@@ -8,7 +8,8 @@
     brightness = spawn "${pkgs.brightnessctl}/bin/brightnessctl" "set";
     playerctl = spawn "${pkgs.playerctl}/bin/playerctl";
   in {
-    "Mod+Return".action = spawn "ghostty";
+    "Mod+Return".action = spawn "wezterm";
+    # "Mod+Return".action = spawn "ghostty";
     "Mod+O".action = show-hotkey-overlay;
     "Mod+D".action = spawn "${pkgs.fuzzel}/bin/fuzzel";
     "Mod+B".action = spawn "${pkgs.brave}/bin/brave";
