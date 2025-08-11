@@ -8,20 +8,18 @@ with lib; {
   options.myModules.core.gpu.enable = mkEnableOption "Enable Gpu";
 
   config = mkIf config.myModules.core.gpu.enable {
-    hardware.graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-        vulkan-loader
-        vulkan-validation-layers
-        vulkan-extension-layer
-        # rocmPackages.clr.icd
-        # amdvlk
-      ];
-    };
-    hardware.opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+    hardware = {
+      opengl.enable = true;
+      graphics = {
+        enable = true;
+        extraPackages = with pkgs; [
+          vulkan-loader
+          vulkan-validation-layers
+          vulkan-extension-layer
+          # rocmPackages.clr.icd
+          # amdvlk
+        ];
+      };
     };
 
     services.xserver.videoDrivers = ["amdgpu"];
