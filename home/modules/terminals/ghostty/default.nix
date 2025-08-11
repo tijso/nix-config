@@ -34,6 +34,7 @@ with lib; {
         copy-on-select = "clipboard";
 
         # Misc
+        renderer = software;
         gtk-single-instance = true;
         shell-integration-features = "no-cursor";
         cursor-style = "bar";
