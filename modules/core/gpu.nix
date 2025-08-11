@@ -4,8 +4,7 @@
   lib,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myModules.core.gpu.enable = mkEnableOption "Enable Gpu";
 
   config = mkIf config.myModules.core.gpu.enable {
@@ -19,8 +18,13 @@ with lib;
         # amdvlk
       ];
     };
+    hardware.opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
 
-    services.xserver.videoDrivers = [ "amdgpu" ];
-    boot.initrd.kernelModules = [ "amdgpu" ];
+    services.xserver.videoDrivers = ["amdgpu"];
+    boot.initrd.kernelModules = ["amdgpu"];
   };
 }
