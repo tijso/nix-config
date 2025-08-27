@@ -1,6 +1,6 @@
 {
   pkgs,
-  # inputs,
+  inputs,
   ...
 }: {
   imports = [
@@ -20,7 +20,7 @@
   };
 
   home.packages = with pkgs; [
-    # inputs.ghostty.packages.${pkgs.system}.default
+    inputs.ghostty.packages.${pkgs.system}.default
     btop
     cliphist
     fd

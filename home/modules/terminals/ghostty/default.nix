@@ -1,8 +1,8 @@
 {
   config,
   lib,
-  # pkgs,
-  # inputs,
+  pkgs,
+  inputs,
   ...
 }:
 with lib; {
@@ -13,7 +13,7 @@ with lib; {
       enableBashIntegration = true;
       enableZshIntegration = true;
       enableFishIntegration = true;
-      # package = inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      package = inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default;
       settings = {
         font-family = "Maple Mono NF";
         font-family-bold = "Maple Mono NF Bold";
