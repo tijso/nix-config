@@ -19,7 +19,7 @@ with lib; {
       openssl
 
       elixir
-      python3
+      # python3
       rustup
 
       ccls
