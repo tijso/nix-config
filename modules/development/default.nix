@@ -4,8 +4,7 @@
   lib,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myModules.development.enable = mkEnableOption "Enable Development";
 
   config = mkIf config.myModules.development.enable {
@@ -29,7 +28,7 @@ with lib;
       nodePackages.bash-language-server
       nodePackages.eslint
       nodePackages.prettier
-      pyright
+      # pyright
       nodePackages.typescript
       nodePackages.typescript-language-server
       vscode-langservers-extracted
