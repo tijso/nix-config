@@ -19,7 +19,7 @@ with lib; {
       openssl
 
       elixir
-      # python3
+      python3
       rustup
 
       ccls
@@ -28,7 +28,7 @@ with lib; {
       nodePackages.bash-language-server
       nodePackages.eslint
       nodePackages.prettier
-      # pyright
+      pyright
       nodePackages.typescript
       nodePackages.typescript-language-server
       vscode-langservers-extracted
