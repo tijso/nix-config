@@ -23,7 +23,7 @@ with lib; {
       rustup
 
       ccls
-      cmake-language-server
+      # cmake-language-server
       lua-language-server
       nodePackages.bash-language-server
       nodePackages.eslint
