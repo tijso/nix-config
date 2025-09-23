@@ -4,15 +4,14 @@
   config,
   ...
 }:
-with lib;
-{
+with lib; {
   options.myHome.development.go.enable = mkEnableOption "Enable Go";
   config = mkIf config.myHome.development.go.enable {
     programs.go = {
       enable = true;
       package = pkgs.go;
-      packages = { };
-      goPath = "go";
+      packages = {};
+      env.GOPATH = "go";
       # goPrivate = ["*github.com/asanbilit/*" "*gitlab.iranairs.com/*"];
     };
 
@@ -29,6 +28,6 @@ with lib;
       sqlc
     ];
 
-    home.sessionPath = [ "$HOME/go/bin" ];
+    home.sessionPath = ["$HOME/go/bin"];
   };
 }
