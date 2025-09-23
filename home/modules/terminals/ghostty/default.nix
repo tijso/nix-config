@@ -77,7 +77,7 @@ with lib; {
           "alt+shift+8=goto_tab:8"
           "alt+shift+9=goto_tab:9"
         ];
-        theme = "rose-pine";
+        theme = "Rose Pine";
       };
       themes = {
         Nightfly = {
