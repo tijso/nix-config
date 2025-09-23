@@ -8,6 +8,7 @@ with lib; {
   config = mkIf config.myHome.cli.ssh.enable {
     programs.ssh = {
       enable = true;
+      enableDefaultConfig = false;
       matchBlocks = {
         "*" = {
           addKeysToAgent = "yes";
