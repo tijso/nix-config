@@ -11,6 +11,11 @@ with lib; {
       matchBlocks = {
         "*" = {
           addKeysToAgent = "yes";
+          compression = true;
+          serverAliveInterval = 0;
+          serverAliveCountMax = 3;
+          hashKnownHosts = true;
+          userKnownHostsFile = "~/.ssh/known_hosts ~/.ssh/known_hosts2";
         };
         "github.com" = {
           hostname = "github.com";
