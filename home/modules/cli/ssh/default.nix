@@ -9,7 +9,9 @@ with lib; {
     programs.ssh = {
       enable = true;
       matchBlocks = {
-        addKeysToAgent = "yes";
+        "*" = {
+          addKeysToAgent = "yes";
+        };
         "github.com" = {
           hostname = "github.com";
           user = "git";
@@ -17,12 +19,6 @@ with lib; {
           identitiesOnly = true;
         };
       };
-
-      # Optional: Any other SSH client config you want to add globally
-      # extraConfig = ''
-      #   Host *
-      #     ServerAliveInterval 60
-      # '';
     };
   };
 }
