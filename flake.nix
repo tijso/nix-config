@@ -34,7 +34,10 @@
     };
 
     nvf.url = "github:notashelf/nvf";
-    ghostty.url = "github:ghostty-org/ghostty";
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
