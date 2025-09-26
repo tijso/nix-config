@@ -59,6 +59,13 @@ with lib; {
           NIXOS_OZONE_WAYLAND_AUTO = "1";
           NIXOS_OZONE_WL = "1";
           XDG_CURRENT_DESKTOP = "Niri";
+
+          GDK_SCALE = "1.25";
+          GDK_DPI_SCALE = "1.0";
+          QT_SCALE_FACTOR = "1.25";
+          XCURSOR_SIZE = "32";
+          QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+          QT_ENABLE_HIGHDPI_SCALING = "1";
         };
 
         input = {
