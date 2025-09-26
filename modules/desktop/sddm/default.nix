@@ -17,7 +17,7 @@ with lib; {
       wayland.enable = true;
       enableHidpi = true;
       autoNumlock = true;
-      theme = "sugar-dark";
+      theme = "catppuccin-mocha";
       settings = {
         Theme = {
           Background = "${config.stylix.image}";
