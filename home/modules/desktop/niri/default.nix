@@ -88,7 +88,7 @@ with lib; {
               height = 2160;
               refresh = null;
             };
-            scale = 1.50;
+            scale = 1.5;
             position = {
               x = 2048;
               y = 0;
