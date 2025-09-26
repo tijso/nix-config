@@ -20,7 +20,6 @@ with lib; {
       theme = "sugar-dark";
       settings = {
         Theme = {
-          Current = "sugar-dark";
           Background = "${config.stylix.image}";
           ScreenWidth = "3849";
           ScreenHeight = "2160";
