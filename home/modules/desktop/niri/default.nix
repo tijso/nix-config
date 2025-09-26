@@ -82,6 +82,7 @@ with lib; {
           };
 
           mouse = {
+            scroll-factor = 2.0;
             natural-scroll = false;
             accel-profile = "adaptive";
           };
