@@ -28,8 +28,8 @@ with lib; {
       enable = true;
       package = pkgs.gitFull;
       settings = {
-        userName = "Joey Sonnier";
-        userEmail = "tijso@protonmail.com";
+        user.name = "Joey Sonnier";
+        user.email = "tijso@protonmail.com";
         aliases = {
           a = "!git add . && git status";
           lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit";
