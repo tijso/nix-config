@@ -83,7 +83,7 @@
     # "Alt+Print".action.screenshot = {
     #   show-pointer = false;
     # };
-    "Mod+Shift+S".action = screenshot;
+    # "Mod+Shift+S".action = screenshot;
 
     "XF86AudioRaiseVolume".action = set-volume "0.1+";
     "XF86AudioLowerVolume".action = set-volume "0.1-";
