@@ -79,7 +79,7 @@
     "Print".action.screenshot-screen = {
       show-pointer = false;
     };
-    # "Ctrl+Print".action = screenshot-window;
+    "Ctrl+Print".action = screenshot;
     "Alt+Print".action.screenshot = {
       show-pointer = false;
     };
