@@ -26,7 +26,7 @@ with lib; {
       packages = with pkgs; [
         jetbrains-mono
         noto-fonts
-        noto-fonts-emoji
+        noto-fonts-color-emoji
         maple-mono.NF
         monaspace
         fira-code
